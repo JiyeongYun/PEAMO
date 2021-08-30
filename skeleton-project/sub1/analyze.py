@@ -10,9 +10,12 @@ def sort_stores_by_score(dataframes, n=20, min_reviews=30):
     """
     stores_reviews = pd.merge(
         dataframes["stores"], dataframes["reviews"], left_on="id", right_on="store"
-    )
-    scores_group = stores_reviews.groupby(["store", "store_name"])
-    scores = scores_group.mean()
+    )  # left_on 왼쪽 data 에서 id를 기준으로, right_on 오른쪽 data 에서 store를 기준으로 값이 같은 애들(공통되는 부분)을 merge
+    scores_group = stores_reviews.groupby(
+        ["store", "store_name"])  # 가게 id로 그룹을 묶고 그 안에서 다시 가게 이름으로 그룹화 한다
+    scores = scores_group.mean()  # 그룹화된 애들 중 Integer 값들을 평균 낸다
+    # 평균 낸 애들을 score 를 기준으로 내림차순 정렬
+    scores = scores.sort_values(by="score", ascending=False)
     return scores.head(n=n).reset_index()
 
 

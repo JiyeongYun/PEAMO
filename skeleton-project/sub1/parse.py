@@ -36,7 +36,7 @@ def import_data(data_path=DATA_FILE):
 
     try:
         with open(data_path, encoding="utf-8") as f:
-            data = json.loads(f.read())
+            data = json.loads(f.read())  # data 라는 변수에 json 데이터를 저장
     except FileNotFoundError as e:
         print(f"`{data_path}` 가 존재하지 않습니다.")
         exit(1)
@@ -100,12 +100,12 @@ def main():
 
     print("[음식점]")
     print(f"{separater}\n")
-    print(data["stores"].head())
+    print(data["stores"].head(10))
     print(f"\n{separater}\n\n")
 
     print("[리뷰]")
     print(f"{separater}\n")
-    print(data["reviews"].head())
+    print(data["reviews"].head(10))
     print(f"\n{separater}\n\n")
 
 
