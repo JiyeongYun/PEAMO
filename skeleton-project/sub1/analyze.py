@@ -46,7 +46,11 @@ def get_most_active_users(dataframes, n=20):
     """
     Req. 1-2-4 가장 많은 리뷰를 작성한 `n`명의 유저를 정렬하여 리턴합니다.
     """
-    raise NotImplementedError
+    # 유저 id로 그룹화 한 뒤에 유저가 남긴 리뷰의 개수에 따라 내림차순 정렬
+    reviews_group = dataframes['reviews'].groupby(
+        "user").count().sort_values(by="score", ascending=False)
+
+    return reviews_group.head(n=n).reset_index()
 
 
 def main():
@@ -69,12 +73,24 @@ def main():
 
     stores_most_review = get_most_reviewed_stores(data)
 
-    print("[리뷰 기준 음식점 정렬]")
+    print("[리뷰 개수 기준 음식점 정렬]")
     print(f"{separater}\n")
     for i, store in stores_most_review.iterrows():
         print(
             "{rank}위: {store}(리뷰 {score}개)".format(
                 rank=i + 1, store=store.store_name, score=store.score
+            )
+        )
+    print(f"\n{separater}\n\n")
+
+    users_most_review = get_most_active_users(data)
+
+    print("[리뷰 개수 기준 유저 정렬]")
+    print(f"{separater}\n")
+    for i, store in users_most_review.iterrows():
+        print(
+            "{rank}위: {user}(리뷰 {score}개)".format(
+                rank=i + 1, user=store.user, score=store.score
             )
         )
     print(f"\n{separater}\n\n")
