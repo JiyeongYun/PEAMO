@@ -93,11 +93,25 @@ def show_store_average_ratings_graph(dataframes, n=100):
     plt.show()
 
 
-def show_user_review_distribution_graph(dataframes):
+def show_user_review_distribution_graph(dataframes, n=100):
     """
     Req. 1-3-3 전체 유저의 리뷰 개수 분포를 그래프로 나타냅니다.
     """
-    raise NotImplementedError
+    reviews = dataframes["reviews"]
+
+    # 모든 user를 1차원 리스트에 저장합니다
+    users = reviews.user.apply(lambda user: str(user))
+    users_count = Counter(list(users))
+    best_review_users = users_count.most_common(n=n)
+    df = pd.DataFrame(best_review_users, columns=["user", "count"]).sort_values(
+        by=["count"], ascending=False
+    )
+
+    # 그래프로 나타냅니다
+    chart = sns.barplot(x="user", y="count", data=df)
+    chart.set_xticklabels(chart.get_xticklabels(), rotation=45)
+    plt.title("유저 리뷰 수 분포")
+    plt.show()
 
 
 def show_user_age_gender_distribution_graph(dataframes):
@@ -120,6 +134,7 @@ def main():
     # show_store_categories_graph(data)
     # show_store_review_distribution_graph(data)
     # show_store_average_ratings_graph(data)
+    show_user_review_distribution_graph(data)
 
 
 if __name__ == "__main__":
