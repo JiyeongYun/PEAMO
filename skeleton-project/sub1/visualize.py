@@ -66,19 +66,31 @@ def show_store_review_distribution_graph(dataframes, n=100):
     df = scores[['store_name', 'branch']].head(n)
     df.columns = ['store_name', 'count']
 
-    print(df)
-
     chart = sns.barplot(x="store_name", y="count", data=df)
-    chart.set_xticklabels(chart.get_xticklabels(), rotation=0)
+    chart.set_xticklabels(chart.get_xticklabels(), rotation=45)
     plt.title("음식점 리뷰 수 분포")
     plt.show()
 
 
-def show_store_average_ratings_graph():
+def show_store_average_ratings_graph(dataframes, n=100):
     """
     Req. 1-3-2 각 음식점의 평균 평점을 그래프로 나타냅니다.
     """
-    raise NotImplementedError
+    stores_reviews = pd.merge(
+        dataframes["stores"], dataframes["reviews"], left_on="id", right_on="store"
+    )  # left_on 왼쪽 data 에서 id를 기준으로, right_on 오른쪽 data 에서 store를 기준으로 값이 같은 애들(공통되는 부분)을 merge
+    scores_group = stores_reviews.groupby(
+        ["store", "store_name"])  # 가게 id로 그룹을 묶고 그 안에서 다시 가게 이름으로 그룹화 한다
+
+    scores = scores_group.mean()  # 평균 평점을 구한다
+    scores = scores.reset_index()  # index값 초기화
+    scores = scores[['store_name', 'score']].head(
+        n)  # score 열과 store_name 열만 추출
+
+    chart = sns.barplot(x="store_name", y="score", data=scores)
+    chart.set_xticklabels(chart.get_xticklabels(), rotation=45)
+    plt.title("음식점 평점 분포")
+    plt.show()
 
 
 def show_user_review_distribution_graph(dataframes):
@@ -106,7 +118,8 @@ def main():
     set_config()
     data = load_dataframes()
     # show_store_categories_graph(data)
-    show_store_review_distribution_graph(data)
+    # show_store_review_distribution_graph(data)
+    # show_store_average_ratings_graph(data)
 
 
 if __name__ == "__main__":
