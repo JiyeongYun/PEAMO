@@ -52,7 +52,7 @@ def show_store_categories_graph(dataframes, n=100):
 
 def show_store_review_distribution_graph(dataframes, n=100):
     """
-    Req. 1-3-1 전체 음식점의 리뷰 개수 분포를 그래프로 나타냅니다. 
+    Req. 1-3-1 전체 음식점의 리뷰 개수 분포를 그래프로 나타냅니다.
     """
     stores_reviews = pd.merge(
         dataframes["stores"], dataframes["reviews"], left_on="id", right_on="store"
@@ -143,11 +143,28 @@ def show_user_age_gender_distribution_graph(dataframes, n=100):
     plt.show()
 
 
-def show_stores_distribution_graph(dataframes):
+def show_stores_distribution_graph(dataframes, n=100):
     """
     Req. 1-3-5 각 음식점의 위치 분포를 지도에 나타냅니다.
     """
-    raise NotImplementedError
+    stores = dataframes["stores"]
+
+    # 모든 지역을 1차원 리스트에 저장합니다
+    areas = stores.area.apply(lambda a: a)
+
+    # # 지역이 없는 경우 추출합니다
+    areas = filter(lambda c: c != None, areas)
+    areas_count = Counter(list(areas))
+    best_areas = areas_count.most_common(n=n)
+    df = pd.DataFrame(best_areas, columns=["area", "count"]).sort_values(
+        by=["count"], ascending=False
+    )
+
+    # # 그래프로 나타냅니다
+    chart = sns.barplot(x="area", y="count", data=df)
+    chart.set_xticklabels(chart.get_xticklabels(), rotation=45)
+    plt.title("음식점 위치 분포")
+    plt.show()
 
 
 def main():
@@ -157,7 +174,8 @@ def main():
     # show_store_review_distribution_graph(data)
     # show_store_average_ratings_graph(data)
     # show_user_review_distribution_graph(data)
-    show_user_age_gender_distribution_graph(data)
+    # show_user_age_gender_distribution_graph(data)
+    show_stores_distribution_graph(data)
 
 
 if __name__ == "__main__":
