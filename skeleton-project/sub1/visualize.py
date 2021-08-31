@@ -114,11 +114,33 @@ def show_user_review_distribution_graph(dataframes, n=100):
     plt.show()
 
 
-def show_user_age_gender_distribution_graph(dataframes):
+def show_user_age_gender_distribution_graph(dataframes, n=100):
     """
     Req. 1-3-4 전체 유저의 성별/나이대 분포를 그래프로 나타냅니다.
     """
-    raise NotImplementedError
+    reviews = dataframes["reviews"]
+
+    # 유저 id 값으로 group을 만든다
+    user_group = reviews.groupby("user")
+    genders = user_group.user_gender.apply(lambda gender: gender)
+    borns = user_group.user_born.apply(lambda born: born)
+    gender_count = Counter(list(genders)).most_common()
+    born_count = Counter(list(borns))
+    born_list = [(k, v) for k, v in born_count.items()]
+    born_list.sort()
+
+    df_gender = pd.DataFrame(gender_count, columns=["gender", "count"])
+    df_born = pd.DataFrame(born_list, columns=["year", "count"])
+
+    chart_gender = sns.barplot(x="gender", y="count", data=df_gender)
+    chart_gender.set_xticklabels(chart_gender.get_xticklabels(), rotation=45)
+    plt.title("유저 성별 분포")
+    plt.show()
+
+    chart_born = sns.barplot(x="year", y="count", data=df_born)
+    chart_born.set_xticklabels(chart_born.get_xticklabels(), rotation=45)
+    plt.title("유저 나이별 분포")
+    plt.show()
 
 
 def show_stores_distribution_graph(dataframes):
@@ -134,7 +156,8 @@ def main():
     # show_store_categories_graph(data)
     # show_store_review_distribution_graph(data)
     # show_store_average_ratings_graph(data)
-    show_user_review_distribution_graph(data)
+    # show_user_review_distribution_graph(data)
+    show_user_age_gender_distribution_graph(data)
 
 
 if __name__ == "__main__":

@@ -26,6 +26,8 @@ review_columns = (
     "score",  # 평점
     "content",  # 리뷰 내용
     "reg_time",  # 리뷰 등록 시간
+    "user_gender",  # 유저 성별
+    "user_born",  # 유저 태어난 해
 )
 
 
@@ -66,7 +68,8 @@ def import_data(data_path=DATA_FILE):
             u = review["writer_info"]
 
             reviews.append(
-                [r["id"], d["id"], u["id"], r["score"], r["content"], r["reg_time"]]
+                [r["id"], d["id"], u["id"], r["score"], r["content"],
+                    r["reg_time"], u["gender"], u["born_year"]]
             )
 
     store_frame = pd.DataFrame(data=stores, columns=store_columns)
