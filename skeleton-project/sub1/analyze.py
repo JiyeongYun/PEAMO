@@ -69,7 +69,7 @@ def get_user_store(dataframes):
     # store name 을 모두 가져와서 중복되는 값을 제거
     store_list = list(set(stores_reviews['store_name'].values.tolist()))
 
-    # 유저 id 값을 행으로 가게 이름을 열로 만들고 값은 모두 0으로 된 dataframe 생성
+    # 유저 id 값을 행으로 가게 이름을 열로 만들고 값은 모두 nan으로 된 dataframe 생성
     df = pd.DataFrame(data=np.nan, index=user_list, columns=store_list)
 
     user_group = stores_reviews.sort_values(
@@ -81,6 +81,56 @@ def get_user_store(dataframes):
         df.loc[user, store_name] = score
 
     return df.astype(pd.SparseDtype("float"))
+
+
+def get_user_category(dataframes):
+    """
+    Req. 1-4-2 유저 - 음식점 카테고리 생성
+    """
+    stores_reviews = pd.merge(
+        dataframes["stores"], dataframes["reviews"], left_on="id", right_on="store"
+    )  # left_on 왼쪽 data 에서 id를 기준으로, right_on 오른쪽 data 에서 store를 기준으로 값이 같은 애들(공통되는 부분)을 merge
+
+    # user id 값을 모두 가져와서 중복되는 값을 제거
+    user_list = list(set(stores_reviews['user'].values.tolist()))
+    user_list.sort()  # user id 를 오름차순으로 정렬
+    category_list = []
+
+    # category 을 모두 가져와서 중복되는 값을 제거
+    for c in stores_reviews['category'].values:
+        for cat in c.split('|'):
+            category_list.append(cat)
+    category_list = list(set(category_list))
+    # 유저 id 값을 행으로 카테고리를 열로 만들고 값은 모두 nan으로 된 dataframe 생성
+    # 각 유저들이 해당 카테고리에 준 모든 점수 합산
+    df_score = pd.DataFrame(
+        data=np.nan, index=user_list, columns=category_list)
+    # 유저 id 값을 행으로 카데고리를 열로 만들고 값은 모두 nan으로 된 dataframe 생성
+    # 각 유저들이 해당 카데고리에 점수를 준 횟수 합산
+    df_count = pd.DataFrame(
+        data=np.nan, index=user_list, columns=category_list)
+    df_check = df_score.isnull()
+
+    # 나중에 df_score / df_count 를 해서 해당 유저가 해당 카테고리에 준 점수 평균을 구할 예정
+
+    user_sort = stores_reviews.sort_values(
+        by='user').loc[:, ["user", "category", "score"]]
+
+    for row in user_sort.to_numpy():
+        user, category, score = row
+        category_list = category.split('|')
+        for cat in category_list:
+            # 만약 값이 비어 있다면
+            if df_check.loc[user, cat]:
+                df_score.loc[user, cat] = score
+                df_count.loc[user, cat] = 1
+                df_check.loc[user, cat] = False
+            else:
+                df_score.loc[user, cat] += score
+                df_count.loc[user, cat] += 1
+
+    df_mean = df_score.div(df_count)  # score 를 count 로 나누어 평균 평점 구한다
+    return df_mean.astype(pd.SparseDtype("float"))
 
 
 def main():
@@ -130,6 +180,13 @@ def main():
     print("[유저 - 음식점 행렬]")
     print(f"{separater}\n")
     print(user_store_arr)
+    print(f"\n{separater}\n\n")
+
+    user_category_arr = get_user_category(data)
+
+    print("[유저 - 카테고리 행렬]")
+    print(f"{separater}\n")
+    print(user_category_arr)
     print(f"\n{separater}\n\n")
 
 
