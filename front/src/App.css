@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-size: var(--main-font-size);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+:root {
+  /* 폰트 사이즈 관련 */
+  --small-font-size: 12px;
+  --main-font-size: 14px;
+  --mid-font-size: 16px;
+  --large-font-size: 20px;
+  --xlarge-font-size: 24px;
+
+  /* 마진 사이즈 관련 */
+  --margin-1: 8px;
+  --margin-2: 16px;
+  --margin-3: 24px;
+  --margin-4: 32px;
+  --margin-5: 40px;
+  --margin-6: 48px;
+
+  /* border-radius 관련 */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* 색상 관련 */
+  --bright-grey: #f8f8f8;
+}
+
+/* header css start */
+header {
+  height: 10vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  color: white;
+}
+
+header > div {
+  height: 100%;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .header__right,
+header .header__left {
+  width: 40%;
+}
+
+header .header__right {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+header .header__mid > a {
+  font-size: var(--xlarge-font-size);
+}
+
+header .header__left > a {
+  margin-right: var(--margin-3);
+}
+
+header .header__right > * {
+  margin-left: var(--margin-3);
+}
+/* header css end */
+
+/* container start */
+.container {
+  min-height: 90vh;
+}
+/* container finish */
+
+/* footer start */
+footer {
+  background-color: var(--bright-grey);
+  text-align: center;
+  padding: var(--margin-3) 0 var(--margin-2);
+}
+
+footer * {
+  font-size: var(--small-font-size);
+}
+
+footer > .slogan {
+  margin: var(--margin-3) 0;
+}
+
+footer > .team > p {
+  margin-top: var(--margin-1);
+}
+
+footer > .company {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--margin-3);
+}
+
+footer > .company > .left,
+footer > .company > .right {
+  margin: 0 var(--margin-2);
+}
+
+footer > .company > .left {
+  display: flex;
+}
+
+footer > .company > .left > p {
+  margin-right: var(--margin-4);
+}
+/* footer end */
