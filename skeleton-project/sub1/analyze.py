@@ -1,7 +1,9 @@
+from numpy import fabs
 from pandas.core import groupby
 from parse import load_dataframes
 import pandas as pd
 import shutil
+import numpy as np
 
 
 def sort_stores_by_score(dataframes, n=20, min_reviews=30):
@@ -53,6 +55,34 @@ def get_most_active_users(dataframes, n=20):
     return reviews_group.head(n=n).reset_index()
 
 
+def get_user_store(dataframes):
+    """
+    Req. 1-4-1 유저 - 음식점 행렬 생성
+    """
+    stores_reviews = pd.merge(
+        dataframes["stores"], dataframes["reviews"], left_on="id", right_on="store"
+    )  # left_on 왼쪽 data 에서 id를 기준으로, right_on 오른쪽 data 에서 store를 기준으로 값이 같은 애들(공통되는 부분)을 merge
+
+    # user id 값을 모두 가져와서 중복되는 값을 제거
+    user_list = list(set(stores_reviews['user'].values.tolist()))
+    user_list.sort()  # user id 를 오름차순으로 정렬
+    # store name 을 모두 가져와서 중복되는 값을 제거
+    store_list = list(set(stores_reviews['store_name'].values.tolist()))
+
+    # 유저 id 값을 행으로 가게 이름을 열로 만들고 값은 모두 0으로 된 dataframe 생성
+    df = pd.DataFrame(data=np.nan, index=user_list, columns=store_list)
+
+    user_group = stores_reviews.sort_values(
+        by='user').groupby(['user', 'store_name']).mean().loc[:, 'score']  # 유저 id 와 가게이름으로 group 한 후 평균을 내고 그 중 score 값만 남긴다
+
+    for index, score in user_group.items():  # index 에는 (user_id, score_name) 이 score 에는 평점이 있다
+        user, store_name = index
+        # df 에서 행에서는 유저 id 를 열에서는 가게 이름을 찾아 값을 평점으로 변경
+        df.loc[user, store_name] = score
+
+    return df.astype(pd.SparseDtype("float"))
+
+
 def main():
     data = load_dataframes()
 
@@ -93,6 +123,13 @@ def main():
                 rank=i + 1, user=store.user, score=store.score
             )
         )
+    print(f"\n{separater}\n\n")
+
+    user_store_arr = get_user_store(data)
+
+    print("[유저 - 음식점 행렬]")
+    print(f"{separater}\n")
+    print(user_store_arr)
     print(f"\n{separater}\n\n")
 
 
