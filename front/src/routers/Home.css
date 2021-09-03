@@ -1,0 +1,38 @@
+.home {
+  height: 100%;
+}
+
+.home > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+}
+
+.home > .home_bottom {
+  height: 30vh;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;
+  text-align: center;
+}
+
+.home > .home_bottom > .home_btn {
+  width: 20%;
+  height: 70px;
+  border: 1px solid white;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.home > .home_bottom > .home_btn > a {
+  font-size: var(--large-font-size);
+  line-height: 70px;
+}
