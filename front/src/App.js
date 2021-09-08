@@ -1,28 +1,38 @@
 import './App.css';
 import { Route, Link } from 'react-router-dom'
-// Components
+// Routers
 import Home from './routers/Home'
 import About from './routers/About'
-import Recommendation from './routers/Recommendation'
 import Teller from './routers/Teller'
-import SignIn from './routers/SignIn'
+// Components
+import SignIn from './components/SignIn'
 
 function App() {
+
+  // 로그인 창을 보여주는 함수
+  const showSignIn = (e) => {
+    e.preventDefault()
+  }
+  
+  // 검색 창을 보여주는 함수
+  const showSearch = (e) => {
+    e.preventDefault()
+  }
+  
   return (
     <div className="App">
       <header>
         <div>
           <div className="header__left">
             <Link to="/teller">PÉ AMO Teller</Link>
-            <Link to="/recommendation">Recommendation</Link>
             <Link to="/about">About</Link>
           </div>
           <div className="header__mid">
             <Link to="/">PÉ AMO</Link>
           </div>
           <div className="header__right">
-            <Link to="/signin"><p>Sign in</p></Link>
-            <p>Search</p>
+            <Link onClick={showSignIn}>Sign in</Link>
+            <Link onClick={showSearch}>Search</Link>
           </div>
         </div>
       </header>
@@ -30,9 +40,7 @@ function App() {
       <div className="container">
         <Route path="/" exact={true} component={Home}/>
         <Route path="/about" exact={true} component={About}/>
-        <Route path="/recommendation" exact={true} component={Recommendation}/>
         <Route path="/teller" exact={true} component={Teller}/>
-        <Route path="/signin" exact={true} component={SignIn}/>
       </div>
 
       <footer>
