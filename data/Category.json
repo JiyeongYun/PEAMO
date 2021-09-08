@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "citrus_smells",
+    "season": [0, 1]
+  },
+  {
+    "id": 2,
+    "name": "fruits_vegetables_and_nuts",
+    "season": [0, 2]
+  },
+  {
+    "id": 3,
+    "name": "flowers",
+    "season": [0, 1, 2, 3]
+  },
+  {
+    "id": 4,
+    "name": "white_flowers",
+    "season": [0, 2, 3]
+  },
+  {
+    "id": 5,
+    "name": "greens_herbs_and_fougeres",
+    "season": [1, 2]
+  },
+  {
+    "id": 6,
+    "name": "spices",
+    "season": [2, 3]
+  },
+  {
+    "id": 7,
+    "name": "sweets_and_gourmand_smells",
+    "season": [3]
+  },
+  {
+    "id": 8,
+    "name": "woods_and_mosses",
+    "season": [2, 3]
+  },
+  {
+    "id": 9,
+    "name": "resins_and_balsams",
+    "season": [2, 3]
+  },
+  {
+    "id": 10,
+    "name": "musk_amber_animalic_smells",
+    "season": [2, 3]
+  },
+  {
+    "id": 11,
+    "name": "beverages",
+    "season": [0, 1, 2, 3]
+  },
+  {
+    "id": 12,
+    "name": "netural_and_synthetic_popular_and_weird",
+    "season": [0, 1, 2, 3]
+  }
+]

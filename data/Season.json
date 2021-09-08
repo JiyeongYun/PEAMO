@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "eng": "spring",
+    "kor": "봄"
+  },
+  {
+    "id": 1,
+    "eng": "summer",
+    "kor": "여름"
+  },
+  {
+    "id": 2,
+    "eng": "autumn",
+    "kor": "가을"
+  },
+  {
+    "id": 3,
+    "eng": "winter",
+    "kor": "겨울"
+  }
+]
