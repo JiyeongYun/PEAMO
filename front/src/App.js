@@ -1,4 +1,5 @@
 import './App.css';
+import { useEffect, useState } from 'react';
 import { Route, Link } from 'react-router-dom'
 // Routers
 import Home from './routers/Home'
@@ -8,19 +9,30 @@ import Teller from './routers/Teller'
 import SignIn from './components/SignIn'
 
 function App() {
+  // useState
+  const [main, setMain] = useState(true)
+  const [showSignin, setShowSignin] = useState(false)
+  const [page_num, setPageNum] = useState(null)
+
+  // KOW - main 사진 번호 랜덤 생성 시작
+  useEffect(() => {
+    let num = Math.floor(Math.random() * 7 + 1)
+    if ( num === 8) {
+      num = 7
+    }
+    setPageNum(num)
+  }, [main])
+  // KOW - main 사진 번호 랜덤 생성 끝
 
   // 로그인 창을 보여주는 함수
-  const showSignIn = (e) => {
+  const toggleSignin = (e) => {
     e.preventDefault()
-  }
-  
-  // 검색 창을 보여주는 함수
-  const showSearch = (e) => {
-    e.preventDefault()
+    setShowSignin(!showSignin)
   }
   
   return (
     <div className="App">
+      {showSignin?<SignIn toggleSignin={toggleSignin} />:null}
       <header>
         <div>
           <div className="header__left">
@@ -28,17 +40,17 @@ function App() {
             <Link to="/about">About</Link>
           </div>
           <div className="header__mid">
-            <Link to="/">PE' AMO</Link>
+            <Link to="/" onClick={() => setMain(!main)}>PE' AMO</Link>
           </div>
           <div className="header__right">
-            <Link onClick={showSignIn}>Sign in</Link>
-            <Link onClick={showSearch}>Search</Link>
+            <Link onClick={toggleSignin} to="/about">Sign in</Link>
+            <Link to="/search">Search</Link>
           </div>
         </div>
       </header>
 
       <div className="container">
-        <Route path="/" exact={true} component={Home}/>
+        <Route path="/" exact={true} render={() => <Home page_num={page_num} />}/>
         <Route path="/about" exact={true} component={About}/>
         <Route path="/teller" exact={true} component={Teller}/>
       </div>
