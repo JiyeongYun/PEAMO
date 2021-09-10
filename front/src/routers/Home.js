@@ -1,17 +1,11 @@
 import { Link } from 'react-router-dom'
 import './Home.css'
 
-function Home() {
-    // KOW - main 사진 번호 랜덤 생성 시작
-    let page_num = Math.floor(Math.random() * 8 + 1)
-    if ( page_num === 9) {
-        page_num = 8
-    }
-    // KOW - main 사진 번호 랜덤 생성 끝
+function Home({page_num}) {
 
     return (
         <div className="home">
-            <div class="grey_canvas"></div>
+            <div className="grey_canvas"></div>
             <img src={`/images/main_${page_num}.jpg`} alt={`main_${page_num}`} />
             <div className="home_bottom">
                 <div className="home_btn">
