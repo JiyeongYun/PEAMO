@@ -24,11 +24,11 @@ function App() {
       <header>
         <div>
           <div className="header__left">
-            <Link to="/teller">PÉ AMO Teller</Link>
+            <Link to="/teller">PE' AMO Teller</Link>
             <Link to="/about">About</Link>
           </div>
           <div className="header__mid">
-            <Link to="/">PÉ AMO</Link>
+            <Link to="/">PE' AMO</Link>
           </div>
           <div className="header__right">
             <Link onClick={showSignIn}>Sign in</Link>
@@ -45,7 +45,7 @@ function App() {
 
       <footer>
         <div className="icons">g</div>
-        <p className="slogan">Find Your Color, PÉ AMO</p>
+        <p className="slogan">Find Your Color, PE' AMO</p>
         <div className="team">
           <p>Team OSDS</p>
           <p>Name: 오순도순 | FE: 권오우, 서예리 | BE: 윤지영, 장현웅</p>
