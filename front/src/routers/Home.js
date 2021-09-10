@@ -11,6 +11,7 @@ function Home() {
 
     return (
         <div className="home">
+            <div class="grey_canvas"></div>
             <img src={`/images/main_${page_num}.jpg`} alt={`main_${page_num}`} />
             <div className="home_bottom">
                 <div className="home_btn">

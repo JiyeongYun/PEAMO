@@ -2,6 +2,15 @@
   height: 100%;
 }
 
+.grey_canvas {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+}
+
 .home > img {
   position: absolute;
   top: 0;
@@ -14,7 +23,7 @@
 
 .home > .home_bottom {
   height: 30vh;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)); */
   color: white;
   position: absolute;
   bottom: 0px;

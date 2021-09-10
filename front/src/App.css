@@ -1,7 +1,10 @@
+@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+
 * {
   box-sizing: border-box;
   margin: 0;
   font-size: var(--main-font-size);
+  font-family: 'Jeju Myeongjo', serif;
 }
 
 body::-webkit-scrollbar {
@@ -42,7 +45,7 @@ a {
 /* header css start */
 header {
   height: 20vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)); */
   color: white;
 }
 
