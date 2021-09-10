@@ -45,7 +45,7 @@ a {
 /* header css start */
 header {
   height: 20vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)); */
   color: white;
 }
 
