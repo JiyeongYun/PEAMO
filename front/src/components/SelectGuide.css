@@ -1,0 +1,30 @@
+.select_guide {
+  height: 80vh;
+  width: 100vw;
+  position: absolute;
+  text-align: center;
+}
+
+.select_guide > .guide_name {
+  color: black;
+  font-size: var(--xlarge-font-size);
+  margin-top: var(--margin-6);
+}
+
+.select_guide > .selection {
+  display: flex;
+  margin: var(--margin-4) auto var(--margin-6);
+  width: 50%;
+  justify-content: space-between;
+}
+
+.select_guide > .selection > p {
+  font-size: var(--large-font-size);
+  color: var(--grey);
+  cursor: pointer;
+  transition: color 1s ease-in;
+}
+
+.select_guide > .selection > .checked {
+  color: black;
+}
