@@ -1,7 +1,9 @@
+import SelectGuide from "../components/SelectGuide"
+
 function About() {
     return (
         <div>
-            About
+            <SelectGuide />
         </div>
     )
 }

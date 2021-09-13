@@ -13,7 +13,7 @@
 
 .select_guide > .selection {
   display: flex;
-  margin: var(--margin-4) auto var(--margin-6);
+  margin: var(--margin-5) auto var(--margin-6);
   width: 50%;
   justify-content: space-between;
 }
@@ -22,9 +22,28 @@
   font-size: var(--large-font-size);
   color: var(--grey);
   cursor: pointer;
-  transition: color 1s ease-in;
+  transition: color 1s ease;
 }
 
 .select_guide > .selection > .checked {
   color: black;
+  font-weight: bold;
+}
+
+.select_guide > .images_container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.select_guide > .images_container h4 {
+  margin-top: var(--margin-3);
+  margin-bottom: var(--margin-2);
+  font-size: var(--large-font-size);
+  font-weight: 500;
+}
+
+.select_guide > .images_container p {
+  font-size: var(--mid-font-size);
 }

@@ -1,5 +1,9 @@
 import { useState } from "react"
 import "./SelectGuide.css"
+// components
+import Style from "./Style"
+import Season from "./Season"
+import Situation from "./Situation"
 
 function SelectGuide() {
     // useState
@@ -10,9 +14,11 @@ function SelectGuide() {
         const {target : {className}} = e
         const prev = document.querySelector(`.${selected}`)
         const now = document.querySelector(`.${className}`)
-        prev.classList.remove('checked')
-        now.classList.add('checked')
-        setSelected(className)
+        if (now) {
+            prev.classList.remove('checked')
+            now.classList.add('checked')
+            setSelected(className)
+        }
     }
 
     return (
@@ -23,9 +29,9 @@ function SelectGuide() {
                 <p className="season" onClick={toggleSelected}>#Season</p>
                 <p className="situation" onClick={toggleSelected}>#Situation</p>
             </div>
-            <div className="images_container">
-                images
-            </div>
+            {selected==="style"&&<Style />}
+            {selected==="season"&&<Season />}
+            {selected==="situation"&&<Situation />}
         </div>
     )
 }
