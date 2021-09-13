@@ -1,0 +1,40 @@
+.about {
+  height: 100%;
+}
+
+.about > img {
+  position: absolute;
+  top: 95px;
+  left: 0;
+  z-index: -10;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+}
+
+.navbar {
+  height: 9vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background-color: black;
+}
+
+.about > .perfume_kind {
+  height: 80vh;
+  width: 100vw;
+  position: absolute;
+  text-align: center;
+}
+
+.about > .perfume_kind > .kind_name {
+  height: 70px;
+  color: black;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 3rem;
+}
+
