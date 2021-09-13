@@ -5,28 +5,28 @@ from .models import *
 # 카테고리 디테일
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
-        Model = Category
+        model = Category
         fields = '__all__'
 
 
 # 향 디테일
 class NoteSerializer(serializers.ModelSerializer):
     class Meta:
-        Model = Note
+        model = Note
         fields = '__all__'
 
 
 # 유저 디테일
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        Model = User
+        model = User
         fields = '__all__'
 
 
 # 브랜드
 class BrandSerializer(serializers.ModelSerializer):
     class Meta:
-        Model = Brand
+        model = Brand
         fields = '__all__'
 
 
@@ -35,7 +35,7 @@ class PerfumeSerializer(serializers.ModelSerializer):
     brand = BrandSerializer(read_only=True)
 
     class Meta:
-        Model = Perfume
+        model = Perfume
         fields = '__all__'
 
 
@@ -44,7 +44,7 @@ class PerfumeNoteListSerializer(serializers.ModelSerializer):
     note = NoteSerializer(read_only=True)
 
     class Meta:
-        Model = PerfumeNote
+        model = PerfumeNote
         fields = ('note', 'note_type')
 
 
@@ -52,5 +52,5 @@ class PerfumeNoteListSerializer(serializers.ModelSerializer):
 class PerfumeListSerializer(serializers.ModelSerializer):
 
     class Meta:
-        Model = Perfume
+        model = Perfume
         fields = ('id', 'name', 'imgurl')
