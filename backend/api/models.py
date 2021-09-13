@@ -6,8 +6,6 @@ from django.db import models
 class Category (models.Model):
     id = models.BigAutoField(primary_key=True)
     eng = models.CharField(max_length=200)
-    kor = models.CharField(max_length=200)
-    desc = models.TextField()
 
 
 class Season (models.Model):
