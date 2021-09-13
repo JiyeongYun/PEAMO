@@ -6,7 +6,7 @@ function SignIn({toggleSignin}) {
         <div className="signin_container">
             <div className="signin_box">
                 <div className="icon">
-                    <Icon onClick={toggleSignin} className="fas fa-times" />
+                    <Icon onClick={toggleSignin} className="fas fa-times" fontSize="small" />
                 </div>
                 <h3>PE' AMO</h3>
                 <h4>당신의 취<span>향</span>을 찾아드립니다.</h4>
