@@ -36,7 +36,7 @@ class Perfume (models.Model):
     id = models.BigAutoField(primary_key=True)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
-    gender = models.IntegerField(max_length=1)
+    gender = models.IntegerField()
     imgurl = models.CharField(max_length=255)
     good_cnt = models.IntegerField()
 
@@ -58,7 +58,7 @@ class User (models.Model):
     id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=200)
     email = models.CharField(max_length=200)
-    gender = models.IntegerField(max_length=1)
+    gender = models.IntegerField()
 
 
 class UserPerfumeList (models.Model):
