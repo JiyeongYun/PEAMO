@@ -6,5 +6,5 @@ urlpatterns = [
     path('perfumes/', views.perfume_list),
     path('perfume/<int:perfume_pk>/', views.perfume_detail),
     path('perfume/<int:perfume_pk>/notes/', views.perfume_notes),
-    path('addPerfume/', views.add_myperfume)
+    # path('addPerfume/', views.add_myperfume)
 ]
