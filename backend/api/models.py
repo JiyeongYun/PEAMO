@@ -54,14 +54,14 @@ class PerfumeCategory (models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 
-class User (models.Model):
-    id = models.BigAutoField(primary_key=True)
-    name = models.CharField(max_length=200)
-    email = models.CharField(max_length=200)
-    gender = models.IntegerField(max_length=1)
+# class User (models.Model):
+#     id = models.BigAutoField(primary_key=True)
+#     name = models.CharField(max_length=200)
+#     email = models.CharField(max_length=200)
+#     gender = models.IntegerField(max_length=1)
 
 
-class UserPerfumeList (models.Model):
-    id = models.BigAutoField(primary_key=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    perfume = models.ForeignKey(Perfume, on_delete=models.CASCADE)
+# class UserPerfumeList (models.Model):
+#     id = models.BigAutoField(primary_key=True)
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     perfume = models.ForeignKey(Perfume, on_delete=models.CASCADE)
