@@ -54,3 +54,11 @@ class PerfumeListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Perfume
         fields = ('id', 'name', 'imgurl')
+
+
+# 나의 향수
+class AddMyPerfumeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserPerfumeList
+        fiedls = '__all__'
+        exclude = ['id']
