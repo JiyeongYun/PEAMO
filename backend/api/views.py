@@ -48,7 +48,18 @@ def perfume_notes(request, perfume_pk):
 # 나의 향수 추가
 @api_view(['POST'])
 def add_myperfume(request):
-    serializer = AddMyPerfumeSerializer(data=request.data)
+    data = request.data
+
+    # 요청한 유저의 향수함 불러오기
+    perfumes = UserPerfumeList.objects.filter(user=data['user'])
+    UserPerfumes = MyPerfumeSerializer(perfumes, many=True)
+
+    # 이미 기존 향수함에 있는 것을 또 추가하면 400 Return
+    for element in UserPerfumes.data:
+        if element['perfume'] == request.data['perfume']:
+            return Response(status=status.status.HTTP_400_BAD_REQUEST)
+
+    serializer = MyPerfumeSerializer(data=data)
 
     serializer.is_valid(raise_exception=True)
 
