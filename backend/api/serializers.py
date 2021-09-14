@@ -17,10 +17,10 @@ class NoteSerializer(serializers.ModelSerializer):
 
 
 # 유저 디테일
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = '__all__'
+# class UserSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = User
+#         fields = '__all__'
 
 
 # 브랜드
@@ -54,3 +54,11 @@ class PerfumeListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Perfume
         fields = ('id', 'name', 'imgurl')
+
+
+# 나의 향수
+# class MyPerfumeSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = UserPerfumeList
+#         fiedls = '__all__'
+#         exclude = ['id']
