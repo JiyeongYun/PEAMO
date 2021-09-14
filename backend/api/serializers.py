@@ -57,7 +57,7 @@ class PerfumeListSerializer(serializers.ModelSerializer):
 
 
 # 나의 향수
-class AddMyPerfumeSerializer(serializers.ModelSerializer):
+class MyPerfumeSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserPerfumeList
         fiedls = '__all__'
