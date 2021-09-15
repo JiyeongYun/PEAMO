@@ -1,9 +1,27 @@
 .home {
-  height: 100%;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow: scroll;
+}
+
+.scroll {
+  opacity: 0;
+  transform: translate(0, 50px);
+}
+
+.scroll.show {
+  opacity: 1;
+  transform: none;
+}
+
+.home::-webkit-scrollbar {
+  display: none;
 }
 
 .white_canvas {
   height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
 }
 
 .grey_canvas {
@@ -15,7 +33,7 @@
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 15% 70%, rgba(0, 0, 0, 0.5));
 }
 
-.home > img {
+.home > .white_canvas > img {
   position: absolute;
   top: 0;
   left: 0;
@@ -25,7 +43,7 @@
   object-fit: cover;
 }
 
-.home > .home_bottom {
+.home > .white_canvas > .home_bottom {
   height: 30vh;
   /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)); */
   color: white;
@@ -35,7 +53,7 @@
   text-align: center;
 }
 
-.home > .home_bottom > .home_btn {
+.home > .white_canvas > .home_bottom > .home_btn {
   width: 20%;
   height: 70px;
   border: 1px solid white;
@@ -45,7 +63,7 @@
   transform: translate(-50%);
 }
 
-.home > .home_bottom > .home_btn > a {
+.home > .white_canvas > .home_bottom > .home_btn > a {
   font-size: var(--large-font-size);
   line-height: 70px;
 }
@@ -54,6 +72,7 @@
   height: 100vh;
   padding-top: 30vh;
   position: relative;
+  scroll-snap-align: start;
 }
 
 .home > .this_month_perfume > .center_pos {
@@ -65,11 +84,13 @@
 .home > .this_month_perfume > .center_pos > .title {
   margin-bottom: var(--margin-6);
   font-size: var(--xxlarge-font-size);
+  transition: all 1s 0.5s;
 }
 
 .home > .this_month_perfume > .center_pos > .perfumes {
   display: flex;
   justify-content: space-between;
+  transition: all 1s 1s;
 }
 
 .home > .this_month_perfume > .center_pos > .perfumes > .perfume {
@@ -87,4 +108,14 @@
 
 .home > .this_month_perfume > .center_pos > .perfumes > .perfume > .perfume_info > p {
   font-size: var(--mid-font-size);
+}
+
+.home > .this_month_perfume > .center_pos > .perfumes > .perfume > .perfume_info > p:nth-child(1) {
+  font-weight: bold;
+  font-size: var(--large-font-size);
+  margin-bottom: var(--margin-1);
+}
+
+.home > .this_month_perfume > .center_pos > .perfumes > .perfume > .notes {
+  font-size: var(--main-font-size);
 }

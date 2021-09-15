@@ -46,11 +46,12 @@ a {
 /* header css start */
 header {
   position: fixed;
-  height: 8vh;
+  height: 9vh;
   width: 100vw;
   /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)); */
   color: white;
   z-index: 10;
+  transition: background 1s ease;
 }
 
 header > div {
