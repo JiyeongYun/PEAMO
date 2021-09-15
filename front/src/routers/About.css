@@ -1,10 +1,25 @@
-.about {
+/* .about {
   height: 100%;
+} */
+
+.navbar {
+  height: 9vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  background-color: black;
 }
 
-.about > img {
+.about > .perfume_kind {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  text-align: center;
+}
+
+.about > .perfume_kind > img {
   position: absolute;
-  top: 95px;
   left: 0;
   z-index: -10;
   height: 100vh;
@@ -12,29 +27,37 @@
   object-fit: cover;
 }
 
-.navbar {
-  height: 9vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  background-color: black;
-}
-
-.about > .perfume_kind {
-  height: 80vh;
-  width: 100vw;
-  position: absolute;
-  text-align: center;
-}
-
 .about > .perfume_kind > .kind_name {
-  height: 70px;
   color: black;
   position: absolute;
-  top: 10%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%);
   font-size: 3rem;
+  z-index: -2;
 }
 
+.about > .perfume_kind > .kind_table {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: -2;
+}
+
+.about > .perfume_select {
+  height: 91vh;
+  width: 100vw;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.about > .perfume_note {
+  height: 91vh;
+  width: 100vw;
+  position: relative;
+  text-align: left;
+  z-index: 1;
+  background-color: lightgray;
+}

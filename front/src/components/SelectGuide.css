@@ -3,19 +3,22 @@
   width: 100vw;
   position: absolute;
   text-align: center;
+  top: 15%;
 }
 
 .select_guide > .guide_name {
   color: black;
-  font-size: var(--xlarge-font-size);
+  font-size: 3rem;
   margin-top: var(--margin-6);
+  position: relative;
 }
 
 .select_guide > .selection {
   display: flex;
-  margin: var(--margin-5) auto var(--margin-6);
-  width: 50%;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: center;
+  position: absolute;
+  top: 20%;
 }
 
 .select_guide > .selection > p {
@@ -23,6 +26,8 @@
   color: var(--grey);
   cursor: pointer;
   transition: color 1s ease;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
 .select_guide > .selection > .checked {
@@ -35,6 +40,10 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .select_guide > .images_container h4 {
