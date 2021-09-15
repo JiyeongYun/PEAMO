@@ -45,9 +45,12 @@ a {
 
 /* header css start */
 header {
-  height: 20vh;
+  position: fixed;
+  height: 8vh;
+  width: 100vw;
   /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)); */
   color: white;
+  z-index: 10;
 }
 
 header > div {
@@ -85,7 +88,7 @@ header .header__right > * {
 
 /* container start */
 .container {
-  min-height: 80vh;
+  min-height: 92vh;
 }
 /* container finish */
 
