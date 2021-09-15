@@ -88,7 +88,7 @@ header .header__right > * {
 
 /* container start */
 .container {
-  min-height: 92vh;
+  min-height: 100vh;
 }
 /* container finish */
 
@@ -103,8 +103,13 @@ footer * {
   font-size: var(--small-font-size);
 }
 
+footer > .icons > i {
+  font-size: var(--large-font-size);
+  margin: 0 var(--margin-1);
+}
+
 footer > .slogan {
-  margin: var(--margin-3) 0;
+  margin: var(--margin-2) 0;
 }
 
 footer > .team > p {
