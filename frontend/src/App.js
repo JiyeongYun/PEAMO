@@ -56,7 +56,11 @@ function App() {
       </div>
 
       <footer>
-        <div className="icons">g</div>
+        <div className="icons">
+          <i className="fab fa-gitlab"></i>
+          <i className="fab fa-jira"></i>
+          <i className="fab fa-youtube"></i>
+        </div>
         <p className="slogan">Find Your Color, PE' AMO</p>
         <div className="team">
           <p>Team OSDS</p>
