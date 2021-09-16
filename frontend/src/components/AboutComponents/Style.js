@@ -1,6 +1,6 @@
 function Style() {
     return (
-        <div className="images_container">
+        <div className="images_container scroll show">
             <div>
                 <img src="/images/classic_suit.png" alt="suit" />
                 <h4>클래식한 수트 룩</h4>
