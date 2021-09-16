@@ -43,12 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #allauth
+    # allauth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
 
-    #provider
+    # provider
+    'allauth.socialaccount.providers.auth0',
     'allauth.socialaccount.providers.kakao'
 ]
 
@@ -139,5 +140,5 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
-ACCOUNT_LOGOUT_REDIRECT_URL ='/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_ON_GET = True

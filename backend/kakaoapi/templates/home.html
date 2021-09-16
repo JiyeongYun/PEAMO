@@ -1,15 +1,14 @@
-{% load socialaccount %} {% providers_media_js %}
-
-<h1>Hello World</h1>
-
-<a href="/accounts/signup">회원가입</a>
-<br />
-
-{% if user.is_authenticated %}
-<a href="/accounts/logout">로그아웃</a>
-<br />
-
-{{user.username}}님이 로그인 중 {% else %}
-<a href="{% provider_login_url 'kakao' %}">카카오 로그인</a>
-로그인 해야함 
-{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/kakao/login">카카오 로그인</a>
+    <p>{{token}}</p>
+    <a href="/kakao/user_info">유저 정보 가져오기</a>
+</body>
+</html>
