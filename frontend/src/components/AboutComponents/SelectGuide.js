@@ -23,8 +23,8 @@ function SelectGuide() {
 
   return (
     <div className="select_guide">
-      <div className="guide_name">향수 선택 가이드</div>
-      <div className="selection">
+      <div className="guide_name scroll">향수 선택 가이드</div>
+      <div className="selection scroll">
         <p className="style checked" onClick={toggleSelected}>#Style</p>
         <p className="season" onClick={toggleSelected}>#Season</p>
         <p className="situation" onClick={toggleSelected}>#Situation</p>
