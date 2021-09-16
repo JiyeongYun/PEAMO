@@ -1,25 +1,26 @@
 .table {
-    width: 70vw;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%);
+  width: 70vw !important;
+  position: absolute !important;
+  top: 30% !important;
+  left: 50% !important;
+  transform: translate(-50%) !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .table_head {
-    background-color: #1C1C1C;
+  background-color: #1c1c1c !important;
 }
 
 .table_head > .table_row > .table_head_cell {
-    color: white;
-    height: 100px;
-    font-size: var(--large-font-size);
+  color: white !important;
+  height: 100px !important;
+  font-size: var(--large-font-size) !important;
+  text-align: center !important;
 }
 
 .table_body > .table_row > .table_body_cell {
-    background-color: white;
-    width: 80px;
-    height: 100px;
-    font-size: var(--large-font-size);
-    opacity: 0.7;
+  width: 80px !important;
+  height: 100px !important;
+  font-size: var(--large-font-size) !important;
+  text-align: center !important;
 }

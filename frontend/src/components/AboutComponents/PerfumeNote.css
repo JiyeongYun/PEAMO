@@ -4,6 +4,7 @@
 
 .note > .note_img {
   width: 50%;
+  transition: all 1s 0.5s;
 }
 
 .note > .note_img > img {
@@ -18,12 +19,12 @@
 .note > .note_word {
   width: 50vw;
   position: absolute;
-  top: 25%;
+  top: 18%;
   right: 5%;
   display: flex;
   justify-content: center;
-  /* transform: translate(-50%); */
   text-align: center;
+  transition: all 1s 0.5s;
 }
 
 .note > .note_word > .notes h2 {

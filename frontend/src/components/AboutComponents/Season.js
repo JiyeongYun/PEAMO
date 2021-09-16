@@ -1,6 +1,6 @@
 function Season() {
     return (
-        <div className="images_container">
+        <div className="images_container scroll show">
             <div>
                 <img src="/images/spring.png" alt="spring" />
                 <h4>봄</h4>

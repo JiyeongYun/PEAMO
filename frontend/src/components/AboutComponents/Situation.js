@@ -1,6 +1,6 @@
 function Situation() {
   return (
-    <div className="images_container">
+    <div className="images_container scroll show">
       <div>
         <img src="/images/first_meet.png" alt="first_meet" />
         <h4>누군가를 처음 소개받는 자리</h4>

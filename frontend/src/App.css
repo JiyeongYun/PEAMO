@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   font-size: var(--main-font-size);
-  font-family: 'Jeju Myeongjo', serif;
+  font-family: 'Jeju Myeongjo', serif !important;
 }
 
 body::-webkit-scrollbar {
