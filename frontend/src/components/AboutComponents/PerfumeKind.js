@@ -30,27 +30,27 @@ export default function BasicTable() {
   const classes = useStyles();
 
   return (
-    <TableContainer class="table" component={Paper}>
+    <TableContainer className="table" component={Paper}>
       <Table className={classes.table} aria-label="simple table">
-        <TableHead class="table_head">
-          <TableRow class="table_row">
-            <TableCell class="table_head_cell">  </TableCell>
-            <TableCell class="table_head_cell">퍼퓸</TableCell>
-            <TableCell class="table_head_cell">오드퍼퓸</TableCell>
-            <TableCell class="table_head_cell">오드뚜왈렛</TableCell>
-            <TableCell class="table_head_cell">오드코롱</TableCell>
+        <TableHead className="table_head">
+          <TableRow className="table_row">
+            <TableCell className="table_head_cell">  </TableCell>
+            <TableCell className="table_head_cell">퍼퓸</TableCell>
+            <TableCell className="table_head_cell">오드퍼퓸</TableCell>
+            <TableCell className="table_head_cell">오드뚜왈렛</TableCell>
+            <TableCell className="table_head_cell">오드코롱</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody class="table_body">
+        <TableBody className="table_body">
           {rows.map((row) => (
-            <TableRow class="table_row" key={row.name}>
-              <TableCell class="table_body_cell" component="th" scope="row">
+            <TableRow className="table_row" key={row.name}>
+              <TableCell className="table_body_cell" component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell class="table_body_cell">{row.pf}</TableCell>
-              <TableCell class="table_body_cell">{row.edp}</TableCell>
-              <TableCell class="table_body_cell">{row.edt}</TableCell>
-              <TableCell class="table_body_cell">{row.edc}</TableCell>
+              <TableCell className="table_body_cell">{row.pf}</TableCell>
+              <TableCell className="table_body_cell">{row.edp}</TableCell>
+              <TableCell className="table_body_cell">{row.edt}</TableCell>
+              <TableCell className="table_body_cell">{row.edc}</TableCell>
 
             </TableRow>
           ))}

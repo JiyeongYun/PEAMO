@@ -8,20 +8,20 @@ function Home({page_num}) {
   const scroll_animation = () => {
     const monthlyPerfume = document.querySelector(".this_month_perfume")
     const scrollList = document.querySelectorAll(".scroll")
-      const dis = monthlyPerfume.getBoundingClientRect().top
-      const header = document.querySelector('header')
-      if (dis < 400) {
-        header.style.backgroundColor = '#1C1C1C'
-        scrollList.forEach(e => {
-          e.classList.add('show')
-        })
-      } else {
-        header.style.backgroundColor = 'inherit'
-        window.scrollTo(0, 0)
-        scrollList.forEach(e => {
-          e.classList.remove('show')
-        })
-      }
+    const dis = monthlyPerfume.getBoundingClientRect().top
+    const header = document.querySelector('header')
+    if (dis < 400) {
+      header.style.backgroundColor = '#1C1C1C'
+      scrollList.forEach(e => {
+        e.classList.add('show')
+      })
+    } else {
+      header.style.backgroundColor = 'inherit'
+      window.scrollTo(0, 0)
+      scrollList.forEach(e => {
+        e.classList.remove('show')
+      })
+    }
   }
   useEffect(() => {
     scroll_animation()
