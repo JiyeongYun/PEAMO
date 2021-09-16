@@ -7,6 +7,11 @@ import About from './routers/About'
 import Teller from './routers/Teller'
 // Components
 import SignIn from './components/SignIn'
+import Teller2 from './routers/Teller2'
+import Teller3 from './routers/Teller3'
+import Teller4 from './routers/Teller4'
+import Teller5 from './routers/Teller5'
+import Teller6 from './routers/Teller6'
 
 function App() {
   // useState
@@ -53,6 +58,11 @@ function App() {
         <Route path="/" exact={true} render={() => <Home page_num={page_num} />}/>
         <Route path="/about" exact={true} component={About}/>
         <Route path="/teller-1" exact={true} component={Teller}/>
+        <Route path="/teller-2" exact={true} component={Teller2}/>
+        <Route path="/teller-3" exact={true} component={Teller3}/>
+        <Route path="/teller-4" exact={true} component={Teller4}/>
+        <Route path="/teller-5" exact={true} component={Teller5}/>
+        <Route path="/teller-6" exact={true} component={Teller6}/>
       </div>
 
       <footer>
