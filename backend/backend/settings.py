@@ -10,20 +10,36 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os, json
 from pathlib import Path
 from backend.setting.development import *
+from django.core.exceptions import ImproperlyConfigured
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# 기존 Django의 SECRET_KEY 정보 삭제
+secret_file = os.path.join(BASE_DIR, 'secrets.json')
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
+# secrets.json 파일을 읽은 후 secrets 변수에 저장
+with open(secret_file) as f:
+    secrets = json.loads(f.read())
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_l(lg9pjvthfa1xvz9(sqj9t-m0o=*f(-cr0jm-4r-k&_049qn'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# get_secret 함수를 생성하여 호출 시 해당 키 값 리턴
+def get_secret(setting, secrets=secrets):
+    try:
+        return secrets[setting]
+    except KeyError:
+        error_msg = "Set the {} environment variable".format(setting)
+        raise ImproperlyConfigured(error_msg)
+
+# get_secret 함수를 호출하여 json REST_API_KEY 키의 값 적용
+REST_API_KEY = get_secret("REST_API_KEY")
+
+SECRET_KEY = get_secret("SECRET_KEY")
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
