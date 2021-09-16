@@ -1,14 +1,11 @@
-/* .about {
-  height: 100%;
-} */
-
+/*네브바 검은색 배경 적용(다른페이지에서 쓸 때 이거 가져가세요!)*/
 .navbar {
   height: 9vh;
   width: 100vw;
   position: fixed;
   top: 0;
   z-index: 5;
-  background-color: black;
+  background-color: #1C1C1C;
 }
 
 .about > .perfume_kind {

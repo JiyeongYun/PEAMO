@@ -1,0 +1,39 @@
+.note {
+  z-index: -1;
+}
+
+.note > .note_img {
+  width: 50%;
+}
+
+.note > .note_img > img {
+  position: relative;
+  width: 30vw;
+  height: 70vh;
+  top: 100px;
+  left: 20%;
+  object-fit: contain;
+}
+
+.note > .note_word {
+  width: 50vw;
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  display: flex;
+  justify-content: center;
+  /* transform: translate(-50%); */
+  text-align: center;
+}
+
+.note > .note_word > .notes h2 {
+  margin-top: var(--margin-4);
+  margin-bottom: var(--margin-4);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.note > .note_word > .notes p {
+  margin-top: var(--margin-2);
+  font-size: 1.3rem;
+}

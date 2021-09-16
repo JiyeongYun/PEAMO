@@ -36,7 +36,7 @@ function App() {
       <header>
         <div>
           <div className="header__left">
-            <Link to="/teller">PE' AMO Teller</Link>
+            <Link to="/teller-1">PE' AMO Teller</Link>
             <Link to="/about">About</Link>
           </div>
           <div className="header__mid">
@@ -52,7 +52,7 @@ function App() {
       <div className="container">
         <Route path="/" exact={true} render={() => <Home page_num={page_num} />}/>
         <Route path="/about" exact={true} component={About}/>
-        <Route path="/teller" exact={true} component={Teller}/>
+        <Route path="/teller-1" exact={true} component={Teller}/>
       </div>
 
       <footer>

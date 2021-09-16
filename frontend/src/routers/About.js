@@ -1,7 +1,7 @@
-import './About.css';
-import PerfumeKind from '../components/PerfumeKind';
-import SelectGuide from '../components/SelectGuide';
-import PerfumeNote from '../components/PerfumeNote';
+import './About.css'
+import PerfumeKind from '../components/AboutComponents/PerfumeKind'
+import SelectGuide from '../components/AboutComponents/SelectGuide'
+import PerfumeNote from '../components/AboutComponents/PerfumeNote'
 
 function About() {
   return (
