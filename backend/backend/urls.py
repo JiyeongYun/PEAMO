@@ -24,6 +24,5 @@ urlpatterns = [
     path('', kakaoapi.views.home, name='home'),
     path('kakao/login/', kakaoapi.views.kakao_login, name="kakao_login"),
     path('kakao/login/callback/',
-         kakaoapi.views.kakao_redirect, name="kakao_redirect"),
-    path('kakao/user_info', kakaoapi.views.kakao_get_user_info, name="user_info")
+         kakaoapi.views.kakao_redirect, name="kakao_redirect")
 ]

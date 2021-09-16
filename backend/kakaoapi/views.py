@@ -16,12 +16,12 @@ def kakao_login(request):
 
 def kakao_redirect(request):
     code = request.GET['code']
-    
     redirect_uri = "http://localhost:8000/kakao/login/callback/"
     url = f"https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id={REST_API_KEY}&redirect_uri={redirect_uri}&code={code}"
     token_response = requests.post(url).json()
     access_token = token_response['access_token']
     user_response = requests.get('https://kapi.kakao.com/v2/user/me', headers={"Authorization": f'Bearer ${access_token}'}).json()
+    
     id = user_response['id']
     email = user_response['kakao_account']['email']
 
@@ -32,9 +32,3 @@ def kakao_redirect(request):
     }
 
     return render(request, 'home.html', context)
-
-
-def kakao_get_user_info(request, token):
-    user_info_response = requests.get('https://kapi.kakao.com/v2/user/me', headers={"Authorization": f'Bearer ${token}'})
-    
-    return redirect('https://localhost:8000/')
