@@ -21,7 +21,6 @@ function About() {
     const dis2 = perfumeNote.getBoundingClientRect().top
     const scrollList1 = perfumeSelect.querySelectorAll(".scroll")
     const scrollList2 = perfumeNote.querySelectorAll(".scroll")
-    console.log(dis2)
     if (0 <= dis1 && dis1 < 400) {
       scrollList1.forEach(e => {
         e.classList.add('show')
@@ -31,7 +30,7 @@ function About() {
         e.classList.remove('show')
       })
     }
-    if (dis2 <= 0) {
+    if (dis2 < 0) {
       window.scrollTo(0, 0)
     } else if (dis2 < 700) {
       scrollList2.forEach(e => {
