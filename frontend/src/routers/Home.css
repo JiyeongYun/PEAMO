@@ -61,7 +61,31 @@
   top: 30%;
   left: 50%;
   transform: translate(-50%);
+  cursor: pointer;
+  transition: all 0.5s;
 }
+
+.home > .white_canvas > .home_bottom > .home_btn:hover {
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+}
+
+/* .home > .white_canvas > .home_bottom > .home_btn:hover > p {
+  opacity: 1;
+  transform: translate(-50%, -30px);
+}
+
+.home > .white_canvas > .home_bottom > .home_btn > p {
+  position: absolute;
+  opacity: 0;
+  font-size: var(--large-font-size);
+  font-weight: bold;
+  transition: all 0.7s;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0);
+} */
 
 .home > .white_canvas > .home_bottom > .home_btn > a {
   font-size: var(--large-font-size);
