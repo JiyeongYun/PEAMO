@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 20;
   top: 0;
 }
@@ -23,9 +23,9 @@
   text-align: end;
 }
 
-.signin_container > .signin_box > .icon > span {
-  margin-top: var(--margin-2);
-  margin-right: var(--margin-2);
+.signin_container > .signin_box > .icon > div {
+  padding-top: var(--margin-2);
+  padding-right: var(--margin-2);
   cursor: pointer;
 }
 

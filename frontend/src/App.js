@@ -1,6 +1,8 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { Route, Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGitlab, faJira, faYoutube } from '@fortawesome/free-brands-svg-icons';
 // Routers
 import Home from './routers/Home'
 import About from './routers/About'
@@ -67,9 +69,9 @@ function App() {
 
       <footer>
         <div className="icons">
-          <i className="fab fa-gitlab"></i>
-          <i className="fab fa-jira"></i>
-          <i className="fab fa-youtube"></i>
+          <FontAwesomeIcon icon={faGitlab} />
+          <FontAwesomeIcon icon={faJira} />
+          <FontAwesomeIcon icon={faYoutube} />
         </div>
         <p className="slogan">Find Your Color, PE' AMO</p>
         <div className="team">
