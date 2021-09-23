@@ -1,7 +1,6 @@
 package com.osds.peamo.service;
 
 import com.osds.peamo.model.entity.Brand;
-import com.osds.peamo.model.network.response.BrandResponse;
 import com.osds.peamo.repository.BrandRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ public class BrandService {
     /**
      * 브랜드 리스트 가져오기
      */
-    public  ArrayList<Brand> getBrandList(){
+    public ArrayList<Brand> getBrandList() {
         ArrayList<Brand> brand = brandRepository.findAll();
         return brand;
     }
@@ -27,7 +26,7 @@ public class BrandService {
     /**
      * 하나의 브랜드 가져오기
      */
-    public Brand getBrand(long id){
+    public Brand getBrand(long id) {
         Brand brand = brandRepository.getBrandById(id);
         return brand;
     }
