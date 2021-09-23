@@ -30,11 +30,10 @@ function About() {
         e.classList.remove('show')
       })
     }
-    if (dis2 <= 0) {
-      window.scrollTo(0, 0)
-    } else if (dis2 < 700) {
+    if (dis2 < 700) {
       scrollList2.forEach(e => {
         e.classList.add('show')
+        window.scrollTo(0, 0)
       })
     } else {
       scrollList2.forEach(e => {
