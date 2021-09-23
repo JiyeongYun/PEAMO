@@ -21,6 +21,7 @@ def category_list(request):
 # 향수 목록 반환
 @api_view(['GET'])
 def perfume_list(request):
+    pageNo = request.data['pageNo']
     perfumes = Perfume.objects.all()[:100]
 
     serializer = PerfumeListSerializer(perfumes, many=True)
