@@ -1,4 +1,8 @@
 package com.osds.peamo.repository;
 
-public class PerfumeRepository {
+import com.osds.peamo.model.Perfume;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PerfumeRepository extends JpaRepository<Perfume, Long> {
+
 }
