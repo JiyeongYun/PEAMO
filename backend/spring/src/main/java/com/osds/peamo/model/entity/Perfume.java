@@ -1,4 +1,4 @@
-package com.osds.peamo.model;
+package com.osds.peamo.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
