@@ -15,6 +15,7 @@ import Teller3 from './routers/Teller3'
 import Teller4 from './routers/Teller4'
 import Teller5 from './routers/Teller5'
 import Teller6 from './routers/Teller6'
+import TellerResult from './routers/TellerResult'
 
 function App() {
   // useState
@@ -67,6 +68,7 @@ function App() {
         <Route path="/teller-4" exact={true} component={Teller4}/>
         <Route path="/teller-5" exact={true} component={Teller5}/>
         <Route path="/teller-6" exact={true} component={Teller6}/>
+        <Route path="/teller-result" exact={true} component={TellerResult}/>
       </div>
 
       <footer>

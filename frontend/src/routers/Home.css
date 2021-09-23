@@ -87,7 +87,7 @@
   transform: translate(-50%, 0);
 } */
 
-.home > .white_canvas > .home_bottom > .home_btn > a {
+.home > .white_canvas > .home_bottom > .home_btn p {
   font-size: var(--large-font-size);
   line-height: 70px;
 }
