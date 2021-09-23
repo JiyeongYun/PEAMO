@@ -6,6 +6,7 @@ import { faGitlab, faJira, faYoutube } from '@fortawesome/free-brands-svg-icons'
 // Routers
 import Home from './routers/Home'
 import About from './routers/About'
+import Search from './routers/Search'
 import Teller from './routers/Teller'
 // Components
 import SignIn from './components/SignIn'
@@ -60,6 +61,7 @@ function App() {
       <div className="container">
         <Route path="/" exact={true} render={() => <Home page_num={page_num} />}/>
         <Route path="/about" exact={true} component={About}/>
+        <Route path="/search" exact={true} component={Search}/>
         <Route path="/teller-1" exact={true} component={Teller}/>
         <Route path="/teller-2" exact={true} component={Teller2}/>
         <Route path="/teller-3" exact={true} component={Teller3}/>
