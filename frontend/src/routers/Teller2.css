@@ -29,7 +29,18 @@
 .teller2 > .teller_2 > .teller_image_2 > .image {
   margin-left: 30px;
   margin-right: 30px;
+  
 } 
+.teller2 > .teller_2 > .teller_image_2 > .image img {
+  transition: all 0.5s ease;
+  filter: grayscale(100%);
+}
+
+.teller2 > .teller_2 > .teller_image_2 > .image img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
 
 .teller2 > .teller_2 > .teller_image_2 p {
   font-size: var(--large-font-size);
