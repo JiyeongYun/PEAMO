@@ -19,5 +19,6 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/', views.cal_similarity)
+    path('perfume/thismonth/', views.cal_similarity),
+    path('perfume/recommend/', views.cal_similarity),
 ]
