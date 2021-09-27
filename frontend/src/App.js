@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Redirect } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGitlab,
@@ -81,6 +81,11 @@ function App() {
         <Route path='/teller-5' exact={true} component={Teller5} />
         <Route path='/teller-6' exact={true} component={Teller6} />
         <Route path='/teller-result' exact={true} component={TellerResult} />
+        <Route
+          path='/callback/kakao'
+          exact={true}
+          render={() => <Home page_num={page_num} />}
+        />
       </div>
 
       <footer>
