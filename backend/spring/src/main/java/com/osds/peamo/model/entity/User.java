@@ -22,5 +22,9 @@ public class User {
     private String uid;
 
     @Column
-    private String name;
+    private String username;
+
+    @Column
+    private String password;
+
 }
