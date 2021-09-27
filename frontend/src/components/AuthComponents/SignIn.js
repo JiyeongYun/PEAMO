@@ -1,9 +1,8 @@
-import "./SignIn.css";
-import CloseIcon from "@mui/icons-material/Close";
-import { useEffect } from "react";
-import axios from "axios";
+import './SignIn.css';
+import CloseIcon from '@mui/icons-material/Close';
 
 function SignIn({ toggleSignin }) {
+<<<<<<< HEAD
   // const REST_API_KEY = "112b52a3500fcf54baac18976074af45";
   // const REDIRECT_URI = "http://localhost:8080/callback/kakao";
   // const callKakaoLoginHandler = async () => {
@@ -37,15 +36,17 @@ function SignIn({ toggleSignin }) {
       });
     }
   };
+=======
+  const REST_API_KEY = '112b52a3500fcf54baac18976074af45';
+  const REDIRECT_URI = 'http://localhost:3000/callback/kakao';
+  const LOGIN_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+>>>>>>> 2ebb8cbbf1975ad705205b0b23eb6f2d27e58875
 
-  // 카카오 로그아웃
-  const kakaoLogout = () => {
-    if (Kakao.Auth.getAccessToken()) {
-      Kakao.Auth.logout();
-      console.log("로그아웃");
-    }
+  const kakaoLogin = () => {
+    window.location.href = LOGIN_URL;
   };
 
+<<<<<<< HEAD
   //
   useEffect(() => {
     if (!Kakao.isInitialized()) {
@@ -53,10 +54,12 @@ function SignIn({ toggleSignin }) {
     }
   });
 
+=======
+>>>>>>> 2ebb8cbbf1975ad705205b0b23eb6f2d27e58875
   return (
-    <div className='signin_container'>
-      <div className='signin_box'>
-        <div className='icon'>
+    <div className="signin_container">
+      <div className="signin_box">
+        <div className="icon">
           <div onClick={toggleSignin}>
             <CloseIcon />
           </div>
@@ -66,11 +69,10 @@ function SignIn({ toggleSignin }) {
           당신의 취<span>향</span>을 찾아드립니다.
         </h4>
         <img
-          src='/images/kakao_login_medium_narrow.png'
-          alt='kakao_login.png'
+          src="/images/kakao_login_medium_narrow.png"
+          alt="kakao_login.png"
           onClick={() => kakaoLogin()}
         />
-        <button onClick={() => kakaoLogout()}>로그아웃</button>
       </div>
     </div>
   );
