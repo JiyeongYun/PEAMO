@@ -21,7 +21,7 @@ function SignIn({ toggleSignin }) {
         success: (response) => {
           const kakaoAccessToken = response.access_token;
           axios
-            .get("/oauth2/authorization/kakao", {
+            .get("http://localhost:8080/user/oauth2/authorization/kakao", {
               headers: {
                 Authorization: kakaoAccessToken,
               },
@@ -49,7 +49,7 @@ function SignIn({ toggleSignin }) {
   //
   useEffect(() => {
     if (!Kakao.isInitialized()) {
-      Kakao.init("e6b1ad5e639cb9eab47e6eba02f71c60");
+      Kakao.init("e6b1ad5e639cb9eab47e6eba02f71c60"); //112b52a3500fcf54baac18976074af45
     }
   });
 
