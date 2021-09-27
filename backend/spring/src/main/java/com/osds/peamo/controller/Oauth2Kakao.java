@@ -4,6 +4,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.osds.peamo.model.entity.AuthorizationKakao;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -17,18 +20,25 @@ import org.springframework.web.client.RestTemplate;
 @Service
 @RequiredArgsConstructor
 public class Oauth2Kakao {
+
+    @Autowired
+    private ApplicationContext context;
+
     private final RestTemplate restTemplate;
+
     private final ObjectMapper objectMapper;
 
-    private final String kakaoOauth2ClinetId = "112b52a3500fcf54baac18976074af45";
-    private final String frontendRedirectUrl = "http://localhost:8080";
+    private String kakaoOauth2ClinetId;
 
+    private final String frontendRedirectUrl = "http://localhost:3000";
 
     public AuthorizationKakao callTokenApi(String code) throws Exception {
         String grantType = "authorization_code";
-
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+
+        Environment environment = context.getEnvironment();
+        kakaoOauth2ClinetId = environment.getProperty("client.id");
 
         MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("grant_type", grantType);
@@ -37,17 +47,14 @@ public class Oauth2Kakao {
         params.add("code", code);
 
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(params, headers);
-
         String url = "https://kauth.kakao.com/oauth/token";
+
         try {
             ResponseEntity<String> response = restTemplate.postForEntity(url, request, String.class);
-
             AuthorizationKakao authorization = objectMapper.readValue(response.getBody(), AuthorizationKakao.class);
-
             return authorization;
         } catch (RestClientException | JsonProcessingException ex) {
             ex.printStackTrace();
-//            throw new ProcyanException(E00001);
             throw new Exception(ex);
         }
     }
@@ -67,12 +74,9 @@ public class Oauth2Kakao {
         String url = "https://kapi.kakao.com/v2/user/me";
         try {
             ResponseEntity<String> response = restTemplate.postForEntity(url, request, String.class);
-            System.out.println("response: " + response.getBody());
-            // 값 리턴
             return response.getBody();
-        }catch (RestClientException ex) {
+        } catch (RestClientException ex) {
             ex.printStackTrace();
-//            throw new ProcyanException(E00002);
             throw new Exception(ex);
         }
     }
