@@ -15,7 +15,7 @@ function Teller3() {
     <div className="teller3">
       <div className="teller_3">
         <div className="teller_question_3">
-          <h2>좋아하는 향기에 더 가까운 이미지는 무엇인가요?</h2>
+          <h2>좋아하는 분위기의 단어는 무엇인가요?</h2>
         </div>
         <div className="teller_answer_3">
         <Link to="/teller-4">

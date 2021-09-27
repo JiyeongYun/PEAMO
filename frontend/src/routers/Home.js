@@ -37,7 +37,9 @@ function Home({page_num}) {
         <img src={`/images/main_${page_num}.jpg`} alt={`main_${page_num}`} />
         <div className="home_bottom">
           <div className="home_btn">
-            <Link to="/teller">나만의 향수 추천</Link>
+            <Link to="/teller-1">
+              <p>나만의 향수 추천</p>
+            </Link>
           </div>
         </div>
       </div>
