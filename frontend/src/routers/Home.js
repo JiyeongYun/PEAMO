@@ -37,7 +37,7 @@ function Home({ page_num }) {
     let code = new URL(window.location.href).searchParams.get('code');
     if (code) {
       axios
-        .get('/oauth2/authorization/kakao', {
+        .get('http://localhost:8080/user/oauth2/authorization/kakao', {
           params: {
             code,
           },
