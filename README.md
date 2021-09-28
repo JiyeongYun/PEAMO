@@ -123,7 +123,7 @@
 
 - React.js
 
-<img src="https://user-images.githubusercontent.com/57614563/135031623-5d3a5829-1cf0-4e65-9b3c-2e988a26babf.PNG" width="200" align="left">
+<img src="https://user-images.githubusercontent.com/57614563/135031623-5d3a5829-1cf0-4e65-9b3c-2e988a26babf.PNG" width="200">
 
 <br>
 
@@ -133,25 +133,25 @@
 
 - Django
 
-<img src="https://user-images.githubusercontent.com/57614563/135032052-cc8cc168-af6e-4d42-af31-581b235054de.PNG" width="150" align="left">
+<img src="https://user-images.githubusercontent.com/57614563/135032052-cc8cc168-af6e-4d42-af31-581b235054de.PNG" width="150">
 
 <br>
 
 - Spring Boot
 
-<img src="https://user-images.githubusercontent.com/57614563/135031884-422c259d-a86a-48da-a14c-f202aef09eeb.PNG" width="200" align="left">
+<img src="https://user-images.githubusercontent.com/57614563/135031884-422c259d-a86a-48da-a14c-f202aef09eeb.PNG" width="200">
 
 <br>
 
 - MySQL
 
-<img src="https://user-images.githubusercontent.com/57614563/135032332-ae5d9f35-24ce-4453-a255-3b177c2ff5ea.PNG" width="180" align="left">
+<img src="https://user-images.githubusercontent.com/57614563/135032332-ae5d9f35-24ce-4453-a255-3b177c2ff5ea.PNG" width="180">
 
 <br>
 
 - AWS RDS
 
-<img src="https://user-images.githubusercontent.com/57614563/135032166-90fe7f8c-0353-4609-a572-9db1dd69e08e.PNG" width="180" align="left">
+<img src="https://user-images.githubusercontent.com/57614563/135032166-90fe7f8c-0353-4609-a572-9db1dd69e08e.PNG" width="180">
 
 <br>
 
