@@ -11,6 +11,6 @@ import java.util.List;
 public interface PerfumeRepository extends JpaRepository<Perfume, Long> {
 
     Page<Perfume> getPerfumesByGenderAndIdIn(int gender, List<Long> perfumeIdList, Pageable pageable);
-
+//    List<Perfume> findBy
     Perfume getPerfumeById(long id);
 }
