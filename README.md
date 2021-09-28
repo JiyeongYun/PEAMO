@@ -12,7 +12,7 @@
 
 **1. 메인화면**
 
-<img src="https://user-images.githubusercontent.com/57614563/135033821-ceeed9dd-bda9-4430-b12b-a66c171256be.gif" width="90%" align="left">
+<img src="https://user-images.githubusercontent.com/57614563/135033821-ceeed9dd-bda9-4430-b12b-a66c171256be.gif" width="90%">
 
 <br>
 
@@ -20,7 +20,7 @@
 
 **2. 이달의 향수**
 
-<img src="https://user-images.githubusercontent.com/57614563/135033977-674b6658-9b05-4ddf-9fad-0f52d9f23896.PNG" width="90%" align="left">
+<img src="https://user-images.githubusercontent.com/57614563/135033977-674b6658-9b05-4ddf-9fad-0f52d9f23896.PNG" width="90%">
 
 <br>
 
@@ -30,7 +30,7 @@
 
 > 향수에 대해 잘 모르는 유저에게 간단한 취향 조사 후 향수 추천
 
-<img src="https://user-images.githubusercontent.com/57614563/135034125-2c7d9284-0588-457e-8f01-d829ce9a8f26.gif" width="90%" align="left">
+<img src="https://user-images.githubusercontent.com/57614563/135034125-2c7d9284-0588-457e-8f01-d829ce9a8f26.gif" width="90%">
 
 <br>
 
@@ -38,7 +38,7 @@
 
 **4. 향수 종류**
 
-<img src="https://user-images.githubusercontent.com/57614563/135034189-c6e45232-15e3-438c-8c73-f8a76997ef0f.PNG" width="90%" align="left">
+<img src="https://user-images.githubusercontent.com/57614563/135034189-c6e45232-15e3-438c-8c73-f8a76997ef0f.PNG" width="90%">
 
 <br>
 
@@ -46,7 +46,7 @@
 
 **5. 향수 가이드**
 
-<img src="https://user-images.githubusercontent.com/57614563/135034295-e6c5f85a-2add-4f89-8888-60ea093beb3a.gif" width="90%" align="left">
+<img src="https://user-images.githubusercontent.com/57614563/135034295-e6c5f85a-2add-4f89-8888-60ea093beb3a.gif" width="90%">
 
 <br>
 
@@ -54,7 +54,7 @@
 
 **6. 성분 향 설명**
 
-<img src="https://user-images.githubusercontent.com/57614563/135034319-61d69d5f-c940-41c9-b42c-c5fd3056df43.PNG" width="90%" align="left">
+<img src="https://user-images.githubusercontent.com/57614563/135034319-61d69d5f-c940-41c9-b42c-c5fd3056df43.PNG" width="90%">
 
 <br>
 
@@ -163,5 +163,5 @@
 
 ------
 
-<img src="https://user-images.githubusercontent.com/57614563/135023758-193c4aef-7a3e-4c87-a77e-85ad7d983908.png">
+<img src="https://user-images.githubusercontent.com/57614563/135023758-193c4aef-7a3e-4c87-a77e-85ad7d983908.png" width="600" align="left">
 
