@@ -19,8 +19,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
-
     @GetMapping("/oauth2/authorization/kakao")
     public ResponseEntity<UserResponse> oauth2AuthorizationKakao(@RequestParam String code) throws Exception {
         UserResponse response = userService.oauth2AuthorizationKakao(code);
