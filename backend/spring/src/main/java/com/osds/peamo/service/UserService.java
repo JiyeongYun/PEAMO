@@ -73,6 +73,6 @@ public class UserService {
      */
     private boolean isInitialLogin(String uid) {
         Optional<User> user = this.userRepository.findByUid(uid);
-        return user.isEmpty();
+        return !user.isPresent();
     }
 }
