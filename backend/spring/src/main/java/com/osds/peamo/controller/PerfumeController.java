@@ -29,21 +29,7 @@ public class PerfumeController {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
-//    @PostMapping("/test")
-//    public ResponseEntity<ArrayList<Perfume>> getPerfumes(@RequestBody PerfumeSearch perfumeSearch) {
-//        List<Long> categoryArrayList = perfumeSearch.getCategoryList();
-//        System.out.println(perfumeSearch.getCategoryList());
-//        ArrayList<Perfume> response = perfumeService.getPerfumestest(perfumeSearch);
-//        return null;
-//    }
 
-    @GetMapping
-    public ResponseEntity<Perfume> getPerfume(@RequestParam String id) {
-        long perfumeId = Long.parseLong(id);
-        Perfume response = perfumeService.getPerfume(perfumeId);
-
-        return ResponseEntity.status(HttpStatus.OK).body(response);
-    }
 
 
 }
