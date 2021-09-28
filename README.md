@@ -163,5 +163,5 @@
 
 ------
 
-<img src="https://user-images.githubusercontent.com/57614563/135023758-193c4aef-7a3e-4c87-a77e-85ad7d983908.png" width="600" align="left">
+<img src="https://user-images.githubusercontent.com/57614563/135023758-193c4aef-7a3e-4c87-a77e-85ad7d983908.png" width="600">
 
