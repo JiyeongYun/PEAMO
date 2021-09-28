@@ -2,16 +2,19 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const login = createAsyncThunk(
-  'auth/login',
+  'LOGIN',
   async (code, { rejectWithValue }) => {
     try {
-      const response = await axios.get('/oauth2/authorization/kakao', {
-        params: {
-          code,
-        },
-      });
-      console.log(response);
-      return response.data;
+      const response = await axios.get(
+        'http://localhost:8080/user/oauth2/authorization/kakao',
+        {
+          params: {
+            code,
+          },
+        }
+      );
+      localStorage.setItem('token', response.data);
+      return response;
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -19,7 +22,7 @@ export const login = createAsyncThunk(
 );
 
 export const logout = createAsyncThunk(
-  'auth/logout',
+  'LOGOUT',
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get('/v1/user/logout', {
@@ -38,6 +41,7 @@ const authSlice = createSlice({
   name: 'auth',
   initialState: {},
   reducers: {},
+  extraReducers: {},
 });
 
-export default authSlice;
+export default authSlice.reducer;

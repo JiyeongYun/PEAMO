@@ -39,12 +39,12 @@ function Home({ page_num }) {
     let code = new URL(window.location.href).searchParams.get('code');
     if (code) {
       dispatch(login(code))
-        .then((res) => {
-          if (res.status === 200) {
+        .then(({ payload }) => {
+          if (payload.status === 200) {
             alert('로그인 성공');
           }
         })
-        .catch((err) => {
+        .catch(() => {
           alert('로그인 실패');
         });
     }
