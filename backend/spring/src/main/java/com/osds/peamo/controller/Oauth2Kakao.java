@@ -32,6 +32,9 @@ public class Oauth2Kakao {
 
     private final String frontendRedirectUrl = "http://localhost:3000";
 
+    /**
+     * 인가코드로 권한 받아오기
+     */
     public AuthorizationKakao callTokenApi(String code) throws Exception {
         String grantType = "authorization_code";
         HttpHeaders headers = new HttpHeaders();
