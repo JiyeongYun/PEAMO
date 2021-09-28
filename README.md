@@ -14,11 +14,15 @@
 
 <img src="https://user-images.githubusercontent.com/57614563/135033821-ceeed9dd-bda9-4430-b12b-a66c171256be.gif" width="90%" align="left">
 
+<br>
+
 
 
 **2. 이달의 향수**
 
 <img src="https://user-images.githubusercontent.com/57614563/135033977-674b6658-9b05-4ddf-9fad-0f52d9f23896.PNG" width="90%" align="left">
+
+<br>
 
 
 
@@ -28,11 +32,15 @@
 
 <img src="https://user-images.githubusercontent.com/57614563/135034125-2c7d9284-0588-457e-8f01-d829ce9a8f26.gif" width="90%" align="left">
 
+<br>
+
 
 
 **4. 향수 종류**
 
 <img src="https://user-images.githubusercontent.com/57614563/135034189-c6e45232-15e3-438c-8c73-f8a76997ef0f.PNG" width="90%" align="left">
+
+<br>
 
 
 
@@ -40,11 +48,15 @@
 
 <img src="https://user-images.githubusercontent.com/57614563/135034295-e6c5f85a-2add-4f89-8888-60ea093beb3a.gif" width="90%" align="left">
 
+<br>
+
 
 
 **6. 성분 향 설명**
 
 <img src="https://user-images.githubusercontent.com/57614563/135034319-61d69d5f-c940-41c9-b42c-c5fd3056df43.PNG" width="90%" align="left">
+
+<br>
 
 
 
@@ -56,11 +68,15 @@
 
 <img src="https://user-images.githubusercontent.com/57614563/135027522-cbec6f62-beb1-413b-a95f-87c01513de18.PNG" width="500">
 
+<br>
+
 
 
 ✔ **컨텐츠 기반 필터링**
 
 <img src="https://user-images.githubusercontent.com/57614563/135040061-f6cb0642-c492-437c-98be-ea4f0521d202.jpg" width="400">
+
+<br>
 
 - 추천의 대상이 되는 아이템과 사용자에 대한 이해를 바탕으로 추천하는 방식
 - **각 아이템들에 대한 특성**들을 벡터로 뽑아내고 **사용자의 선호 특성**들을 벡터로 뽑아내 두 벡터간의 연산을 통해 추천하는 방식
@@ -109,6 +125,8 @@
 
 <img src="https://user-images.githubusercontent.com/57614563/135031623-5d3a5829-1cf0-4e65-9b3c-2e988a26babf.PNG" width="200" align="left">
 
+<br>
+
 
 
 **3. 백엔드**
@@ -117,17 +135,25 @@
 
 <img src="https://user-images.githubusercontent.com/57614563/135032052-cc8cc168-af6e-4d42-af31-581b235054de.PNG" width="150" align="left">
 
+<br>
+
 - Spring Boot
 
 <img src="https://user-images.githubusercontent.com/57614563/135031884-422c259d-a86a-48da-a14c-f202aef09eeb.PNG" width="200" align="left">
+
+<br>
 
 - MySQL
 
 <img src="https://user-images.githubusercontent.com/57614563/135032332-ae5d9f35-24ce-4453-a255-3b177c2ff5ea.PNG" width="180" align="left">
 
+<br>
+
 - AWS RDS
 
 <img src="https://user-images.githubusercontent.com/57614563/135032166-90fe7f8c-0353-4609-a572-9db1dd69e08e.PNG" width="180" align="left">
+
+<br>
 
 
 
