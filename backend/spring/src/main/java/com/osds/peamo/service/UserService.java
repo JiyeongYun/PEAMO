@@ -45,7 +45,7 @@ public class UserService {
         }
 
         // 5. User 객체에서 UserResponse 객체로 변환 후 반환
-        UserResponse userResponse = new UserResponse(user.getUid(), user.getName());
+        UserResponse userResponse = new UserResponse(user.getUid(), user.getName(), authorization.getAccess_token());
         return userResponse;
     }
 
@@ -73,6 +73,6 @@ public class UserService {
      */
     private boolean isInitialLogin(String uid) {
         Optional<User> user = this.userRepository.findByUid(uid);
-        return user.isEmpty();
+        return !user.isPresent();
     }
 }
