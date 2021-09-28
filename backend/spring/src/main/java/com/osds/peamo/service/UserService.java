@@ -11,8 +11,9 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -30,29 +31,39 @@ public class UserService {
     public UserResponse oauth2AuthorizationKakao(String code) throws Exception {
         AuthorizationKakao authorization = oauth2Kakao.callTokenApi(code);
         String userInfoFromKakao = oauth2Kakao.callGetUserByAccessToken(authorization.getAccess_token());
-        return convertJsonToObject(userInfoFromKakao);
+
+        User user = convertJsonToObject(userInfoFromKakao);
+        if(isInitialLogin(user.getUid())){
+            this.userRepository.save(user);
+        }
+        UserResponse userResponse = new UserResponse(user.getUid(), user.getName());
+        return userResponse;
     }
 
-    private UserResponse convertJsonToObject(String json) throws ParseException {
+    /**
+     * json형태로 된 문자열을 객체 형태로 변환하기
+     */
+    private User convertJsonToObject(String json) throws ParseException {
         JSONParser p = new JSONParser();
-        JSONObject obj = (JSONObject)p.parse(json);
+        JSONObject obj = (JSONObject) p.parse(json);
 
         // uid 추출
         String uid = obj.get("id").toString();
         // nickname 추출
-        JSONObject properties = (JSONObject)obj.get("properties");
+        JSONObject properties = (JSONObject) obj.get("properties");
         String name = properties.get("nickname").toString();
 
-        User user = User.builder()
-                .uid(uid)
-                .username(name)
-                .build();
-        this.userRepository.save(user);
-
-        UserResponse userResponse = UserResponse.builder()
+        return User.builder()
                 .uid(uid)
                 .name(name)
                 .build();
-        return userResponse;
+    }
+
+    /**
+     *
+     */
+    private boolean isInitialLogin(String uid) {
+        Optional<User> user = this.userRepository.findByUid(uid);
+        return !user.isPresent();
     }
 }

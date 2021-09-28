@@ -22,6 +22,6 @@ public class User {
     private String uid;
 
     @Column
-    private String username;
+    private String name;
 
 }
