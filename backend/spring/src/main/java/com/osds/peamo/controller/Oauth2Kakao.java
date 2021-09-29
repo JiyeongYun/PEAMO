@@ -17,6 +17,9 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 @Service
 @RequiredArgsConstructor
 public class Oauth2Kakao {
@@ -82,5 +85,23 @@ public class Oauth2Kakao {
             ex.printStackTrace();
             throw new Exception(ex);
         }
+    }
+
+    /**
+     * accessToken으로 로그아웃하기
+     */
+    public int kakaoLogout(String access_Token) {
+        String reqURL = "https://kapi.kakao.com/v1/user/logout";
+        int responseCode = 0;
+        try {
+            URL url = new URL(reqURL);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Authorization", "Bearer " + access_Token);
+            responseCode = conn.getResponseCode();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return responseCode;
     }
 }
