@@ -75,4 +75,15 @@ public class UserService {
         Optional<User> user = this.userRepository.findByUid(uid);
         return !user.isPresent();
     }
+
+    /**
+     * 카카오 로그아웃
+     */
+    public boolean kakaoLogout(String accessToken){
+        int responseCode = oauth2Kakao.kakaoLogout(accessToken);
+        if(responseCode == 200){
+            return true;
+        } return false;
+    }
+
 }
