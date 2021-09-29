@@ -17,7 +17,7 @@ public class Perfume {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;                         // id
+    private long id;                         // id
 
     @Column
     private String name;                     // name
@@ -33,6 +33,6 @@ public class Perfume {
 
     @ManyToOne
     @JoinColumn(name="brand_id")
-    private Brand brandId;                     // brand
+    private Brand brand;                     // brand
 
 }
