@@ -49,7 +49,15 @@ function App() {
 
   // 카카오 로그아웃
   const kakaoLogout = () => {
-    dispatch(logout());
+    dispatch(logout())
+      .then((res) => {
+        console.log(res);
+        alert('로그아웃 성공');
+      })
+      .catch((err) => {
+        console.log(err);
+        alert('로그아웃 실패');
+      });
   };
 
   return (
