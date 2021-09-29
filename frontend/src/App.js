@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { Route, Link, Redirect } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGitlab,
@@ -20,8 +21,11 @@ import Teller4 from './routers/Teller4';
 import Teller5 from './routers/Teller5';
 import Teller6 from './routers/Teller6';
 import TellerResult from './routers/TellerResult';
+// redux reducer
+import { logout } from './components/AuthComponents/authSlice';
 
 function App() {
+  const dispatch = useDispatch();
   // useState
   const [main, setMain] = useState(true);
   const [showSignin, setShowSignin] = useState(false);
@@ -43,9 +47,14 @@ function App() {
     setShowSignin(!showSignin);
   };
 
+  // 카카오 로그아웃
+  const kakaoLogout = () => {
+    dispatch(logout());
+  };
+
   return (
     <div className="App">
-      {showSignin ? <SignIn toggleSignin={toggleSignin} /> : null}
+      {showSignin && <SignIn toggleSignin={toggleSignin} />}
       <header>
         <div>
           <div className="header__left">
@@ -58,9 +67,20 @@ function App() {
             </Link>
           </div>
           <div className="header__right">
-            <Link onClick={toggleSignin} to="/about">
-              Sign in
-            </Link>
+            {false ? (
+              <Link
+                to="/mypage"
+                onClick={() => {
+                  kakaoLogout();
+                }}
+              >
+                My page
+              </Link>
+            ) : (
+              <Link onClick={toggleSignin} to="/about">
+                Sign in
+              </Link>
+            )}
             <Link to="/search">Search</Link>
           </div>
         </div>
@@ -81,11 +101,6 @@ function App() {
         <Route path="/teller-5" exact={true} component={Teller5} />
         <Route path="/teller-6" exact={true} component={Teller6} />
         <Route path="/teller-result" exact={true} component={TellerResult} />
-        <Route
-          path="/callback/kakao"
-          exact={true}
-          render={() => <Home page_num={page_num} />}
-        />
       </div>
 
       <footer>
