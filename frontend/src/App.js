@@ -1,5 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -21,9 +22,10 @@ import Teller5 from './routers/Teller5';
 import Teller6 from './routers/Teller6';
 import TellerResult from './routers/TellerResult';
 // redux reducer
-// import { logout } from './components/AuthComponents/authSlice';
+import { logout } from './components/AuthComponents/authSlice';
 
 function App() {
+  const dispatch = useDispatch();
   // useState
   const [main, setMain] = useState(true);
   const [showSignin, setShowSignin] = useState(false);
@@ -46,9 +48,9 @@ function App() {
   };
 
   // 카카오 로그아웃
-  // const kakaoLogout = () => {
-  //   dispatch(logout());
-  // };
+  const kakaoLogout = () => {
+    dispatch(logout());
+  };
 
   return (
     <div className="App">
@@ -65,8 +67,15 @@ function App() {
             </Link>
           </div>
           <div className="header__right">
-            {localStorage.getItem('token') ? (
-              <Link to="/mypage">My page</Link>
+            {false ? (
+              <Link
+                to="/mypage"
+                onClick={() => {
+                  kakaoLogout();
+                }}
+              >
+                My page
+              </Link>
             ) : (
               <Link onClick={toggleSignin} to="/about">
                 Sign in
@@ -92,11 +101,6 @@ function App() {
         <Route path="/teller-5" exact={true} component={Teller5} />
         <Route path="/teller-6" exact={true} component={Teller6} />
         <Route path="/teller-result" exact={true} component={TellerResult} />
-        <Route
-          path="/callback/kakao"
-          exact={true}
-          render={() => <Home page_num={page_num} />}
-        />
       </div>
 
       <footer>
