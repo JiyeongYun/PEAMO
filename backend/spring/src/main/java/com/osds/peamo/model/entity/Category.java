@@ -18,7 +18,7 @@ import javax.persistence.Id;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;                         // id
+    private long id;                         // id
 
     private String eng;
 }

@@ -10,15 +10,18 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "api_brand")
+@Entity(name = "api_user")
 @Builder
-public class Brand {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;                    // id
+    private long id;
 
     @Column
-    private String name;                // name
+    private String uid;
+
+    @Column
+    private String name;
 
 }
