@@ -7,7 +7,7 @@ conn = create_conn()
 cursor = conn.cursor()
 
 
-f = open("D:/JHW/gender.csv")
+f = open("./gender.csv")
 
 while True:
     str = f.readline()

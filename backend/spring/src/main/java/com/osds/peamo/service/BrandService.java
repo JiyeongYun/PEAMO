@@ -27,7 +27,7 @@ public class BrandService {
      * 하나의 브랜드 가져오기
      */
     public Brand getBrand(long id) {
-        Brand brand = brandRepository.getBrandById(id);
+        Brand brand = brandRepository.getById(id);
         return brand;
     }
 

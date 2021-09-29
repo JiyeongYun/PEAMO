@@ -8,7 +8,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Getter
-public class PerfumeSearch {
+public class PerfumeListSearch {
 
     int gender;
     List<Long> categoryList;

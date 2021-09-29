@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @Builder
 @Getter
+@ToString
 public class PerfumeCategory {
 
     @Id
