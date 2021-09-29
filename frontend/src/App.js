@@ -77,9 +77,17 @@ function App() {
                 My page
               </Link>
             ) : (
-              <Link onClick={toggleSignin} to="/about">
-                Sign in
-              </Link>
+              <>
+                <Link onClick={toggleSignin} to="/about">
+                  Sign in
+                </Link>
+                <div
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => kakaoLogout()}
+                >
+                  Logout
+                </div>
+              </>
             )}
             <Link to="/search">Search</Link>
           </div>
