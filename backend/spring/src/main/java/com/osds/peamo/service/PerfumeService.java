@@ -82,7 +82,7 @@ public class PerfumeService {
         return perfumeListResponse;
     }
 
-    public List<PerfumeSimpleInfo> recommend(RecommendRequest recommendRequest) {
+    public List<PerfumeSimpleInfo> getPerfumeRecommend(RecommendRequest recommendRequest) {
         int season = recommendRequest.getSeason();
 
         boolean mainContainSeason = false; // 메인 카테고리가 계절 포함하는지
@@ -111,10 +111,10 @@ public class PerfumeService {
         List<PerfumeCategory> subLikes = perfumeCategoryRepository.getPerfumeCategoriesByCategoryId(subCategory);
         List<PerfumeCategory> hates = perfumeCategoryRepository.getPerfumeCategoriesByCategoryId(dislikeCategory);
 
-        List<Long> result = new ArrayList<Long>(); // 교집합 결과
+        List<Long> intersectionList = new ArrayList<>(); // 교집합 결과
 
-        Set<Long> hateSet = new HashSet<Long>();
-        Set<Long> subSet = new HashSet<Long>();
+        Set<Long> hateSet = new HashSet<>();
+        Set<Long> subSet = new HashSet<>();
 
         for (int i = 0; i < hates.size(); i++) // 싫어하는 카테고리 찾아내기
             hateSet.add(hates.get(i).getPerfumeId());
@@ -129,16 +129,15 @@ public class PerfumeService {
             for (int i = 0; i < mainLikes.size(); i++) {
                 long perfumeId = mainLikes.get(i).getPerfumeId();
                 if (!hateSet.contains(perfumeId) && subSet.contains(perfumeId)) {
-                    result.add(perfumeId);
+                    intersectionList.add(perfumeId);
                 }
             }
-
 
         } else if (mainContainSeason) {
             for (int i = 0; i < mainLikes.size(); i++) {
                 long perfumeId = mainLikes.get(i).getPerfumeId();
                 if (!hateSet.contains(perfumeId)) {
-                    result.add(perfumeId);
+                    intersectionList.add(perfumeId);
                 }
             }
 
@@ -146,16 +145,44 @@ public class PerfumeService {
             for (int i = 0; i < subLikes.size(); i++) {
                 long perfumeId = subLikes.get(i).getPerfumeId();
                 if (!hateSet.contains(perfumeId)) {
-                    result.add(perfumeId);
+                    intersectionList.add(perfumeId);
                 }
             }
         }
 
-        for (int i = 0; i < result.size(); i++) { // 교집합 결과들
-            System.out.println(result.get(i));
+        for (int i = 0; i < intersectionList.size(); i++) { // 교집합 결과들
+            System.out.println(intersectionList.get(i));
         }
 
+        long perfumeId = getRandomOnePerfume(intersectionList);
+
         return null;
+    }
+
+    /**
+     * 교집합으로 나온 향수 id list 중 랜덤으로 하나의 향수 id 값을 뽑기
+     * [조건] top, middle, base note가 하나라도 존재하는 향수여야 한다.
+     */
+    private long getRandomOnePerfume(List<Long> result){
+
+        Random rand = new Random();
+        while(true){
+            // 1. 랜덤으로 idx 하나 뽑기
+            long perfumeId = result.get(rand.nextInt(result.size()));
+
+            // 2. note가 있는 향수인지 체크하기
+            if(isExistNote(perfumeId)){
+                return perfumeId;
+            }
+        }
+    }
+
+    /**
+     * note가 있는 향수인지 체크하기
+     */
+    private boolean isExistNote(long perfumeId){
+        List<PerfumeCategory> perfumeCategory = this.perfumeCategoryRepository.getPerfumeCategoriesByPerfumeId(perfumeId);
+        return perfumeCategory.size() > 0;
     }
 
 }

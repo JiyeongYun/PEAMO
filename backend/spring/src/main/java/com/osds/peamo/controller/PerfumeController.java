@@ -1,13 +1,11 @@
 package com.osds.peamo.controller;
 
 import java.util.List;
-import java.util.Map;
 
 import com.osds.peamo.model.network.request.RecommendRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.osds.peamo.model.network.request.PerfumeListSearch;
-import com.osds.peamo.model.network.response.PerfumeDetailInfo;
 import com.osds.peamo.model.network.response.PerfumeSimpleInfo;
 import com.osds.peamo.service.PerfumeService;
 
@@ -40,9 +37,7 @@ public class PerfumeController {
 
     @PostMapping("/recommend")
     public ResponseEntity<List<PerfumeSimpleInfo>> recommend(@RequestBody RecommendRequest recommendRequest) {
-        System.out.println("recommend 실행");
-        perfumeService.recommend(recommendRequest);
-
+        perfumeService.getPerfumeRecommend(recommendRequest);
         return null;
     }
 
