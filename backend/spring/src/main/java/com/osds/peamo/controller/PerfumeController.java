@@ -1,13 +1,12 @@
 package com.osds.peamo.controller;
 
 import java.util.List;
-import java.util.Map;
 
 import com.osds.peamo.model.network.request.RecommendRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.osds.peamo.model.network.request.PerfumeListSearch;
-import com.osds.peamo.model.network.response.PerfumeDetailInfo;
 import com.osds.peamo.model.network.response.PerfumeSimpleInfo;
 import com.osds.peamo.service.PerfumeService;
 
@@ -25,6 +23,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/perfume")
+@Slf4j
 public class PerfumeController {
 
     private PerfumeService perfumeService;
@@ -40,10 +39,10 @@ public class PerfumeController {
 
     @PostMapping("/recommend")
     public ResponseEntity<List<PerfumeSimpleInfo>> recommend(@RequestBody RecommendRequest recommendRequest) {
-        System.out.println("recommend 실행");
-        perfumeService.recommend(recommendRequest);
-
-        return null;
+        List<PerfumeSimpleInfo> response = perfumeService.getPerfumeRecommend(recommendRequest);
+        if(response == null)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
 // 코드 작성 중
