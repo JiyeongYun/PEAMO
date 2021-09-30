@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface PerfumeCategoryRepository extends JpaRepository<PerfumeCategory, Long> {
     List<PerfumeCategory> getPerfumeCategoriesByCategoryIdIn(List<Long> categoryIdList);
+    List<PerfumeCategory> getPerfumeCategoriesByCategoryId(long categoryId);
+
 }
