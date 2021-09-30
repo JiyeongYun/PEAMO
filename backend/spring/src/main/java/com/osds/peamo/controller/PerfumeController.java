@@ -35,7 +35,8 @@ public class PerfumeController {
 		}
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
- 
+
+// 코드 작성 중
 //    @GetMapping
 //    public ResponseEntity<PerfumeDetailInfo> getPerfume(long id) {
 //    	PerfumeDetailInfo response = perfumeService.getPerfumeDetailInfo(id);
