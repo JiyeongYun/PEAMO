@@ -1,7 +1,9 @@
 package com.osds.peamo.controller;
 
 import java.util.List;
+import java.util.Map;
 
+import com.osds.peamo.model.network.request.RecommendRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -34,6 +36,14 @@ public class PerfumeController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
         return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @PostMapping("/recommend")
+    public ResponseEntity<List<PerfumeSimpleInfo>> recommend(@RequestBody RecommendRequest recommendRequest) {
+        System.out.println("recommend 실행");
+        perfumeService.recommend(recommendRequest);
+
+        return null;
     }
 
 // 코드 작성 중
