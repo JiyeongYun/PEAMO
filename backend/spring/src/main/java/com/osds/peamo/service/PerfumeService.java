@@ -3,7 +3,7 @@ package com.osds.peamo.service;
 import com.osds.peamo.model.entity.Perfume;
 import com.osds.peamo.model.entity.PerfumeCategory;
 import com.osds.peamo.model.network.request.PerfumeListSearch;
-import com.osds.peamo.model.network.response.PerfumeListResponse;
+import com.osds.peamo.model.network.response.PerfumeSimpleInfo;
 import com.osds.peamo.repository.BrandRepository;
 import com.osds.peamo.repository.PerfumeCategoryRepository;
 import com.osds.peamo.repository.PerfumeRepository;
@@ -25,17 +25,17 @@ public class PerfumeService {
     final private PerfumeCategoryRepository perfumeCategoryRepository;
     final private BrandRepository brandRepository;
 
-    public List<PerfumeListResponse> getPerfumeList(PerfumeListSearch perfumeSearch, int page) {
+    public List<PerfumeSimpleInfo> getPerfumeList(PerfumeListSearch perfumeSearch, int page) {
 
     	List<Long> categoryList = perfumeSearch.getCategoryList();
     	List<Long> subCategoryList = new ArrayList<>();
     	for (int i = 0, size=categoryList.size(); i < size; i++) {
 			long num = categoryList.get(i);
-			if (num == 1) { subCategoryList.add((long) 1); }
-			else if (num == 2) { subCategoryList.add((long) 3); subCategoryList.add((long) 4); }
-			else if (num == 3) { subCategoryList.add((long) 2); }
-			else if (num == 4) { subCategoryList.add((long) 5); subCategoryList.add((long) 8); } 
-			else if (num == 5) { subCategoryList.add((long) 7); } 
+			if (num == 4) { subCategoryList.add((long) 1); }
+			else if (num == 5) { subCategoryList.add((long) 3); subCategoryList.add((long) 4); }
+			else if (num == 6) { subCategoryList.add((long) 2); }
+			else if (num == 7) { subCategoryList.add((long) 5); subCategoryList.add((long) 8); } 
+			else if (num == 8) { subCategoryList.add((long) 7); } 
     	}//sql에서 찾을 구체적인 카테고리로 담아주기
     	
         List<PerfumeCategory> perfumeCategoryList = perfumeCategoryRepository.getPerfumeCategoriesByCategoryIdIn(subCategoryList);
@@ -54,12 +54,12 @@ public class PerfumeService {
         Page<Perfume> perfumePage = perfumeRepository.getPerfumesByGenderAndIdIn(perfumeSearch.getGender(), perfumeIdList, PageRequest.of(page, 30, Sort.by("id")));
         List<Perfume> perfumeList = perfumePage.getContent();
         
-        List<PerfumeListResponse> perfumeListResponse = new ArrayList<>();
+        List<PerfumeSimpleInfo> perfumeListResponse = new ArrayList<>();
         
         for (int i = 0, size=perfumeList.size(); i < size; i++) {
         	Perfume perfume = perfumeList.get(i);
             String brandName = brandRepository.getById(perfume.getBrand().getId()).getName();
-			perfumeListResponse.add(PerfumeListResponse.builder().id(perfume.getId())
+			perfumeListResponse.add(PerfumeSimpleInfo.builder().id(perfume.getId())
 					.name(perfume.getName()).brand(brandName).imgurl(perfume.getImgurl()).build());
 		}
         
