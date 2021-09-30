@@ -1,16 +1,10 @@
 package com.osds.peamo.service;
 
-import com.osds.peamo.model.entity.Brand;
-import com.osds.peamo.model.entity.CategorySeason;
-import com.osds.peamo.model.entity.Perfume;
-import com.osds.peamo.model.entity.PerfumeCategory;
+import com.osds.peamo.model.entity.*;
 import com.osds.peamo.model.network.request.PerfumeListSearch;
 import com.osds.peamo.model.network.request.RecommendRequest;
 import com.osds.peamo.model.network.response.PerfumeSimpleInfo;
-import com.osds.peamo.repository.BrandRepository;
-import com.osds.peamo.repository.CategorySeasonRepository;
-import com.osds.peamo.repository.PerfumeCategoryRepository;
-import com.osds.peamo.repository.PerfumeRepository;
+import com.osds.peamo.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -27,6 +21,7 @@ public class PerfumeService {
     final private PerfumeCategoryRepository perfumeCategoryRepository;
     final private BrandRepository brandRepository;
     final private CategorySeasonRepository categorySeasonRepository;
+    final private SimilarityRepository similarityRepository;
 
     public List<PerfumeSimpleInfo> getPerfumeList(PerfumeListSearch perfumeSearch, int page) {
 
@@ -150,12 +145,53 @@ public class PerfumeService {
             }
         }
 
-        for (int i = 0; i < intersectionList.size(); i++) { // 교집합 결과들
-            System.out.println(intersectionList.get(i));
-        }
+//        for (int i = 0; i < intersectionList.size(); i++) { // 교집합 결과들
+//            System.out.println(intersectionList.get(i));
+//        }
 
+
+        List<PerfumeSimpleInfo> recommendedPerfumes = new ArrayList<>();
+
+        // 랜덤으로 한 개의 향수 뽑기
         long perfumeId = getRandomOnePerfume(intersectionList);
 
+        // 랜덤으로 뽑은 향수와 유사도가 높은 향수 2개 뽑기
+        List<Similarity> similarityList = this.similarityRepository.getSimilaritiesByStandard(perfumeId);
+
+        // TOP3 향수 return
+        recommendedPerfumes.add(getPerfumeSimpleInfo(perfumeId));
+        for (Similarity similarity : similarityList) {
+            recommendedPerfumes.add(getPerfumeSimpleInfo(similarity.getComparison()));
+        }
+
+        return recommendedPerfumes;
+    }
+
+    /**
+     * 향수 ID로 PerfumeSimpleInfo 객체 정보 채워 반환하는 메서드
+     */
+    private PerfumeSimpleInfo getPerfumeSimpleInfo(long perfumeId){
+
+        Perfume perfume = perfumeRepository.getPerfumeById(perfumeId);
+        if(perfume != null) {
+            String brandName = getBrandName(perfume.getBrand().getId());
+            return PerfumeSimpleInfo.builder()
+                    .id(perfume.getId())
+                    .name(perfume.getName())
+                    .brand(brandName)
+                    .imgurl(perfume.getImgurl())
+                    .build();
+        }
+        return null;
+    }
+
+    /**
+     * brand명 가져오는 메서드
+     */
+    private String getBrandName(long id){
+        Optional<Brand> brand = brandRepository.getBrandById(id);
+        if (brand.isPresent())
+            return brand.get().getName();
         return null;
     }
 
