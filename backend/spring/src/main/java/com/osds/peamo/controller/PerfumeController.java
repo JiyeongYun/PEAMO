@@ -21,10 +21,10 @@ public class PerfumeController {
 
     @PostMapping("/list")
     public ResponseEntity<List<PerfumeSimpleInfo>> getPerfumes(@RequestBody PerfumeListSearch perfumeSearch, @RequestParam int page) {
-    	List<PerfumeSimpleInfo> response = perfumeService.getPerfumeList(perfumeSearch, page);
+        List<PerfumeSimpleInfo> response = perfumeService.getPerfumeList(perfumeSearch, page);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
- 
+
 // 코드 작성 중
 //    @GetMapping
 //    public ResponseEntity<PerfumeDetailInfo> getPerfume(long id) {
@@ -34,6 +34,6 @@ public class PerfumeController {
 //		}
 //    	return ResponseEntity.status(HttpStatus.OK).body(response);
 //    }
-    
+
 
 }
