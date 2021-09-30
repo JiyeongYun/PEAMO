@@ -63,33 +63,6 @@ public class UserService {
     }
 
     /**
-     * 객체 형태로 변환 메서드
-     */
-    private User convertJsonToObject(String json) throws ParseException {
-        JSONParser p = new JSONParser();
-        JSONObject obj = (JSONObject) p.parse(json);
-
-        // uid 추출
-        String uid = obj.get("id").toString();
-        // nickname 추출
-        JSONObject properties = (JSONObject) obj.get("properties");
-        String name = properties.get("nickname").toString();
-
-        return User.builder()
-                .uid(uid)
-                .name(name)
-                .build();
-    }
-
-    /**
-     * 최초로그인 확인 메서드
-     */
-    private boolean isInitialLogin(String uid) {
-        Optional<User> user = this.userRepository.findByUid(uid);
-        return !user.isPresent();
-    }
-
-    /**
      * 카카오 로그아웃
      */
     public boolean kakaoLogout(String accessToken){
@@ -98,6 +71,44 @@ public class UserService {
             return true;
         } return false;
     }
+
+    /**
+     * 향수 좋아요 및 좋아요 취소 메서드
+     */
+    public void likePerfume(String uid, long perfumeId){
+
+        // uid값으로 user 정보 가져오기
+        Optional<User> user = this.userRepository.findByUid(uid);
+
+        if(user.isPresent()){
+            long userId = user.get().getId();
+            Perfume perfume = this.perfumeRepository.getPerfumeById(perfumeId);
+
+            long userPerfumeId = isLikePerfume(userId, perfumeId);
+            if(userPerfumeId != -1){   // 유저가 해당 향수를 좋아요한 경우
+                // remove
+                this.userPerfumeListRepository.deleteById(userPerfumeId);
+                if(perfume.getGoodCnt() > 0)
+                    perfume.setGoodCnt(perfume.getGoodCnt() - 1);
+            } else{
+                // add
+                this.userPerfumeListRepository.save(UserPerfumeList.builder().perfumeId(perfumeId).userId(userId).build());
+                perfume.setGoodCnt(perfume.getGoodCnt() + 1);
+            }
+            this.perfumeRepository.save(perfume);
+        }
+    }
+
+    /**
+     * 유저가 해당 향수를 좋아요했는지에 대한 여부를 반환해주는 메서드
+     */
+    public long isLikePerfume(long userId, long perfumeId){
+        Optional<UserPerfumeList> userPerfumeList = this.userPerfumeListRepository.getUserPerfumeListByPerfumeIdAndUserId(perfumeId, userId);
+        if(userPerfumeList.isPresent())     // 좋아요 O
+            return userPerfumeList.get().getId();
+        return -1;                          // 좋아요 X
+    }
+
 
     /**
      * 마이페이지 정보 가져오기
@@ -129,6 +140,33 @@ public class UserService {
             return myPageResponse;
         }
         return null;
+    }
+
+    /**
+     * 객체 형태로 변환 메서드
+     */
+    private User convertJsonToObject(String json) throws ParseException {
+        JSONParser p = new JSONParser();
+        JSONObject obj = (JSONObject) p.parse(json);
+
+        // uid 추출
+        String uid = obj.get("id").toString();
+        // nickname 추출
+        JSONObject properties = (JSONObject) obj.get("properties");
+        String name = properties.get("nickname").toString();
+
+        return User.builder()
+                .uid(uid)
+                .name(name)
+                .build();
+    }
+
+    /**
+     * 최초로그인 확인 메서드
+     */
+    private boolean isInitialLogin(String uid) {
+        Optional<User> user = this.userRepository.findByUid(uid);
+        return !user.isPresent();
     }
 
 }
