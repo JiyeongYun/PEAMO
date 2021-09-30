@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { login } from '../components/AuthComponents/authSlice';
 
-function Home({ page_num }) {
+function Home({ page_num, setIsLoggedIn }) {
+  const dispatch = useDispatch();
   // scroll animation 관련
   window.scrollTo(0, 0);
   const scroll_animation = () => {
@@ -36,22 +38,18 @@ function Home({ page_num }) {
   useEffect(() => {
     let code = new URL(window.location.href).searchParams.get('code');
     if (code) {
-      axios
-        .get('http://localhost:8080/user/oauth2/authorization/kakao', {
-          params: {
-            code,
-          },
-        })
-        .then((res) => {
-          if (res.status === 200) {
+      dispatch(login(code))
+        .then(({ payload }) => {
+          if (payload.status === 200) {
+            setIsLoggedIn(true);
             alert('로그인 성공');
           }
         })
-        .catch((err) => {
+        .catch(() => {
           alert('로그인 실패');
         });
     }
-  }, []);
+  }, [dispatch, setIsLoggedIn]);
 
   return (
     <div className="home">

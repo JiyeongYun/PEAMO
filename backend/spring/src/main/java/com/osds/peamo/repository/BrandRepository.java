@@ -11,5 +11,5 @@ public interface BrandRepository extends JpaRepository<Brand, Long> {
 
     ArrayList<Brand> findAll();
     Optional<Brand> getBrandById(long id);
-
+    
 }

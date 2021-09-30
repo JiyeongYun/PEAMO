@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { Route, Link, Redirect } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGitlab,
@@ -20,12 +21,19 @@ import Teller4 from './routers/Teller4';
 import Teller5 from './routers/Teller5';
 import Teller6 from './routers/Teller6';
 import TellerResult from './routers/TellerResult';
+// redux reducer
+import { logout } from './components/AuthComponents/authSlice';
 
 function App() {
+  const dispatch = useDispatch();
   // useState
   const [main, setMain] = useState(true);
   const [showSignin, setShowSignin] = useState(false);
   const [page_num, setPageNum] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // access token 여부
+  const isTokenExist = localStorage.getItem('token');
 
   // KOW - main 사진 번호 랜덤 생성 시작
   useEffect(() => {
@@ -43,9 +51,22 @@ function App() {
     setShowSignin(!showSignin);
   };
 
+  // 카카오 로그아웃
+  const kakaoLogout = () => {
+    dispatch(logout())
+      .then((res) => {
+        console.log(res);
+        alert('로그아웃 성공');
+      })
+      .catch((err) => {
+        console.log(err);
+        alert('로그아웃 실패');
+      });
+  };
+
   return (
     <div className="App">
-      {showSignin ? <SignIn toggleSignin={toggleSignin} /> : null}
+      {showSignin && <SignIn toggleSignin={toggleSignin} />}
       <header>
         <div>
           <div className="header__left">
@@ -58,9 +79,21 @@ function App() {
             </Link>
           </div>
           <div className="header__right">
-            <Link onClick={toggleSignin} to="/about">
-              Sign in
-            </Link>
+            {isLoggedIn || isTokenExist ? (
+              <Link to="/mypage">My page</Link>
+            ) : (
+              <>
+                <Link onClick={toggleSignin} to="/about">
+                  Sign in
+                </Link>
+                <div
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => kakaoLogout()}
+                >
+                  Logout
+                </div>
+              </>
+            )}
             <Link to="/search">Search</Link>
           </div>
         </div>
@@ -70,7 +103,9 @@ function App() {
         <Route
           path="/"
           exact={true}
-          render={() => <Home page_num={page_num} />}
+          render={() => (
+            <Home page_num={page_num} setIsLoggedIn={setIsLoggedIn} />
+          )}
         />
         <Route path="/about" exact={true} component={About} />
         <Route path="/search" exact={true} component={Search} />
@@ -81,11 +116,6 @@ function App() {
         <Route path="/teller-5" exact={true} component={Teller5} />
         <Route path="/teller-6" exact={true} component={Teller6} />
         <Route path="/teller-result" exact={true} component={TellerResult} />
-        <Route
-          path="/callback/kakao"
-          exact={true}
-          render={() => <Home page_num={page_num} />}
-        />
       </div>
 
       <footer>
