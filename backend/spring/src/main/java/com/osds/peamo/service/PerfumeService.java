@@ -40,17 +40,8 @@ public class PerfumeService {
         }//sql에서 찾을 구체적인 카테고리로 담아주기
 
         List<PerfumeCategory> perfumeCategoryList = perfumeCategoryRepository.getPerfumeCategoriesByCategoryIdIn(subCategoryList);
+        List<Long> perfumeIdList = changeToAndLogic(perfumeCategoryList, subCategoryList);
 
-        HashMap<Long, Integer> hm = new HashMap<Long, Integer>();
-        List<Long> perfumeIdList = new ArrayList<>();
-        perfumeCategoryList.forEach(p -> {
-            int cnt = hm.getOrDefault(p.getPerfumeId(),0);
-            cnt++;
-            hm.put(p.getPerfumeId(),cnt);
-            if(cnt == subCategoryList.size()){
-                perfumeIdList.add(p.getPerfumeId());
-            }
-        });// 향수 id list에 담기
 
         Page<Perfume> perfumePage = perfumeRepository.getPerfumesByGenderAndIdIn(perfumeSearch.getGender(), perfumeIdList, PageRequest.of(page, 30, Sort.by("id")));
         List<Perfume> perfumeList = perfumePage.getContent();
@@ -70,6 +61,21 @@ public class PerfumeService {
 		}
         
         return perfumeListResponse;
+    }
+    
+    // select OR -> AND 처리 메소드
+    public List<Long> changeToAndLogic(List<PerfumeCategory> perfumeCategoryList, List<Long> subCategoryList){
+        HashMap<Long, Integer> hm = new HashMap<Long, Integer>();
+        List<Long> perfumeIdList = new ArrayList<>();
+        perfumeCategoryList.forEach(p -> {
+            int cnt = hm.getOrDefault(p.getPerfumeId(),0);
+            cnt++;
+            hm.put(p.getPerfumeId(),cnt);
+            if(cnt == subCategoryList.size()){
+                perfumeIdList.add(p.getPerfumeId());
+            }
+        });// 향수 id list에 담기
+        return perfumeIdList;
     }
 
 }
