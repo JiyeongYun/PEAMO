@@ -58,7 +58,7 @@ public class PerfumeService {
         
         for (int i = 0, size=perfumeList.size(); i < size; i++) {
         	Perfume perfume = perfumeList.get(i);
-            String brandName = brandRepository.getById(perfume.getBrand().getId()).getName();
+            String brandName = brandRepository.getBrandById(perfume.getBrand().getId()).getName();
 			perfumeListResponse.add(PerfumeSimpleInfo.builder().id(perfume.getId())
 					.name(perfume.getName()).brand(brandName).imgurl(perfume.getImgurl()).build());
 		}
