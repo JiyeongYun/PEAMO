@@ -17,5 +17,7 @@ public class PerfumeDetailInfo {
 	
 	PerfumeSimpleInfo perfumeSimpleInfo;
 	List<Category> categoryList;
+	int gender;
+	
 	
 }

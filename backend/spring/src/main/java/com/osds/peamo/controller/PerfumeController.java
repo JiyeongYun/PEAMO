@@ -1,20 +1,29 @@
 package com.osds.peamo.controller;
 
-import com.osds.peamo.model.network.request.PerfumeListSearch;
-//import com.osds.peamo.model.network.response.PerfumeDetailInfo;
-import com.osds.peamo.model.network.response.PerfumeSimpleInfo;
-import com.osds.peamo.service.PerfumeService;
-import lombok.AllArgsConstructor;
+import java.util.List;
+
+import com.osds.peamo.model.network.request.RecommendRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.osds.peamo.model.network.request.PerfumeListSearch;
+import com.osds.peamo.model.network.response.PerfumeSimpleInfo;
+import com.osds.peamo.service.PerfumeService;
+
+import lombok.AllArgsConstructor;
 
 @CrossOrigin("*")
 @AllArgsConstructor
 @RestController
 @RequestMapping("/perfume")
+@Slf4j
 public class PerfumeController {
 
     private PerfumeService perfumeService;
@@ -22,9 +31,20 @@ public class PerfumeController {
     @PostMapping("/list")
     public ResponseEntity<List<PerfumeSimpleInfo>> getPerfumes(@RequestBody PerfumeListSearch perfumeSearch, @RequestParam int page) {
     	List<PerfumeSimpleInfo> response = perfumeService.getPerfumeList(perfumeSearch, page);
+    	if (response == null) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
- 
+
+    @PostMapping("/recommend")
+    public ResponseEntity<List<PerfumeSimpleInfo>> recommend(@RequestBody RecommendRequest recommendRequest) {
+        List<PerfumeSimpleInfo> response = perfumeService.getPerfumeRecommend(recommendRequest);
+        if(response == null)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
 // 코드 작성 중
 //    @GetMapping
 //    public ResponseEntity<PerfumeDetailInfo> getPerfume(long id) {
@@ -34,6 +54,5 @@ public class PerfumeController {
 //		}
 //    	return ResponseEntity.status(HttpStatus.OK).body(response);
 //    }
-    
 
 }
