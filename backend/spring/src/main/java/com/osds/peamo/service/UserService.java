@@ -106,17 +106,12 @@ public class UserService {
 
         // uid값으로 user 정보 가져오기
         Optional<User> user = userRepository.findByUid(id);
-        System.out.println("존재하는가?" + user.isPresent());
 
         // user 정보가 존재하는 경우 유저가 좋아요한 향수 정보 가져오기
         if(user.isPresent()){
 
-            System.out.println("존재해서 들어옴");
             String uid = user.get().getUid();
             String name = user.get().getName();
-            System.out.println("id: " + user.get().getId());
-            System.out.println("uid: " + uid);
-            System.out.println("name: " + name);
             ArrayList<UserPerfumeList> userPerfumeList = userPerfumeListRepository.getUserPerfumeListsByUserId(user.get().getId());
             ArrayList<Perfume> perfumeList = new ArrayList<>();
 
@@ -126,18 +121,13 @@ public class UserService {
                     perfumeList.add(perfume);
             }
 
-            System.out.println("size: " + perfumeList.size());
-
             MyPageResponse myPageResponse = MyPageResponse.builder()
                     .uid(uid)
                     .name(name)
                     .perfumeList(perfumeList)
                     .build();
-
             return myPageResponse;
-
         }
-
         return null;
     }
 
