@@ -6,7 +6,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @Getter
-public class PerfumeListResponse {
+public class PerfumeSimpleInfo {
 	
 	long id;
 	String name;
