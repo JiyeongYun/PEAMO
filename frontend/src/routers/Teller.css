@@ -30,15 +30,14 @@
 .teller > .teller1 > .teller_image_1 > .image {
   margin-left: 30px;
   margin-right: 30px;
-
 }
 
-.teller > .teller1 > .teller_image_1 > .image img {
+.teller > .teller1 > .teller_image_1 > .image {
   filter: grayscale(100%);
   transition: all 0.5s ease;
 }
 
-.teller > .teller1 > .teller_image_1 > .image img:hover {
+.teller > .teller1 > .teller_image_1 > .image:hover {
   transform: scale(1.1);
   filter: grayscale(0%);
 }
