@@ -1,5 +1,6 @@
 package com.osds.peamo.service;
 
+import com.osds.peamo.model.entity.Brand;
 import com.osds.peamo.model.entity.Perfume;
 import com.osds.peamo.model.entity.PerfumeCategory;
 import com.osds.peamo.model.network.request.PerfumeListSearch;
@@ -57,12 +58,17 @@ public class PerfumeService {
         List<PerfumeSimpleInfo> perfumeListResponse = new ArrayList<>();
 
         for (int i = 0, size=perfumeList.size(); i < size; i++) {
-            Perfume perfume = perfumeList.get(i);
-            String brandName = brandRepository.getById(perfume.getBrand().getId()).getName();
-            perfumeListResponse.add(PerfumeSimpleInfo.builder().id(perfume.getId())
-                    .name(perfume.getName()).brand(brandName).imgurl(perfume.getImgurl()).build());
-        }
-
+        	Perfume perfume = perfumeList.get(i);
+        	Optional<Brand> brand = brandRepository.getBrandById(perfume.getBrand().getId());
+        	if (brand.isPresent()) {
+        		String brandName = brand.get().getName();
+        		perfumeListResponse.add(PerfumeSimpleInfo.builder().id(perfume.getId())
+    					.name(perfume.getName()).brand(brandName).imgurl(perfume.getImgurl()).build());
+			} else {
+				return null;
+			}
+		}
+        
         return perfumeListResponse;
     }
 
