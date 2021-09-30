@@ -30,6 +30,10 @@ function App() {
   const [main, setMain] = useState(true);
   const [showSignin, setShowSignin] = useState(false);
   const [page_num, setPageNum] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // access token 여부
+  const isTokenExist = localStorage.getItem('token');
 
   // KOW - main 사진 번호 랜덤 생성 시작
   useEffect(() => {
@@ -75,15 +79,8 @@ function App() {
             </Link>
           </div>
           <div className="header__right">
-            {false ? (
-              <Link
-                to="/mypage"
-                onClick={() => {
-                  kakaoLogout();
-                }}
-              >
-                My page
-              </Link>
+            {isLoggedIn || isTokenExist ? (
+              <Link to="/mypage">My page</Link>
             ) : (
               <>
                 <Link onClick={toggleSignin} to="/about">
@@ -106,7 +103,9 @@ function App() {
         <Route
           path="/"
           exact={true}
-          render={() => <Home page_num={page_num} />}
+          render={() => (
+            <Home page_num={page_num} setIsLoggedIn={setIsLoggedIn} />
+          )}
         />
         <Route path="/about" exact={true} component={About} />
         <Route path="/search" exact={true} component={Search} />

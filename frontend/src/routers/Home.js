@@ -4,7 +4,7 @@ import './Home.css';
 import { useDispatch } from 'react-redux';
 import { login } from '../components/AuthComponents/authSlice';
 
-function Home({ page_num }) {
+function Home({ page_num, setIsLoggedIn }) {
   const dispatch = useDispatch();
   // scroll animation 관련
   window.scrollTo(0, 0);
@@ -41,6 +41,7 @@ function Home({ page_num }) {
       dispatch(login(code))
         .then(({ payload }) => {
           if (payload.status === 200) {
+            setIsLoggedIn(true);
             alert('로그인 성공');
           }
         })
@@ -48,7 +49,7 @@ function Home({ page_num }) {
           alert('로그인 실패');
         });
     }
-  }, [dispatch]);
+  }, [dispatch, setIsLoggedIn]);
 
   return (
     <div className="home">
