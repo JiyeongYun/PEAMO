@@ -1,6 +1,11 @@
 .search_page {
   height: 100vh;
   padding-top: 9vh;
+  overflow-y: scroll;
+}
+
+.search_page::-webkit-scrollbar {
+  display: none;
 }
 
 .search_page > .sex_category,
@@ -41,4 +46,9 @@ ul {
 .search_page > .note_category li:nth-child(2n + 1) {
   cursor: pointer;
   transition: color 1s ease-out;
+}
+
+.search_page > .search_card {
+  width: 60vw;
+  margin: 0 auto;
 }
