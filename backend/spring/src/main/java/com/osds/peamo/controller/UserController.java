@@ -48,7 +48,7 @@ public class UserController {
     }
 
     @PostMapping("/mypage")
-    public ResponseEntity<MyPageResponse> mypage(@RequestBody Map<String, String> request) {
+    public ResponseEntity<MyPageResponse> getUserInfo(@RequestBody Map<String, String> request) {
         MyPageResponse response = userService.getUserInfo(request.get("uid"));
         if (response == null)
             return new ResponseEntity(HttpStatus.NOT_FOUND);
