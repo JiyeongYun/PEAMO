@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public interface BrandRepository extends JpaRepository<Brand, Long> {
 
     ArrayList<Brand> findAll();
-//    Brand getBrandById(long id);
+
+    Brand getBrandById(long id);
 
 }
