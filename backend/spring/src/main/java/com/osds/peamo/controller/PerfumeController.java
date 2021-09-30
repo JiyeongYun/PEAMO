@@ -42,11 +42,6 @@ public class PerfumeController {
         List<PerfumeSimpleInfo> response = perfumeService.getPerfumeRecommend(recommendRequest);
         if(response == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-
-        for(PerfumeSimpleInfo obj : response){
-            log.info("obj: {}", obj);
-        }
-
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 

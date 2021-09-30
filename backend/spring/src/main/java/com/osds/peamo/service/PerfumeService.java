@@ -80,8 +80,8 @@ public class PerfumeService {
     public List<PerfumeSimpleInfo> getPerfumeRecommend(RecommendRequest recommendRequest) {
         int season = recommendRequest.getSeason();
 
-        boolean mainContainSeason = false; // 메인 카테고리가 계절 포함하는지
-        boolean subContainSeason = false; // 서브 카테고리가 계절 포함하는지
+        boolean mainContainSeason = false;  // 메인 카테고리가 계절 포함하는지
+        boolean subContainSeason = false;   // 서브 카테고리가 계절 포함하는지
 
         long mainCategory = recommendRequest.getMainCategory();
         long subCategory = recommendRequest.getSubCategory();
@@ -106,12 +106,14 @@ public class PerfumeService {
         List<PerfumeCategory> subLikes = perfumeCategoryRepository.getPerfumeCategoriesByCategoryId(subCategory);
         List<PerfumeCategory> hates = perfumeCategoryRepository.getPerfumeCategoriesByCategoryId(dislikeCategory);
 
-        List<Long> intersectionList = new ArrayList<>(); // 교집합 결과
+        // 교집합 결과
+        List<Long> intersectionList = new ArrayList<>();
 
         Set<Long> hateSet = new HashSet<>();
         Set<Long> subSet = new HashSet<>();
 
-        for (int i = 0; i < hates.size(); i++) // 싫어하는 카테고리 찾아내기
+        // 싫어하는 카테고리 찾아내기
+        for (int i = 0; i < hates.size(); i++)
             hateSet.add(hates.get(i).getPerfumeId());
 
         if ((mainContainSeason && subContainSeason) || (!mainContainSeason && !subContainSeason)) {
@@ -145,35 +147,29 @@ public class PerfumeService {
             }
         }
 
-//        for (int i = 0; i < intersectionList.size(); i++) { // 교집합 결과들
-//            System.out.println(intersectionList.get(i));
-//        }
-
-
         List<PerfumeSimpleInfo> recommendedPerfumes = new ArrayList<>();
 
-        // 랜덤으로 한 개의 향수 뽑기
+        // 1. 랜덤으로 한 개의 향수 뽑기
         long perfumeId = getRandomOnePerfume(intersectionList);
 
-        // 랜덤으로 뽑은 향수와 유사도가 높은 향수 2개 뽑기
+        // 2. 랜덤으로 뽑은 향수와 유사도가 높은 향수 2개 뽑기
         List<Similarity> similarityList = this.similarityRepository.getSimilaritiesByStandard(perfumeId);
 
-        // TOP3 향수 return
+        // 3. TOP3 향수 담아서 return
         recommendedPerfumes.add(getPerfumeSimpleInfo(perfumeId));
         for (Similarity similarity : similarityList) {
             recommendedPerfumes.add(getPerfumeSimpleInfo(similarity.getComparison()));
         }
-
         return recommendedPerfumes;
     }
 
     /**
      * 향수 ID로 PerfumeSimpleInfo 객체 정보 채워 반환하는 메서드
      */
-    private PerfumeSimpleInfo getPerfumeSimpleInfo(long perfumeId){
+    private PerfumeSimpleInfo getPerfumeSimpleInfo(long perfumeId) {
 
         Perfume perfume = perfumeRepository.getPerfumeById(perfumeId);
-        if(perfume != null) {
+        if (perfume != null) {
             String brandName = getBrandName(perfume.getBrand().getId());
             return PerfumeSimpleInfo.builder()
                     .id(perfume.getId())
@@ -188,7 +184,7 @@ public class PerfumeService {
     /**
      * brand명 가져오는 메서드
      */
-    private String getBrandName(long id){
+    private String getBrandName(long id) {
         Optional<Brand> brand = brandRepository.getBrandById(id);
         if (brand.isPresent())
             return brand.get().getName();
@@ -199,15 +195,16 @@ public class PerfumeService {
      * 교집합으로 나온 향수 id list 중 랜덤으로 하나의 향수 id 값을 뽑기
      * [조건] top, middle, base note가 하나라도 존재하는 향수여야 한다.
      */
-    private long getRandomOnePerfume(List<Long> result){
+    private long getRandomOnePerfume(List<Long> result) {
 
         Random rand = new Random();
-        while(true){
+        while (true) {
+
             // 1. 랜덤으로 idx 하나 뽑기
             long perfumeId = result.get(rand.nextInt(result.size()));
 
             // 2. note가 있는 향수인지 체크하기
-            if(isExistNote(perfumeId)){
+            if (isExistNote(perfumeId)) {
                 return perfumeId;
             }
         }
@@ -216,7 +213,7 @@ public class PerfumeService {
     /**
      * note가 있는 향수인지 체크하기
      */
-    private boolean isExistNote(long perfumeId){
+    private boolean isExistNote(long perfumeId) {
         List<PerfumeCategory> perfumeCategory = this.perfumeCategoryRepository.getPerfumeCategoriesByPerfumeId(perfumeId);
         return perfumeCategory.size() > 0;
     }
