@@ -13,6 +13,7 @@ import Home from './routers/Home';
 import About from './routers/About';
 import Search from './routers/Search';
 import Teller from './routers/Teller';
+import MyPage from './routers/MyPage';
 // Components
 import SignIn from './components/AuthComponents/SignIn';
 import Teller2 from './routers/Teller2';
@@ -21,8 +22,6 @@ import Teller4 from './routers/Teller4';
 import Teller5 from './routers/Teller5';
 import Teller6 from './routers/Teller6';
 import TellerResult from './routers/TellerResult';
-// redux reducer
-import { logout } from './components/AuthComponents/authSlice';
 
 function App() {
   const dispatch = useDispatch();
@@ -51,19 +50,6 @@ function App() {
     setShowSignin(!showSignin);
   };
 
-  // 카카오 로그아웃
-  const kakaoLogout = () => {
-    dispatch(logout())
-      .then((res) => {
-        console.log(res);
-        alert('로그아웃 성공');
-      })
-      .catch((err) => {
-        console.log(err);
-        alert('로그아웃 실패');
-      });
-  };
-
   return (
     <div className="App">
       {showSignin && <SignIn toggleSignin={toggleSignin} />}
@@ -82,17 +68,9 @@ function App() {
             {isLoggedIn || isTokenExist ? (
               <Link to="/mypage">My page</Link>
             ) : (
-              <>
-                <Link onClick={toggleSignin} to="/about">
-                  Sign in
-                </Link>
-                <div
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => kakaoLogout()}
-                >
-                  Logout
-                </div>
-              </>
+              <Link onClick={toggleSignin} to="/about">
+                Sign in
+              </Link>
             )}
             <Link to="/search">Search</Link>
           </div>
@@ -109,6 +87,7 @@ function App() {
         />
         <Route path="/about" exact={true} component={About} />
         <Route path="/search" exact={true} component={Search} />
+        <Route path="/mypage" exact={true} component={MyPage} />
         <Route path="/teller-1" exact={true} component={Teller} />
         <Route path="/teller-2" exact={true} component={Teller2} />
         <Route path="/teller-3" exact={true} component={Teller3} />

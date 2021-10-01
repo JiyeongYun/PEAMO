@@ -1,0 +1,8 @@
+.mypage {
+  height: 100vh;
+  padding-top: 9vh;
+}
+  
+.logout_button {
+  cursor: pointer;
+}
