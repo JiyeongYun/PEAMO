@@ -3,6 +3,8 @@ import PerfumeKind from '../components/AboutComponents/PerfumeKind'
 import SelectGuide from '../components/AboutComponents/SelectGuide'
 import PerfumeNote from '../components/AboutComponents/PerfumeNote'
 import { useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 
 function About() {
   // header 검은색으로 변경
@@ -58,9 +60,11 @@ function About() {
           <div className="grey_canvas_2"></div>
           <PerfumeKind></PerfumeKind>
         </div>
+        <FontAwesomeIcon className="down_icon" icon={faAngleDoubleDown} size="3x" />
       </div>
       <div className="perfume_select">
         <SelectGuide></SelectGuide>
+        <FontAwesomeIcon className="down_icon black_icon" icon={faAngleDoubleDown} size="3x" />
       </div>
       <div className="perfume_note">
         <PerfumeNote></PerfumeNote>

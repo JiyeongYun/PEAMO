@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import { useDispatch } from 'react-redux';
 import { login } from '../components/AuthComponents/authSlice';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 
 function Home({ page_num, setIsLoggedIn }) {
   const dispatch = useDispatch();
@@ -63,6 +65,7 @@ function Home({ page_num, setIsLoggedIn }) {
             </Link>
           </div>
         </div>
+        <FontAwesomeIcon className="down_icon" icon={faAngleDoubleDown} size="3x" />
       </div>
       <div className="this_month_perfume">
         <div className="center_pos">
