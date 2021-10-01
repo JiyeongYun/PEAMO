@@ -4,6 +4,28 @@
   overflow: scroll;
 }
 
+.down_icon {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, 0);
+  animation: updown 0.5s alternate infinite;
+}
+
+.black_icon {
+  color: black;
+}
+
+@keyframes updown {
+  from {
+    transform: translate(-50%, -5%);
+  }
+  to {
+    transform: translate(-50%, 5%);
+  }
+}
+
 .scroll {
   opacity: 0;
   transform: translate(0, 50px);
@@ -30,7 +52,11 @@
   position: absolute;
   top: 0;
   z-index: -1;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 15% 70%, rgba(0, 0, 0, 0.5));
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0) 15% 70%,
+    rgba(0, 0, 0, 0.5)
+  );
 }
 
 .home > .white_canvas > img {
@@ -126,15 +152,32 @@
   object-fit: contain;
 }
 
-.home > .this_month_perfume > .center_pos > .perfumes > .perfume > .perfume_info {
+.home
+  > .this_month_perfume
+  > .center_pos
+  > .perfumes
+  > .perfume
+  > .perfume_info {
   margin: var(--margin-2);
 }
 
-.home > .this_month_perfume > .center_pos > .perfumes > .perfume > .perfume_info > p {
+.home
+  > .this_month_perfume
+  > .center_pos
+  > .perfumes
+  > .perfume
+  > .perfume_info
+  > p {
   font-size: var(--mid-font-size);
 }
 
-.home > .this_month_perfume > .center_pos > .perfumes > .perfume > .perfume_info > p:nth-child(1) {
+.home
+  > .this_month_perfume
+  > .center_pos
+  > .perfumes
+  > .perfume
+  > .perfume_info
+  > p:nth-child(1) {
   font-weight: bold;
   font-size: var(--large-font-size);
   margin-bottom: var(--margin-1);
