@@ -7,18 +7,16 @@ import Grid from '@material-ui/core/Grid'
 
 function Search () {
   const [perfumeResult, setPerfumeResult] = useState([])
-
+  const [axiosGenderData, setAxiosGenderData] = useState(2)
+  const [axiosCateData, setAxiosCateData] = useState([4])
   // header 검은색으로 변경
   useEffect(() => {
     const header = document.querySelector('header')
     header.style.backgroundColor = '#1C1C1C'
-    axiosStart()
   }, [])
   // header 검은색으로 변경
-
-  let axiosGenderData = 2
-  let axiosCateData = [4]
-
+  
+  // search page 들어오자마자 기본 값인 her, all 향수 정보 axios 요청
   const axiosStart = () => {
     axios
       .post("http://j5a403.p.ssafy.io:8000/perfume/list?page=0", {
@@ -36,6 +34,10 @@ function Search () {
       }) 
   }
 
+  useEffect(() => {
+    axiosStart()
+  }, [axiosGenderData, axiosCateData])
+
   const toggleItems = (n, e) => {
     const t = e.target
     let genderNum
@@ -47,49 +49,17 @@ function Search () {
     }
     if (t.classList.contains('gender')) {
       const genders = document.querySelectorAll('.gender')
-      axiosGenderData = genderNum
+      setAxiosGenderData(genderNum)
       genders.forEach(gender => {
         if (gender === t) {
           gender.classList.add("checked")
-          console.log('gender: ', axiosGenderData)
-          console.log('category: ', axiosCateData)
-          axios
-            .post("http://j5a403.p.ssafy.io:8000/perfume/list?page=0", {
-                "gender": axiosGenderData,
-                "categoryList": axiosCateData,
-            })
-            .then((res) => {
-              if (res.status === 200) {
-                setPerfumeResult(res.data)
-                console.log(perfumeResult)
-              }
-            })
-            .catch((err) => {
-              console.log(err)
-            }) 
         } else {
           gender.classList.remove("checked")
         }
       })
     } else if (t.classList.contains('notes')) {
       const notes = document.querySelectorAll('.notes')        
-      axiosCateData = [categoryNum]
-      console.log('gender: ', axiosGenderData)
-      console.log('category: ', axiosCateData)
-      axios
-        .post("http://j5a403.p.ssafy.io:8000/perfume/list?page=0", {
-            "gender": axiosGenderData,
-            "categoryList": axiosCateData,
-        })
-        .then((res) => {
-          if (res.status === 200) {
-            setPerfumeResult(res.data)
-            console.log(perfumeResult)
-          }
-        })
-        .catch((err) => {
-          console.log(err)
-        }) 
+      setAxiosCateData([categoryNum])
       notes.forEach(note => {
         if (note === t) {
           note.classList.add("checked")
@@ -99,7 +69,7 @@ function Search () {
       })
     }
   }
-
+  
   return (
     <div className="search_page">
       <div className="sex_category">
@@ -146,4 +116,4 @@ function Search () {
   )
 }
 
-export default Search
+export default Search;
