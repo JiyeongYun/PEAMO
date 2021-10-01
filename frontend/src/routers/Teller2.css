@@ -5,20 +5,20 @@
 
 .teller2 > .teller_2 {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%);
 }
 
 .teller2 > .teller_2 > .teller_image_2 {
-  width: 90%;
+  width: 90vw;
   margin: 0 auto;
   margin-top: 120px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
-.teller2 > .teller_2 > .teller_question_2 h2{
+.teller2 > .teller_2 > .teller_question_2 h2 {
   margin-top: var(--margin-4);
   margin-bottom: var(--margin-6);
   font-size: 2rem;
@@ -27,20 +27,19 @@
 }
 
 .teller2 > .teller_2 > .teller_image_2 > .image {
-  margin-left: 30px;
-  margin-right: 30px;
-  
-} 
+  margin: 0 30px;
+  width: 20%;
+}
 .teller2 > .teller_2 > .teller_image_2 > .image img {
   transition: all 0.5s ease;
   filter: grayscale(100%);
+  width: 100%;
 }
 
 .teller2 > .teller_2 > .teller_image_2 > .image img:hover {
   transform: scale(1.1);
   filter: grayscale(0%);
 }
-
 
 .teller2 > .teller_2 > .teller_image_2 p {
   font-size: var(--large-font-size);

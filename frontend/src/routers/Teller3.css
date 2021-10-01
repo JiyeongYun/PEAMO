@@ -5,12 +5,12 @@
 
 .teller3 > .teller_3 {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%);
 }
 
-.teller3 > .teller_3 > .teller_question_3 h2{
+.teller3 > .teller_3 > .teller_question_3 h2 {
   margin-top: var(--margin-4);
   margin-bottom: var(--margin-6);
   font-size: 2rem;

@@ -11,22 +11,21 @@
 }
 
 .teller4 > .teller_4 > .teller_image_41 {
-  width: 90%;
+  width: 90vw;
   margin: 0 auto;
-  margin-top: 120px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .teller4 > .teller_4 > .teller_image_42 {
-  width: 90%;
+  width: 90vw;
   margin: 0 auto;
-  margin-top: 20px;
+  /* margin-top: 10px; */
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
-.teller4 > .teller_4 > .teller_question_4 h2{
+.teller4 > .teller_4 > .teller_question_4 h2 {
   margin-top: var(--margin-4);
   margin-bottom: var(--margin-6);
   font-size: 2rem;
@@ -35,13 +34,14 @@
 }
 
 .teller4 > .teller_4 > .teller_image_41 > .image {
-  margin-left: 30px;
-  margin-right: 30px;
+  margin: 0 30px;
+  width: 20vw;
 }
 
 .teller4 > .teller_4 > .teller_image_41 > .image img {
   transition: all 0.5s ease;
   filter: grayscale(100%);
+  width: 100%;
 }
 
 .teller4 > .teller_4 > .teller_image_41 > .image img:hover {
@@ -49,24 +49,23 @@
   filter: grayscale(0%);
 }
 
-
-
 .teller4 > .teller_4 > .teller_image_41 p {
   font-size: var(--large-font-size);
-  margin-top: var(--margin-2);
+  margin-top: var(--margin-1);
   margin-bottom: var(--margin-3);
   text-align: center;
   color: black;
 }
 
 .teller4 > .teller_4 > .teller_image_42 > .image {
-  margin-left: 30px;
-  margin-right: 30px;
+  margin: 0 30px;
+  width: 20vw;
 }
 
 .teller4 > .teller_4 > .teller_image_42 > .image img {
   transition: all 0.5s ease;
   filter: grayscale(100%);
+  width: 100%;
 }
 
 .teller4 > .teller_4 > .teller_image_42 > .image img:hover {
@@ -76,7 +75,7 @@
 
 .teller4 > .teller_4 > .teller_image_42 p {
   font-size: var(--large-font-size);
-  margin-top: var(--margin-4);
+  margin-top: var(--margin-1);
   text-align: center;
   color: black;
 }
