@@ -11,6 +11,7 @@ export const login = createAsyncThunk(
         },
       });
       localStorage.setItem('token', response.data.access_token);
+      localStorage.setItem('userId', response.data.uid);
       return response;
     } catch (error) {
       return rejectWithValue(error);
@@ -33,7 +34,7 @@ export const logout = createAsyncThunk(
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    isAuthenticated: false,
+    isLoggedIn: false,
   },
   reducers: {},
   extraReducers: {},

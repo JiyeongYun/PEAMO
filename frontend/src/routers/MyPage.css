@@ -1,8 +1,13 @@
 .mypage {
   height: 100vh;
   padding-top: 9vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
   
 .logout_button {
+  width: 100px;
   cursor: pointer;
+  z-index: 123;
 }

@@ -1,6 +1,5 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -24,7 +23,6 @@ import Teller6 from './routers/Teller6';
 import TellerResult from './routers/TellerResult';
 
 function App() {
-  const dispatch = useDispatch();
   // useState
   const [main, setMain] = useState(true);
   const [showSignin, setShowSignin] = useState(false);
