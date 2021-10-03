@@ -1,0 +1,29 @@
+.mypage {
+  height: 100vh;
+  padding-top: 9vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+
+.mypage::-webkit-scrollbar {
+  display: none;
+}
+
+.mypage_title {
+  top: 10%;
+  font-size: var(--xxlarge-font-size);
+}
+
+.card_image {
+  background-repeat: no-repeat;
+  width: 80%;
+  height: 80%;
+}
+
+.logout_button {
+  width: 100px;
+  cursor: pointer;
+  bottom: 0;
+}

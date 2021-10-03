@@ -33,7 +33,7 @@ public class UserService {
     private PerfumeRepository perfumeRepository;
 
     @Autowired
-    private UserPerfumeListRepository userPerfumeListRepository;
+    private static UserPerfumeListRepository userPerfumeListRepository;
 
 
     private final Oauth2Kakao oauth2Kakao;
@@ -102,8 +102,10 @@ public class UserService {
     /**
      * 유저가 해당 향수를 좋아요했는지에 대한 여부를 반환해주는 메서드
      */
-    public long isLikePerfume(long userId, long perfumeId){
-        Optional<UserPerfumeList> userPerfumeList = this.userPerfumeListRepository.getUserPerfumeListByPerfumeIdAndUserId(perfumeId, userId);
+    public static long isLikePerfume(long userId, long perfumeId){
+    	System.out.println("들어가기전");
+        Optional<UserPerfumeList> userPerfumeList = userPerfumeListRepository.getUserPerfumeListByPerfumeIdAndUserId(perfumeId, userId);
+        System.out.println("후");
         if(userPerfumeList.isPresent())     // 좋아요 O
             return userPerfumeList.get().getId();
         return -1;                          // 좋아요 X
