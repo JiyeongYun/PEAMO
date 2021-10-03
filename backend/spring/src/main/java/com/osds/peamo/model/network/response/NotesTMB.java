@@ -1,16 +1,19 @@
 package com.osds.peamo.model.network.response;
 
+import java.util.List;
+
 import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Getter
-// Top, Middle, Base notes 정보를 담은 Class
+@Data
+// 향수의 Top, Middle, Base notes 정보를 담은 Class
 public class NotesTMB {
 	
-	String topNote;
-	String middleNote;
-	String baseNote;
+	List<String> topNote;
+	List<String> middleNote;
+	List<String> baseNote;
 	
 }
+

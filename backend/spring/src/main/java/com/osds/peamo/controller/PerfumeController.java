@@ -36,14 +36,13 @@ public class PerfumeController {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
-// 코드 작성 중
-//    @GetMapping
-//    public ResponseEntity<PerfumeDetailInfo> getPerfume(long id) {
-//    	PerfumeDetailInfo response = perfumeService.getPerfumeDetailInfo(id);
-//    	if (response == null) {
-//    		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response); // 존재하지 않는 id 요청
-//		}
-//    	return ResponseEntity.status(HttpStatus.OK).body(response);
-//    }
+    @GetMapping
+    public ResponseEntity<PerfumeDetailInfo> getPerfume(@RequestParam long id) {
+    	PerfumeDetailInfo response = perfumeService.getPerfumeDetailInfo(id);
+    	if (response == null) {
+    		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response); // 존재하지 않는 id 요청
+		}
+    	return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
 
 }
