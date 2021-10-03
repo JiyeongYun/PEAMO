@@ -18,10 +18,10 @@ public class UserPerfumeList {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;                    // id
 
-    @Column
+    @Column(name = "perfume_id")
     private long perfumeId;
 
-    @Column
+    @Column(name = "user_id")
     private long userId;
 
 }

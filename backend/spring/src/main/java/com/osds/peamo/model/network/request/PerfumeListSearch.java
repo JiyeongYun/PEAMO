@@ -10,5 +10,6 @@ public class PerfumeListSearch {
 
     int gender;
     long category;
+    String uid;
 
 }
