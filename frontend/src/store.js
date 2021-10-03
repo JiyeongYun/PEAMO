@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import AuthReducer from './components/AuthComponents/authSlice';
-import MyPageReducer from './components/MypageComponents/myPageSlice';
+import MyPageReducer from './components/MyPageComponents/myPageSlice';
 
 const rootReducer = combineReducers({
   auth: AuthReducer,

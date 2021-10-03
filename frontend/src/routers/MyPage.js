@@ -5,18 +5,18 @@ import './MyPage.css';
 import { makeStyles } from '@material-ui/core/styles';
 // components
 // import { logout } from '../components/AuthComponents/authSlice';
-import PerfumeCard from '../components/MypageComponents/PerfumeCard';
+import PerfumeCard from '../components/MyPageComponents/PerfumeCard';
 import Grid from '@material-ui/core/Grid';
 // redux reducer
-import { getMyPerfume } from '../components/MypageComponents/myPageSlice';
+import { getMyPerfume } from '../components/MyPageComponents/myPageSlice';
 
 const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
     justifyContent: 'center',
-    position: 'relative',
-    top: '10%',
+    marginTop: '50px',
     flexGrow: 1,
+    width: '80vw',
   },
 }));
 
@@ -39,16 +39,17 @@ function Mypage() {
 
   return (
     <div className="mypage">
+      <p className="mypage_title">나의 향수함</p>
       <Grid className={classes.root} container spacing={2}>
-        <Grid item xs={4}>
-          <PerfumeCard />
-        </Grid>
-        <Grid item xs={4}>
-          <PerfumeCard />
-        </Grid>
-        <Grid item xs={4}>
-          <PerfumeCard />
-        </Grid>
+        {myPerfume &&
+          myPerfume.map((perfume) => (
+            <Grid item xs={12} sm={6} md={3} spacing={3}>
+              <PerfumeCard
+                key={`${perfume.id}_${perfume.name}`}
+                perfume={perfume}
+              />
+            </Grid>
+          ))}
       </Grid>
       <button className="logout_button" onClick={() => kakaoLogout()}>
         logoutwdwd
