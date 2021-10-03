@@ -41,15 +41,14 @@ public class PerfumeService {
     final private NoteRepository noteRepository;
     final private CategorySeasonRepository categorySeasonRepository;
 
-    public List<PerfumeSimpleInfo> getPerfumeList(PerfumeListSearch perfumeSearch, int page) {
+    // 향수 간단 정보 반환
+    public List<PerfumeSimpleInfo> getPerfumeList(PerfumeListSearch perfumeListSearch, int page) {
 
-        List<Long> categoryList = perfumeSearch.getCategoryList();
-        List<Long> subCategoryList = getSubCategoryList(categoryList);
+        Long category = perfumeListSearch.getCategory();
+        List<Long> subCategoryList = getSubCategoryList(category.intValue());
+        List<Long> perfumeIdList = perfumeCategoryRepository.getperfumeIdByCategoryId(subCategoryList);
 
-        List<PerfumeCategory> perfumeCategoryList = perfumeCategoryRepository.getPerfumeCategoriesByCategoryIdIn(subCategoryList);
-        List<Long> perfumeIdList = changeToAndLogic(perfumeCategoryList, subCategoryList);
-
-        Page<Perfume> perfumePage = perfumeRepository.getPerfumesByGenderAndIdIn(perfumeSearch.getGender(), perfumeIdList, PageRequest.of(page, 30, Sort.by("id")));
+        Page<Perfume> perfumePage = perfumeRepository.getPerfumesByGenderAndIdIn(perfumeListSearch.getGender(), perfumeIdList, PageRequest.of(page, 30, Sort.by("id").descending()));
         List<Perfume> perfumeList = perfumePage.getContent();
 
         List<PerfumeSimpleInfo> perfumeListResponse = new ArrayList<>();
@@ -65,37 +64,20 @@ public class PerfumeService {
 				return null;
 			}
 		}
-        
         return perfumeListResponse;
     }
     
     // 큰 카테고리 -> 세부 카테고리 변환 메소드
-    public List<Long> getSubCategoryList(List<Long> categoryList){
+    public List<Long> getSubCategoryList(int category){
     	List<Long> subCategoryList = new ArrayList<>();
-        for (int i = 0, size=categoryList.size(); i < size; i++) {
-            long num = categoryList.get(i);
-            if (num == 4) { subCategoryList.add((long) 1); }
-            else if (num == 5) { subCategoryList.add((long) 3); subCategoryList.add((long) 4); }
-            else if (num == 6) { subCategoryList.add((long) 2); }
-            else if (num == 7) { subCategoryList.add((long) 5); subCategoryList.add((long) 8); }
-            else if (num == 8) { subCategoryList.add((long) 7); }
-        }
+    	switch (category) {
+		case 4: subCategoryList.add((long) 1); break;
+		case 5: subCategoryList.add((long) 3); subCategoryList.add((long) 4); break;
+		case 6: subCategoryList.add((long) 2); break;
+		case 7: subCategoryList.add((long) 5); subCategoryList.add((long) 8); break;
+		case 8: subCategoryList.add((long) 7); break;
+		}
     	return subCategoryList;
-    }
-    
-    // select OR -> AND 처리 메소드
-    public List<Long> changeToAndLogic(List<PerfumeCategory> perfumeCategoryList, List<Long> subCategoryList){
-        HashMap<Long, Integer> hm = new HashMap<Long, Integer>();
-        List<Long> perfumeIdList = new ArrayList<>();
-        perfumeCategoryList.forEach(p -> {
-            int cnt = hm.getOrDefault(p.getPerfumeId(),0);
-            cnt++;
-            hm.put(p.getPerfumeId(),cnt);
-            if(cnt == subCategoryList.size()){
-                perfumeIdList.add(p.getPerfumeId());
-            }
-        });// 향수 id list에 담기
-        return perfumeIdList;
     }
 
     // 향수 상세 정보 반환

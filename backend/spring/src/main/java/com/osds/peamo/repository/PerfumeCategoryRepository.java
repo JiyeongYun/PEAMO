@@ -8,9 +8,10 @@ import java.util.List;
 
 public interface PerfumeCategoryRepository extends JpaRepository<PerfumeCategory, Long> {
 	
-	//입력 받는 카테고리 번호에 따라 세부 카테고리 리턴
-    List<PerfumeCategory> getPerfumeCategoriesByCategoryIdIn(List<Long> categoryIdList);
+	@Query(value = "SELECT perfume_id From peamo.api_perfumecategory WHERE category_id in (:categoryIdList)", nativeQuery = true)
+    List<Long> getperfumeIdByCategoryId(List<Long> categoryIdList);
     
     @Query(value = "SELECT * From peamo.api_perfumecategory WHERE perfume_id = :perfumeId", nativeQuery = true)
     List<PerfumeCategory> getpcListByPerfumeId(long perfumeId);
+
 }
