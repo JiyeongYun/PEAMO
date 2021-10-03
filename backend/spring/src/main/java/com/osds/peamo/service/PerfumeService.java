@@ -100,9 +100,7 @@ public class PerfumeService {
 			
 			return PerfumeDetailInfo.builder().perfumeSimpleInfo(perfumeSimpleInfo).categoryNameList(categoryNameList)
 					.notesTMB(notesTMB).gender(gender).seasons(seasons).goodCount(goodCount).build();
-		} else {
-			return null;
-		}
+		} else { return null; }
 	}
 	
     // 향수 id에 맞는 NotesTMB 반환
@@ -114,8 +112,7 @@ public class PerfumeService {
     		switch (noteType) { //id에 맞는 note 영어 이름 각 리스트에 저장
 			case 1:	notesTMB.getTopNote().addAll(noteRepository.getNoteEngNameById(noteIdList)); break;
 			case 2: notesTMB.getMiddleNote().addAll(noteRepository.getNoteEngNameById(noteIdList));	break;
-			case 3:	notesTMB.getBaseNote().addAll(noteRepository.getNoteEngNameById(noteIdList)); break;
-			}
+			case 3:	notesTMB.getBaseNote().addAll(noteRepository.getNoteEngNameById(noteIdList)); break; }
 		}
         return notesTMB;
     }
@@ -123,24 +120,30 @@ public class PerfumeService {
     // 이달의 향수 리스트 반환
 	public List<PerfumeSimpleInfo> getMonthPerfume() {
 		
-		List<PerfumeSimpleInfo> response = new ArrayList<>();
-		
 		int season = getSeason();
 		List<Long> categoryIds = categorySeasonRepository.getCategoryIdBySeasonId(season); //시즌에 해당하는 카테고리 아이디들
 		int listSize = categoryIds.size();
 		Long categoryId = categoryIds.get((int)((Math.random()*listSize)));
-		int perfumeId = perfumeCategoryRepository.getRandomPerfumeIdByCategoryId(categoryId);
+		long perfumeId = perfumeCategoryRepository.getRandomPerfumeIdByCategoryId(categoryId);
 		
-        // 2. 랜덤으로 뽑은 향수와 유사도가 높은 향수 2개 뽑기
+        return getSimilarPerfumes(perfumeId);
+	}
+	
+	// id에 해당하는 향수 & 유사 향수 두 개 반환
+	public List<PerfumeSimpleInfo> getSimilarPerfumes(long perfumeId){
+		List<PerfumeSimpleInfo> response = new ArrayList<>();
+		
+		// 1. 랜덤으로 뽑은 향수와 유사도가 높은 향수 2개 뽑기
         List<Similarity> similarityList = this.similarityRepository.getSimilaritiesByStandard(perfumeId);
 
-        // 3. TOP3 향수 담아서 return
+        // 2. TOP3 향수 담아서 return
         response.add(getPerfumeSimpleInfo(perfumeId));
         for (Similarity similarity : similarityList) {
         	response.add(getPerfumeSimpleInfo(similarity.getComparison()));
         }
-        return response;
+		return response;
 	}
+	
 	
 	// 월에 따라 season 반환
 	public int getSeason() {
@@ -223,21 +226,10 @@ public class PerfumeService {
                 }
             }
         }
-
-        List<PerfumeSimpleInfo> recommendedPerfumes = new ArrayList<>();
-
-        // 1. 랜덤으로 한 개의 향수 뽑기
+        // 랜덤으로 한 개의 향수 뽑기
         long perfumeId = getRandomOnePerfume(intersectionList);
 
-        // 2. 랜덤으로 뽑은 향수와 유사도가 높은 향수 2개 뽑기
-        List<Similarity> similarityList = this.similarityRepository.getSimilaritiesByStandard(perfumeId);
-
-        // 3. TOP3 향수 담아서 return
-        recommendedPerfumes.add(getPerfumeSimpleInfo(perfumeId));
-        for (Similarity similarity : similarityList) {
-            recommendedPerfumes.add(getPerfumeSimpleInfo(similarity.getComparison()));
-        }
-        return recommendedPerfumes;
+        return getSimilarPerfumes(perfumeId);
     }
 
     /**
