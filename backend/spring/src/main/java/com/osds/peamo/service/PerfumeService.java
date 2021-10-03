@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-
 @RequiredArgsConstructor
 @Service
 public class PerfumeService {
@@ -28,10 +27,10 @@ public class PerfumeService {
 	final private PerfumeNoteRepository perfumeNoteRepository;
     final private PerfumeRepository perfumeRepository;
     final private SimilarityRepository similarityRepository;
-    final private UserPerfumeListRepository userPerfumeListRepository;
+    final private UserRepository userRepository;
 
     // 향수 간단 정보 반환
-    public List<PerfumeSimpleInfo> getPerfumeList(PerfumeListSearch perfumeListSearch, int userId, int page) {
+    public List<PerfumeSimpleInfo> getPerfumeList(PerfumeListSearch perfumeListSearch, String uId, int page) {
 
         Long category = perfumeListSearch.getCategory();
         List<Long> perfumeIdList;
@@ -47,16 +46,18 @@ public class PerfumeService {
 
         List<PerfumeSimpleInfo> perfumeListResponse = new ArrayList<>();
 
+        Optional<User> user = userRepository.findByUid(uId);
+        long userId = user.get().getId();
         for (int i = 0, size=perfumeList.size(); i < size; i++) {
         	Perfume perfume = perfumeList.get(i);
-        	long perfumeId = perfume.getBrand().getId();
-        	int like = 0;
-//        	if(userPerfumeListRepository.getIdByPidAndUid(perfumeId, userId)!=null) { like=1; }
+        	long perfumeId = perfume.getId();
+        	boolean isLike = false;
+//        	if(UserService.isLikePerfume(userId, perfumeId) != -1) isLike = true;
         	Optional<Brand> brand = brandRepository.getBrandById(perfumeId);
         	if (brand.isPresent()) {
         		String brandName = brand.get().getName();
         		perfumeListResponse.add(PerfumeSimpleInfo.builder().id(perfume.getId())
-    					.name(perfume.getName()).brand(brandName).imgurl(perfume.getImgurl()).like(like).build());
+    					.name(perfume.getName()).brand(brandName).imgurl(perfume.getImgurl()).isLike(isLike).build());
 			} else {
 				return null;
 			}

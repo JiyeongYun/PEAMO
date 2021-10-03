@@ -32,8 +32,8 @@ public class PerfumeController {
 
     // 향수 전체 리스트
     @PostMapping("/list")
-    public ResponseEntity<List<PerfumeSimpleInfo>> getPerfumes(@RequestBody PerfumeListSearch perfumeSearch, @RequestParam int userId, @RequestParam int page) {
-    	List<PerfumeSimpleInfo> response = perfumeService.getPerfumeList(perfumeSearch, userId, page);
+    public ResponseEntity<List<PerfumeSimpleInfo>> getPerfumes(@RequestBody PerfumeListSearch perfumeSearch, @RequestParam String uId, @RequestParam int page) {
+    	List<PerfumeSimpleInfo> response = perfumeService.getPerfumeList(perfumeSearch, uId, page);
     	if (response == null) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
