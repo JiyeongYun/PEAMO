@@ -6,29 +6,31 @@ import Typography from '@mui/material/Typography'
 
 function SearchCard({ key, imgurl, brand, name}) {
   const cardStyle = {
-    width: '340px',
+    width: '18vw',
     height: '500px',
     margin: '10px',
-    display: 'block'
+    display: 'block',
+    border: 'none'
   }
   const imgStyle = {
-    width: '340px',
-    height: '400px'
+    width: '18vw',
+    height: '400px',
+    objectFit: 'contain'
   }
 
   return (
-    <Card style={cardStyle} key={key}>
+    <Card style={cardStyle} variant="outlined" key={key}>
         <CardMedia
           style={imgStyle}
           component="img"
           src={imgurl}
         ></CardMedia>
         <div style={{ whiteSpace: 'nowrap' }}>
-          <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <CardContent sx={{ textAlign: 'center' }}>
             <Typography sx={{ fontSize: 16 }}>
               {brand}
             </Typography>
-            <Typography sx={{ width:'300px', alignItems: 'center', fontSize: 20, overflow: 'hidden', textOverflow: 'ellipsis', background: 'pink' }}>
+            <Typography sx={{ width:'260px', display: 'inline-block', fontSize: 20, overflow: 'hidden', textOverflow: 'ellipsis' }}>
               {name}
             </Typography>
           </CardContent>
