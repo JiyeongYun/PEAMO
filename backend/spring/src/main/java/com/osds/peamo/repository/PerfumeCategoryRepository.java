@@ -8,6 +8,9 @@ import java.util.List;
 
 public interface PerfumeCategoryRepository extends JpaRepository<PerfumeCategory, Long> {
 	
+	@Query(value = "SELECT perfume_id From peamo.api_perfumecategory", nativeQuery = true)
+    List<Long> getAllPerfumeId();
+	
 	@Query(value = "SELECT perfume_id From peamo.api_perfumecategory WHERE category_id in (:categoryIdList)", nativeQuery = true)
     List<Long> getperfumeIdByCategoryId(List<Long> categoryIdList);
     

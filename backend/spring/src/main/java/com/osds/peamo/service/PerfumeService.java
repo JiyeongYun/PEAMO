@@ -45,8 +45,13 @@ public class PerfumeService {
     public List<PerfumeSimpleInfo> getPerfumeList(PerfumeListSearch perfumeListSearch, int page) {
 
         Long category = perfumeListSearch.getCategory();
+        List<Long> perfumeIdList;
+        if (category == 3) {
+			perfumeIdList = perfumeCategoryRepository.getAllPerfumeId();
+		} else {
         List<Long> subCategoryList = getSubCategoryList(category.intValue());
-        List<Long> perfumeIdList = perfumeCategoryRepository.getperfumeIdByCategoryId(subCategoryList);
+        perfumeIdList = perfumeCategoryRepository.getperfumeIdByCategoryId(subCategoryList);
+        }
 
         Page<Perfume> perfumePage = perfumeRepository.getPerfumesByGenderAndIdIn(perfumeListSearch.getGender(), perfumeIdList, PageRequest.of(page, 30, Sort.by("id").descending()));
         List<Perfume> perfumeList = perfumePage.getContent();
