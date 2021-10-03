@@ -9,7 +9,7 @@ function Search () {
   const [items, setItems] = useState([])
   const [axiosGenderData, setAxiosGenderData] = useState(2)
   const [axiosCateData, setAxiosCateData] = useState([4])
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(0)
   const [noMore, setnoMore] = useState(false)
 
   // header 검은색으로 변경
@@ -24,8 +24,11 @@ function Search () {
   }
 
   // search page 들어오자마자 기본 값인 her, all 향수 정보 axios 요청
-  useEffect(() => {
-    if (page !== -1) setnoMore(true)
+  const axiosStart = () => {
+    // if (page !== -1) setnoMore(true)
+    console.log('axpage: ', page)
+    console.log('axgender: ', axiosGenderData)
+    console.log('axcategory: ', axiosCateData)
     axios
       .post(`http://j5a403.p.ssafy.io:8000/perfume/list?page=${page}`, {
           "gender": axiosGenderData,
@@ -41,6 +44,10 @@ function Search () {
       .catch((err) => {
         console.log(err)
       })
+  }
+
+  useEffect(() => {
+    axiosStart()
   }, [page, axiosGenderData, axiosCateData])
   
   const toggleItems = (n, e) => {
@@ -55,8 +62,10 @@ function Search () {
     if (t.classList.contains('gender')) {
       const genders = document.querySelectorAll('.gender')
       setAxiosGenderData(genderNum)
+      setPage(0)
       console.log('gender: ', axiosGenderData)
       console.log('category: ', axiosCateData)
+      console.log('page: ', page)
       genders.forEach(gender => {
         if (gender === t) {
           gender.classList.add("checked")

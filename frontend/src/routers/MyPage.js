@@ -5,10 +5,10 @@ import './MyPage.css';
 import { makeStyles } from '@material-ui/core/styles';
 // components
 // import { logout } from '../components/AuthComponents/authSlice';
-import PerfumeCard from '../components/MyPageComponents/PerfumeCard';
+import PerfumeCard from '../components/MypageComponents/PerfumeCard';
 import Grid from '@material-ui/core/Grid';
 // redux reducer
-import { getMyPerfume } from '../components/MyPageComponents/myPageSlice';
+import { getMyPerfume } from '../components/MypageComponents/MyPageSlice';
 
 const useStyles = makeStyles(() => ({
   root: {
