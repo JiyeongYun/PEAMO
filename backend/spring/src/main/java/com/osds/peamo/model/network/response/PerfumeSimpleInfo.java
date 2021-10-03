@@ -14,9 +14,6 @@ public class PerfumeSimpleInfo {
 	String name;
 	String brand;
 	String imgurl;
-<<<<<<< HEAD
-
-=======
 	int like;
->>>>>>> BE_search
+	
 }
