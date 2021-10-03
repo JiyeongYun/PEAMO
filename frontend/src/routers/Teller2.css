@@ -31,12 +31,12 @@
   margin-right: 30px;
   
 } 
-.teller2 > .teller_2 > .teller_image_2 > .image img {
-  transition: all 0.5s ease;
+.teller2 > .teller_2 > .teller_image_2 > .image{
   filter: grayscale(100%);
+  transition: all 0.5s ease;
 }
 
-.teller2 > .teller_2 > .teller_image_2 > .image img:hover {
+.teller2 > .teller_2 > .teller_image_2 > .image:hover {
   transform: scale(1.1);
   filter: grayscale(0%);
 }
