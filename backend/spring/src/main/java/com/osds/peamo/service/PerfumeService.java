@@ -1,7 +1,6 @@
 package com.osds.peamo.service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -26,6 +25,7 @@ import com.osds.peamo.repository.NoteRepository;
 import com.osds.peamo.repository.PerfumeCategoryRepository;
 import com.osds.peamo.repository.PerfumeNoteRepository;
 import com.osds.peamo.repository.PerfumeRepository;
+import com.osds.peamo.repository.UserPerfumeListRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -40,18 +40,19 @@ public class PerfumeService {
     final private PerfumeNoteRepository perfumeNoteRepository;
     final private NoteRepository noteRepository;
     final private CategorySeasonRepository categorySeasonRepository;
+    final private UserPerfumeListRepository userPerfumeListRepository;
 
     // 향수 간단 정보 반환
-    public List<PerfumeSimpleInfo> getPerfumeList(PerfumeListSearch perfumeListSearch, int page) {
+    public List<PerfumeSimpleInfo> getPerfumeList(PerfumeListSearch perfumeListSearch, int userId, int page) {
 
         Long category = perfumeListSearch.getCategory();
         List<Long> perfumeIdList;
-        if (category == 3) {
+		if (category == 3) {
 			perfumeIdList = perfumeCategoryRepository.getAllPerfumeId();
 		} else {
-        List<Long> subCategoryList = getSubCategoryList(category.intValue());
-        perfumeIdList = perfumeCategoryRepository.getperfumeIdByCategoryId(subCategoryList);
-        }
+			List<Long> subCategoryList = getSubCategoryList(category.intValue());
+			perfumeIdList = perfumeCategoryRepository.getperfumeIdByCategoryId(subCategoryList);
+		}
 
         Page<Perfume> perfumePage = perfumeRepository.getPerfumesByGenderAndIdIn(perfumeListSearch.getGender(), perfumeIdList, PageRequest.of(page, 30, Sort.by("id").descending()));
         List<Perfume> perfumeList = perfumePage.getContent();
@@ -60,11 +61,14 @@ public class PerfumeService {
 
         for (int i = 0, size=perfumeList.size(); i < size; i++) {
         	Perfume perfume = perfumeList.get(i);
-        	Optional<Brand> brand = brandRepository.getBrandById(perfume.getBrand().getId());
+        	long perfumeId = perfume.getBrand().getId();
+        	int like = 0;
+//        	if(userPerfumeListRepository.getIdByPidAndUid(perfumeId, userId)!=null) { like=1; }
+        	Optional<Brand> brand = brandRepository.getBrandById(perfumeId);
         	if (brand.isPresent()) {
         		String brandName = brand.get().getName();
         		perfumeListResponse.add(PerfumeSimpleInfo.builder().id(perfume.getId())
-    					.name(perfume.getName()).brand(brandName).imgurl(perfume.getImgurl()).build());
+    					.name(perfume.getName()).brand(brandName).imgurl(perfume.getImgurl()).like(like).build());
 			} else {
 				return null;
 			}
