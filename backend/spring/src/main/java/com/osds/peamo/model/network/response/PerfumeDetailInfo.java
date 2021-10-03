@@ -1,13 +1,9 @@
 package com.osds.peamo.model.network.response;
 
 import java.util.List;
+import java.util.Set;
 
-import com.osds.peamo.model.entity.Category;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,8 +12,10 @@ import lombok.NoArgsConstructor;
 public class PerfumeDetailInfo {
 	
 	PerfumeSimpleInfo perfumeSimpleInfo;
-	List<Category> categoryList;
+	List<String> categoryNameList;
+	NotesTMB notesTMB;
 	int gender;
-	
+	Set<Long> seasons;
+	int goodCount;
 	
 }
