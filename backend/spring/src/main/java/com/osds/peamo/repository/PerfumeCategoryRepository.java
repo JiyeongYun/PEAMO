@@ -17,4 +17,7 @@ public interface PerfumeCategoryRepository extends JpaRepository<PerfumeCategory
     @Query(value = "SELECT * From peamo.api_perfumecategory WHERE perfume_id = :perfumeId", nativeQuery = true)
     List<PerfumeCategory> getpcListByPerfumeId(long perfumeId);
 
+    @Query(value = "SELECT perfume_id From peamo.api_perfumecategory WHERE category_id = :categoryId ORDER BY rand() LIMIT 1", nativeQuery = true)
+	int getRandomPerfumeIdByCategoryId(Long categoryId);
+
 }

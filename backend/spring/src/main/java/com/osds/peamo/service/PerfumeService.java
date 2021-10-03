@@ -1,6 +1,7 @@
 package com.osds.peamo.service;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -131,5 +132,30 @@ public class PerfumeService {
 		}
         return notesTMB;
     }
+
+    // 이달의 향수 리스트 반환
+	public List<PerfumeSimpleInfo> getMonthPerfume() {
+		
+		int season = getSeason();
+		List<Long> categoryIds = categorySeasonRepository.getCategoryIdBySeasonId(season); //시즌에 해당하는 카테고리 아이디들
+		int listSize = categoryIds.size();
+		Long categoryId = categoryIds.get((int)((Math.random()*listSize)));
+		int perfumeId = perfumeCategoryRepository.getRandomPerfumeIdByCategoryId(categoryId);
+		
+		
+		return null;
+	}
+	
+	// 월에 따라 season 반환
+	public int getSeason() {
+		int season;
+		Calendar cal = Calendar.getInstance();
+		int month = cal.get ( cal.MONTH ) + 1 ;
+		if (month == 3 || month == 4 || month == 5) { season=1; }
+		else if (month == 6 || month == 7 || month == 8) { season=2; }
+		else if (month == 9 || month == 10 || month == 11) { season=3; }
+		else { season=4; }
+		return season;
+	}
 
 }

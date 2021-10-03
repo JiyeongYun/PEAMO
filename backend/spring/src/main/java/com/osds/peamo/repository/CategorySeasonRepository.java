@@ -13,5 +13,8 @@ public interface CategorySeasonRepository extends JpaRepository<CategorySeason, 
 
 	@Query(value = "SELECT season_id FROM peamo.api_categoryseason WHERE category_id in (:pCList)", nativeQuery = true)
 	Set<Long> getSeasonIdsByCategoryIds(List<PerfumeCategory> pCList);
+
+	@Query(value = "SELECT category_id FROM peamo.api_categoryseason WHERE season_id = :season)", nativeQuery = true)
+	List<Long> getCategoryIdBySeasonId(int season);
 	
 }
