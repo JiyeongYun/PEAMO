@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { getPerfumeDetail } from '../components/Common/commonSlice';
 // css
 import './MyPage.css';
 import { makeStyles } from '@material-ui/core/styles';
@@ -7,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // import { logout } from '../components/AuthComponents/authSlice';
 import PerfumeCard from '../components/MypageComponents/PerfumeCard';
 import Grid from '@material-ui/core/Grid';
-import PerfumeDetail from '../components/SearchComponents/PerfumeDetail';
+import PerfumeDetail from '../components/Common/PerfumeDetail';
 // redux reducer
 import { getMyPerfume } from '../components/MypageComponents/myPageSlice';
 import { logout } from '../components/AuthComponents/authSlice';
@@ -26,12 +27,24 @@ function Mypage() {
   const classes = useStyles();
   const dispatch = useDispatch();
   const { myPerfume } = useSelector((state) => state.mypage);
+  // 향수 디테일 모달 state
   const [showPerfumeDetail, setShowPerfumeDetail] = useState(false);
 
-  const togglePerfumeDetail = () => {
-    setShowPerfumeDetail(!showPerfumeDetail);
+  // 향수 디테일 모달 열고 닫는 함수
+  const togglePerfumeDetail = (perfumeId) => {
+    if (!showPerfumeDetail) {
+      // 향수 디테일 api 통신
+      dispatch(getPerfumeDetail(perfumeId))
+        .unwrap()
+        .then(() => {
+          setShowPerfumeDetail(!showPerfumeDetail);
+        });
+    } else {
+      setShowPerfumeDetail(!showPerfumeDetail);
+    }
   };
 
+  // 카카오 로그아웃
   const kakaoLogout = () => {
     dispatch(logout())
       .unwrap()
@@ -42,7 +55,7 @@ function Mypage() {
           alert('로그아웃 성공');
         }
       })
-      .catch((err) => {
+      .catch(() => {
         alert('로그아웃 실패');
       });
   };
@@ -64,11 +77,16 @@ function Mypage() {
       <Grid className={classes.root} container spacing={2}>
         {myPerfume &&
           myPerfume.map((perfume) => (
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={3}
+              onClick={() => togglePerfumeDetail(perfume.id)}
+            >
               <PerfumeCard
                 key={`${perfume.id}_${perfume.name}`}
                 perfume={perfume}
-                togglePerfumeDetail={togglePerfumeDetail}
               />
             </Grid>
           ))}

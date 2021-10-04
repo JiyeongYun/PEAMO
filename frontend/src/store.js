@@ -1,12 +1,14 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import AuthReducer from './components/AuthComponents/authSlice';
 import MyPageReducer from './components/MypageComponents/myPageSlice';
-import TellerSlice from './components/TellerComponents/TellerSlice';
+import CommonReducer from './components/Common/commonSlice';
+import TellerReducer from './components/TellerComponents/TellerSlice';
 
 const rootReducer = combineReducers({
   auth: AuthReducer,
   mypage: MyPageReducer,
-  teller: TellerSlice,
+  common: CommonReducer,
+  teller: TellerReducer,
 });
 
 const store = configureStore({
