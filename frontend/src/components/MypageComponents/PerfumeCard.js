@@ -1,5 +1,3 @@
-import { useDispatch } from 'react-redux';
-import { getPerfumeDetail } from '../SearchComponents/searchSlice';
 // style
 import { makeStyles } from '@material-ui/core/styles';
 import './PerfumeCard.css';
@@ -18,9 +16,6 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     textAlign: 'center',
     cursor: 'pointer',
-    // backgroundImage: `url('/images/myperfume.jpg')`,
-    // backgroundSize: '100% 100%',
-    // backgroundRepeat: 'no-repeat',
   },
   title: {
     fontSize: 14,
@@ -30,15 +25,10 @@ const useStyles = makeStyles({
   },
 });
 
-export default function PerfumeCard({ perfume, togglePerfumeDetail }) {
-  const dispatch = useDispatch();
+export default function PerfumeCard({ perfume }) {
   const classes = useStyles();
-  const perfumeDetail = (perfumeId) => {
-    dispatch(getPerfumeDetail(perfumeId));
-    togglePerfumeDetail();
-  };
   return (
-    <Card className={classes.root} onClick={() => perfumeDetail(perfume.id)}>
+    <Card className={classes.root}>
       <CardContent>
         <img className="card_image" src={perfume.imgurl} alt={perfume.name} />
         <Typography
