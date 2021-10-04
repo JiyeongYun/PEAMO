@@ -1,12 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import { useDispatch } from 'react-redux';
 import { login } from '../components/AuthComponents/authSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios'
 
 function Home({ page_num, setIsLoggedIn }) {
+  // state
+  const [monthlyPerfumeList, setMonthlyPerfumeList] = useState([])
+  // state 끝
+
   const dispatch = useDispatch();
   // scroll animation 관련
   window.scrollTo(0, 0);
@@ -54,6 +59,20 @@ function Home({ page_num, setIsLoggedIn }) {
     }
   }, [dispatch, setIsLoggedIn]);
 
+  // 이달의 향수 가져오기
+
+  if (!monthlyPerfumeList.length) {
+    axios.get(
+      'http://j5a403.p.ssafy.io:8000/perfume/thismonth'
+    )
+      .then(res => {
+        if (res.status === 200) {
+          setMonthlyPerfumeList(res.data)
+        };
+      })
+      .catch(err => console.log(err))
+  }
+  // 이달의 향수 가져오기 끝
   return (
     <div className="home">
       <div className="white_canvas">
@@ -76,36 +95,19 @@ function Home({ page_num, setIsLoggedIn }) {
         <div className="center_pos">
           <div className="title scroll">이달의 향수</div>
           <div className="perfumes scroll">
-            <div className="perfume">
-              <img src="/images/lovely.png" alt="perfume" />
-              <div className="perfume_info">
-                <p>Libre</p>
-                <p>Yves Saint Laurent</p>
-              </div>
-              <div className="notes">
-                #Lavender #Mandarin Orange #Jasmine #Musk
-              </div>
-            </div>
-            <div className="perfume">
-              <img src="/images/lovely.png" alt="perfume" />
-              <div className="perfume_info">
-                <p>Libre</p>
-                <p>Yves Saint Laurent</p>
-              </div>
-              <div className="notes">
-                #Lavender #Mandarin Orange #Jasmine #Musk
-              </div>
-            </div>
-            <div className="perfume">
-              <img src="/images/lovely.png" alt="perfume" />
-              <div className="perfume_info">
-                <p>Libre</p>
-                <p>Yves Saint Laurent</p>
-              </div>
-              <div className="notes">
-                #Lavender #Mandarin Orange #Jasmine #Musk
-              </div>
-            </div>
+            {
+              monthlyPerfumeList.length !== 0 && monthlyPerfumeList.map(perfume => {
+                return (
+                  <div key={perfume.id} className="perfume">
+                    <img src={perfume.imgurl} alt={perfume.name} />
+                    <div className="perfume_info">
+                      <p>{perfume.brand}</p>
+                      <p>{perfume.name}</p>
+                    </div>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
       </div>

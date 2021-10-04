@@ -14,7 +14,6 @@ function Teller1 () {
           <Link to={{ pathname: "/teller-2", state: {question: 1}}}>
             <img src="/images/perfumeteller/teller1-1.jpg" alt="teller1-1"></img>
           </Link>
-            <br></br>
           <Link to={{ pathname: "/teller-2", state: {question: 1} }}>
             <span>생기가 넘쳐보이는 달콤한 향</span>
           </Link>
@@ -44,6 +43,9 @@ function Teller1 () {
           </Link>
         </div>
       </div>
+      {/* <div className="tellercon">
+        <Route path="/teller-2" exact={true} component={Teller2}/>
+      </div> */}
     </div>
   )
 }
