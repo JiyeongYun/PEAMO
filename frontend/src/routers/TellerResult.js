@@ -41,7 +41,6 @@ function Result() {
   }
   // axios 요청 보내서 향수 데이터 가져오기 끝
 
-  console.log(perfumeList.length)
   return (
     perfumeList.length !== 0 &&
       <div className="tellerresult">

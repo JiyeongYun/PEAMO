@@ -17,6 +17,7 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  transform: translate(13px);
 }
 
 .tellerresult > .teller_result > .result_question h2 {
@@ -27,27 +28,24 @@
   text-align: center;
 }
 
-.tellerresult > .teller_result > .result_image > .image1 {
-  margin-left: 20px;
-  margin-right: 20px;
+.tellerresult > .teller_result > .result_image > div {
+  width: 300px;
+  margin: 0 50px;
+  text-align: center;
 }
 
 .tellerresult > .teller_result > .result_image > .image2 {
-  margin-left: 20px;
-  margin-right: 20px;
   position: relative;
   top: 50px;
 }
 
 .tellerresult > .teller_result > .result_image > .image3 {
-  margin-left: 20px;
-  margin-right: 20px;
   position: relative;
   top: 80px;
 }
 
 .tellerresult > .teller_result > .result_image img {
-  width: 100%;
+  width: 200px;
   object-fit: contain;
 }
 
@@ -66,4 +64,10 @@
   margin: 10px auto 0;
   display: flex;
   justify-content: center;
+  width: 1200px;
+}
+
+.tellerresult > .teller_result > .result_123 > img {
+  width: 100%;
+  object-position: center;
 }
