@@ -28,4 +28,14 @@
 .teller3 > .teller_3 > .teller_answer_3 a {
   font-size: var(--xlarge-font-size);
   color: black;
+  display: block;
+  margin: 0 auto 20px;
+  width: fit-content;
+  color: var(--grey);
+  transition: color 0.5s;
+}
+
+.teller3 > .teller_3 > .teller_answer_3 a:hover {
+  font-weight: bold;
+  color: black;
 }

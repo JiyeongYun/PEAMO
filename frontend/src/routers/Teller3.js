@@ -23,11 +23,11 @@ function Teller3() {
         </div>
         <div className="teller_answer_3">
           <span><Link to="/teller-4" onClick={() => onClick(1)}>싱그러운</Link></span>
-          <br></br>
+          {/* <br></br> */}
           <span><Link to="/teller-4" onClick={() => onClick(3)}>부드러운</Link></span>
-          <br></br>
+          {/* <br></br> */}
           <span><Link to="/teller-4" onClick={() => onClick(2)}>사랑스러운</Link></span>
-          <br></br>
+          {/* <br></br> */}
           <span><Link to="/teller-4" onClick={() => onClick(8)}>도시적인</Link></span>
         </div>
       </div>
