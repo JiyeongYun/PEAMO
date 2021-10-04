@@ -17,9 +17,16 @@ export const getPerfumeDetail = createAsyncThunk(
   }
 );
 
-const searchSlice = createSlice({
-  name: 'search',
-  initialState: {},
+const commonSlice = createSlice({
+  name: 'common',
+  initialState: {
+    currentPerfume: {},
+  },
+  extraReducers: {
+    [getPerfumeDetail.fulfilled]: (state, action) => {
+      state.currentPerfume = action.payload.data;
+    },
+  },
 });
 
-export default searchSlice.reducer;
+export default commonSlice.reducer;
