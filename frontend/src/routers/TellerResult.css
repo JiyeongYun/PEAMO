@@ -16,7 +16,7 @@
   width: 90%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .tellerresult > .teller_result > .result_question h2 {
@@ -44,6 +44,11 @@
   margin-right: 20px;
   position: relative;
   top: 80px;
+}
+
+.tellerresult > .teller_result > .result_image img {
+  width: 100%;
+  object-fit: contain;
 }
 
 .tellerresult > .teller_result > .result_image p:nth-child(1) {
