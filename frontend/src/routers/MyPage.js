@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import PerfumeDetail from '../components/SearchComponents/PerfumeDetail';
 // redux reducer
 import { getMyPerfume } from '../components/MyPageComponents/myPageSlice';
+import { logout } from '../components/AuthComponents/authSlice';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -28,6 +29,21 @@ function Mypage() {
 
   const togglePerfumeDetail = () => {
     setShowPerfumeDetail(!showPerfumeDetail);
+  };
+
+  const kakaoLogout = () => {
+    dispatch(logout())
+      .unwrap()
+      .then((res) => {
+        if (res.status === 200) {
+          localStorage.removeItem('token');
+          localStorage.removeItem('userId');
+          alert('로그아웃 성공');
+        }
+      })
+      .catch((err) => {
+        alert('로그아웃 실패');
+      });
   };
 
   // header 검은색으로 변경
@@ -56,7 +72,9 @@ function Mypage() {
             </Grid>
           ))}
       </Grid>
-      <button className="logout_button">logout</button>
+      <button className="logout_button" onClick={() => kakaoLogout()}>
+        logout
+      </button>
     </div>
   );
 }
