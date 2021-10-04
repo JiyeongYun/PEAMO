@@ -16,12 +16,18 @@ function Teller2({ location }) {
   // Teller1에서 받아온 props
   const question = location.state.question;
 
+  
+  // 사진 혹은 text 클릭 시 localStrage에 저장
+  const onClick = (cat) => {
+    localStorage.setItem('mainCategory', cat)
+  }
+
   return (
     <div className="teller2">
-      {question === 1 && <Teller21></Teller21>}
-      {question === 2 && <Teller22></Teller22>}
-      {question === 3 && <Teller23></Teller23>}
-      {question === 4 && <Teller24></Teller24>}
+      {question === 1 && <Teller21 onClick={onClick}></Teller21>}
+      {question === 2 && <Teller22 onClick={onClick}></Teller22>}
+      {question === 3 && <Teller23 onClick={onClick}></Teller23>}
+      {question === 4 && <Teller24 onClick={onClick}></Teller24>}
     </div>
   );
 }
