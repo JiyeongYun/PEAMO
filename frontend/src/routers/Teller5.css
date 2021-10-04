@@ -29,11 +29,8 @@
 .teller5 > .teller_5 > .teller_image_5 > .image {
   margin: 0 30px;
   width: 20vw;
-}
-
-.teller5 > .teller_5 > .teller_image_5 > .image {
   filter: grayscale(100%);
-  width: 100%;
+  transition: all 0.5s;
 }
 
 .teller5 > .teller_5 > .teller_image_5 > .image:hover {
