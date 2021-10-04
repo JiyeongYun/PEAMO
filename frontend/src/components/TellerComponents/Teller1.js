@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 // import Teller from './routers/Teller'
 // import Teller2 from '../../routers/Teller2'
 
-
 function Teller1 () {
+
   return (
     <div className="teller1">
       <div className="teller_question_1">
@@ -11,7 +11,7 @@ function Teller1 () {
       </div>
       <div className="teller_image_1">
         <div className="image">
-          <Link to={{ pathname: "/teller-2", state: {question: 1} }}>
+          <Link to={{ pathname: "/teller-2", state: {question: 1}}}>
             <img src="/images/perfumeteller/teller1-1.jpg" alt="teller1-1"></img>
           </Link>
           <Link to={{ pathname: "/teller-2", state: {question: 1} }}>
