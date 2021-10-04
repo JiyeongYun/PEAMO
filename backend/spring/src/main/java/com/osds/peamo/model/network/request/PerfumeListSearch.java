@@ -9,7 +9,7 @@ import lombok.*;
 public class PerfumeListSearch {
 
     int gender;
-    long category;
+    int category;
     String uid;
 
 }
