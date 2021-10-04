@@ -18,9 +18,9 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     textAlign: 'center',
     cursor: 'pointer',
-    backgroundImage: `url('/images/myperfume.jpg')`,
-    backgroundSize: '100% 100%',
-    backgroundRepeat: 'no-repeat',
+    // backgroundImage: `url('/images/myperfume.jpg')`,
+    // backgroundSize: '100% 100%',
+    // backgroundRepeat: 'no-repeat',
   },
   title: {
     fontSize: 14,

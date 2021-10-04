@@ -18,9 +18,7 @@ function PerfumeDetail({ togglePerfumeDetail }) {
               src="/images/perfume_hermes.jpeg"
               className="detail_info1_image"
               alt="perfumeImage"
-            >
-              image
-            </img>
+            />
             <div>Name Le Jardin de Monsieur Li</div>
             <div>Brand Hermes</div>
           </div>
