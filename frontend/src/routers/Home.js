@@ -46,6 +46,7 @@ function Home({ page_num, setIsLoggedIn }) {
     let code = new URL(window.location.href).searchParams.get('code');
     if (code) {
       dispatch(login(code))
+        .unwrap()
         .then(({ payload }) => {
           if (payload.status === 200) {
             setIsLoggedIn(true);
@@ -84,7 +85,11 @@ function Home({ page_num, setIsLoggedIn }) {
             </Link>
           </div>
         </div>
-        <FontAwesomeIcon className="down_icon" icon={faAngleDoubleDown} size="3x" />
+        <FontAwesomeIcon
+          className="down_icon"
+          icon={faAngleDoubleDown}
+          size="3x"
+        />
       </div>
       <div className="this_month_perfume">
         <div className="center_pos">

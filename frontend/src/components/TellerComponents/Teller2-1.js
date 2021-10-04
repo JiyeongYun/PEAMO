@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function Teller21 ({onClick}) {
 
@@ -42,7 +42,7 @@ function Teller21 ({onClick}) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Teller21
+export default Teller21;
