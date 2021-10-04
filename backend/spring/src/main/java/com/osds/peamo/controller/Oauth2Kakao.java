@@ -33,7 +33,7 @@ public class Oauth2Kakao {
 
     private String kakaoOauth2ClinetId;
 
-    private final String frontendRedirectUrl = "http://localhost:3000";
+    private final String frontendRedirectUrl = "http://j5a403.p.ssafy.io:3000";
 
     /**
      * 인가코드로 권한 받아오기
