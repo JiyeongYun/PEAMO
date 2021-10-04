@@ -1,61 +1,64 @@
 .tellerresult {
-    height: 100vh;
-    width: 100vw;
-  }
-    
-  .tellerresult > .teller_result {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%);
-  }
-  
-  .tellerresult > .teller_result > .result_image {
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 120px;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .tellerresult > .teller_result > .result_question h2{
-    margin-top: var(--margin-4);
-    margin-bottom: var(--margin-6);
-    font-size: 2rem;
-    font-weight: 500;
-    text-align: center;
-  }
-  
-  .tellerresult > .teller_result > .result_image > .image1 {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+  height: 100vh;
+  width: 100vw;
+}
 
-  .tellerresult > .teller_result > .result_image > .image2 {
-    margin-left: 20px;
-    margin-right: 20px;
-    position: relative;
-    top: 60px;
-  } 
+.tellerresult > .teller_result {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  height: 80vh;
+  overflow: hidden;
+}
 
-  .tellerresult > .teller_result > .result_image > .image3 {
-    margin-left: 20px;
-    margin-right: 20px;
-    position: relative;
-    top: 90px;
-  } 
-  
-  .tellerresult > .teller_result > .result_image p {
-    font-size: var(--large-font-size);
-    margin-top: var(--margin-4);
-    text-align: center;
-    color: black;
-  }
+.tellerresult > .teller_result > .result_image {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
 
-  .tellerresult > .teller_result > .result_123 {
-    width: 60%;
-    margin: 0 auto;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-  }
+.tellerresult > .teller_result > .result_question h2 {
+  margin-top: var(--margin-4);
+  margin-bottom: var(--margin-6);
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.tellerresult > .teller_result > .result_image > .image1 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.tellerresult > .teller_result > .result_image > .image2 {
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  top: 50px;
+}
+
+.tellerresult > .teller_result > .result_image > .image3 {
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  top: 80px;
+}
+
+.tellerresult > .teller_result > .result_image p:nth-child(1) {
+  font-size: var(--main-font-size);
+}
+
+.tellerresult > .teller_result > .result_image p {
+  font-size: var(--large-font-size);
+  margin-top: var(--margin-2);
+  text-align: center;
+  color: black;
+}
+
+.tellerresult > .teller_result > .result_123 {
+  margin: 10px auto 0;
+  display: flex;
+  justify-content: center;
+}

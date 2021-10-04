@@ -22,8 +22,8 @@ function Result() {
               <img src="/images/perfume_byredo.jpeg" alt="byredo"></img>
             </Link>
             <Link to="/teller-result">
-              <p>Bal d'Afrique</p>
               <p>Byredo</p>
+              <p>Bal d'Afrique</p>
             </Link>
           </div>
           <div className="image1">
@@ -31,8 +31,8 @@ function Result() {
               <img src="/images/perfume_jomalone.jpeg" alt="chloe"></img>
             </Link>
             <Link to="/teller-result">
-              <p>Chloe(new)</p>
               <p>Chloe</p>
+              <p>Chloe(new)</p>
             </Link>
           </div>
           <div className="image3">
@@ -40,8 +40,8 @@ function Result() {
               <img src="/images/perfume_hermes.jpeg" alt="giorgio"></img>
             </Link>
             <Link to="/teller-result">
-              <p>Un Jardin en Mediterranee</p>
               <p>Hermes</p>
+              <p>Un Jardin en Mediterranee</p>
             </Link>
           </div>
         </div>
