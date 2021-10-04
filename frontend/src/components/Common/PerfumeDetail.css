@@ -1,0 +1,64 @@
+.perfume_detail_container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 20;
+  top: 0;
+}
+
+.perfume_detail_box {
+  background-color: rgba(255, 255, 255, 1);
+  width: 80%;
+  height: 80%;
+  border-radius: 20px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close_icon {
+  cursor: pointer;
+  position: absolute;
+  right: 1.5%;
+  top: 2%;
+  opacity: 0.5;
+}
+
+.close_icon:hover{
+  opacity:1;
+}
+
+
+.detail_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail_info1 {
+  position: relative;
+  left: 50%;
+}
+
+.detail_info1_title {
+  color: #C8C8C8;
+}
+
+.detail_info2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail_info2_seasons img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+}
