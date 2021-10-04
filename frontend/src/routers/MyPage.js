@@ -1,12 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // css
 import './MyPage.css';
 import { makeStyles } from '@material-ui/core/styles';
 // components
-// import { logout } from '../components/AuthComponents/authSlice';
 import PerfumeCard from '../components/MyPageComponents/PerfumeCard';
 import Grid from '@material-ui/core/Grid';
+import PerfumeDetail from '../components/SearchComponents/PerfumeDetail';
 // redux reducer
 import { getMyPerfume } from '../components/MyPageComponents/myPageSlice';
 
@@ -24,9 +24,10 @@ function Mypage() {
   const classes = useStyles();
   const dispatch = useDispatch();
   const { myPerfume } = useSelector((state) => state.mypage);
+  const [showPerfumeDetail, setShowPerfumeDetail] = useState(false);
 
-  const kakaoLogout = () => {
-    console.log(myPerfume);
+  const togglePerfumeDetail = () => {
+    setShowPerfumeDetail(!showPerfumeDetail);
   };
 
   // header 검은색으로 변경
@@ -39,21 +40,23 @@ function Mypage() {
 
   return (
     <div className="mypage">
+      {showPerfumeDetail && (
+        <PerfumeDetail togglePerfumeDetail={togglePerfumeDetail} />
+      )}
       <p className="mypage_title">나의 향수함</p>
       <Grid className={classes.root} container spacing={2}>
         {myPerfume &&
           myPerfume.map((perfume) => (
-            <Grid item xs={12} sm={6} md={3} spacing={3}>
+            <Grid item xs={12} sm={6} md={3}>
               <PerfumeCard
                 key={`${perfume.id}_${perfume.name}`}
                 perfume={perfume}
+                togglePerfumeDetail={togglePerfumeDetail}
               />
             </Grid>
           ))}
       </Grid>
-      <button className="logout_button" onClick={() => kakaoLogout()}>
-        logoutwdwd
-      </button>
+      <button className="logout_button">logout</button>
     </div>
   );
 }
