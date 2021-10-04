@@ -12,7 +12,7 @@ function Teller23 () {
           <img src="/images/perfumeteller/teller2-3-1.jpg" alt="teller2-3-1"></img>
         </Link>
         <Link to="/teller-3">    
-          <p>무성한 나무 사이 흙길</p>
+          <span>무성한 나무 사이 흙길</span>
         </Link>  
         </div>
         <div className="image">
@@ -20,7 +20,7 @@ function Teller23 () {
           <img src="/images/perfumeteller/teller2-3-2.jpg" alt="teller2-3-2"></img>
         </Link>
         <Link to="/teller-3">    
-          <p>바람에 흔들리는 들판의 싱그러움</p>
+          <span>바람에 흔들리는 들판의 싱그러움</span>
         </Link>
         </div>
       </div>

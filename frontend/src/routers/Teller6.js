@@ -17,15 +17,11 @@ function Teller6() {
           <h2>향수를 사용하는 사람은 누구인가요?</h2>
         </div>
         <div className="teller_answer_6">
-          <Link to="/teller-result">
-            <p>남성</p>
-          </Link>
-          <Link to="/teller-result">
-            <p>여성</p>
-          </Link>
-          <Link to="/teller-result">
-            <p>남녀겸용</p>
-          </Link>
+        <span><Link to="/teller-result">남성</Link></span>
+        <br></br>
+        <span><Link to="/teller-result">여성</Link></span>
+        <br></br>
+        <span><Link to="/teller-result">남녀겸용</Link></span>  
         </div>
       </div>
     </div>

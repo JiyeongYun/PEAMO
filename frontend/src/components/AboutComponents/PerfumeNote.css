@@ -13,12 +13,12 @@
 }
 
 .note > .note_img > img {
-  width: 30vw;
+  width: 23vw;
   object-fit: contain;
 }
 
 .note > .note_word {
-  width: 50vw;
+  width: 40vw;
   display: flex;
   justify-content: center;
   text-align: center;

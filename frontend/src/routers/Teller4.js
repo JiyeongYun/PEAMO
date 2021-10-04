@@ -25,7 +25,7 @@ function Teller4() {
               ></img>
             </Link>
             <Link to="/teller-5">
-              <p>Vanilla</p>
+              <span>Vanilla</span>
             </Link>
           </div>
           <div className="image">
@@ -36,7 +36,7 @@ function Teller4() {
               ></img>
             </Link>
             <Link to="/teller-5">
-              <p>Woody</p>
+              <span>Woody</span>
             </Link>
           </div>
           <div className="image">
@@ -47,7 +47,7 @@ function Teller4() {
               ></img>
             </Link>
             <Link to="/teller-5">
-              <p>Spices</p>
+              <span>Spices</span>
             </Link>
           </div>
         </div>
@@ -60,7 +60,7 @@ function Teller4() {
               ></img>
             </Link>
             <Link to="/teller-5">
-              <p>Musk</p>
+              <span>Musk</span>
             </Link>
           </div>
           <div className="image">
@@ -71,7 +71,7 @@ function Teller4() {
               ></img>
             </Link>
             <Link to="/teller-5">
-              <p>Fruits</p>
+              <span>Fruits</span>
             </Link>
           </div>
           <div className="image">
@@ -82,7 +82,7 @@ function Teller4() {
               ></img>
             </Link>
             <Link to="/teller-5">
-              <p>Nothing</p>
+              <span>Nothing</span>
             </Link>
           </div>
         </div>

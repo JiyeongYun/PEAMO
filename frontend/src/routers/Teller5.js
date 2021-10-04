@@ -21,32 +21,36 @@ function Teller5() {
             <Link to="/teller-6">
               <img src="/images/spring.png" alt="spring"></img>
             </Link>
+            <br></br>
             <Link to="/teller-6">
-              <p>봄</p>
+              <span>봄</span>
             </Link>
           </div>
           <div className="image">
             <Link to="/teller-6">
               <img src="/images/summer.png" alt="summer"></img>
             </Link>
+            <br></br>
             <Link to="/teller-6">
-              <p>여름</p>
+              <span>여름</span>
             </Link>
           </div>
           <div className="image">
             <Link to="/teller-6">
               <img src="/images/fall.png" alt="fall"></img>
             </Link>
+            <br></br>
             <Link to="/teller-6">
-              <p>가을</p>
+              <span>가을</span>
             </Link>
           </div>
           <div className="image">
             <Link to="/teller-6">
               <img src="/images/winter.png" alt="winter"></img>
             </Link>
+            <br></br>
             <Link to="/teller-6">
-              <p>겨울</p>
+              <span>겨울</span>
             </Link>
           </div>
         </div>

@@ -5,7 +5,7 @@
 
 .teller3 > .teller_3 {
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%);
 }
@@ -20,11 +20,12 @@
 .teller3 > .teller_3 > .teller_answer_3 {
   position: relative;
   top: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.teller3 > .teller_3 > .teller_answer_3 p {
+.teller3 > .teller_3 > .teller_answer_3 a {
   font-size: var(--xlarge-font-size);
-  margin-top: var(--margin-4);
-  text-align: center;
   color: black;
 }

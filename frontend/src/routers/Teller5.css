@@ -29,22 +29,22 @@
 .teller5 > .teller_5 > .teller_image_5 > .image {
   margin: 0 30px;
   width: 20vw;
+  text-align: center;
 }
 
-.teller5 > .teller_5 > .teller_image_5 > .image {
+.teller5 > .teller_5 > .teller_image_5 > .image img {
+  transition: all 0.5s ease;
   filter: grayscale(100%);
-  width: 100%;
 }
 
-.teller5 > .teller_5 > .teller_image_5 > .image:hover {
+.teller5 > .teller_5 > .teller_image_5 > .image img:hover {
   transform: scale(1.1);
-
   filter: grayscale(0%);
 }
 
-.teller5 > .teller_5 > .teller_image_5 p {
+.teller5 > .teller_5 > .teller_image_5 span {
   font-size: var(--large-font-size);
-  margin-top: var(--margin-4);
-  text-align: center;
+  position: relative;
+  top: 20px;
   color: black;
 }

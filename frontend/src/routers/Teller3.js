@@ -17,18 +17,13 @@ function Teller3() {
           <h2>좋아하는 분위기의 단어는 무엇인가요?</h2>
         </div>
         <div className="teller_answer_3">
-          <Link to="/teller-4">
-            <p>싱그러운</p>
-          </Link>
-          <Link to="/teller-4">
-            <p>부드러운</p>
-          </Link>
-          <Link to="/teller-4">
-            <p>사랑스러운</p>
-          </Link>
-          <Link to="/teller-4">
-            <p>도시적인</p>
-          </Link>
+          <span><Link to="/teller-4">싱그러운</Link></span>
+          <br></br>
+          <span><Link to="/teller-4">부드러운</Link></span>
+          <br></br>
+          <span><Link to="/teller-4">사랑스러운</Link></span>
+          <br></br>
+          <span><Link to="/teller-4">도시적인</Link></span>
         </div>
       </div>
     </div>
