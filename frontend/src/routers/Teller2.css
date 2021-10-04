@@ -34,7 +34,7 @@
   text-align: center;
 }
 
-.teller2 > .teller_2 > .teller_image_2 > .image:hover {
+.teller2 > .teller_2 > .teller_image_2 > .image:hover img {
   transform: scale(1.1);
   filter: grayscale(0%);
 }

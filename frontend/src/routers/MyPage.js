@@ -52,7 +52,7 @@ function Mypage() {
           ))}
       </Grid>
       <button className="logout_button" onClick={() => kakaoLogout()}>
-        logoutwdwd
+        로그아웃
       </button>
     </div>
   );
