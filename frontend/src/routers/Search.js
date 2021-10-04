@@ -94,8 +94,8 @@ function Search () {
       <div className="sex_category">
         <ul>
           <li className="checked gender" onClick={(e) => {toggleItems(2, e)}}>#For Her</li>
-          <li className="gender" onClick={(e) => {toggleItems(0, e)}}>#For Unisex</li>
           <li className="gender" onClick={(e) => {toggleItems(1, e)}}>#For Him</li>
+          <li className="gender" onClick={(e) => { toggleItems(0, e) }}>#For Unisex</li>
         </ul>
       </div>
       <div className="note_category">
