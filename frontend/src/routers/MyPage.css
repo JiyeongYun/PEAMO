@@ -12,6 +12,7 @@
 }
 
 .mypage_title {
+  margin-top: var(--margin-3);
   top: 10%;
   font-size: var(--xxlarge-font-size);
 }
