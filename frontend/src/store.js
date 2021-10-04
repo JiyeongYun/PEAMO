@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import AuthReducer from './components/AuthComponents/authSlice';
-import MyPageReducer from './components/MypageComponents/MyPageSlice';
+import MyPageReducer from './components/MypageComponents/myPageSlice';
 import TellerSlice from './components/TellerComponents/TellerSlice';
 
 const rootReducer = combineReducers({
