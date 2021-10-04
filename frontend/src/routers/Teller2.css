@@ -29,11 +29,9 @@
 .teller2 > .teller_2 > .teller_image_2 > .image {
   margin: 0 30px;
   width: 20%;
-}
-.teller2 > .teller_2 > .teller_image_2 > .image img {
-  filter: grayscale(100%);
   transition: all 0.5s ease;
-  width: 100%;
+  filter: grayscale(100%);
+  text-align: center;
 }
 
 .teller2 > .teller_2 > .teller_image_2 > .image:hover img {
@@ -41,9 +39,9 @@
   filter: grayscale(0%);
 }
 
-.teller2 > .teller_2 > .teller_image_2 p {
+.teller2 > .teller_2 > .teller_image_2 span {
   font-size: var(--large-font-size);
-  margin-top: var(--margin-4);
-  text-align: center;
+  position: relative;
+  top: 30px;
   color: black;
 }
