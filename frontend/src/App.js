@@ -104,7 +104,7 @@ function App() {
         <p className="slogan">Find Your Color, PE' AMO</p>
         <div className="team">
           <p>Team OSDS</p>
-          <p>Name: 오순도순 | FE: 권오우, 서예리 | BE: 윤지영, 장현웅</p>
+          <p>Name: 오순도순 | FE: 권오우, 송상민, 서예리 | BE: 신지수, 윤지영, 장현웅</p>
         </div>
         <div className="company">
           <div className="left">
