@@ -36,7 +36,7 @@
   width: 100%;
 }
 
-.teller2 > .teller_2 > .teller_image_2 > .image img:hover {
+.teller2 > .teller_2 > .teller_image_2 > .image:hover {
   transform: scale(1.1);
   filter: grayscale(0%);
 }
