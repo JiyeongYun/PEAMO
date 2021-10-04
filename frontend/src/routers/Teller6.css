@@ -20,11 +20,12 @@
 .teller6 > .teller_6 > .teller_answer_6 {
   position: relative;
   top: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.teller6 > .teller_6 > .teller_answer_6 p {
+.teller6 > .teller_6 > .teller_answer_6 a {
   font-size: var(--xlarge-font-size);
-  margin-top: var(--margin-4);
-  text-align: center;
   color: black;
 }

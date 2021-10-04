@@ -12,7 +12,7 @@ function Teller21 () {
           <img src="/images/perfumeteller/teller2-1-1.jpg" alt="teller2-1-1"></img>
         </Link>
         <Link to="/teller-3">
-          <p>톡톡 튀는 상쾌함</p>
+          <span>톡톡 튀는 상쾌함</span>
         </Link>
         </div>
         <div className="image">
@@ -20,7 +20,7 @@ function Teller21 () {
           <img src="/images/perfumeteller/teller2-1-2.jpg" alt="teller2-1-2"></img>
         </Link>  
         <Link to="/teller-3">
-          <p>부담스럽지 않은 달콤함</p>
+          <span>부담스럽지 않은 달콤함</span>
         </Link>  
         </div>
         <div className="image">
@@ -28,7 +28,7 @@ function Teller21 () {
           <img src="/images/perfumeteller/teller2-1-3.jpg" alt="teller2-1-3"></img>
         </Link>
         <Link to="/teller-3">  
-          <p>시원한 음료의 달콤함</p>
+          <span>시원한 음료의 달콤함</span>
         </Link>  
         </div>
         <div className="image">
@@ -36,7 +36,7 @@ function Teller21 () {
           <img src="/images/perfumeteller/teller2-1-4.jpg" alt="teller2-1-4"></img>
         </Link>
         <Link to="/teller-3">  
-          <p>바닐라, 꿀과 같은 진득한 달콤함</p>
+          <span>바닐라, 꿀과 같은 진득한 달콤함</span>
         </Link>  
         </div>
       </div>

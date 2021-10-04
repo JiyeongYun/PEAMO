@@ -12,7 +12,7 @@ function Teller24 () {
           <img src="/images/perfumeteller/teller2-4-1.jpg" alt="teller2-4-1"></img>
         </Link>  
         <Link to="/teller-3">  
-          <p>자상하게 안아주는 듯한 살 내음</p>
+          <span>자상하게 안아주는 듯한 살 내음</span>
         </Link>  
         </div>
         <div className="image">
@@ -20,7 +20,7 @@ function Teller24 () {
           <img src="/images/perfumeteller/teller2-4-2.png" alt="teller2-4-2"></img>
         </Link>
         <Link to="/teller-3">    
-          <p>자극적이고 관능적인 인상을 주는 향</p>
+          <span>자극적이고 관능적인 인상을 주는 향</span>
         </Link>
         </div>
       </div>

@@ -5,7 +5,7 @@
 
 .teller4 > .teller_4 {
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%);
 }
@@ -20,7 +20,7 @@
 .teller4 > .teller_4 > .teller_image_42 {
   width: 90vw;
   margin: 0 auto;
-  /* margin-top: 10px; */
+  margin-top: 40px;
   display: flex;
   justify-content: center;
 }
@@ -36,6 +36,7 @@
 .teller4 > .teller_4 > .teller_image_41 > .image {
   margin: 0 30px;
   width: 20vw;
+  text-align: center;
 }
 
 .teller4 > .teller_4 > .teller_image_41 > .image img {
@@ -44,22 +45,22 @@
   width: 100%;
 }
 
-.teller4 > .teller_4 > .teller_image_41 > .image:hover img {
-  transform: scale(1.1);
+.teller4 > .teller_4 > .teller_image_41 > .image img:hover {
   filter: grayscale(0%);
+  transform: scale(1.1);
 }
 
-.teller4 > .teller_4 > .teller_image_41 p {
+.teller4 > .teller_4 > .teller_image_41 span {
   font-size: var(--large-font-size);
-  margin-top: var(--margin-1);
-  margin-bottom: var(--margin-3);
-  text-align: center;
+  position: relative;
+  top: 20px;
   color: black;
 }
 
 .teller4 > .teller_4 > .teller_image_42 > .image {
   margin: 0 30px;
   width: 20vw;
+  text-align: center;
 }
 
 .teller4 > .teller_4 > .teller_image_42 > .image img {
@@ -73,9 +74,9 @@
   transform: scale(1.1);
 }
 
-.teller4 > .teller_4 > .teller_image_42 p {
+.teller4 > .teller_4 > .teller_image_42 span {
   font-size: var(--large-font-size);
-  margin-top: var(--margin-1);
-  text-align: center;
+  position: relative;
+  top: 20px;
   color: black;
 }
