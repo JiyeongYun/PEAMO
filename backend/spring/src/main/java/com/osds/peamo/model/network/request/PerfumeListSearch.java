@@ -2,8 +2,6 @@ package com.osds.peamo.model.network.request;
 
 import lombok.*;
 
-import java.util.List;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -11,6 +9,7 @@ import java.util.List;
 public class PerfumeListSearch {
 
     int gender;
-    List<Long> categoryList;
+    long category;
+    String uid;
 
 }

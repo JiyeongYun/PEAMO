@@ -15,7 +15,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -26,17 +25,10 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserService {
 
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private PerfumeRepository perfumeRepository;
-
-    @Autowired
-    private UserPerfumeListRepository userPerfumeListRepository;
-
-
-    private final Oauth2Kakao oauth2Kakao;
+    final private UserRepository userRepository;
+    final private PerfumeRepository perfumeRepository;
+    final private UserPerfumeListRepository userPerfumeListRepository;
+    final private Oauth2Kakao oauth2Kakao;
 
     /**
      * 카카오 인증 메서드
@@ -65,32 +57,33 @@ public class UserService {
     /**
      * 카카오 로그아웃
      */
-    public boolean kakaoLogout(String accessToken){
+    public boolean kakaoLogout(String accessToken) {
         int responseCode = oauth2Kakao.kakaoLogout(accessToken);
-        if(responseCode == 200){
+        if (responseCode == 200) {
             return true;
-        } return false;
+        }
+        return false;
     }
 
     /**
      * 향수 좋아요 및 좋아요 취소 메서드
      */
-    public void likePerfume(String uid, long perfumeId){
+    public void likePerfume(String uid, long perfumeId) {
 
         // uid값으로 user 정보 가져오기
-        Optional<User> user = this.userRepository.findByUid(uid);
+        Optional<User> user = this.userRepository.findUserByUid(uid);
 
-        if(user.isPresent()){
+        if (user.isPresent()) {
             long userId = user.get().getId();
             Perfume perfume = this.perfumeRepository.getPerfumeById(perfumeId);
 
             long userPerfumeId = isLikePerfume(userId, perfumeId);
-            if(userPerfumeId != -1){   // 유저가 해당 향수를 좋아요한 경우
+            if (userPerfumeId != -1) {   // 유저가 해당 향수를 좋아요한 경우
                 // remove
                 this.userPerfumeListRepository.deleteById(userPerfumeId);
-                if(perfume.getGoodCnt() > 0)
+                if (perfume.getGoodCnt() > 0)
                     perfume.setGoodCnt(perfume.getGoodCnt() - 1);
-            } else{
+            } else {
                 // add
                 this.userPerfumeListRepository.save(UserPerfumeList.builder().perfumeId(perfumeId).userId(userId).build());
                 perfume.setGoodCnt(perfume.getGoodCnt() + 1);
@@ -102,9 +95,9 @@ public class UserService {
     /**
      * 유저가 해당 향수를 좋아요했는지에 대한 여부를 반환해주는 메서드
      */
-    public long isLikePerfume(long userId, long perfumeId){
+    public long isLikePerfume(long userId, long perfumeId) {
         Optional<UserPerfumeList> userPerfumeList = this.userPerfumeListRepository.getUserPerfumeListByPerfumeIdAndUserId(perfumeId, userId);
-        if(userPerfumeList.isPresent())     // 좋아요 O
+        if (userPerfumeList.isPresent())     // 좋아요 O
             return userPerfumeList.get().getId();
         return -1;                          // 좋아요 X
     }
@@ -113,22 +106,22 @@ public class UserService {
     /**
      * 마이페이지 정보 가져오기
      */
-    public MyPageResponse getUserInfo(String id){
+    public MyPageResponse getUserInfo(String id) {
 
         // uid값으로 user 정보 가져오기
-        Optional<User> user = userRepository.findByUid(id);
+        Optional<User> user = userRepository.findUserByUid(id);
 
         // user 정보가 존재하는 경우 유저가 좋아요한 향수 정보 가져오기
-        if(user.isPresent()){
+        if (user.isPresent()) {
 
             String uid = user.get().getUid();
             String name = user.get().getName();
             ArrayList<UserPerfumeList> userPerfumeList = userPerfumeListRepository.getUserPerfumeListsByUserId(user.get().getId());
             ArrayList<Perfume> perfumeList = new ArrayList<>();
 
-            for(UserPerfumeList obj : userPerfumeList){
+            for (UserPerfumeList obj : userPerfumeList) {
                 Perfume perfume = perfumeRepository.getPerfumeById(obj.getPerfumeId());
-                if(perfume != null)
+                if (perfume != null)
                     perfumeList.add(perfume);
             }
 
@@ -165,7 +158,7 @@ public class UserService {
      * 최초로그인 확인 메서드
      */
     private boolean isInitialLogin(String uid) {
-        Optional<User> user = this.userRepository.findByUid(uid);
+        Optional<User> user = this.userRepository.findUserByUid(uid);
         return !user.isPresent();
     }
 

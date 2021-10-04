@@ -38,13 +38,12 @@
   width: 20vw;
 }
 
-.teller4 > .teller_4 > .teller_image_41 > .image img {
-  transition: all 0.5s ease;
+.teller4 > .teller_4 > .teller_image_41 > .image {
   filter: grayscale(100%);
   width: 100%;
 }
 
-.teller4 > .teller_4 > .teller_image_41 > .image img:hover {
+.teller4 > .teller_4 > .teller_image_41 > .image:hover {
   transform: scale(1.1);
   filter: grayscale(0%);
 }
