@@ -85,6 +85,10 @@ header .header__left > a {
 header .header__right > * {
   margin-left: var(--margin-5);
 }
+
+header .header__right > p {
+  cursor: pointer;
+}
 /* header css end */
 
 /* container start */
