@@ -46,6 +46,7 @@
 
 .detail_info1 {
   margin-right: var(--margin-4);
+  width: 45%;
 }
 
 .detail_info1_title {
@@ -66,23 +67,35 @@
 .detail_info2 {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  transform: translate(0, -30px);
   margin-left: var(--margin-4);
+  width: 55%;
+}
+
+.detail_info2_title {
+  align-self: flex-start;
+  text-align: start;
+}
+
+.detail_info2_title p {
+  font-size: var(--mid-font-size);
+  font-weight: 450;
+  margin-bottom: var(--margin-2);
 }
 
 .detail_info2_seasons {
-  overflow: hidden;
+  display: flex;
+  margin-top: var(--margin-4);
 }
-
 
 .detail_info2_seasons img {
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
-  filter: grayscale(100%);;
+  margin-right: 10px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25)) grayscale(100%);
 }
 
 .detail_info2_seasons img.season_active {
-  filter: grayscale(0%);
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25)) grayscale(0%);
 }

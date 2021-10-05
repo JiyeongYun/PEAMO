@@ -11,10 +11,13 @@ function PerfumeDetail({ togglePerfumeDetail }) {
   const [isSummer, setIsSummer] = useState(false);
   const [isFall, setIsFall] = useState(false);
   const [isWinter, setIsWinter] = useState(false);
+  const [gender, setGender] = useState(null);
+
   const closePerfumeDetail = () => {
     togglePerfumeDetail();
   };
 
+  // 계절 여부 파악하는 함수
   const checkSeasons = (seasons) => {
     seasons.forEach((season) => {
       if (season === 1) {
@@ -29,9 +32,20 @@ function PerfumeDetail({ togglePerfumeDetail }) {
     });
   };
 
+  const checkGender = (g) => {
+    if (g === 0) {
+      setGender('Unisex');
+    } else if (g === 1) {
+      setGender('Him');
+    } else if (g === 2) {
+      setGender('Her');
+    }
+  };
+
   useEffect(() => {
     checkSeasons(perfume.seasons);
-  }, [perfume.seasons]);
+    checkGender(perfume.gender);
+  }, [perfume.seasons, perfume.gender]);
 
   return (
     <div className="perfume_detail_container">
@@ -57,7 +71,10 @@ function PerfumeDetail({ togglePerfumeDetail }) {
             </div>
           </div>
           <div className="detail_info2">
-            <div className="detail_info2_title">{perfume.categoryNameList}</div>
+            <div className="detail_info2_title">
+              <p>{perfume.categoryNameList}</p>
+              <p>For {gender}</p>
+            </div>
             <table className="detail_info2_table">
               <thead>
                 <tr>
