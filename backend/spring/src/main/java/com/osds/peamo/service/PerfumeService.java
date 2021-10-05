@@ -98,16 +98,12 @@ public class PerfumeService {
         return subCategoryList;
     }
 
-    /**
-     * 향수 상세 정보 반환
-     */
+    /** 향수 상세 정보 반환 */
     public PerfumeDetailInfo getPerfumeDetailInfo(long id) {
-
-        PerfumeSimpleInfo perfumeSimpleInfo;  // 향수 간단 정보
+    	
         Perfume perfume = perfumeRepository.getPerfumeById(id);
         if (perfume != null) {
-            perfumeSimpleInfo = PerfumeSimpleInfo.builder().id(id).name(perfume.getName()).brand(perfume.getBrand().getName()).imgurl(perfume.getImgurl()).build();
-
+        	PerfumeSimpleInfo perfumeSimpleInfo = getPerfumeSimpleInfo(id);  // 향수 간단 정보
             List<PerfumeCategory> PCList = perfumeCategoryRepository.getPerfumeCategoriesByPerfumeId(id);
             List<String> categoryNameList = new ArrayList<>(); // 카테고리 이름 정보
             for (int i = 0, size = PCList.size(); i < size; i++) {
