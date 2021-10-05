@@ -83,7 +83,7 @@ function Home({ page_num, setIsLoggedIn }) {
           <h1>Personal perfume</h1>
           <h3>당신에게 어울리는 향수를 찾아보세요</h3>
           <div className="home_btn">
-            <Link to="/teller-1">
+            <Link to="/teller">
               <p>나만의 향수 추천</p>
             </Link>
           </div>

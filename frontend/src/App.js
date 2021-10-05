@@ -12,7 +12,8 @@ import {
 import Home from './routers/Home';
 import About from './routers/About';
 import Search from './routers/Search';
-import Teller from './routers/Teller';
+import TellerIntro from './routers/TellerIntro';
+import Teller1 from './routers/Teller';
 import MyPage from './routers/MyPage';
 // Components
 import SignIn from './components/AuthComponents/SignIn';
@@ -75,7 +76,7 @@ function App() {
       <header>
         <div>
           <div className="header__left">
-            <Link to="/teller-1">PE' AMO Teller</Link>
+            <Link to="/teller">PE' AMO Teller</Link>
             <Link to="/about">About</Link>
           </div>
           <div className="header__mid">
@@ -110,7 +111,8 @@ function App() {
         <Route path="/about" exact={true} component={About} />
         <Route path="/search" exact={true} component={Search} />
         <Route path="/mypage" exact={true} component={MyPage} />
-        <Route path="/teller-1" exact={true} component={Teller} />
+        <Route path="/teller" exact={true} component={TellerIntro} />
+        <Route path="/teller-1" exact={true} component={Teller1} />
         <Route path="/teller-2" exact={true} component={Teller2} />
         <Route path="/teller-3" exact={true} component={Teller3} />
         <Route path="/teller-4" exact={true} component={Teller4} />
