@@ -188,3 +188,7 @@
 .home > .this_month_perfume > .center_pos > .perfumes > .perfume > .notes {
   font-size: var(--main-font-size);
 }
+
+.home > .white_canvas > .down_icon {
+  cursor: pointer;
+}

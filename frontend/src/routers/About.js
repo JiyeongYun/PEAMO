@@ -60,13 +60,17 @@ function About() {
           <div className="grey_canvas_2"></div>
           <PerfumeKind></PerfumeKind>
         </div>
-        <FontAwesomeIcon className="down_icon" icon={faAngleDoubleDown} size="3x" />
+        <a href="#perfume_select">
+          <FontAwesomeIcon className="down_icon" icon={faAngleDoubleDown} size="3x" />
+        </a>
       </div>
-      <div className="perfume_select">
+      <div className="perfume_select" id="perfume_select">
         <SelectGuide></SelectGuide>
-        <FontAwesomeIcon className="down_icon black_icon" icon={faAngleDoubleDown} size="3x" />
+        <a href="#perfume_note">
+          <FontAwesomeIcon className="down_icon black_icon" icon={faAngleDoubleDown} size="3x" />
+        </a>
       </div>
-      <div className="perfume_note">
+      <div className="perfume_note" id="perfume_note">
         <PerfumeNote></PerfumeNote>
       </div>
     </div>
