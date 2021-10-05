@@ -73,6 +73,7 @@ function Home({ page_num, setIsLoggedIn }) {
       .catch(err => console.log(err))
   }
   // 이달의 향수 가져오기 끝
+  
   return (
     <div className="home">
       <div className="white_canvas">
@@ -85,13 +86,14 @@ function Home({ page_num, setIsLoggedIn }) {
             </Link>
           </div>
         </div>
-        <FontAwesomeIcon
-          className="down_icon"
-          icon={faAngleDoubleDown}
-          size="3x"
-        />
+        <a href="#this_month_perfume">
+          <FontAwesomeIcon
+            className="down_icon"
+            icon={faAngleDoubleDown}
+            size="3x"/>
+        </a>
       </div>
-      <div className="this_month_perfume">
+      <div className="this_month_perfume" id="this_month_perfume">
         <div className="center_pos">
           <div className="title scroll">이달의 향수</div>
           <div className="perfumes scroll">
