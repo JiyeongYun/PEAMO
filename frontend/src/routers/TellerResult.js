@@ -51,7 +51,7 @@ function Result() {
           <div className="result_image">
             <div className="image2">
               <Link to="/teller-result">
-                <img src={perfumeList[1].imgurl} alt={perfumeList[1].name}></img>
+                <img src={perfumeList[1].imgurl==="http://www.basenotes.net/photos/300noimage.png" || perfumeList[1].imgurl===undefined?'/images/no_image.png':perfumeList[1].imgurl} alt={perfumeList[1].name}></img>
               </Link>
               <Link to="/teller-result">
                 <p>{perfumeList[1].brand}</p>
@@ -60,7 +60,7 @@ function Result() {
             </div>
             <div className="image1">
               <Link to="/teller-result">
-                <img src={perfumeList[0].imgurl} alt={perfumeList[0].name}></img>
+                <img src={perfumeList[0].imgurl==="http://www.basenotes.net/photos/300noimage.png" || perfumeList[0].imgurl===undefined?'/images/no_image.png':perfumeList[0].imgurl} alt={perfumeList[0].name}></img>
               </Link>
               <Link to="/teller-result">
                 <p>{perfumeList[0].brand}</p>
@@ -69,7 +69,7 @@ function Result() {
             </div>
             <div className="image3">
               <Link to="/teller-result">
-                <img src={perfumeList[2].imgurl} alt={perfumeList[2].name}></img>
+                <img src={perfumeList[2].imgurl==="http://www.basenotes.net/photos/300noimage.png" || perfumeList[2].imgurl===undefined?'/images/no_image.png':perfumeList[2].imgurl} alt={perfumeList[2].name}></img>
               </Link>
               <Link to="/teller-result">
                 <p>{perfumeList[2].brand}</p>

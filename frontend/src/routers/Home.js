@@ -97,9 +97,10 @@ function Home({ page_num, setIsLoggedIn }) {
           <div className="perfumes scroll">
             {
               monthlyPerfumeList.length !== 0 && monthlyPerfumeList.map(perfume => {
+                console.log(perfume.imgurl)
                 return (
                   <div key={perfume.id} className="perfume">
-                    <img src={perfume.imgurl} alt={perfume.name} />
+                    <img src={perfume.imgurl==="http://www.basenotes.net/photos/300noimage.png" || perfume.imgurl===undefined?'/images/no_image.png':perfume.imgurl} alt={perfume.name} />
                     <div className="perfume_info">
                       <p>{perfume.brand}</p>
                       <p>{perfume.name}</p>
