@@ -158,10 +158,12 @@ public class PerfumeService {
 
         int season = getSeason();
         List<Long> categoryIds = categorySeasonRepository.getCategoryIdBySeasonId(season); //시즌에 해당하는 카테고리 아이디들
-        int listSize = categoryIds.size();
-        long categoryId = categoryIds.get((int) ((Math.random() * listSize)));
-        long perfumeId = perfumeCategoryRepository.getRandomPerfumeIdByCategoryId(categoryId);
-
+        List<Long> perfumeIds = perfumeCategoryRepository.getPopularPerfumeIdByCategoryId(categoryIds);
+        long perfumeId = perfumeIds.get(0);
+        for (int i = 0; i < 100; i++) {
+        	perfumeId = perfumeIds.get(i);
+        	if(isExistNote(perfumeId)) break;
+		}
         return getSimilarPerfumes(perfumeId);
     }
 
@@ -329,8 +331,7 @@ public class PerfumeService {
      * note가 있는 향수인지 체크하기
      */
     private boolean isExistNote(long perfumeId) {
-        List<PerfumeCategory> perfumeCategory = this.perfumeCategoryRepository.getPerfumeCategoriesByPerfumeId(perfumeId);
-        return perfumeCategory.size() > 0;
+        return similarityRepository.getIdByStandard(perfumeId).isPresent();
     }
 
 }
