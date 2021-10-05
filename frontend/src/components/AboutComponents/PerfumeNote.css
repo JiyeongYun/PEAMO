@@ -1,38 +1,63 @@
 .note {
+  height: 80vh;
+  width: 100vw;
+  position: absolute;
+  text-align: center;
+  top: 15%;
+}
+
+.note > .note_title {
+  color: black;
+  font-size: 3rem;
+  margin-top: var(--margin-6);
+  position: relative;
+  transition: all 1s 0.5s;
+}
+
+.note > .note_subtitle {
+  color: black;
+  font-size: 2rem;
+  margin-top: var(--margin-6);
+  position: relative;
+  transition: all 1s 0.5s;
+}
+
+.note > .note_content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin: var(--margin-6);
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
 }
 
-.note > .note_img {
+
+.note > .note_content > .note_img {
   transition: all 1s 0.5s;
 }
 
-.note > .note_img > img {
-  width: 23vw;
+.note > .note_content > .note_img > img {
+  width: 20vw;
   object-fit: contain;
 }
 
-.note > .note_word {
-  width: 40vw;
+.note > .note_content > .note_word {
+  width: 50vw;
   display: flex;
   justify-content: center;
   text-align: center;
   transition: all 1s 0.5s;
 }
 
-.note > .note_word > .notes h2 {
+.note > .note_content > .note_word > .notes h2 {
   margin-top: var(--margin-4);
   margin-bottom: var(--margin-4);
   font-size: 2rem;
   font-weight: 500;
 }
 
-.note > .note_word > .notes p {
+.note > .note_content > .note_word > .notes p {
   margin-top: var(--margin-2);
-  font-size: 1rem;
+  font-size: 1.5rem;
 }

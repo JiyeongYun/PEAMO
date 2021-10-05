@@ -81,7 +81,7 @@ function Home({ page_num, setIsLoggedIn }) {
         <img src={`/images/main_${page_num}.jpg`} alt={`main_${page_num}`} />
         <div className="home_bottom">
           <div className="home_btn">
-            <Link to="/teller-1">
+            <Link to="/teller">
               <p>나만의 향수 추천</p>
             </Link>
           </div>
