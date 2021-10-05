@@ -10,7 +10,7 @@ function Search () {
   const [axiosGenderData, setAxiosGenderData] = useState(2)
   const [axiosCateData, setAxiosCateData] = useState([4])
   const [page, setPage] = useState(0)
-  const [noMore, setnoMore] = useState(false)
+  const [noMore, setNoMore] = useState(false)
 
   // header 검은색으로 변경
   useEffect(() => {
@@ -29,6 +29,8 @@ function Search () {
     console.log('axpage: ', page)
     console.log('axgender: ', axiosGenderData)
     console.log('axcategory: ', axiosCateData)
+    const axiosUserId = localStorage.userId
+    console.log(axiosUserId)
     axios
       .post(`http://j5a403.p.ssafy.io:8000/perfume/list?page=${page}`, {
           "gender": axiosGenderData,
@@ -37,7 +39,7 @@ function Search () {
       .then((res) => {
         if (res.status === 200) {
           setItems([...items, ...res.data])
-          setnoMore(true)
+          setNoMore(true)
           console.log(items)
         }
       })
