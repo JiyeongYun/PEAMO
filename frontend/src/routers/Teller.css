@@ -27,11 +27,15 @@
 }
 
 .teller > .teller1 > .teller_image_1 > .image {
-  width: 20%;
+  width: 20vw;
   margin: 0 30px;
+  text-align: center;
+}
+
+.teller > .teller1 > .teller_image_1 > .image img {
+  width: 100%;
   filter: grayscale(100%);
   transition: all 0.5s ease;
-  text-align: center;
 }
 
 .teller > .teller1 > .teller_image_1 > .image:hover img {
@@ -39,10 +43,9 @@
   filter: grayscale(0%);
 }
 
-
 .teller > .teller1 > .teller_image_1 span {
+  display: block;
+  margin-top: 30px;
   font-size: var(--large-font-size);
-  position: relative;
-  top: 30px;
   color: black;
 }

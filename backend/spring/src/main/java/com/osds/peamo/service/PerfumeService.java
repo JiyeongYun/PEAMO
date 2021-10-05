@@ -35,12 +35,12 @@ public class PerfumeService {
      */
     public List<PerfumeSimpleInfo> getPerfumeList(PerfumeListSearch perfumeListSearch, int page) {
 
-        long category = perfumeListSearch.getCategory();
+        int category = perfumeListSearch.getCategory();
         List<Long> perfumeIdList;
         if (category == 3) {
             perfumeIdList = perfumeCategoryRepository.getAllPerfumeId();
         } else {
-            List<Long> subCategoryList = getSubCategoryList((int) category);
+            List<Long> subCategoryList = getSubCategoryList(category);
             perfumeIdList = perfumeCategoryRepository.getperfumeIdByCategoryId(subCategoryList);
         }
 
@@ -50,22 +50,24 @@ public class PerfumeService {
         List<PerfumeSimpleInfo> perfumeListResponse = new ArrayList<>();
 
         Optional<User> user = userRepository.findUserByUid(perfumeListSearch.getUid());
-        if (user.isPresent()) {
-            long userId = user.get().getId();
-            int size = perfumeList.size();
 
-            for (int i = 0; i < size; i++) {
-                Perfume perfume = perfumeList.get(i);
-                long perfumeId = perfume.getId();
-                boolean isLike = userService.isLikePerfume(userId, perfumeId) != -1 ? true : false; // -1이 아닌 경우? true: 좋아요 O  / false: 좋아요 X
-                Optional<Brand> brand = brandRepository.getBrandById(perfume.getBrand().getId());
-                String brandName = null;
-                if (brand.isPresent()) {
-                    brandName = brand.get().getName();
-                }
-                perfumeListResponse.add(PerfumeSimpleInfo.builder().id(perfume.getId()).name(perfume.getName()).brand(brandName).imgurl(perfume.getImgurl()).isLike(isLike).build());
+        long userId = user.isPresent() ? user.get().getId() : -1;
+        int size = perfumeList.size();
+
+        for (int i = 0; i < size; i++) {
+            Perfume perfume = perfumeList.get(i);
+            long perfumeId = perfume.getId();
+            boolean isLike = false;
+            if(userId != -1)
+                isLike = userService.isLikePerfume(userId, perfumeId) != -1 ? true : false; // -1이 아닌 경우? true: 좋아요 O  / false: 좋아요 X
+            Optional<Brand> brand = brandRepository.getBrandById(perfume.getBrand().getId());
+            String brandName = null;
+            if (brand.isPresent()) {
+                brandName = brand.get().getName();
             }
+            perfumeListResponse.add(PerfumeSimpleInfo.builder().id(perfume.getId()).name(perfume.getName()).brand(brandName).imgurl(perfume.getImgurl()).isLike(isLike).build());
         }
+
         return perfumeListResponse;
     }
 

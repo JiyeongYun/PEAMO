@@ -1,5 +1,6 @@
 // style
 import { makeStyles } from '@material-ui/core/styles';
+import './PerfumeCard.css';
 
 // components
 import Card from '@material-ui/core/Card';
@@ -15,9 +16,6 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     textAlign: 'center',
     cursor: 'pointer',
-    backgroundImage: `url('/images/myperfume.jpg')`,
-    backgroundSize: '100% 100%',
-    backgroundRepeat: 'no-repeat',
   },
   title: {
     fontSize: 14,
@@ -28,7 +26,6 @@ const useStyles = makeStyles({
 });
 
 export default function PerfumeCard({ perfume }) {
-  console.log(perfume);
   const classes = useStyles();
   return (
     <Card className={classes.root}>
@@ -41,7 +38,7 @@ export default function PerfumeCard({ perfume }) {
         >
           {perfume.name}
         </Typography>
-        <Typography variant="body2" component="p">
+        <Typography className="perfume_brand" component="p">
           {perfume.brand.name}
         </Typography>
       </CardContent>
