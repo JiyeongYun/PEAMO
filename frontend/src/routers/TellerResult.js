@@ -44,41 +44,29 @@ function Result() {
   return (
     perfumeList.length !== 0 &&
       <div className="tellerresult">
+        <img src="/images/result_back.png" alt="back_ground"/>
         <div className="teller_result">
           <div className="result_question">
             <h2>당신에게 맞는 향수를 골라봤어요!</h2>
           </div>
-          <div className="result_image">
-            <div className="image2">
-              <Link to="/teller-result">
-                <img src={perfumeList[1].imgurl} alt={perfumeList[1].name}></img>
-              </Link>
-              <Link to="/teller-result">
-                <p>{perfumeList[1].brand}</p>
-                <p>{perfumeList[1].name}</p>
-              </Link>
-            </div>
-            <div className="image1">
-              <Link to="/teller-result">
-                <img src={perfumeList[0].imgurl} alt={perfumeList[0].name}></img>
-              </Link>
-              <Link to="/teller-result">
-                <p>{perfumeList[0].brand}</p>
-                <p>{perfumeList[0].name}</p>
-              </Link>
-            </div>
-            <div className="image3">
-              <Link to="/teller-result">
-                <img src={perfumeList[2].imgurl} alt={perfumeList[2].name}></img>
-              </Link>
-              <Link to="/teller-result">
-                <p>{perfumeList[2].brand}</p>
-                <p>{perfumeList[2].name}</p>
-              </Link>
-            </div>
-          </div>
-          <div className="result_123">
-            <img src="/images/result_123.png" alt="result_123"></img>
+          <div className="result_images">
+            {
+              perfumeList.map(perfume => {
+                return (
+                  <div className="result_image" key={perfume.id}>
+                    <div className="round">
+                      <Link to="/teller-result">
+                        <img src={perfume.imgurl==="http://www.basenotes.net/photos/300noimage.png" || perfume.imgurl===undefined?'/images/no_image.png':perfume.imgurl} alt={perfume.name}></img>
+                      </Link>
+                    </div>
+                    <Link to="/teller-result">
+                      <p>{perfume.brand}</p>
+                      <p>{perfume.name}</p>
+                    </Link>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
       </div>

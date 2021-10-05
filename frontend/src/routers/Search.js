@@ -8,39 +8,45 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 function Search () {
   const [items, setItems] = useState([])
   const [axiosGenderData, setAxiosGenderData] = useState(2)
-  const [axiosCateData, setAxiosCateData] = useState([4])
-  const [page, setPage] = useState(0)
+  const [axiosCateData, setAxiosCateData] = useState(3)
   const [noMore, setNoMore] = useState(false)
-
+  const [page, setPage] = useState(0)
+  const axiosUserId = localStorage.getItem('userId')
+  
   // header 검은색으로 변경
   useEffect(() => {
     const header = document.querySelector('header')
     header.style.backgroundColor = '#1C1C1C'
   }, [])
   // header 검은색으로 변경
+  
+  // 페이지 새로고침 한 경우 scroll 위로 이동
+  window.scrollTo(0, 0);
+  // scroll 위로 이동 끝
 
   const loadMoreData = () => {
-    setPage(page + 1)
+    setPage(page+1)
+    axiosStart()
   }
 
   // search page 들어오자마자 기본 값인 her, all 향수 정보 axios 요청
   const axiosStart = () => {
-    // if (page !== -1) setnoMore(true)
-    console.log('axpage: ', page)
-    console.log('axgender: ', axiosGenderData)
-    console.log('axcategory: ', axiosCateData)
-    const axiosUserId = localStorage.userId
-    console.log(axiosUserId)
     axios
       .post(`http://j5a403.p.ssafy.io:8000/perfume/list?page=${page}`, {
           "gender": axiosGenderData,
-          "categoryList": axiosCateData,
+          "category": axiosCateData,
+          "uid": axiosUserId
       })
       .then((res) => {
-        if (res.status === 200) {
-          setItems([...items, ...res.data])
+        if (res.status === 200 && page === 0) {
+          setItems(res.data)
           setNoMore(true)
-          console.log(items)
+        } else if (res.status === 200 && page !== 0) {
+          let temp = Object.assign([], items)
+          if (items.length === page * 30) {
+            temp = temp.concat(res.data)
+            setItems(temp)
+          }
         }
       })
       .catch((err) => {
@@ -50,24 +56,18 @@ function Search () {
 
   useEffect(() => {
     axiosStart()
-  }, [page, axiosGenderData, axiosCateData])
+  }, [axiosGenderData, axiosCateData, page])
   
   const toggleItems = (n, e) => {
+    setPage(0)
     const t = e.target
-    let genderNum
-    let categoryNum
     if (n < 3) {
-      genderNum = n
+      setAxiosGenderData(n)
     } else {
-      categoryNum = n
+      setAxiosCateData(n)
     }
     if (t.classList.contains('gender')) {
       const genders = document.querySelectorAll('.gender')
-      setAxiosGenderData(genderNum)
-      setPage(0)
-      console.log('gender: ', axiosGenderData)
-      console.log('category: ', axiosCateData)
-      console.log('page: ', page)
       genders.forEach(gender => {
         if (gender === t) {
           gender.classList.add("checked")
@@ -76,10 +76,7 @@ function Search () {
         }
       })
     } else if (t.classList.contains('notes')) {
-      const notes = document.querySelectorAll('.notes')        
-      setAxiosCateData([categoryNum])
-      console.log('gender: ', axiosGenderData)
-      console.log('category: ', axiosCateData)
+      const notes = document.querySelectorAll('.notes')    
       notes.forEach(note => {
         if (note === t) {
           note.classList.add("checked")
@@ -116,34 +113,32 @@ function Search () {
         </ul>
       </div>
       <div className="search_card">
-      <InfiniteScroll
-        dataLength={items.length} //This is important field to render the next data
-        next={loadMoreData}
-        hasMore={noMore}
-        loader={<h4>Loading...</h4>}
-        endMessage={
-          <p style={{ textAlign: 'center' }}>
-            <b>Yay! You have seen it all</b>
-          </p>
-        }
-      >
-        <Grid container spacing={3}>
-          {items.map((item) => {
-            return <Grid item md={4} sm={6} xs={12}>
-                    <SearchCard
-                      key={item.id}
-                      imgurl={item.imgurl}
-                      brand={item.brand}
-                      name={item.name}
-                      id={item.id}
-                    >
-                    </SearchCard>
-                  </Grid>
-            }
-          )}
-        </Grid>
-      </InfiniteScroll>
-        
+        <InfiniteScroll
+          dataLength={items.length} //This is important field to render the next data
+          next={loadMoreData}
+          hasMore={noMore}
+          loader={<h4 style={{textAlign: 'center'}}>스크롤을 내리면 더 많은 향수를 볼 수 있습니다.</h4>}
+          endMessage={
+            <p style={{ textAlign: 'center' }}>
+              <b>Yay! You have seen it all</b>
+            </p>
+          }
+        >
+          <Grid container spacing={3}>
+            {items.map((item) => {
+              return <Grid key={item.id} item md={4} sm={6} xs={12}>
+                      <SearchCard
+                        imgurl={item.imgurl==="http://www.basenotes.net/photos/300noimage.png" || item.imgurl===undefined?'/images/no_image.png':item.imgurl}
+                        brand={item.brand}
+                        name={item.name}
+                        id={item.id}
+                      >
+                      </SearchCard>
+                    </Grid>
+              }
+            )}
+          </Grid>
+        </InfiniteScroll>
       </div>
     </div>
   )
