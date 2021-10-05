@@ -3,6 +3,11 @@
   width: 100vw;
 }
 
+.tellerresult > img {
+  width: 100vw;
+  height: 100vh;
+}
+
 .tellerresult > .teller_result {
   position: absolute;
   top: 20%;
@@ -12,7 +17,7 @@
   overflow: hidden;
 }
 
-.tellerresult > .teller_result > .result_image {
+.tellerresult > .teller_result > .result_images {
   width: 90%;
   margin: 0 auto;
   display: flex;
@@ -28,46 +33,42 @@
   text-align: center;
 }
 
-.tellerresult > .teller_result > .result_image > div {
-  width: 300px;
+.tellerresult > .teller_result > .result_images > .result_image {
+  width: 350px;
   margin: 0 50px;
   text-align: center;
-}
-
-.tellerresult > .teller_result > .result_image > .image2 {
   position: relative;
-  top: 50px;
 }
 
-.tellerresult > .teller_result > .result_image > .image3 {
-  position: relative;
-  top: 80px;
+.tellerresult > .teller_result > .result_images > .result_image > .round {
+  width: 350px;
+  height: 350px;
+  background: url('../round.png');
+  background-size: cover;
+  /* border-radius: 50%; */
+  /* box-shadow: 4px 4px 4px 4px; */
 }
 
-.tellerresult > .teller_result > .result_image img {
+.tellerresult
+  > .teller_result
+  > .result_images
+  > .result_image
+  > .round
+  > a
+  > img {
+  margin-top: var(--margin-4);
   width: 200px;
-  object-fit: contain;
+  height: 200px;
+  transform: translate(0, 30px);
 }
 
-.tellerresult > .teller_result > .result_image p:nth-child(1) {
+.tellerresult > .teller_result > .result_images p:nth-child(1) {
   font-size: var(--main-font-size);
 }
 
-.tellerresult > .teller_result > .result_image p {
+.tellerresult > .teller_result > .result_images p {
   font-size: var(--large-font-size);
   margin-top: var(--margin-2);
   text-align: center;
   color: black;
-}
-
-.tellerresult > .teller_result > .result_123 {
-  margin: 10px auto 0;
-  display: flex;
-  justify-content: center;
-  width: 1200px;
-}
-
-.tellerresult > .teller_result > .result_123 > img {
-  width: 100%;
-  object-position: center;
 }
