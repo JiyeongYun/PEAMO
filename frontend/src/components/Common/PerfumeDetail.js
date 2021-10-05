@@ -1,13 +1,38 @@
-import './PerfumeDetail.css';
-import CloseIcon from '@mui/icons-material/Close';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+// css
+import './PerfumeDetail.css';
+// component
+import CloseIcon from '@mui/icons-material/Close';
 
 function PerfumeDetail({ togglePerfumeDetail }) {
   const perfume = useSelector((state) => state.common.currentPerfume);
-  console.log(perfume, 'perfumedetail component');
+  const [isSpring, setIsSpring] = useState(false);
+  const [isSummer, setIsSummer] = useState(false);
+  const [isFall, setIsFall] = useState(false);
+  const [isWinter, setIsWinter] = useState(false);
   const closePerfumeDetail = () => {
     togglePerfumeDetail();
   };
+
+  const checkSeasons = (seasons) => {
+    seasons.forEach((season) => {
+      if (season === 1) {
+        setIsSpring(true);
+      } else if (season === 2) {
+        setIsSummer(true);
+      } else if (season === 3) {
+        setIsFall(true);
+      } else if (season === 4) {
+        setIsWinter(true);
+      }
+    });
+  };
+
+  useEffect(() => {
+    checkSeasons(perfume.seasons);
+  }, [perfume.seasons]);
+
   return (
     <div className="perfume_detail_container">
       <div className="perfume_detail_box">
@@ -23,9 +48,13 @@ function PerfumeDetail({ togglePerfumeDetail }) {
               alt="perfumeImage"
             />
             <div className="detail_info1_title">Name</div>
-            <div>{perfume.perfumeSimpleInfo.name}</div>
+            <div className="detail_info1_content">
+              {perfume.perfumeSimpleInfo.name}
+            </div>
             <div className="detail_info1_title">Brand</div>
-            <div>{perfume.perfumeSimpleInfo.brand}</div>
+            <div className="detail_info1_content">
+              {perfume.perfumeSimpleInfo.brand}
+            </div>
           </div>
           <div className="detail_info2">
             <div className="detail_info2_title">{perfume.categoryNameList}</div>
@@ -54,10 +83,26 @@ function PerfumeDetail({ togglePerfumeDetail }) {
               </tbody>
             </table>
             <div className="detail_info2_seasons">
-              <img src="/images/spring.png" alt="spring"></img>
-              <img src="/images/summer.png" alt="summer"></img>
-              <img src="/images/fall.png" alt="fall"></img>
-              <img src="/images/winter.png" alt="winter"></img>
+              <img
+                src="/images/spring.png"
+                alt="spring"
+                className={isSpring ? 'season_active' : null}
+              ></img>
+              <img
+                src="/images/summer.png"
+                alt="summer"
+                className={isSummer ? 'season_active' : null}
+              ></img>
+              <img
+                src="/images/fall.png"
+                alt="fall"
+                className={isFall ? 'season_active' : null}
+              ></img>
+              <img
+                src="/images/winter.png"
+                alt="winter"
+                className={isWinter ? 'season_active' : null}
+              ></img>
             </div>
           </div>
         </div>
