@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPerfumeDetail } from '../components/Common/commonSlice';
+import { Link } from 'react-router-dom';
 // css
 import './MyPage.css';
 import { makeStyles } from '@material-ui/core/styles';
@@ -57,23 +58,40 @@ function Mypage() {
         <PerfumeDetail togglePerfumeDetail={togglePerfumeDetail} />
       )}
       <p className="mypage_title">나의 향수함</p>
-      <Grid className={classes.root} container spacing={2}>
-        {myPerfume &&
-          myPerfume.map((perfume) => (
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={3}
-              onClick={() => togglePerfumeDetail(perfume.id)}
-            >
-              <PerfumeCard
-                key={`${perfume.id}_${perfume.name}`}
-                perfume={perfume}
-              />
-            </Grid>
-          ))}
-      </Grid>
+      {
+        myPerfume.length === 0 ?
+        <div className="no_perfume">
+          <p>🤍를 누른 향수가 없습니다</p>
+          <div className="link_box">
+            <Link to="/teller-1">
+              <p>나만의 향수 추천</p>
+            </Link>
+          </div>
+          <p>혹은</p>
+          <div className="link_box">
+            <Link to="/search">
+              <p>향수 검색</p>
+            </Link>
+          </div>
+        </div>
+          :
+          <Grid className={classes.root} container spacing={2}>
+            {myPerfume.map((perfume) => (
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={3}
+                onClick={() => togglePerfumeDetail(perfume.id)}
+              >
+                <PerfumeCard
+                  key={`${perfume.id}_${perfume.name}`}
+                  perfume={perfume}
+                />
+              </Grid>
+            ))}
+          </Grid>
+      }
     </div>
   );
 }
