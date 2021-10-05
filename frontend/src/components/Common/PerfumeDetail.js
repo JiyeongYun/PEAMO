@@ -12,6 +12,7 @@ function PerfumeDetail({ togglePerfumeDetail }) {
   const [isFall, setIsFall] = useState(false);
   const [isWinter, setIsWinter] = useState(false);
   const [gender, setGender] = useState(null);
+  const [noteTableData, setNoteTableData] = useState([]);
 
   const closePerfumeDetail = () => {
     togglePerfumeDetail();
@@ -32,6 +33,7 @@ function PerfumeDetail({ togglePerfumeDetail }) {
     });
   };
 
+  // 성별 파악하는 함수
   const checkGender = (g) => {
     if (g === 0) {
       setGender('Unisex');
@@ -42,10 +44,28 @@ function PerfumeDetail({ togglePerfumeDetail }) {
     }
   };
 
+  // top, middle, base 노트 테이블 자료 만드는 함수
+  const makeNoteTableData = (notes) => {
+    // console.log(Object.values(notes));
+    // console.log(notes);
+    const maxLength = Object.values(notes)
+      .map((note) => note.length)
+      .reduce((a, b) => Math.max(a, b));
+    const data = [];
+    for (let i = 0; i < maxLength; i++) {
+      let top = notes.topNote[i] ? notes.topNote[i] : '';
+      let middle = notes.middleNote[i] ? notes.middleNote[i] : '';
+      let base = notes.baseNote[i] ? notes.baseNote[i] : '';
+      data.push([top, middle, base]);
+    }
+    return data;
+  };
+
   useEffect(() => {
     checkSeasons(perfume.seasons);
     checkGender(perfume.gender);
-  }, [perfume.seasons, perfume.gender]);
+    setNoteTableData(makeNoteTableData(perfume.notesTMB));
+  }, [perfume.seasons, perfume.gender, perfume.notesTMB]);
 
   return (
     <div className="perfume_detail_container">
@@ -72,7 +92,14 @@ function PerfumeDetail({ togglePerfumeDetail }) {
           </div>
           <div className="detail_info2">
             <div className="detail_info2_title">
-              <p>{perfume.categoryNameList}</p>
+              <p>
+                {perfume.categoryNameList.map((category, index) => {
+                  if (index !== perfume.categoryNameList.length - 1) {
+                    return `${category} /`;
+                  }
+                  return ` ${category}`;
+                })}
+              </p>
               <p>For {gender}</p>
             </div>
             <table className="detail_info2_table">
@@ -84,19 +111,15 @@ function PerfumeDetail({ togglePerfumeDetail }) {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Mandarine</td>
-                  <td>Rose</td>
-                  <td>Woody</td>
-                </tr>
-                <tr>
-                  <td>Orange</td>
-                  <td>Musk</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Rose</td>
-                </tr>
+                {noteTableData.map((tableData) => {
+                  return (
+                    <tr>
+                      {tableData.map((data) => {
+                        return <td>{data}</td>;
+                      })}
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
             <div className="detail_info2_seasons">

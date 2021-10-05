@@ -36,12 +36,16 @@
 
 
 .detail_wrapper {
-  overflow: auto;
+  overflow-x: scroll;
   width: 80%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.detail_wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .detail_info1 {
@@ -83,8 +87,14 @@
   margin-bottom: var(--margin-2);
 }
 
+.detail_info2_table {
+  overflow: scroll;
+  border: 1px solid #C8C8C8;
+}
+
 .detail_info2_seasons {
   display: flex;
+  justify-content: space-around;
   margin-top: var(--margin-4);
 }
 
@@ -92,7 +102,7 @@
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  margin-right: 10px;
+  /* margin-right: 10px; */
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25)) grayscale(100%);
 }
 
