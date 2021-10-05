@@ -9,8 +9,8 @@
 
 .perfume_detail_box {
   background-color: rgba(255, 255, 255, 1);
-  width: 80%;
-  height: 80%;
+  width: 50%;
+  height: 60%;
   border-radius: 20px;
   position: relative;
   top: 50%;
@@ -36,29 +36,87 @@
 
 
 .detail_wrapper {
+  overflow-x: scroll;
+  width: 80%;
+  height: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.detail_wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .detail_info1 {
-  position: relative;
-  left: 50%;
+  margin-right: var(--margin-4);
+  width: 45%;
 }
 
 .detail_info1_title {
   color: #C8C8C8;
+  margin: var(--margin-1) 0;
+  font-size: var(--main-font-size);
+}
+
+.detail_info1_image {
+  min-width: 250px;
+}
+
+.detail_info1_content {
+  font-size: var(--mid-font-size);
+  font-weight: bold;
 }
 
 .detail_info2 {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin-left: var(--margin-4);
+  width: 55%;
+}
+
+.detail_info2_title {
+  align-self: flex-start;
+  text-align: start;
+}
+
+.detail_info2_title p {
+  font-size: var(--mid-font-size);
+  font-weight: 450;
+  margin-bottom: var(--margin-2);
+}
+
+.detail_info2_table {
+  overflow: scroll;
+  border-collapse: collapse;
+  border-top: 1.5px solid rgba(126, 126, 126, 1);
+  border-bottom: 1px solid rgba(229, 229, 229, 1);
+}
+
+.detail_info2_table thead th {
+  font-size: var(--large-font-size);
+  font-weight: bold;
+  border-bottom: 1px solid rgba(229, 229, 229, 1);
+}
+
+.detail_info2_table tbody tr td {
+  font-size: var(--mid-font-size);
+}
+
+.detail_info2_seasons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: var(--margin-4);
 }
 
 .detail_info2_seasons img {
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+  /* margin-right: 10px; */
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25)) grayscale(100%);
+}
+
+.detail_info2_seasons img.season_active {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25)) grayscale(0%);
 }
