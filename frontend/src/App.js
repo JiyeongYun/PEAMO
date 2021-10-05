@@ -1,5 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -21,6 +22,8 @@ import Teller4 from './routers/Teller4';
 import Teller5 from './routers/Teller5';
 import Teller6 from './routers/Teller6';
 import TellerResult from './routers/TellerResult';
+// Redux actions
+import { logout } from './components/AuthComponents/authSlice';
 
 function App() {
   // useState
@@ -28,6 +31,8 @@ function App() {
   const [showSignin, setShowSignin] = useState(false);
   const [page_num, setPageNum] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // useDispatch
+  const dispatch = useDispatch();
 
   // access token 여부
   const isTokenExist = localStorage.getItem('token');
@@ -48,6 +53,22 @@ function App() {
     setShowSignin(!showSignin);
   };
 
+  // 카카오 로그아웃
+  const kakaoLogout = () => {
+    dispatch(logout())
+      .unwrap()
+      .then((res) => {
+        if (res.status === 200) {
+          localStorage.removeItem('token');
+          localStorage.removeItem('userId');
+          alert('로그아웃 성공');
+        }
+      })
+      .catch(() => {
+        alert('로그아웃 실패');
+      });
+  };
+
   return (
     <div className="App">
       {showSignin && <SignIn toggleSignin={toggleSignin} />}
@@ -64,7 +85,10 @@ function App() {
           </div>
           <div className="header__right">
             {isLoggedIn || isTokenExist ? (
-              <Link to="/mypage">My page</Link>
+              <>
+                <p onClick={() => kakaoLogout()}>logout</p>
+                <Link to="/mypage">My page</Link>
+              </>
             ) : (
               <Link onClick={toggleSignin} to="/about">
                 Sign in
@@ -104,7 +128,10 @@ function App() {
         <p className="slogan">Find Your Color, PE' AMO</p>
         <div className="team">
           <p>Team OSDS</p>
-          <p>Name: 오순도순 | FE: 권오우, 송상민, 서예리 | BE: 신지수, 윤지영, 장현웅</p>
+          <p>
+            Name: 오순도순 | FE: 권오우, 송상민, 서예리 | BE: 신지수, 윤지영,
+            장현웅
+          </p>
         </div>
         <div className="company">
           <div className="left">
