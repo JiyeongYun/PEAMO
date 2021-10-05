@@ -80,6 +80,8 @@ function Home({ page_num, setIsLoggedIn }) {
         <div className="grey_canvas"></div>
         <img src={`/images/main_${page_num}.jpg`} alt={`main_${page_num}`} />
         <div className="home_bottom">
+          <h1>Personal perfume</h1>
+          <h3>당신에게 어울리는 향수를 찾아보세요</h3>
           <div className="home_btn">
             <Link to="/teller">
               <p>나만의 향수 추천</p>

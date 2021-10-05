@@ -12,7 +12,7 @@
 }
 
 .mypage_title {
-  margin-top: var(--margin-3);
+  margin-top: 100px;
   top: 10%;
   font-size: var(--xxlarge-font-size);
 }
@@ -27,4 +27,36 @@
   width: 100px;
   cursor: pointer;
   bottom: 0;
+}
+
+.mypage > .no_perfume {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.mypage > .no_perfume > p:nth-child(1) {
+  font-size: var(--large-font-size);
+}
+
+.mypage > .no_perfume > .link_box {
+  width: 20vw;
+  height: 70px;
+  border: 1px solid black;
+  margin: var(--margin-6) 0;
+  transition: all 0.5s;
+}
+
+.mypage > .no_perfume > .link_box:hover {
+  background-color: black;
+}
+
+.mypage > .no_perfume > .link_box:hover p {
+  color: white;
+}
+
+.mypage > .no_perfume > .link_box p {
+  color: black;
+  line-height: 70px;
+  font-size: var(--large-font-size);
+  transition: all 0.5s;
 }
