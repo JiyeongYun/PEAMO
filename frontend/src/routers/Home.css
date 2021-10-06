@@ -143,6 +143,7 @@
 
 .home > .this_month_perfume > .center_pos > .perfumes > .perfume {
   width: 20%;
+  cursor: pointer;
 }
 
 .home > .this_month_perfume > .center_pos > .perfumes > .perfume > img {
