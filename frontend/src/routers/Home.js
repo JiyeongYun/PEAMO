@@ -5,11 +5,11 @@ import { useDispatch } from 'react-redux';
 import { login } from '../components/AuthComponents/authSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios'
+import axios from 'axios';
 
 function Home({ page_num, setIsLoggedIn }) {
   // state
-  const [monthlyPerfumeList, setMonthlyPerfumeList] = useState([])
+  const [monthlyPerfumeList, setMonthlyPerfumeList] = useState([]);
   // state 끝
 
   const dispatch = useDispatch();
@@ -47,8 +47,8 @@ function Home({ page_num, setIsLoggedIn }) {
     if (code) {
       dispatch(login(code))
         .unwrap()
-        .then(({ payload }) => {
-          if (payload.status === 200) {
+        .then((res) => {
+          if (res.status === 200) {
             setIsLoggedIn(true);
             alert('로그인 성공');
           }
@@ -62,18 +62,17 @@ function Home({ page_num, setIsLoggedIn }) {
   // 이달의 향수 가져오기
 
   if (!monthlyPerfumeList.length) {
-    axios.get(
-      'http://j5a403.p.ssafy.io:8000/perfume/thismonth'
-    )
-      .then(res => {
+    axios
+      .get('http://j5a403.p.ssafy.io:8000/perfume/thismonth')
+      .then((res) => {
         if (res.status === 200) {
-          setMonthlyPerfumeList(res.data)
-        };
+          setMonthlyPerfumeList(res.data);
+        }
       })
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err));
   }
   // 이달의 향수 가져오기 끝
-  
+
   return (
     <div className="home">
       <div className="white_canvas">
@@ -92,26 +91,35 @@ function Home({ page_num, setIsLoggedIn }) {
           <FontAwesomeIcon
             className="down_icon"
             icon={faAngleDoubleDown}
-            size="3x"/>
+            size="3x"
+          />
         </a>
       </div>
       <div className="this_month_perfume" id="this_month_perfume">
         <div className="center_pos">
           <div className="title scroll">이달의 향수</div>
           <div className="perfumes scroll">
-            {
-              monthlyPerfumeList.length !== 0 && monthlyPerfumeList.map(perfume => {
+            {monthlyPerfumeList.length !== 0 &&
+              monthlyPerfumeList.map((perfume) => {
                 return (
                   <div key={perfume.id} className="perfume">
-                    <img src={perfume.imgurl==="http://www.basenotes.net/photos/300noimage.png" || perfume.imgurl===undefined?'/images/no_image.png':perfume.imgurl} alt={perfume.name} />
+                    <img
+                      src={
+                        perfume.imgurl ===
+                          'http://www.basenotes.net/photos/300noimage.png' ||
+                        perfume.imgurl === undefined
+                          ? '/images/no_image.png'
+                          : perfume.imgurl
+                      }
+                      alt={perfume.name}
+                    />
                     <div className="perfume_info">
                       <p>{perfume.brand}</p>
                       <p>{perfume.name}</p>
                     </div>
                   </div>
-                )
-              })
-            }
+                );
+              })}
           </div>
         </div>
       </div>
