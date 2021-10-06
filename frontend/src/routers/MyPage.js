@@ -76,7 +76,7 @@ function Mypage() {
         <div className="no_perfume">
           <p>🤍를 누른 향수가 없습니다</p>
           <div className="link_box">
-            <Link to="/teller-1">
+            <Link to="/teller">
               <p>나만의 향수 추천</p>
             </Link>
           </div>
