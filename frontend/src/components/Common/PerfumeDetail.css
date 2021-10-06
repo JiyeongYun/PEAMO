@@ -9,8 +9,8 @@
 
 .perfume_detail_box {
   background-color: rgba(255, 255, 255, 1);
-  width: 50%;
-  height: 60%;
+  width: 55%;
+  height: 65%;
   border-radius: 20px;
   position: relative;
   top: 50%;
@@ -42,6 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin: var(--margin-2) 0;
 }
 
 .detail_wrapper::-webkit-scrollbar {
@@ -49,8 +50,24 @@
 }
 
 .detail_info1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-right: var(--margin-4);
   width: 45%;
+}
+
+.detail_info1_icon {
+  color: #EE3434;
+  opacity: 0.8;
+  margin-bottom: var(--margin-2);
+  font-size: var(--large-font-size);
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+
+.icon_active {
+  filter: grayscale(0%);
 }
 
 .detail_info1_title {
