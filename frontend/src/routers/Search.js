@@ -14,6 +14,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import SearchCard from '../components/SearchComponents/SearchCard';
 import Grid from '@material-ui/core/Grid';
 import PerfumeDetail from '../components/Common/PerfumeDetail';
+import Loading from '../components/Loading';
 
 // action
 import { getPerfumeDetail } from '../components/Common/commonSlice';
@@ -118,8 +119,14 @@ function Search() {
     }
   };
 
+  // 향수 검색 함수
+  function searchPer () {
+    console.log('검색')
+  }
+  // 향수 검색 종료
+
   return (
-    <div className="search_page">
+    <div className="searchpage">
       {showPerfumeDetail && (
         <PerfumeDetail togglePerfumeDetail={togglePerfumeDetail} />
       )}
@@ -127,137 +134,147 @@ function Search() {
       <a href="#top">
         <FontAwesomeIcon className="up_icon" icon={faAngleDoubleUp} size="3x" />
       </a>
-      <div className="sex_category">
-        <ul>
-          <li
-            className="checked gender"
-            onClick={(e) => {
-              toggleItems(2, e);
-            }}
-          >
-            #For Her
-          </li>
-          <li
-            className="gender"
-            onClick={(e) => {
-              toggleItems(1, e);
-            }}
-          >
-            #For Him
-          </li>
-          <li
-            className="gender"
-            onClick={(e) => {
-              toggleItems(0, e);
-            }}
-          >
-            #For Unisex
-          </li>
-        </ul>
-      </div>
-      <div className="note_category">
-        <ul>
-          <li
-            className="checked notes"
-            onClick={(e) => {
-              toggleItems(3, e);
-            }}
-          >
-            ALL
-          </li>
-          <li>|</li>
-          <li
-            className="notes"
-            onClick={(e) => {
-              toggleItems(4, e);
-            }}
-          >
-            FLOWERS
-          </li>
-          <li>|</li>
-          <li
-            className="notes"
-            onClick={(e) => {
-              toggleItems(5, e);
-            }}
-          >
-            CITRUS
-          </li>
-          <li>|</li>
-          <li
-            className="notes"
-            onClick={(e) => {
-              toggleItems(6, e);
-            }}
-          >
-            FRUITS
-          </li>
-          <li>|</li>
-          <li
-            className="notes"
-            onClick={(e) => {
-              toggleItems(7, e);
-            }}
-          >
-            GREENS
-          </li>
-          <li>|</li>
-          <li
-            className="notes"
-            onClick={(e) => {
-              toggleItems(8, e);
-            }}
-          >
-            SWEETS
-          </li>
-        </ul>
-      </div>
-      <div className="search_card">
-        <InfiniteScroll
-          dataLength={items.length} //This is important field to render the next data
-          next={loadMoreData}
-          hasMore={noMore}
-          loader={
-            <h4 style={{ textAlign: 'center' }}>
-              스크롤을 내리면 더 많은 향수를 볼 수 있습니다.
-            </h4>
-          }
-          endMessage={
-            <p style={{ textAlign: 'center' }}>
-              <b>Yay! You have seen it all</b>
-            </p>
-          }
-        >
-          <Grid container spacing={3}>
-            {items.map((item) => {
-              return (
-                <Grid
-                  key={item.id}
-                  item
-                  md={4}
-                  sm={6}
-                  xs={12}
-                  onClick={() => togglePerfumeDetail(item.id)}
-                  className="perfume_card"
-                >
-                  <SearchCard
-                    imgurl={
-                      item.imgurl ===
-                        'http://www.basenotes.net/photos/300noimage.png' ||
-                      item.imgurl === undefined
-                        ? '/images/no_image.png'
-                        : item.imgurl
-                    }
-                    brand={item.brand}
-                    name={item.name}
-                    id={item.id}
-                  ></SearchCard>
-                </Grid>
-              );
-            })}
-          </Grid>
-        </InfiniteScroll>
-      </div>
+      {items.length === 0 ?
+        <Loading />
+        :
+        <div className="search_page">
+          <div className="sex_category">
+            <ul>
+              <li
+                className="checked gender"
+                onClick={(e) => {
+                  toggleItems(2, e);
+                }}
+              >
+                #For Her
+              </li>
+              <li
+                className="gender"
+                onClick={(e) => {
+                  toggleItems(1, e);
+                }}
+              >
+                #For Him
+              </li>
+              <li
+                className="gender"
+                onClick={(e) => {
+                  toggleItems(0, e);
+                }}
+              >
+                #For Unisex
+              </li>
+            </ul>
+          </div>
+          <div className="note_category">
+            <ul>
+              <li
+                className="checked notes"
+                onClick={(e) => {
+                  toggleItems(3, e);
+                }}
+              >
+                ALL
+              </li>
+              <li>|</li>
+              <li
+                className="notes"
+                onClick={(e) => {
+                  toggleItems(4, e);
+                }}
+              >
+                FLOWERS
+              </li>
+              <li>|</li>
+              <li
+                className="notes"
+                onClick={(e) => {
+                  toggleItems(5, e);
+                }}
+              >
+                CITRUS
+              </li>
+              <li>|</li>
+              <li
+                className="notes"
+                onClick={(e) => {
+                  toggleItems(6, e);
+                }}
+              >
+                FRUITS
+              </li>
+              <li>|</li>
+              <li
+                className="notes"
+                onClick={(e) => {
+                  toggleItems(7, e);
+                }}
+              >
+                GREENS
+              </li>
+              <li>|</li>
+              <li
+                className="notes"
+                onClick={(e) => {
+                  toggleItems(8, e);
+                }}
+              >
+                SWEETS
+              </li>
+            </ul>
+          </div>
+          <div className="search_bar">
+            <input type="text" placeholder="향수이름" />
+            <p onClick={searchPer}>검색</p>
+          </div>
+          <div className="search_card">
+            <InfiniteScroll
+              dataLength={items.length} //This is important field to render the next data
+              next={loadMoreData}
+              hasMore={noMore}
+              loader={
+                <h4 style={{ textAlign: 'center' }}>
+                  스크롤을 내리면 더 많은 향수를 볼 수 있습니다.
+                </h4>
+              }
+              endMessage={
+                <p style={{ textAlign: 'center' }}>
+                  <b>Yay! You have seen it all</b>
+                </p>
+              }
+            >
+              <Grid container spacing={3}>
+                {items.map((item) => {
+                  return (
+                    <Grid
+                      key={item.id}
+                      item
+                      md={4}
+                      sm={6}
+                      xs={12}
+                      onClick={() => togglePerfumeDetail(item.id)}
+                      className="perfume_card"
+                    >
+                      <SearchCard
+                        imgurl={
+                          item.imgurl ===
+                            'http://www.basenotes.net/photos/300noimage.png' ||
+                          item.imgurl === undefined
+                            ? '/images/no_image.png'
+                            : item.imgurl
+                        }
+                        brand={item.brand}
+                        name={item.name}
+                        id={item.id}
+                      ></SearchCard>
+                    </Grid>
+                  );
+                })}
+              </Grid>
+            </InfiniteScroll>
+          </div>
+        </div>
+      }
     </div>
   );
 }

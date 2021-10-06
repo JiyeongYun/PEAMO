@@ -1,10 +1,10 @@
-.search_page {
+.searchpage {
   height: 100vh;
   padding-top: 9vh;
   overflow: scroll;
 }
 
-.search_page::-webkit-scrollbar {
+.searchpage::-webkit-scrollbar {
   display: none;
 }
 
@@ -76,4 +76,29 @@ ul {
 
 .perfume_card {
   cursor: pointer;
+}
+
+.search_page > .search_bar {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.search_page > .search_bar > input {
+  text-align: right;
+  padding-right: 60px;
+  height: 30px;
+}
+
+.search_page > .search_bar > p {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translate(0, -50%);
+  cursor: pointer;
+}
+
+.MuiCardMedia-img {
+  height: 300px !important;
 }
