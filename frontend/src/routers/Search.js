@@ -4,6 +4,9 @@ import axios from 'axios'
 import SearchCard from '../components/SearchComponents/SearchCard'
 import Grid from '@material-ui/core/Grid'
 import InfiniteScroll from 'react-infinite-scroll-component'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
+import commonSlice from '../components/Common/commonSlice'
 
 function Search () {
   const [items, setItems] = useState([])
@@ -89,7 +92,14 @@ function Search () {
 
   return (
     <div className="search_page">
-      
+      <div id="top"></div>
+      <a href="#top">
+        <FontAwesomeIcon
+          className="up_icon"
+          icon={faAngleDoubleUp}
+          size="3x"
+        />
+      </a>
       <div className="sex_category">
         <ul>
           <li className="checked gender" onClick={(e) => {toggleItems(2, e)}}>#For Her</li>
