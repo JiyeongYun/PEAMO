@@ -71,9 +71,7 @@ public class PerfumeService {
         return perfumeListResponse;
     }
 
-    /**
-     * 큰 카테고리 -> 세부 카테고리 변환 메소드
-     */
+    /** 큰 카테고리 -> 세부 카테고리 변환 메소드 */
     public List<Long> getSubCategoryList(int category) {
         List<Long> subCategoryList = new ArrayList<>();
         switch (category) {
@@ -146,12 +144,30 @@ public class PerfumeService {
     }
 
     /** 이달의 향수 리스트 반환 */
-    public List<PerfumeSimpleInfo> getMonthPerfume() {
-        int season = getSeason();
+    public Map<String, Object> getMonthPerfume() {
+        Map<String, Object> response = new HashMap<String, Object>();
+    	int season = getSeason();
         List<Long> categoryIds = categorySeasonRepository.getCategoryIdBySeasonId(season); //시즌에 해당하는 카테고리 아이디들
         List<Long> perfumeIds = perfumeCategoryRepository.getPopularPerfumeIdByCategoryId(categoryIds);
-        return getSimilarPerfumes(getSimilarityExistPerfumeId(perfumeIds));
+        response.put("PerfumeSimpleInfoList", getSimilarPerfumes(getSimilarityExistPerfumeId(perfumeIds)));
+        response.put("categoryIds", getCategoryList(categoryIds));
+        return response;
     }
+    
+	/** 세부 카테고리 -> 큰 카테고리 변환 메소드 */
+	public Set<Integer> getCategoryList(List<Long> subCategory) {
+		Set<Integer> categoryList = new HashSet<>();
+		for (int i = 0, size = subCategory.size(); i < size; i++) {
+			long num = subCategory.get(i);
+			if(num == 1) { categoryList.add(4); }
+			else if(num == 3 || num == 4) { categoryList.add(5); }
+			else if(num == 2) { categoryList.add(6); }
+			else if(num == 5 || num == 8) { categoryList.add(7); }
+			else if(num == 7) { categoryList.add(8); }
+		}
+		return categoryList;
+	}
+    
 
     /** id에 해당하는 향수 & 유사 향수 두 개 반환 */
     public List<PerfumeSimpleInfo> getSimilarPerfumes(long perfumeId) {

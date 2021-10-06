@@ -1,6 +1,7 @@
 package com.osds.peamo.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import com.osds.peamo.model.network.request.RecommendRequest;
 import lombok.extern.slf4j.Slf4j;
@@ -60,8 +61,8 @@ public class PerfumeController {
     
     // 이달의 향수
     @GetMapping("/thismonth")
-    public ResponseEntity<List<PerfumeSimpleInfo>> getMonthPerfume() {
-    	List<PerfumeSimpleInfo> response = perfumeService.getMonthPerfume();
+    public ResponseEntity<Map<String, Object>> getMonthPerfume() {
+    	Map<String, Object> response = perfumeService.getMonthPerfume();
     	return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
