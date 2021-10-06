@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "api_brand")
+@Entity(name = "brand")
 @Builder
 public class Brand {
 

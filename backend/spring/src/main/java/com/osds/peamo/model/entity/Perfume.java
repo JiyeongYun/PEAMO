@@ -1,6 +1,5 @@
 package com.osds.peamo.model.entity;
 
-import com.osds.peamo.model.entity.Brand;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,7 +10,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name="api_perfume")
+@Entity(name = "perfume")
 @Builder
 public class Perfume {
 
@@ -28,11 +27,11 @@ public class Perfume {
     @Column
     private String imgurl;                   // imgurl
 
-    @Column(name="good_cnt")
+    @Column(name = "good_cnt")
     private int goodCnt;                     // good_cnt
 
     @ManyToOne
-    @JoinColumn(name="brand_id")
+    @JoinColumn(name = "brand_id")
     private Brand brand;                     // brand
 
 }

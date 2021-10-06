@@ -351,10 +351,12 @@ public class PerfumeService {
         return perfumeId;
     }
 
-    /** 이름에 단어가 포함된 향수 리스트 반환 */
-	public List<PerfumeSimpleInfo> getPerfumeList(String word, String uId, int page) {
-		Page<Perfume> perfumePage = perfumeRepository.findByNameLike(word, PageRequest.of(page, 30, Sort.by("id").descending()));
-		List<Perfume> perfumeList = perfumePage.getContent();
+    /**
+     * 이름에 단어가 포함된 향수 리스트 반환
+     */
+    public List<PerfumeSimpleInfo> getPerfumeList(String word, String uId, int page) {
+        Page<Perfume> perfumePage = perfumeRepository.findByNameLike(word, PageRequest.of(page, 30, Sort.by("id").descending()));
+        List<Perfume> perfumeList = perfumePage.getContent();
 
         List<PerfumeSimpleInfo> perfumeListResponse = new ArrayList<>();
 
@@ -376,6 +378,6 @@ public class PerfumeService {
             perfumeListResponse.add(PerfumeSimpleInfo.builder().id(perfume.getId()).name(perfume.getName()).brand(brandName).imgurl(perfume.getImgurl()).isLike(isLike).build());
         }
         return perfumeListResponse;
-	}
+    }
 
 }

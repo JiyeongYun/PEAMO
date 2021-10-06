@@ -4,14 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.AnyMetaDefs;
 
 import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name="api_perfumenote")
+@Entity(name = "perfumenote")
 @Builder
 public class PerfumeNote {
     @Id
@@ -21,10 +20,10 @@ public class PerfumeNote {
     private int noteType;                    // note_type
 
     @OneToOne
-    @JoinColumn(name="note_id")
+    @JoinColumn(name = "note_id")
     private Note note;
 
     @ManyToOne
-    @JoinColumn(name="perfume_id")
+    @JoinColumn(name = "perfume_id")
     private Perfume perfume;
 }
