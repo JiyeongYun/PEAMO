@@ -74,16 +74,14 @@ function Mypage() {
       <p className="mypage_title">나의 향수함</p>
       {myPerfume.length === 0 ? (
         <div className="no_perfume">
-          <p>🤍를 누른 향수가 없습니다</p>
-          <div className="link_box">
+          <p>향수함이 비었습니다</p>
+          <div className="flex_box">
             <Link to="/teller">
-              <p>나만의 향수 추천</p>
+              <p>향수 추천받기</p>
             </Link>
-          </div>
-          <p>혹은</p>
-          <div className="link_box">
+            <p>|</p>
             <Link to="/search">
-              <p>향수 검색</p>
+              <p>향수 둘러보기</p>
             </Link>
           </div>
         </div>

@@ -13,6 +13,15 @@
   animation: updown 0.5s alternate infinite;
 }
 
+.up_icon {
+  cursor: pointer;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  color: black;
+  animation: updown 0.5s alternate infinite;
+}
+
 .black_icon {
   color: black;
 }
@@ -90,10 +99,6 @@
   width: 20%;
   height: 70px;
   border: 1px solid white;
-  /* position: relative; */
-  /* top: 30%; */
-  /* left: 50%; */
-  /* transform: translate(-50%); */
   cursor: pointer;
   transition: all 0.5s;
   margin: 0 auto;
@@ -104,22 +109,6 @@
   background-color: black;
   color: white;
 }
-
-/* .home > .white_canvas > .home_bottom > .home_btn:hover > p {
-  opacity: 1;
-  transform: translate(-50%, -30px);
-}
-
-.home > .white_canvas > .home_bottom > .home_btn > p {
-  position: absolute;
-  opacity: 0;
-  font-size: var(--large-font-size);
-  font-weight: bold;
-  transition: all 0.7s;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, 0);
-} */
 
 .home > .white_canvas > .home_bottom > .home_btn p {
   font-size: var(--large-font-size);
@@ -187,10 +176,9 @@
   > .perfumes
   > .perfume
   > .perfume_info
-  > p:nth-child(1) {
-  font-weight: bold;
+  > p:nth-child(2) {
   font-size: var(--large-font-size);
-  margin-bottom: var(--margin-1);
+  margin-top: var(--margin-1);
 }
 
 .home > .this_month_perfume > .center_pos > .perfumes > .perfume > .notes {
