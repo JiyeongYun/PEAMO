@@ -1,64 +1,46 @@
-<h1>PE' AMO</h1>
+<img src="https://user-images.githubusercontent.com/57614563/135024260-2559c6a8-7dd2-4e5e-950c-c5595c6af3f8.png">
+
+# PE' AMO [ 당신의 취향을 찾아드립니다 ]
 
 > *Pe*rfume(향수) 과 TI *Amo*(사랑해) 의 결합
 >
-> 빅데이터 기반 향수 추천 애플리케이션
-
-<img src="https://user-images.githubusercontent.com/57614563/135024260-2559c6a8-7dd2-4e5e-950c-c5595c6af3f8.png">
-
-<h3>주요기능</h3>
-
----
-
-**1. 메인화면**
-
-<img src="https://user-images.githubusercontent.com/57614563/135033821-ceeed9dd-bda9-4430-b12b-a66c171256be.gif" width="90%">
-
-<br>
+> 빅데이터 기반 향수 추천 사이트
 
 
 
-**2. 이달의 향수**
+[TOC]
 
-<img src="https://user-images.githubusercontent.com/57614563/135033977-674b6658-9b05-4ddf-9fad-0f52d9f23896.PNG" width="90%">
+## 0. 팀소개
 
-<br>
+![members](README.assets/members.png)
 
-
-
-**3. 스무고개**
-
-> 향수에 대해 잘 모르는 유저에게 간단한 취향 조사 후 향수 추천
-
-<img src="https://user-images.githubusercontent.com/57614563/135034125-2c7d9284-0588-457e-8f01-d829ce9a8f26.gif" width="90%">
-
-<br>
+- 권오우 : 
+- 서예리 : 
+- 송상민 : 
+- 신지수 : 
+- 윤지영 : 
+- 장현웅 : 
 
 
 
-**4. 향수 종류**
+## 1. 서비스 소개
 
-<img src="https://user-images.githubusercontent.com/57614563/135034189-c6e45232-15e3-438c-8c73-f8a76997ef0f.PNG" width="90%">
-
-<br>
+> 빅데이터를 기반으로 향수를 추천해주는 사이트
 
 
 
-**5. 향수 가이드**
+##### 1.1 기획 배경
 
-<img src="https://user-images.githubusercontent.com/57614563/135034295-e6c5f85a-2add-4f89-8888-60ea093beb3a.gif" width="90%">
+코로나로 인한 정부 방역지침에 따라 백화점에서는 시식, 시음, 시향 등을 금지했으며, 이에 따라 화장품 매출은 감소했지만 향수 매출은 오히려 늘어났다. 업계에서는 화장 대신 자신을 표현할 수 있는 수단으로 향수가 각광받고 있는 것으로 보고 있다. 이러한 흐름에 발 맞추어 사용자에게 어울리는 향수를 추천해주는 사이트의 필요성을 느끼고 PE' AMO 프로젝트를 기획하게 되었다.
 
-<br>
+ 
 
+##### 1.2 주요 타겟
 
-
-**6. 성분 향 설명**
-
-<img src="https://user-images.githubusercontent.com/57614563/135034319-61d69d5f-c940-41c9-b42c-c5fd3056df43.PNG" width="90%">
-
-<br>
-
-
+1. 향수에 대해 잘 모르는 사회 초년생
+   - 향수를 처음 구매하려는 사회 초년생에게는 많은 진입 장벽이 있다. 우리 사이트에서는 이런 진입 장벽을 허물고 간단한 질문을 통해 사용자의 선호도를 파악하고 그에 맞는 향수를 추천해준다.
+2. 본인이 사용했던 향수와 비슷한 향을 찾는 구매자
+   - 향수는 같은 향을 낸다고 하더라도 포함된 노트들에 따라 전혀 다른 향기가 난다. 이런 문제로 고민을 하는 구매자들에게 자신이 사용했던 향수를 검색하면 그 향수와 가장 비슷한 향수를 찾아서 추천해준다.
 
 
 
