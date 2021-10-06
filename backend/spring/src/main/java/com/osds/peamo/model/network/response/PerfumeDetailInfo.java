@@ -1,5 +1,6 @@
 package com.osds.peamo.model.network.response;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -15,7 +16,7 @@ public class PerfumeDetailInfo {
 	List<String> categoryNameList;
 	NotesTMB notesTMB;
 	int gender;
-	Set<Long> seasons;
+	HashSet<Long> seasons;
 	int goodCount;
 	
 }
