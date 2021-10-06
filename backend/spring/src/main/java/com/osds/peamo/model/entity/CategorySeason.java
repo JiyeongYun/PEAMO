@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "categoryseason")
+@Entity(name="categoryseason")
 @Builder
 public class CategorySeason {
     @Id
