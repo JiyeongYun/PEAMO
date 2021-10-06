@@ -51,8 +51,8 @@ public class PerfumeController {
 
     // 향수 상세 정보
     @GetMapping
-    public ResponseEntity<PerfumeDetailInfo> getPerfume(@RequestParam long id) {
-    	PerfumeDetailInfo response = perfumeService.getPerfumeDetailInfo(id);
+    public ResponseEntity<PerfumeDetailInfo> getPerfume(@RequestParam long pId, @RequestParam String uId) {
+    	PerfumeDetailInfo response = perfumeService.getPerfumeDetailInfo(pId, uId);
     	if (response == null) {
     		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response); // 존재하지 않는 id 요청
 		}

@@ -97,12 +97,18 @@ public class PerfumeService {
     }
 
     /** 향수 상세 정보 반환 */
-    public PerfumeDetailInfo getPerfumeDetailInfo(long id) {
+    public PerfumeDetailInfo getPerfumeDetailInfo(long pId, String uId) {
     	
-        Perfume perfume = perfumeRepository.getPerfumeById(id);
+        Perfume perfume = perfumeRepository.getPerfumeById(pId);
         if (perfume != null) {
-        	PerfumeSimpleInfo perfumeSimpleInfo = getPerfumeSimpleInfo(id);  // 향수 간단 정보
-            List<PerfumeCategory> PCList = perfumeCategoryRepository.getPerfumeCategoriesByPerfumeId(id);
+        	PerfumeSimpleInfo perfumeSimpleInfo = getPerfumeSimpleInfo(pId);  // 향수 간단 정보
+        	Optional<User> user = userRepository.findUserByUid(uId);
+        	long userId = user.isPresent() ? user.get().getId() : -1;
+        	boolean isLike = false;
+        	if(userId != -1) isLike = userService.isLikePerfume(userId, pId) != -1 ? true : false;
+        	perfumeSimpleInfo.setLike(isLike);
+        	
+        	List<PerfumeCategory> PCList = perfumeCategoryRepository.getPerfumeCategoriesByPerfumeId(pId);
             List<String> categoryNameList = new ArrayList<>(); // 카테고리 이름 정보
             for (int i = 0, size = PCList.size(); i < size; i++) {
                 long categoryId = PCList.get(i).getCategoryId();
@@ -110,11 +116,11 @@ public class PerfumeService {
                 categoryNameList.add(category.getEng());
             }
 
-            NotesTMB notesTMB = getNotesTMB(id); // 향(Top, Middle, Base) 정보
+            NotesTMB notesTMB = getNotesTMB(pId); // 향(Top, Middle, Base) 정보
             int gender = perfume.getGender(); // 성별 정보
             Set<Long> seasons = categorySeasonRepository.getSeasonIdsByCategoryIds(PCList);
             int goodCount = perfume.getGoodCnt();
-
+            
             return PerfumeDetailInfo.builder().perfumeSimpleInfo(perfumeSimpleInfo).categoryNameList(categoryNameList)
                     .notesTMB(notesTMB).gender(gender).seasons(seasons).goodCount(goodCount).build();
         } else {
@@ -190,15 +196,10 @@ public class PerfumeService {
         int season;
         Calendar cal = Calendar.getInstance();
         int month = cal.get(cal.MONTH) + 1;
-        if (month == 3 || month == 4 || month == 5) {
-            season = 1;
-        } else if (month == 6 || month == 7 || month == 8) {
-            season = 2;
-        } else if (month == 9 || month == 10 || month == 11) {
-            season = 3;
-        } else {
-            season = 4;
-        }
+        if (month == 3 || month == 4 || month == 5) { season = 1; } 
+        else if (month == 6 || month == 7 || month == 8) { season = 2; } 
+        else if (month == 9 || month == 10 || month == 11) { season = 3; } 
+        else { season = 4; }
         return season;
     }
 

@@ -6,7 +6,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Getter
+@Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PerfumeSimpleInfo {
 	
