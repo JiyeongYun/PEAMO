@@ -27,10 +27,6 @@ public class UserController {
         UserResponse response = userService.oauth2AuthorizationKakao(code);
         if (response == null) return new ResponseEntity(HttpStatus.NOT_FOUND);
         return ResponseEntity.status(HttpStatus.OK).body(response);
-//        MultiValueMap accessToken = new LinkedMultiValueMap<>();
-//        accessToken.add("AccessToken", response.getAccess_token());
-//        response.setAccess_token(null);
-//        return new ResponseEntity(response, accessToken, HttpStatus.OK);
     }
 
     @PostMapping("/logout")
@@ -42,7 +38,7 @@ public class UserController {
     }
 
     @PostMapping("/like")
-    public ResponseEntity likePerfume(@RequestBody Map<String, String> request){
+    public ResponseEntity likePerfume(@RequestBody Map<String, String> request) {
         userService.likePerfume(request.get("uid"), Long.parseLong(request.get("perfumeId")));
         return new ResponseEntity(HttpStatus.OK);
     }

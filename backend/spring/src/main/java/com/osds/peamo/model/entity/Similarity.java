@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name="similarity")
+@Entity(name = "similarity")
 @Builder
 public class Similarity {
 
