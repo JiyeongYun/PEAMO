@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router';
 import { Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -34,6 +35,8 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   // useDispatch
   const dispatch = useDispatch();
+  // useHistory
+  const history = useHistory();
 
   // access token 여부
   const isTokenExist = localStorage.getItem('token');
@@ -62,6 +65,8 @@ function App() {
         if (res.status === 200) {
           localStorage.removeItem('token');
           localStorage.removeItem('userId');
+          setIsLoggedIn(false);
+          history.push('/');
           alert('로그아웃 성공');
         }
       })
