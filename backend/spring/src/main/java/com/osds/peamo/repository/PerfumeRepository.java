@@ -14,4 +14,7 @@ public interface PerfumeRepository extends JpaRepository<Perfume, Long> {
     Perfume getPerfumeById(long id);
 
     List<Perfume> getPerfumesByIdIn(List<Long> perfumeIdList);
+    
+    // 이름에 단어가 포함된 향수 객체 반환
+    Page<Perfume> findByNameLike(String word, Pageable pageable);
 }
