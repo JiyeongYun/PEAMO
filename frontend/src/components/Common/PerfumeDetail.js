@@ -2,8 +2,14 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 // css
 import './PerfumeDetail.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
 // component
 import CloseIcon from '@mui/icons-material/Close';
+
+// library
+import axios from '../Common/http-common';
 
 function PerfumeDetail({ togglePerfumeDetail }) {
   const perfume = useSelector((state) => state.common.currentPerfume);
@@ -13,6 +19,7 @@ function PerfumeDetail({ togglePerfumeDetail }) {
   const [isWinter, setIsWinter] = useState(false);
   const [gender, setGender] = useState(null);
   const [noteTableData, setNoteTableData] = useState([]);
+  const [isLiked, setIsLiked] = useState(false);
 
   const closePerfumeDetail = () => {
     togglePerfumeDetail();
@@ -61,11 +68,34 @@ function PerfumeDetail({ togglePerfumeDetail }) {
     return data;
   };
 
+  // 좋아요 토글 함수
+  const likeToggle = async (perfumeId) => {
+    const uid = localStorage.getItem('userId');
+    try {
+      await axios
+        .post('/user/like', {
+          uid,
+          perfumeId,
+        })
+        .then(() => {
+          setIsLiked(!isLiked);
+        });
+    } catch (error) {
+      alert('통신불가');
+    }
+  };
+
   useEffect(() => {
     checkSeasons(perfume.seasons);
     checkGender(perfume.gender);
     setNoteTableData(makeNoteTableData(perfume.notesTMB));
-  }, [perfume.seasons, perfume.gender, perfume.notesTMB]);
+    setIsLiked(perfume.perfumeSimpleInfo.like);
+  }, [
+    perfume.seasons,
+    perfume.gender,
+    perfume.notesTMB,
+    perfume.perfumeSimpleInfo.like,
+  ]);
 
   return (
     <div className="perfume_detail_container">
@@ -74,8 +104,16 @@ function PerfumeDetail({ togglePerfumeDetail }) {
           className="close_icon"
           onClick={() => closePerfumeDetail()}
         />
+
         <div className="detail_wrapper">
           <div className="detail_info1">
+            <FontAwesomeIcon
+              className={
+                isLiked ? 'detail_info1_icon icon_active' : 'detail_info1_icon'
+              }
+              icon={faHeart}
+              onClick={() => likeToggle(perfume.perfumeSimpleInfo.id)}
+            />
             <img
               src={perfume.perfumeSimpleInfo.imgurl}
               className="detail_info1_image"
