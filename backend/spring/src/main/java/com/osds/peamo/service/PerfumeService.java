@@ -43,7 +43,6 @@ public class PerfumeService {
             List<Long> subCategoryList = getSubCategoryList(category);
             perfumeIdList = perfumeCategoryRepository.getperfumeIdByCategoryId(subCategoryList);
         }
-
         Page<Perfume> perfumePage = perfumeRepository.getPerfumesByGenderAndIdIn(perfumeListSearch.getGender(), perfumeIdList, PageRequest.of(page, 30, Sort.by("id").descending()));
         List<Perfume> perfumeList = perfumePage.getContent();
 
@@ -334,5 +333,32 @@ public class PerfumeService {
         }
         return perfumeId;
     }
+
+    /** 이름에 단어가 포함된 향수 리스트 반환 */
+	public List<PerfumeSimpleInfo> getPerfumeList(String word, String uId, int page) {
+		Page<Perfume> perfumePage = perfumeRepository.findByNameLike(word, PageRequest.of(page, 30, Sort.by("id").descending()));
+		List<Perfume> perfumeList = perfumePage.getContent();
+
+        List<PerfumeSimpleInfo> perfumeListResponse = new ArrayList<>();
+
+        Optional<User> user = userRepository.findUserByUid(uId);
+        long userId = user.isPresent() ? user.get().getId() : -1;
+        int size = perfumeList.size();
+
+        for (int i = 0; i < size; i++) {
+            Perfume perfume = perfumeList.get(i);
+            long perfumeId = perfume.getId();
+            boolean isLike = false;
+            if (userId != -1)
+                isLike = userService.isLikePerfume(userId, perfumeId) != -1 ? true : false; // -1이 아닌 경우? true: 좋아요 O  / false: 좋아요 X
+            Optional<Brand> brand = brandRepository.getBrandById(perfume.getBrand().getId());
+            String brandName = null;
+            if (brand.isPresent()) {
+                brandName = brand.get().getName();
+            }
+            perfumeListResponse.add(PerfumeSimpleInfo.builder().id(perfume.getId()).name(perfume.getName()).brand(brandName).imgurl(perfume.getImgurl()).isLike(isLike).build());
+        }
+        return perfumeListResponse;
+	}
 
 }

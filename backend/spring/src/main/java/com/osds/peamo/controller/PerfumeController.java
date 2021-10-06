@@ -40,6 +40,17 @@ public class PerfumeController {
 		}
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
+    
+    // 단어로 향수 검색
+    @GetMapping("/search")
+    public ResponseEntity<List<PerfumeSimpleInfo>> getPerfumes(@RequestParam String word, @RequestParam String uId, @RequestParam int page) {
+    	List<PerfumeSimpleInfo> response = perfumeService.getPerfumeList(word, uId, page);
+    	if (response == null) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+    
 
     @PostMapping("/recommend")
     public ResponseEntity<List<PerfumeSimpleInfo>> recommend(@RequestBody RecommendRequest recommendRequest) {
