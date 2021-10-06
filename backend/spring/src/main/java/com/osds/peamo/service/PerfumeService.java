@@ -27,14 +27,10 @@ public class PerfumeService {
     final private PerfumeNoteRepository perfumeNoteRepository;
     final private PerfumeRepository perfumeRepository;
     final private SimilarityRepository similarityRepository;
-    final private UserRepository userRepository;
     final private UserService userService;
 
-    /**
-     * 향수 기본 정보 반환
-     */
+    /** 향수 기본 정보 반환 */
     public List<PerfumeSimpleInfo> getPerfumeList(PerfumeListSearch perfumeListSearch, int page) {
-
         int category = perfumeListSearch.getCategory();
         List<Long> perfumeIdList;
         if (category == 3) {
@@ -46,11 +42,14 @@ public class PerfumeService {
         Page<Perfume> perfumePage = perfumeRepository.getPerfumesByGenderAndIdIn(perfumeListSearch.getGender(), perfumeIdList, PageRequest.of(page, 30, Sort.by("id").descending()));
         List<Perfume> perfumeList = perfumePage.getContent();
 
+        return getPerfumeSimpleInfoList(perfumeList, perfumeListSearch.getUid());
+    }
+    
+    // 향수 리스트, 향수 기본 정보 리스트 반환
+    public List<PerfumeSimpleInfo> getPerfumeSimpleInfoList(List<Perfume> perfumeList, String uId) {
         List<PerfumeSimpleInfo> perfumeListResponse = new ArrayList<>();
 
-        Optional<User> user = userRepository.findUserByUid(perfumeListSearch.getUid());
-
-        long userId = user.isPresent() ? user.get().getId() : -1;
+        long userId = userService.getUserTableId(uId);
         int size = perfumeList.size();
 
         for (int i = 0; i < size; i++) {
@@ -66,43 +65,46 @@ public class PerfumeService {
             }
             perfumeListResponse.add(PerfumeSimpleInfo.builder().id(perfume.getId()).name(perfume.getName()).brand(brandName).imgurl(perfume.getImgurl()).isLike(isLike).build());
         }
-
         return perfumeListResponse;
     }
+    
 
-    /** 큰 카테고리 -> 세부 카테고리 변환 메소드 */
+    // 큰 카테고리 -> 세부 카테고리 변환 메소드
     public List<Long> getSubCategoryList(int category) {
         List<Long> subCategoryList = new ArrayList<>();
         switch (category) {
-            case 4:
-                subCategoryList.add((long) 1);
-                break;
-            case 5:
-                subCategoryList.add((long) 3);
-                subCategoryList.add((long) 4);
-                break;
-            case 6:
-                subCategoryList.add((long) 2);
-                break;
-            case 7:
-                subCategoryList.add((long) 5);
-                subCategoryList.add((long) 8);
-                break;
-            case 8:
-                subCategoryList.add((long) 7);
-                break;
+            case 4: subCategoryList.add((long) 1); break;
+            case 5: subCategoryList.add((long) 3); subCategoryList.add((long) 4); break;
+            case 6: subCategoryList.add((long) 2); break;
+            case 7: subCategoryList.add((long) 5); subCategoryList.add((long) 8); break;
+            case 8: subCategoryList.add((long) 7); break;
         }
         return subCategoryList;
     }
+    
+	// 세부 카테고리 -> 큰 카테고리 변환 메소드
+	public Set<Integer> getCategoryList(List<Long> subCategory) {
+		Set<Integer> categoryList = new HashSet<>();
+		for (int i = 0, size = subCategory.size(); i < size; i++) {
+			long num = subCategory.get(i);
+			if(num == 1) { categoryList.add(4); }
+			else if(num == 3 || num == 4) { categoryList.add(5); }
+			else if(num == 2) { categoryList.add(6); }
+			else if(num == 5 || num == 8) { categoryList.add(7); }
+			else if(num == 7) { categoryList.add(8); }
+		}
+		return categoryList;
+	}
 
     /** 향수 상세 정보 반환 */
     public PerfumeDetailInfo getPerfumeDetailInfo(long pId, String uId) {
-    	
+    	System.out.println(pId);
         Perfume perfume = perfumeRepository.getPerfumeById(pId);
         if (perfume != null) {
+        	System.out.println("들어오나요?222");
         	PerfumeSimpleInfo perfumeSimpleInfo = getPerfumeSimpleInfo(pId);  // 향수 간단 정보
-        	Optional<User> user = userRepository.findUserByUid(uId);
-        	long userId = user.isPresent() ? user.get().getId() : -1;
+        	
+        	long userId = userService.getUserTableId(uId);
         	boolean isLike = false;
         	if(userId != -1) isLike = userService.isLikePerfume(userId, pId) != -1 ? true : false;
         	perfumeSimpleInfo.setLike(isLike);
@@ -114,7 +116,6 @@ public class PerfumeService {
                 Category category = categoryRepository.getById(categoryId);
                 categoryNameList.add(category.getEng());
             }
-
             NotesTMB notesTMB = getNotesTMB(pId); // 향(Top, Middle, Base) 정보
             int gender = perfume.getGender(); // 성별 정보
             Set<Long> seasons = categorySeasonRepository.getSeasonIdsByCategoryIds(PCList);
@@ -127,9 +128,7 @@ public class PerfumeService {
         }
     }
 
-    /**
-     * 향수 id에 맞는 NotesTMB 반환
-     */
+    // 향수 id에 맞는 NotesTMB 반환
     public NotesTMB getNotesTMB(long id) {
         NotesTMB notesTMB = new NotesTMB(new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
         List<Long> noteIdList;
@@ -160,25 +159,8 @@ public class PerfumeService {
         response.put("categoryIds", getCategoryList(categoryIds));
         return response;
     }
-    
-	/** 세부 카테고리 -> 큰 카테고리 변환 메소드 */
-	public Set<Integer> getCategoryList(List<Long> subCategory) {
-		Set<Integer> categoryList = new HashSet<>();
-		for (int i = 0, size = subCategory.size(); i < size; i++) {
-			long num = subCategory.get(i);
-			if(num == 1) { categoryList.add(4); }
-			else if(num == 3 || num == 4) { categoryList.add(5); }
-			else if(num == 2) { categoryList.add(6); }
-			else if(num == 5 || num == 8) { categoryList.add(7); }
-			else if(num == 7) { categoryList.add(8); }
-		}
-		return categoryList;
-	}
-    
 
-    /**
-     * id에 해당하는 향수 & 유사 향수 두 개 반환
-     */
+    // id에 해당하는 향수 & 유사 향수 두 개 반환
     public List<PerfumeSimpleInfo> getSimilarPerfumes(long perfumeId) {
         List<PerfumeSimpleInfo> response = new ArrayList<>();
 
@@ -194,9 +176,7 @@ public class PerfumeService {
     }
 
 
-    /**
-     * 월에 따라 season 반환
-     */
+    // 월에 따라 season 반환
     public int getSeason() {
         int season;
         Calendar cal = Calendar.getInstance();
@@ -208,9 +188,7 @@ public class PerfumeService {
         return season;
     }
 
-    /**
-     * teller 데이터에 따른 향수 추천
-     */
+    /** teller 데이터에 따른 향수 추천 */
     public List<PerfumeSimpleInfo> getPerfumeRecommend(RecommendRequest recommendRequest) {
         System.out.println("teller 시작");
         int season = recommendRequest.getSeason();
@@ -293,11 +271,8 @@ public class PerfumeService {
         return getSimilarPerfumes(getSimilarityExistPerfumeId(result));
     }
 
-    /**
-     * 향수 ID로 PerfumeSimpleInfo 객체 정보 채워 반환하는 메서드
-     */
+    // 향수 ID로 PerfumeSimpleInfo 객체 정보 채워 반환하는 메서드
     private PerfumeSimpleInfo getPerfumeSimpleInfo(long perfumeId) {
-
         Perfume perfume = perfumeRepository.getPerfumeById(perfumeId);
         if (perfume != null) {
             String brandName = getBrandName(perfume.getBrand().getId());
@@ -311,9 +286,7 @@ public class PerfumeService {
         return null;
     }
 
-    /**
-     * brand명 가져오는 메서드
-     */
+    // brand명 가져오는 메서드
     private String getBrandName(long id) {
         Optional<Brand> brand = brandRepository.getBrandById(id);
         if (brand.isPresent())
@@ -322,9 +295,7 @@ public class PerfumeService {
     }
 
 
-    /**
-     * 유사도가 존재하는 향수의 perfumeId 반환
-     */
+    // 유사도가 존재하는 향수의 perfumeId 반환
     private long getSimilarityExistPerfumeId(List<Long> perfumeIds) {
         long perfumeId = perfumeIds.get(0);
         for (int i = 0; i < 100; i++) {
@@ -338,27 +309,8 @@ public class PerfumeService {
 	public List<PerfumeSimpleInfo> getPerfumeList(String word, String uId, int page) {
 		Page<Perfume> perfumePage = perfumeRepository.findByNameLike(word, PageRequest.of(page, 30, Sort.by("id").descending()));
 		List<Perfume> perfumeList = perfumePage.getContent();
-
-        List<PerfumeSimpleInfo> perfumeListResponse = new ArrayList<>();
-
-        Optional<User> user = userRepository.findUserByUid(uId);
-        long userId = user.isPresent() ? user.get().getId() : -1;
-        int size = perfumeList.size();
-
-        for (int i = 0; i < size; i++) {
-            Perfume perfume = perfumeList.get(i);
-            long perfumeId = perfume.getId();
-            boolean isLike = false;
-            if (userId != -1)
-                isLike = userService.isLikePerfume(userId, perfumeId) != -1 ? true : false; // -1이 아닌 경우? true: 좋아요 O  / false: 좋아요 X
-            Optional<Brand> brand = brandRepository.getBrandById(perfume.getBrand().getId());
-            String brandName = null;
-            if (brand.isPresent()) {
-                brandName = brand.get().getName();
-            }
-            perfumeListResponse.add(PerfumeSimpleInfo.builder().id(perfume.getId()).name(perfume.getName()).brand(brandName).imgurl(perfume.getImgurl()).isLike(isLike).build());
-        }
-        return perfumeListResponse;
+        return getPerfumeSimpleInfoList(perfumeList, uId);
 	}
+	
 
 }

@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface NoteRepository extends JpaRepository<Note, Long> {
 
-	@Query(value = "SELECT eng FROM peamo.api_note WHERE id in (:noteIdList)", nativeQuery = true)
+	@Query(value = "SELECT eng FROM peamo.note WHERE id in (:noteIdList)", nativeQuery = true)
 	List<String> getNoteEngNameById(List<Long> noteIdList);
 	
 }

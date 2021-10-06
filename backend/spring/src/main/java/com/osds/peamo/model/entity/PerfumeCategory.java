@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "api_perfumecategory")
+@Table(name = "perfumecategory")
 @Entity
 @Builder
 @Getter

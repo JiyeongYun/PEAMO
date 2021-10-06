@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name="api_category")
+@Entity(name="category")
 @Builder
 public class Category {
     @Id

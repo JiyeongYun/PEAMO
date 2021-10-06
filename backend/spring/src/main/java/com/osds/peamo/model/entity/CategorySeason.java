@@ -7,7 +7,7 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name="api_categoryseason")
+@Entity(name="categoryseason")
 @Builder
 public class CategorySeason {
     @Id

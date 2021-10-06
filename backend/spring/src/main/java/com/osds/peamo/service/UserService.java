@@ -161,5 +161,12 @@ public class UserService {
         Optional<User> user = this.userRepository.findUserByUid(uid);
         return !user.isPresent();
     }
+    
+    // uId로 api_user 테이블의 Id값 가져오는 메서드
+    public long getUserTableId(String uId) {
+    	Optional<User> user = userRepository.findUserByUid(uId);
+        long userId = user.isPresent() ? user.get().getId() : -1;
+        return userId;
+    }
 
 }

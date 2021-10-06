@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name="api_note")
+@Entity(name="note")
 @Builder
 public class Note {
     @Id

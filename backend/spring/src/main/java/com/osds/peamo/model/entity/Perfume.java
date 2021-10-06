@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name="api_perfume")
+@Entity(name="perfume")
 @Builder
 public class Perfume {
 
