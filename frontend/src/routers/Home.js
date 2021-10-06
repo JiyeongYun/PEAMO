@@ -1,17 +1,28 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import './Home.css';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+// style
+import './Home.css';
+
+// library
+import axios from 'axios';
+
+// action
 import { login } from '../components/AuthComponents/authSlice';
+import { getPerfumeDetail } from '../components/Common/commonSlice';
+
+// component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
+import PerfumeDetail from '../components/Common/PerfumeDetail';
 
 function Home({ page_num, setIsLoggedIn }) {
   // state
   const [monthlyPerfumeList, setMonthlyPerfumeList] = useState([]);
+  // 향수 디테일 모달 state
+  const [showPerfumeDetail, setShowPerfumeDetail] = useState(false);
   // state 끝
-
+  // useDispatch
   const dispatch = useDispatch();
   // scroll animation 관련
   window.scrollTo(0, 0);
@@ -73,8 +84,25 @@ function Home({ page_num, setIsLoggedIn }) {
   }
   // 이달의 향수 가져오기 끝
 
+  // 향수 디테일 모달 열고 닫는 함수
+  const togglePerfumeDetail = (perfumeId) => {
+    if (!showPerfumeDetail) {
+      // 향수 디테일 api 통신
+      dispatch(getPerfumeDetail(perfumeId))
+        .unwrap()
+        .then(() => {
+          setShowPerfumeDetail(!showPerfumeDetail);
+        });
+    } else {
+      setShowPerfumeDetail(!showPerfumeDetail);
+    }
+  };
+
   return (
     <div className="home">
+      {showPerfumeDetail && (
+        <PerfumeDetail togglePerfumeDetail={togglePerfumeDetail} />
+      )}
       <div className="white_canvas">
         <div className="grey_canvas"></div>
         <img src={`/images/main_${page_num}.jpg`} alt={`main_${page_num}`} />
@@ -102,7 +130,11 @@ function Home({ page_num, setIsLoggedIn }) {
             {monthlyPerfumeList.length !== 0 &&
               monthlyPerfumeList.map((perfume) => {
                 return (
-                  <div key={perfume.id} className="perfume">
+                  <div
+                    key={perfume.id}
+                    className="perfume"
+                    onClick={() => togglePerfumeDetail(perfume.id)}
+                  >
                     <img
                       src={
                         perfume.imgurl ===
