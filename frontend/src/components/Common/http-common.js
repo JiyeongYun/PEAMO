@@ -4,7 +4,7 @@ import baseAxios from 'axios';
 
 // 기본 axios 설정
 const axios = baseAxios.create({
-  baseURL: 'http://j5a403.p.ssafy.io:8000',
+  baseURL: 'http://localhost:8080',
   headers: {
     'Content-Type': 'application/json',
   },

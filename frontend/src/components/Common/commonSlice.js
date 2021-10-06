@@ -3,11 +3,13 @@ import axios from '../Common/http-common';
 
 export const getPerfumeDetail = createAsyncThunk(
   'GET_PERFUME_DETAIL',
-  async (id, { rejectWithValue }) => {
+  async (pId, { rejectWithValue }) => {
+    const uId = localStorage.getItem('userId');
     try {
       const response = await axios.get('/perfume', {
         params: {
-          id,
+          uId,
+          pId,
         },
       });
       return response;
@@ -21,6 +23,12 @@ const commonSlice = createSlice({
   name: 'common',
   initialState: {
     currentPerfume: {},
+    isError: false,
+  },
+  reducers: {
+    setIsError: (state, action) => {
+      state.isError = action.payload;
+    },
   },
   extraReducers: {
     [getPerfumeDetail.fulfilled]: (state, action) => {
@@ -29,4 +37,5 @@ const commonSlice = createSlice({
   },
 });
 
+export const { setIsError } = commonSlice.actions;
 export default commonSlice.reducer;
