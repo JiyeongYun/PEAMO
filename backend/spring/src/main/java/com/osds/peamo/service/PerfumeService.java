@@ -44,7 +44,7 @@ public class PerfumeService {
         Page<Perfume> perfumePage = perfumeRepository.getPerfumesByGenderAndIdIn(perfumeListSearch.getGender(), perfumeIdList, PageRequest.of(page, 30, Sort.by("id").descending()));
         List<Perfume> perfumeList = perfumePage.getContent();
 
-        return getPerfumeSimpleInfoList(perfumeList, perfumeListSearch.getUid());
+        return getPerfumeSimpleInfoList(perfumeList, perfumeListSearch.getUId());
     }
     
     // 향수 리스트, 향수 기본 정보 리스트 반환

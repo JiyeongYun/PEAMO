@@ -10,6 +10,6 @@ public class PerfumeListSearch {
 
     int gender;
     int category;
-    String uid;
+    String uId;
 
 }
