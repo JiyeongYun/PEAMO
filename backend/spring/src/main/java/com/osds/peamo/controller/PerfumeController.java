@@ -51,7 +51,7 @@ public class PerfumeController {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
     
-
+    // teller 스무고개
     @PostMapping("/recommend")
     public ResponseEntity<List<PerfumeSimpleInfo>> recommend(@RequestBody RecommendRequest recommendRequest) {
         List<PerfumeSimpleInfo> response = perfumeService.getPerfumeRecommend(recommendRequest);
