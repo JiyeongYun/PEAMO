@@ -38,26 +38,14 @@
   font-size: var(--large-font-size);
 }
 
-.mypage > .no_perfume > .link_box {
-  width: 20vw;
-  height: 70px;
-  border: 1px solid black;
-  margin: var(--margin-6) 0;
-  transition: all 0.5s;
-  background-color: black;
+.mypage > .no_perfume > .flex_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.mypage > .no_perfume > .link_box:hover {
-  background-color: white;
-}
-
-.mypage > .no_perfume > .link_box:hover p {
+.mypage > .no_perfume > .flex_box p {
+  font-size: var(--mid-font-size);
   color: black;
-}
-
-.mypage > .no_perfume > .link_box p {
-  color: white;
-  line-height: 70px;
-  font-size: var(--large-font-size);
-  transition: all 0.5s;
+  margin: var(--margin-6) var(--margin-1) 0;
 }
