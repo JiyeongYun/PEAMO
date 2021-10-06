@@ -51,11 +51,6 @@ function About() {
   }, [])
   // scroll animation 관련 끝
 
-  const scrollMove = () => {
-    var offset = $("#perfume_kind").offset();
-    $('html, body').animate({scrollTop : offset.top}, 400);
-  }
-
   return (
     <div className="about">
       <div className="aboutintro">
@@ -74,7 +69,7 @@ function About() {
         </div>
         <div className="intro_bottom">
           <div className="intro_btn">
-              <p onclick={scrollMove}>더 알아보기</p>
+              <a href="#perfume_kind"><p>더 알아보기</p></a>
           </div>
         </div>
       </div>
