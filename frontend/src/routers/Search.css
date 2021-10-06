@@ -73,3 +73,7 @@ ul {
 .search_page > .search_card div::-webkit-scrollbar {
   display: none;
 }
+
+.perfume_card {
+  cursor: pointer;
+}
