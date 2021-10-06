@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name="api_note")
+@Entity(name = "note")
 @Builder
 public class Note {
     @Id
@@ -23,6 +23,6 @@ public class Note {
     private String kor;
 
     @ManyToOne
-    @JoinColumn(name="category_id")
+    @JoinColumn(name = "category_id")
     private Category category;
 }
