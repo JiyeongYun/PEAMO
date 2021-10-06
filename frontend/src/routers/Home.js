@@ -77,7 +77,7 @@ function Home({ page_num, setIsLoggedIn }) {
       .get('http://j5a403.p.ssafy.io:8000/perfume/thismonth')
       .then((res) => {
         if (res.status === 200) {
-          setMonthlyPerfumeList(res.data);
+          setMonthlyPerfumeList(res.data.PerfumeSimpleInfoList);
         }
       })
       .catch((err) => console.log(err));
@@ -151,7 +151,8 @@ function Home({ page_num, setIsLoggedIn }) {
                     </div>
                   </div>
                 );
-              })}
+              })
+            }
           </div>
         </div>
       </div>
