@@ -12,4 +12,6 @@ public interface PerfumeRepository extends JpaRepository<Perfume, Long> {
     Page<Perfume> getPerfumesByGenderAndIdIn(int gender, List<Long> perfumeIdList, Pageable pageable);
 
     Perfume getPerfumeById(long id);
+
+    List<Perfume> getPerfumesByIdIn(List<Long> perfumeIdList);
 }

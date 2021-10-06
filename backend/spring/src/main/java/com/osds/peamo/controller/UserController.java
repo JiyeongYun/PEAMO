@@ -43,7 +43,6 @@ public class UserController {
 
     @PostMapping("/like")
     public ResponseEntity likePerfume(@RequestBody Map<String, String> request){
-        System.out.println("호출!!!!!!");
         userService.likePerfume(request.get("uid"), Long.parseLong(request.get("perfumeId")));
         return new ResponseEntity(HttpStatus.OK);
     }
