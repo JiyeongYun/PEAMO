@@ -6,6 +6,7 @@ import './TellerResult.css';
 
 // component
 import PerfumeDetail from '../components/Common/PerfumeDetail';
+import Loading from '../components/Loading';
 
 // action
 import { getPerfumeDetail } from '../components/Common/commonSlice';
@@ -70,7 +71,7 @@ function Result() {
       {showPerfumeDetail && (
         <PerfumeDetail togglePerfumeDetail={togglePerfumeDetail} />
       )}
-      {perfumeList.length !== 0 && (
+      {perfumeList.length !== 0 ?
         <div className="tellerresult">
           <img src="/images/result_back.png" alt="back_ground" />
           <div className="teller_result">
@@ -109,7 +110,9 @@ function Result() {
             </div>
           </div>
         </div>
-      )}
+      :
+        <Loading />
+      }
     </>
   );
 }
