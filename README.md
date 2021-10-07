@@ -219,9 +219,15 @@ for std in n_df.index:
 
 
 
-## 4. 아키텍처
+## 4. 아키텍처 및 ERD
 
-![img](https://cdn.discordapp.com/attachments/878874729862291480/895597062316503070/unknown.png)
+- 아키텍처
+
+![architecture](README.assets/architecture.png)
+
+- ERD
+
+  ![img](README.assets/ERD.png)
 
 
 
