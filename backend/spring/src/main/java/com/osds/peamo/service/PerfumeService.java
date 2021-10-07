@@ -101,10 +101,10 @@ public class PerfumeService {
     }
 
     /**
-     * 향수 상세 정보 반환
+     * 향수 상세 정보 & 유사 향수 2개 간단 정보 반환
      */
-    public PerfumeDetailInfo getPerfumeDetailInfo(long pId, String uId) {
-
+    public Map<String, Object> getPerfumeDetailInfo(long pId, String uId) {
+    	Map<String, Object> response = new HashMap<>();
         Perfume perfume = perfumeRepository.getPerfumeById(pId);
         if (perfume != null) {
 
@@ -143,8 +143,18 @@ public class PerfumeService {
             // 6. 좋아요 수 - goodCount
             int goodCount = perfume.getGoodCnt();
 
-            return PerfumeDetailInfo.builder().perfumeSimpleInfo(perfumeSimpleInfo).categoryNameList(categoryNameList)
-                    .notesTMB(notesTMB).gender(gender).seasons(seasons).goodCount(goodCount).build();
+            // 향수 상세 정보 담기
+            response.put("perfumeDetailInfo", PerfumeDetailInfo.builder().perfumeSimpleInfo(perfumeSimpleInfo).categoryNameList(categoryNameList)
+                    .notesTMB(notesTMB).gender(gender).seasons(seasons).goodCount(goodCount).build());
+            
+            List<PerfumeSimpleInfo> twoPerfumeSimpleInfos = new ArrayList<>();
+            List<Similarity> similarityList = similarityRepository.getSimilaritiesByStandard(pId);
+            for (Similarity similarity : similarityList) {
+            	twoPerfumeSimpleInfos.add(getPerfumeSimpleInfo(similarity.getComparison()));
+            }
+            // 유사한 향수 2개 간단 정보 담기
+            response.put("twoSimilarPerfumeSimpleInfos", twoPerfumeSimpleInfos);
+            return response;
         }
         return null;
     }
