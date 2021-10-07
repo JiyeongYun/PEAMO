@@ -31,11 +31,6 @@ public class PerfumeController {
 
     private PerfumeService perfumeService;
 
-    @GetMapping("/change")
-    public void changePerfumeData(@RequestParam int start, @RequestParam int end) {
-        perfumeService.changePerfumeData(start, end);
-    }
-
     // 향수 전체 리스트
     @PostMapping("/list")
     public ResponseEntity<List<PerfumeSimpleInfo>> getPerfumes(@RequestBody PerfumeListSearch perfumeSearch, @RequestParam int page) {
@@ -67,8 +62,8 @@ public class PerfumeController {
 
     // 향수 상세 정보
     @GetMapping
-    public ResponseEntity<PerfumeDetailInfo> getPerfume(@RequestParam long pId, @RequestParam String uId) {
-    	PerfumeDetailInfo response = perfumeService.getPerfumeDetailInfo(pId, uId);
+    public ResponseEntity<Map<String, Object>> getPerfume(@RequestParam long pId, @RequestParam String uId) {
+    	Map<String, Object> response = perfumeService.getPerfumeDetailInfo(pId, uId);
     	if (response == null) {
     		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response); // 존재하지 않는 id 요청
 		}

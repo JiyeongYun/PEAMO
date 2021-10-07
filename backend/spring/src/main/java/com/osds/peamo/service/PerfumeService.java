@@ -30,53 +30,7 @@ public class PerfumeService {
     final private PerfumeRepository perfumeRepository;
     final private SimilarityRepository similarityRepository;
     final private UserService userService;
-
-    private String mid = "/bnassets/vintage";
-
-    /**
-     * 향수 이미지 URL 변경하기 + column 소문자로 바꾸기
-     */
-    public void changePerfumeData(int start, int end){
-        for(int i = start; i <= end; i++){
-            long id = Long.valueOf(i);
-            Perfume perfume = perfumeRepository.getPerfumeById(id);
-
-            if(perfume != null){
-                // 1. 향수 이미지 URL 변경하기
-                String newImgURL = "";
-                String imgURL = perfume.getImgurl();
-                int idx = imgURL.indexOf("/photos");
-
-                if(idx > 0 && imgURL != "" && imgURL != null){
-                    String front = imgURL.substring(0, idx);
-                    String back = imgURL.substring(idx);
-
-                    if(back.contains("noimage")){
-                        newImgURL = front + back;
-                    }else{
-                        newImgURL = front + mid + back;
-                    }
-                }
-                if(!imgURL.equals("")){
-                    perfume.setImgurl(newImgURL);
-                    System.out.println("변경된 URL: " + newImgURL);
-                } else{
-                    System.out.println("URL 변경 안 됨 !!!!! 문제의 향수 ID: " + perfume.getId());
-                }
-
-                // 2. column 소문자로 바꾸기
-                String name = perfume.getName();
-                String lowerName = name.toLowerCase();
-                perfume.setNameLowercase(lowerName);
-                System.out.println("소문자로 변경:\t" + name + " ======> " + lowerName);
-
-                perfumeRepository.save(perfume);
-            }
-
-
-        }
-    }
-
+    
     /**
      * 향수 기본 정보 반환
      */
@@ -147,10 +101,10 @@ public class PerfumeService {
     }
 
     /**
-     * 향수 상세 정보 반환
+     * 향수 상세 정보 & 유사 향수 2개 간단 정보 반환
      */
-    public PerfumeDetailInfo getPerfumeDetailInfo(long pId, String uId) {
-
+    public Map<String, Object> getPerfumeDetailInfo(long pId, String uId) {
+    	Map<String, Object> response = new HashMap<>();
         Perfume perfume = perfumeRepository.getPerfumeById(pId);
         if (perfume != null) {
 
@@ -189,8 +143,18 @@ public class PerfumeService {
             // 6. 좋아요 수 - goodCount
             int goodCount = perfume.getGoodCnt();
 
-            return PerfumeDetailInfo.builder().perfumeSimpleInfo(perfumeSimpleInfo).categoryNameList(categoryNameList)
-                    .notesTMB(notesTMB).gender(gender).seasons(seasons).goodCount(goodCount).build();
+            // 향수 상세 정보 담기
+            response.put("perfumeDetailInfo", PerfumeDetailInfo.builder().perfumeSimpleInfo(perfumeSimpleInfo).categoryNameList(categoryNameList)
+                    .notesTMB(notesTMB).gender(gender).seasons(seasons).goodCount(goodCount).build());
+            
+            List<PerfumeSimpleInfo> twoPerfumeSimpleInfos = new ArrayList<>();
+            List<Similarity> similarityList = similarityRepository.getSimilaritiesByStandard(pId);
+            for (Similarity similarity : similarityList) {
+            	twoPerfumeSimpleInfos.add(getPerfumeSimpleInfo(similarity.getComparison()));
+            }
+            // 유사한 향수 2개 간단 정보 담기
+            response.put("twoSimilarPerfumeSimpleInfos", twoPerfumeSimpleInfos);
+            return response;
         }
         return null;
     }
@@ -274,7 +238,7 @@ public class PerfumeService {
      * 이름에 단어가 포함된 향수 리스트 반환
      */
     public List<PerfumeSimpleInfo> getPerfumeList(String word, String uId, int page) {
-        Page<Perfume> perfumePage = perfumeRepository.findByNameLike(word, PageRequest.of(page, 30, Sort.by("id").descending()));
+    	Page<Perfume> perfumePage = perfumeRepository.findByNameLike(word.toLowerCase(), PageRequest.of(page, 30, Sort.by("id").descending()));
         List<Perfume> perfumeList = perfumePage.getContent();
         return getPerfumeSimpleInfoList(perfumeList, uId);
     }
