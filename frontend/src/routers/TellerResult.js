@@ -48,7 +48,7 @@ function Result() {
           setPerfumeList(res.data);
         }
       })
-      .catch((err) => console.log(err));
+      .catch(() => {});
   }
   // axios 요청 보내서 향수 데이터 가져오기 끝
 
@@ -71,7 +71,7 @@ function Result() {
       {showPerfumeDetail && (
         <PerfumeDetail togglePerfumeDetail={togglePerfumeDetail} />
       )}
-      {perfumeList.length !== 0 ?
+      {perfumeList.length !== 0 ? (
         <div className="tellerresult">
           <img src="/images/result_back.png" alt="back_ground" />
           <div className="teller_result">
@@ -110,9 +110,9 @@ function Result() {
             </div>
           </div>
         </div>
-      :
+      ) : (
         <Loading />
-      }
+      )}
     </>
   );
 }
