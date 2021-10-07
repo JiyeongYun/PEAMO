@@ -54,8 +54,6 @@ function PerfumeDetail({ togglePerfumeDetail }) {
 
   // top, middle, base 노트 테이블 자료 만드는 함수
   const makeNoteTableData = (notes) => {
-    // console.log(Object.values(notes));
-    // console.log(notes);
     const maxLength = Object.values(notes)
       .map((note) => note.length)
       .reduce((a, b) => Math.max(a, b));
@@ -82,11 +80,9 @@ function PerfumeDetail({ togglePerfumeDetail }) {
           .then(() => {
             setIsLiked(!isLiked);
           });
-      } catch (error) {
-        alert('통신불가');
-      }
+      } catch (err) {}
     } else {
-      alert('로그인이 필요한 작업입니다')
+      alert("로그인이 필요한 작업입니다")
     }
   };
 
