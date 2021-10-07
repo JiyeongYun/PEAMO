@@ -61,12 +61,9 @@ function Home({ page_num, setIsLoggedIn }) {
         .then((res) => {
           if (res.status === 200) {
             setIsLoggedIn(true);
-            alert('로그인 성공');
           }
         })
-        .catch(() => {
-          alert('로그인 실패');
-        });
+        .catch(() => {});
     }
   }, [dispatch, setIsLoggedIn]);
 

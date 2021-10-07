@@ -78,9 +78,7 @@ function PerfumeDetail({ togglePerfumeDetail }) {
         .then(() => {
           setIsLiked(!isLiked);
         });
-    } catch (error) {
-      alert('통신불가');
-    }
+    } catch (err) {}
   };
 
   useEffect(() => {

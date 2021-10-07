@@ -70,12 +70,9 @@ function App() {
           setIsLoggedIn(false);
           isTokenExist = null;
           history.push('/');
-          alert('로그아웃 성공');
         }
       })
-      .catch(() => {
-        alert('로그아웃 실패');
-      });
+      .catch(() => {});
   };
 
   return (
