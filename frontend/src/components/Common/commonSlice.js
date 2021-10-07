@@ -4,11 +4,12 @@ import axios from '../Common/http-common';
 export const getPerfumeDetail = createAsyncThunk(
   'GET_PERFUME_DETAIL',
   async (pId, { rejectWithValue }) => {
-    const uId = localStorage.getItem('userId');
+    const userId = localStorage.getItem('userId');
+    const uId = userId?userId:"";
     try {
       const response = await axios.get('/perfume', {
         params: {
-          uId,
+          uId: "",
           pId,
         },
       });
