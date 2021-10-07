@@ -44,4 +44,5 @@
 
 .signin_container > .signin_box > img {
   margin-top: var(--margin-6);
+  cursor: pointer;
 }
