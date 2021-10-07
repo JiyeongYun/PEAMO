@@ -80,7 +80,7 @@ function Home({ page_num, setIsLoggedIn }) {
           setMonthlyPerfumeList(res.data.PerfumeSimpleInfoList);
         }
       })
-      .catch((err) => console.log(err));
+      .catch(() => {});
   }
   // 이달의 향수 가져오기 끝
 
@@ -151,8 +151,7 @@ function Home({ page_num, setIsLoggedIn }) {
                     </div>
                   </div>
                 );
-              })
-            }
+              })}
           </div>
         </div>
       </div>

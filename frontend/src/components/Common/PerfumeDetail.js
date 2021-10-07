@@ -53,8 +53,6 @@ function PerfumeDetail({ togglePerfumeDetail }) {
 
   // top, middle, base 노트 테이블 자료 만드는 함수
   const makeNoteTableData = (notes) => {
-    // console.log(Object.values(notes));
-    // console.log(notes);
     const maxLength = Object.values(notes)
       .map((note) => note.length)
       .reduce((a, b) => Math.max(a, b));
