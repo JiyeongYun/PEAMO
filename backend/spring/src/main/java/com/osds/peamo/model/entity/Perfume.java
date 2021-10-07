@@ -20,6 +20,9 @@ public class Perfume {
 
     @Column
     private String name;                     // name
+    
+    @Column
+    private String nameLowercase;            // name_lowercase
 
     @Column
     private int gender;                      // gender
