@@ -65,10 +65,10 @@ function App() {
       .unwrap()
       .then((res) => {
         if (res.status === 200) {
+          isTokenExist = null;
           localStorage.removeItem('token');
           localStorage.removeItem('userId');
           setIsLoggedIn(false);
-          isTokenExist = null;
           history.push('/');
         }
       })
