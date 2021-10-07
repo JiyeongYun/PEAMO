@@ -41,7 +41,7 @@ function App() {
   const history = useHistory();
 
   // access token 여부
-  const isTokenExist = localStorage.getItem('token');
+  let isTokenExist = localStorage.getItem('token');
 
   // KOW - main 사진 번호 랜덤 생성 시작
   useEffect(() => {
@@ -68,6 +68,7 @@ function App() {
           localStorage.removeItem('token');
           localStorage.removeItem('userId');
           setIsLoggedIn(false);
+          isTokenExist = null;
           history.push('/');
           alert('로그아웃 성공');
         }
