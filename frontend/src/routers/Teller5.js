@@ -9,11 +9,11 @@ function Teller5() {
     header.style.backgroundColor = '#1C1C1C';
   }, []);
   // header 검은색으로 변경
-  
+
   // 사진 혹은 text 클릭 시 localStrage에 저장
   const onClick = (cat) => {
-    localStorage.setItem('season', cat)
-  }
+    localStorage.setItem('season', cat);
+  };
 
   return (
     <div className="teller5">
