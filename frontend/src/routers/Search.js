@@ -121,7 +121,23 @@ function Search() {
 
   // 향수 검색 함수
   function searchPer () {
-    console.log('검색')
+    const word = document.querySelector('#search_name').value
+    const uId = localStorage.getItem('userId')
+    axios.get(
+      'http://j5a403.p.ssafy.io:8000/perfume/search',
+      {
+        params: {
+          word,
+          uId,
+          page: 0,
+        }
+      }
+    )
+      .then(res => {
+        console.log(res)
+        setItems(res.data);
+      })
+      .catch(err => console.log(err))
   }
   // 향수 검색 종료
 
@@ -224,7 +240,9 @@ function Search() {
             </ul>
           </div>
           <div className="search_bar">
-            <input type="text" placeholder="향수이름" />
+            <input type="text" placeholder="향수이름" id="search_name" onKeyDown={e => {
+              if (e.key === "Enter") searchPer()
+            }} />
             <p onClick={searchPer}>검색</p>
           </div>
           <div className="search_card">
