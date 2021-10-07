@@ -82,7 +82,7 @@ function PerfumeDetail({ togglePerfumeDetail }) {
           });
       } catch (err) {}
     } else {
-      alert("로그인이 필요한 작업입니다")
+      alert('로그인이 필요한 작업입니다');
     }
   };
 
@@ -91,12 +91,13 @@ function PerfumeDetail({ togglePerfumeDetail }) {
     checkGender(perfume.perfumeDetailInfo.gender);
     setNoteTableData(makeNoteTableData(perfume.perfumeDetailInfo.notesTMB));
     setIsLiked(perfume.perfumeDetailInfo.perfumeSimpleInfo.like);
-    setSimilar(perfume.twoSimilarPerfumeSimpleInfos)
+    setSimilar(perfume.twoSimilarPerfumeSimpleInfos);
   }, [
-    perfume.seasons,
-    perfume.gender,
-    perfume.notesTMB,
+    perfume.perfumeDetailInfo.seasons,
+    perfume.perfumeDetailInfo.gender,
     perfume.perfumeDetailInfo.perfumeSimpleInfo.like,
+    perfume.twoSimilarPerfumeSimpleInfos,
+    perfume.perfumeDetailInfo.notesTMB,
   ]);
 
   return (
@@ -114,7 +115,9 @@ function PerfumeDetail({ togglePerfumeDetail }) {
                 isLiked ? 'detail_info1_icon icon_active' : 'detail_info1_icon'
               }
               icon={faHeart}
-              onClick={() => likeToggle(perfume.perfumeDetailInfo.perfumeSimpleInfo.id)}
+              onClick={() =>
+                likeToggle(perfume.perfumeDetailInfo.perfumeSimpleInfo.id)
+              }
             />
             <img
               src={perfume.perfumeDetailInfo.perfumeSimpleInfo.imgurl}
@@ -133,12 +136,17 @@ function PerfumeDetail({ togglePerfumeDetail }) {
           <div className="detail_info2">
             <div className="detail_info2_title">
               <p>
-                {perfume.perfumeDetailInfo.categoryNameList.map((category, index) => {
-                  if (index !== perfume.perfumeDetailInfo.categoryNameList.length - 1) {
-                    return `${category} /`;
+                {perfume.perfumeDetailInfo.categoryNameList.map(
+                  (category, index) => {
+                    if (
+                      index !==
+                      perfume.perfumeDetailInfo.categoryNameList.length - 1
+                    ) {
+                      return `${category} /`;
+                    }
+                    return ` ${category}`;
                   }
-                  return ` ${category}`;
-                })}
+                )}
               </p>
               <p>For {gender}</p>
             </div>
@@ -184,25 +192,30 @@ function PerfumeDetail({ togglePerfumeDetail }) {
                 className={isWinter ? 'season_active' : null}
               ></img>
             </div>
-            <hr/>
+            <hr />
             <p className="similar_title">유사한 향수</p>
             <div className="similar_perfumes">
-              {similar.length === 0 ? 
+              {similar.length === 0 ? (
                 <p>비슷한 향수를 찾을 수 없어요!</p>
-              :
-                similar.map(per => {
+              ) : (
+                similar.map((per) => {
                   return (
                     <div className="similar_perfume" key={per.id}>
-                      <img src={per.imgurl ===
+                      <img
+                        src={
+                          per.imgurl ===
                             'http://www.basenotes.net/photos/300noimage.png' ||
                           per.imgurl === undefined
                             ? '/images/no_image.png'
-                            : per.imgurl} alt={per.name} />
+                            : per.imgurl
+                        }
+                        alt={per.name}
+                      />
                       <p>{per.name}</p>
                     </div>
-                  )
+                  );
                 })
-              }
+              )}
             </div>
           </div>
         </div>
