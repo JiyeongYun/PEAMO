@@ -30,53 +30,7 @@ public class PerfumeService {
     final private PerfumeRepository perfumeRepository;
     final private SimilarityRepository similarityRepository;
     final private UserService userService;
-
-    private String mid = "/bnassets/vintage";
-
-    /**
-     * 향수 이미지 URL 변경하기 + column 소문자로 바꾸기
-     */
-    public void changePerfumeData(int start, int end){
-        for(int i = start; i <= end; i++){
-            long id = Long.valueOf(i);
-            Perfume perfume = perfumeRepository.getPerfumeById(id);
-
-            if(perfume != null){
-                // 1. 향수 이미지 URL 변경하기
-                String newImgURL = "";
-                String imgURL = perfume.getImgurl();
-                int idx = imgURL.indexOf("/photos");
-
-                if(idx > 0 && imgURL != "" && imgURL != null){
-                    String front = imgURL.substring(0, idx);
-                    String back = imgURL.substring(idx);
-
-                    if(back.contains("noimage")){
-                        newImgURL = front + back;
-                    }else{
-                        newImgURL = front + mid + back;
-                    }
-                }
-                if(!imgURL.equals("")){
-                    perfume.setImgurl(newImgURL);
-                    System.out.println("변경된 URL: " + newImgURL);
-                } else{
-                    System.out.println("URL 변경 안 됨 !!!!! 문제의 향수 ID: " + perfume.getId());
-                }
-
-                // 2. column 소문자로 바꾸기
-                String name = perfume.getName();
-                String lowerName = name.toLowerCase();
-                perfume.setNameLowercase(lowerName);
-                System.out.println("소문자로 변경:\t" + name + " ======> " + lowerName);
-
-                perfumeRepository.save(perfume);
-            }
-
-
-        }
-    }
-
+    
     /**
      * 향수 기본 정보 반환
      */
