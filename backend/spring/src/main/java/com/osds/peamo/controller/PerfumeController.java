@@ -31,6 +31,11 @@ public class PerfumeController {
 
     private PerfumeService perfumeService;
 
+    @GetMapping("/change")
+    public void changePerfumeData(@RequestParam int start, @RequestParam int end) {
+        perfumeService.changePerfumeData(start, end);
+    }
+
     // 향수 전체 리스트
     @PostMapping("/list")
     public ResponseEntity<List<PerfumeSimpleInfo>> getPerfumes(@RequestBody PerfumeListSearch perfumeSearch, @RequestParam int page) {
