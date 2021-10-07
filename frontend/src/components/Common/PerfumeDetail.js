@@ -20,6 +20,7 @@ function PerfumeDetail({ togglePerfumeDetail }) {
   const [gender, setGender] = useState(null);
   const [noteTableData, setNoteTableData] = useState([]);
   const [isLiked, setIsLiked] = useState(false);
+  const [similar, setSimilar] = useState([]);
 
   const closePerfumeDetail = () => {
     togglePerfumeDetail();
@@ -71,30 +72,35 @@ function PerfumeDetail({ togglePerfumeDetail }) {
   // 좋아요 토글 함수
   const likeToggle = async (perfumeId) => {
     const uid = localStorage.getItem('userId');
-    try {
-      await axios
-        .post('/user/like', {
-          uid,
-          perfumeId,
-        })
-        .then(() => {
-          setIsLiked(!isLiked);
-        });
-    } catch (error) {
-      alert('통신불가');
+    if (uid) {
+      try {
+        await axios
+          .post('/user/like', {
+            uid,
+            perfumeId,
+          })
+          .then(() => {
+            setIsLiked(!isLiked);
+          });
+      } catch (error) {
+        alert('통신불가');
+      }
+    } else {
+      alert('로그인이 필요한 작업입니다')
     }
   };
 
   useEffect(() => {
-    checkSeasons(perfume.seasons);
-    checkGender(perfume.gender);
-    setNoteTableData(makeNoteTableData(perfume.notesTMB));
-    setIsLiked(perfume.perfumeSimpleInfo.like);
+    checkSeasons(perfume.perfumeDetailInfo.seasons);
+    checkGender(perfume.perfumeDetailInfo.gender);
+    setNoteTableData(makeNoteTableData(perfume.perfumeDetailInfo.notesTMB));
+    setIsLiked(perfume.perfumeDetailInfo.perfumeSimpleInfo.like);
+    setSimilar(perfume.twoSimilarPerfumeSimpleInfos)
   }, [
     perfume.seasons,
     perfume.gender,
     perfume.notesTMB,
-    perfume.perfumeSimpleInfo.like,
+    perfume.perfumeDetailInfo.perfumeSimpleInfo.like,
   ]);
 
   return (
@@ -112,27 +118,27 @@ function PerfumeDetail({ togglePerfumeDetail }) {
                 isLiked ? 'detail_info1_icon icon_active' : 'detail_info1_icon'
               }
               icon={faHeart}
-              onClick={() => likeToggle(perfume.perfumeSimpleInfo.id)}
+              onClick={() => likeToggle(perfume.perfumeDetailInfo.perfumeSimpleInfo.id)}
             />
             <img
-              src={perfume.perfumeSimpleInfo.imgurl}
+              src={perfume.perfumeDetailInfo.perfumeSimpleInfo.imgurl}
               className="detail_info1_image"
               alt="perfumeImage"
             />
-            <div className="detail_info1_title">Name</div>
-            <div className="detail_info1_content">
-              {perfume.perfumeSimpleInfo.name}
-            </div>
             <div className="detail_info1_title">Brand</div>
             <div className="detail_info1_content">
-              {perfume.perfumeSimpleInfo.brand}
+              {perfume.perfumeDetailInfo.perfumeSimpleInfo.brand}
+            </div>
+            <div className="detail_info1_title">Name</div>
+            <div className="detail_info1_content">
+              {perfume.perfumeDetailInfo.perfumeSimpleInfo.name}
             </div>
           </div>
           <div className="detail_info2">
             <div className="detail_info2_title">
               <p>
-                {perfume.categoryNameList.map((category, index) => {
-                  if (index !== perfume.categoryNameList.length - 1) {
+                {perfume.perfumeDetailInfo.categoryNameList.map((category, index) => {
+                  if (index !== perfume.perfumeDetailInfo.categoryNameList.length - 1) {
                     return `${category} /`;
                   }
                   return ` ${category}`;
@@ -181,6 +187,26 @@ function PerfumeDetail({ togglePerfumeDetail }) {
                 alt="winter"
                 className={isWinter ? 'season_active' : null}
               ></img>
+            </div>
+            <hr/>
+            <p className="similar_title">유사한 향수</p>
+            <div className="similar_perfumes">
+              {similar.length === 0 ? 
+                <p>비슷한 향수를 찾을 수 없어요!</p>
+              :
+                similar.map(per => {
+                  return (
+                    <div className="similar_perfume" key={per.id}>
+                      <img src={per.imgurl ===
+                            'http://www.basenotes.net/photos/300noimage.png' ||
+                          per.imgurl === undefined
+                            ? '/images/no_image.png'
+                            : per.imgurl} alt={per.name} />
+                      <p>{per.name}</p>
+                    </div>
+                  )
+                })
+              }
             </div>
           </div>
         </div>
