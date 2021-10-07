@@ -228,7 +228,7 @@ public class PerfumeService {
      * 이름에 단어가 포함된 향수 리스트 반환
      */
     public List<PerfumeSimpleInfo> getPerfumeList(String word, String uId, int page) {
-        Page<Perfume> perfumePage = perfumeRepository.findByNameLike(word, PageRequest.of(page, 30, Sort.by("id").descending()));
+    	Page<Perfume> perfumePage = perfumeRepository.findByNameLike(word.toLowerCase(), PageRequest.of(page, 30, Sort.by("id").descending()));
         List<Perfume> perfumeList = perfumePage.getContent();
         return getPerfumeSimpleInfoList(perfumeList, uId);
     }
