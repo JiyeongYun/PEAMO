@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 // css
 import './PerfumeDetail.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,7 +11,11 @@ import CloseIcon from '@mui/icons-material/Close';
 // library
 import axios from '../Common/http-common';
 
-function PerfumeDetail({ togglePerfumeDetail }) {
+// action
+import { getMyPerfume } from '../MypageComponents/mypageSlice';
+
+function PerfumeDetail({ togglePerfumeDetail, extra = 'default' }) {
+  const dispatch = useDispatch();
   const perfume = useSelector((state) => state.common.currentPerfume);
   const [isSpring, setIsSpring] = useState(false);
   const [isSummer, setIsSummer] = useState(false);
@@ -67,6 +71,13 @@ function PerfumeDetail({ togglePerfumeDetail }) {
     return data;
   };
 
+  // mypage에서 향수 상세 모달을 켜서 좋아요를 눌렀을 때 실행시킬 나의 향수 업데이트 함수
+  const updateMyPerfume = () => {
+    if (extra === 'mypage') {
+      dispatch(getMyPerfume());
+    }
+  };
+
   // 좋아요 토글 함수
   const likeToggle = async (perfumeId) => {
     const uid = localStorage.getItem('userId');
@@ -79,6 +90,7 @@ function PerfumeDetail({ togglePerfumeDetail }) {
           })
           .then(() => {
             setIsLiked(!isLiked);
+            dispatch(updateMyPerfume());
           });
       } catch (err) {}
     } else {

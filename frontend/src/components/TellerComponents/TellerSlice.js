@@ -27,23 +27,29 @@ const tellerSlice = createSlice({
   },
   reducers: {
     addSeason(state, action) {
-      state.season = action.payload
+      state.season = action.payload;
     },
     addGender(state, action) {
-      state.gender = action.payload
+      state.gender = action.payload;
     },
     addMainCategory(state, action) {
-      state.mainCategory = action.payload
+      state.mainCategory = action.payload;
     },
     addSubCategory(state, action) {
-      state.subCategory = action.payload
+      state.subCategory = action.payload;
     },
     addDislikeCategory(state, action) {
-      state.dislikeCategory = action.payload
+      state.dislikeCategory = action.payload;
     },
   },
 });
 
-export const { addSeason, addGender, addMainCategory, addSubCategory, addDislikeCategory} = tellerSlice.actions
+export const {
+  addSeason,
+  addGender,
+  addMainCategory,
+  addSubCategory,
+  addDislikeCategory,
+} = tellerSlice.actions;
 
 export default tellerSlice.reducer;
