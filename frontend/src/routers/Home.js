@@ -61,12 +61,9 @@ function Home({ page_num, setIsLoggedIn }) {
         .then((res) => {
           if (res.status === 200) {
             setIsLoggedIn(true);
-            alert('로그인 성공');
           }
         })
-        .catch(() => {
-          alert('로그인 실패');
-        });
+        .catch(() => {});
     }
   }, [dispatch, setIsLoggedIn]);
 
@@ -80,7 +77,7 @@ function Home({ page_num, setIsLoggedIn }) {
           setMonthlyPerfumeList(res.data.PerfumeSimpleInfoList);
         }
       })
-      .catch((err) => console.log(err));
+      .catch(() => {});
   }
   // 이달의 향수 가져오기 끝
 
@@ -151,8 +148,7 @@ function Home({ page_num, setIsLoggedIn }) {
                     </div>
                   </div>
                 );
-              })
-            }
+              })}
           </div>
         </div>
       </div>
