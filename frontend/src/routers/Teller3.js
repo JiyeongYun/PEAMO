@@ -12,8 +12,8 @@ function Teller3() {
 
   // 사진 혹은 text 클릭 시 localStrage에 저장
   const onClick = (cat) => {
-    localStorage.setItem('subCategory', cat)
-  }
+    localStorage.setItem('subCategory', cat);
+  };
 
   return (
     <div className="teller3">
@@ -22,13 +22,29 @@ function Teller3() {
           <h2>좋아하는 분위기의 단어는 무엇인가요?</h2>
         </div>
         <div className="teller_answer_3">
-          <span><Link to="/teller-4" onClick={() => onClick(1)}>싱그러운</Link></span>
+          <span>
+            <Link to="/teller-4" onClick={() => onClick(1)}>
+              싱그러운
+            </Link>
+          </span>
           {/* <br></br> */}
-          <span><Link to="/teller-4" onClick={() => onClick(3)}>부드러운</Link></span>
+          <span>
+            <Link to="/teller-4" onClick={() => onClick(3)}>
+              부드러운
+            </Link>
+          </span>
           {/* <br></br> */}
-          <span><Link to="/teller-4" onClick={() => onClick(2)}>사랑스러운</Link></span>
+          <span>
+            <Link to="/teller-4" onClick={() => onClick(2)}>
+              사랑스러운
+            </Link>
+          </span>
           {/* <br></br> */}
-          <span><Link to="/teller-4" onClick={() => onClick(8)}>도시적인</Link></span>
+          <span>
+            <Link to="/teller-4" onClick={() => onClick(8)}>
+              도시적인
+            </Link>
+          </span>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function TellerStart () {
+function TellerStart() {
   return (
     <div className="tellerstart">
       <div className="startimg">
@@ -8,13 +8,13 @@ function TellerStart () {
       </div>
       <div className="tellerstart_bottom">
         <div className="teller_btn">
-        <Link to={{ pathname: "/teller-1"}}>
-          <p>당신의 취'향'을 탐색합니다</p>
-        </Link>
+          <Link to={{ pathname: '/teller-1' }}>
+            <p>당신의 취'향'을 탐색합니다</p>
+          </Link>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default TellerStart
+export default TellerStart;
