@@ -65,17 +65,14 @@ function App() {
       .unwrap()
       .then((res) => {
         if (res.status === 200) {
+          isTokenExist = null;
           localStorage.removeItem('token');
           localStorage.removeItem('userId');
           setIsLoggedIn(false);
-          isTokenExist = null;
           history.push('/');
-          alert('로그아웃 성공');
         }
       })
-      .catch(() => {
-        alert('로그아웃 실패');
-      });
+      .catch(() => {});
   };
 
   return (

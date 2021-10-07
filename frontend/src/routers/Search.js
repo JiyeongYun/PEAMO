@@ -67,9 +67,7 @@ function Search() {
           }
         }
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch(() => {});
   };
 
   useEffect(() => {
@@ -120,24 +118,21 @@ function Search() {
   };
 
   // 향수 검색 함수
-  function searchPer () {
-    const word = document.querySelector('#search_name').value
-    const uId = localStorage.getItem('userId')
-    axios.get(
-      'http://j5a403.p.ssafy.io:8000/perfume/search',
-      {
+  function searchPer() {
+    const word = document.querySelector('#search_name').value;
+    const uId = localStorage.getItem('userId');
+    axios
+      .get('http://j5a403.p.ssafy.io:8000/perfume/search', {
         params: {
           word,
           uId,
           page: 0,
-        }
-      }
-    )
-      .then(res => {
-        console.log(res)
+        },
+      })
+      .then((res) => {
         setItems(res.data);
       })
-      .catch(err => console.log(err))
+      .catch(() => {});
   }
   // 향수 검색 종료
 
@@ -150,9 +145,9 @@ function Search() {
       <a href="#top">
         <FontAwesomeIcon className="up_icon" icon={faAngleDoubleUp} size="3x" />
       </a>
-      {items.length === 0 ?
+      {items.length === 0 ? (
         <Loading />
-        :
+      ) : (
         <div className="search_page">
           <div className="sex_category">
             <ul>
@@ -240,9 +235,14 @@ function Search() {
             </ul>
           </div>
           <div className="search_bar">
-            <input type="text" placeholder="향수이름" id="search_name" onKeyDown={e => {
-              if (e.key === "Enter") searchPer()
-            }} />
+            <input
+              type="text"
+              placeholder="향수이름"
+              id="search_name"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') searchPer();
+              }}
+            />
             <p onClick={searchPer}>검색</p>
           </div>
           <div className="search_card">
@@ -292,7 +292,7 @@ function Search() {
             </InfiniteScroll>
           </div>
         </div>
-      }
+      )}
     </div>
   );
 }
