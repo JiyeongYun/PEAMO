@@ -1,0 +1,191 @@
+.home {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow: scroll;
+}
+
+.down_icon {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, 0);
+  animation: updown 0.5s alternate infinite;
+}
+
+.up_icon {
+  cursor: pointer;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  color: black;
+  animation: updown 0.5s alternate infinite;
+}
+
+.black_icon {
+  color: black;
+}
+
+@keyframes updown {
+  from {
+    transform: translate(-50%, -5%);
+  }
+  to {
+    transform: translate(-50%, 5%);
+  }
+}
+
+.scroll {
+  opacity: 0;
+  transform: translate(0, 50px);
+}
+
+.scroll.show {
+  opacity: 1;
+  transform: none;
+}
+
+.home::-webkit-scrollbar {
+  display: none;
+}
+
+.white_canvas {
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.grey_canvas {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.home > .white_canvas > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+}
+
+.home > .white_canvas > .home_bottom {
+  color: white;
+  position: absolute;
+  top: 50%;
+  width: 100vw;
+  text-align: center;
+  transform: translate(0, -50%);
+}
+
+.home > .white_canvas > .home_bottom > h1 {
+  font-size: 60px;
+  margin-bottom: var(--margin-5);
+  font-weight: lighter;
+}
+
+.home > .white_canvas > .home_bottom > h3 {
+  font-size: var(--xlarge-font-size);
+  margin-bottom: 90px;
+  font-weight: lighter;
+}
+
+.home > .white_canvas > .home_bottom > .home_btn {
+  width: 20%;
+  height: 70px;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin: 0 auto;
+}
+
+.home > .white_canvas > .home_bottom > .home_btn:hover {
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+}
+
+.home > .white_canvas > .home_bottom > .home_btn p {
+  font-size: var(--large-font-size);
+  line-height: 70px;
+}
+
+.home > .this_month_perfume {
+  height: 100vh;
+  padding-top: 25vh;
+  position: relative;
+  scroll-snap-align: start;
+}
+
+.home > .this_month_perfume > .center_pos {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home > .this_month_perfume > .center_pos > .title {
+  margin-bottom: 100px;
+  font-size: var(--xxlarge-font-size);
+  transition: all 1s 0.5s;
+}
+
+.home > .this_month_perfume > .center_pos > .perfumes {
+  display: flex;
+  justify-content: center;
+  gap: 180px;
+  transition: all 1s 1s;
+}
+
+.home > .this_month_perfume > .center_pos > .perfumes > .perfume {
+  width: 20%;
+  cursor: pointer;
+}
+
+.home > .this_month_perfume > .center_pos > .perfumes > .perfume > img {
+  width: 90%;
+  max-width: 300px;
+  object-fit: contain;
+}
+
+.home
+  > .this_month_perfume
+  > .center_pos
+  > .perfumes
+  > .perfume
+  > .perfume_info {
+  margin: var(--margin-4);
+}
+
+.home
+  > .this_month_perfume
+  > .center_pos
+  > .perfumes
+  > .perfume
+  > .perfume_info
+  > p {
+  font-size: var(--mid-font-size);
+}
+
+.home
+  > .this_month_perfume
+  > .center_pos
+  > .perfumes
+  > .perfume
+  > .perfume_info
+  > p:nth-child(2) {
+  font-size: var(--large-font-size);
+  margin-top: var(--margin-1);
+}
+
+.home > .this_month_perfume > .center_pos > .perfumes > .perfume > .notes {
+  font-size: var(--main-font-size);
+}
+
+.home > .white_canvas > .down_icon {
+  cursor: pointer;
+}

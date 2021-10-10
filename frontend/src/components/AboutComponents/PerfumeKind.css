@@ -1,0 +1,26 @@
+.table {
+  width: 70vw !important;
+  position: absolute !important;
+  top: 30% !important;
+  left: 50% !important;
+  transform: translate(-50%) !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.table_head {
+  background-color: #1c1c1c !important;
+}
+
+.table_head > .table_row > .table_head_cell {
+  color: white !important;
+  height: 100px !important;
+  font-size: var(--large-font-size) !important;
+  text-align: center !important;
+}
+
+.table_body > .table_row > .table_body_cell {
+  width: 80px !important;
+  height: 100px !important;
+  font-size: var(--large-font-size) !important;
+  text-align: center !important;
+}

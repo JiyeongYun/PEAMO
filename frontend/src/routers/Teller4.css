@@ -1,0 +1,82 @@
+.teller4 {
+  height: 100vh;
+  width: 100vw;
+}
+
+.teller4 > .teller_4 {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.teller4 > .teller_4 > .teller_image_41 {
+  width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.teller4 > .teller_4 > .teller_image_42 {
+  width: 90vw;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.teller4 > .teller_4 > .teller_question_4 h2 {
+  margin-top: var(--margin-4);
+  margin-bottom: var(--margin-6);
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.teller4 > .teller_4 > .teller_image_41 > .image {
+  margin: 0 30px;
+  width: 20vw;
+  text-align: center;
+}
+
+.teller4 > .teller_4 > .teller_image_41 > .image img {
+  transition: all 0.5s ease;
+  filter: grayscale(100%);
+  width: 100%;
+}
+
+.teller4 > .teller_4 > .teller_image_41 > .image img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+.teller4 > .teller_4 > .teller_image_41 span {
+  font-size: var(--large-font-size);
+  position: relative;
+  top: 20px;
+  color: black;
+}
+
+.teller4 > .teller_4 > .teller_image_42 > .image {
+  margin: 0 30px;
+  width: 20vw;
+  text-align: center;
+}
+
+.teller4 > .teller_4 > .teller_image_42 > .image img {
+  transition: all 0.5s ease;
+  filter: grayscale(100%);
+  width: 100%;
+}
+
+.teller4 > .teller_4 > .teller_image_42 > .image img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+.teller4 > .teller_4 > .teller_image_42 span {
+  font-size: var(--large-font-size);
+  position: relative;
+  top: 20px;
+  color: black;
+}
