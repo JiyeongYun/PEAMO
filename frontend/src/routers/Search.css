@@ -1,0 +1,104 @@
+.searchpage {
+  height: 100vh;
+  padding-top: 9vh;
+  overflow: scroll;
+}
+
+.searchpage::-webkit-scrollbar {
+  display: none;
+}
+
+.search_page > .sex_category,
+.search_page > .note_category {
+  margin: var(--margin-6) auto;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.search_page li {
+  font-size: var(--large-font-size);
+  color: var(--grey);
+}
+
+.search_page > .sex_category li {
+  margin: 0 var(--margin-3);
+}
+
+.search_page > .note_category li {
+  margin: 0 var(--margin-1);
+}
+
+.search_page .checked {
+  color: black;
+  font-weight: bold;
+}
+
+.search_page > .note_category li:nth-child(2n) {
+  color: black;
+}
+
+.search_page > .sex_category li,
+.search_page > .note_category li:nth-child(2n + 1) {
+  cursor: pointer;
+  transition: color 1s ease-out;
+}
+
+.search_page > .search_card {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.search_page > .search_card p {
+  width: 100%;
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+}
+
+.search_page > .search_card::-webkit-scrollbar {
+  display: none;
+}
+
+.css-9vnvu0-MuiCardContent-root:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+}
+
+.search_page > .search_card div::-webkit-scrollbar {
+  display: none;
+}
+
+.perfume_card {
+  cursor: pointer;
+}
+
+.search_page > .search_bar {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.search_page > .search_bar > input {
+  text-align: right;
+  padding-right: 60px;
+  height: 30px;
+}
+
+.search_page > .search_bar > p {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translate(0, -50%);
+  cursor: pointer;
+}
+
+.MuiCardMedia-img {
+  height: 300px !important;
+}

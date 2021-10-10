@@ -1,0 +1,45 @@
+.note {
+  height: 80vh;
+  width: 100vw;
+  position: absolute;
+  text-align: center;
+  top: 15%;
+}
+
+.note > .note_title {
+  color: black;
+  font-size: 3rem;
+  margin-top: var(--margin-6);
+}
+
+.note > .note_subtitle {
+  color: black;
+  font-size: 1.5rem;
+  margin-top: var(--margin-4);
+}
+
+.note > .note_content {
+  margin: 5rem 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.note > .note_content > .note_img > img {
+  width: 15vw;
+  object-fit: contain;
+}
+
+.note > .note_content > .note_word > .notes {
+  margin-left: 200px;
+}
+
+.note > .note_content > .note_word > .notes h2 {
+  margin: var(--margin-4) 0;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.note > .note_content > .note_word > .notes p {
+  font-size: 1.2rem;
+}

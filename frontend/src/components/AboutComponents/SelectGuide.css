@@ -1,0 +1,78 @@
+.select_guide {
+  height: 80vh;
+  width: 100vw;
+  position: absolute;
+  text-align: center;
+  top: 15%;
+}
+
+.select_guide > .guide_name {
+  color: black;
+  font-size: 3rem;
+  margin-top: var(--margin-6);
+  position: relative;
+  transition: all 1s 0.5s;
+}
+
+.select_guide > .selection {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: absolute;
+  top: 20%;
+  transition: all 1s 0.5s;
+}
+
+.select_guide > .selection > p {
+  font-size: var(--large-font-size);
+  color: var(--grey);
+  cursor: pointer;
+  transition: color 1s ease;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.select_guide > .selection > .checked {
+  color: black;
+  font-weight: bold;
+}
+
+.select_guide > .images_container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
+  transition: all 1s 1s;
+}
+
+.select_guide > .images_container img {
+  animation: show 1s;
+}
+
+.select_guide > .images_container h4 {
+  animation: show 1s;
+  margin-top: var(--margin-3);
+  margin-bottom: var(--margin-2);
+  font-size: var(--large-font-size);
+  font-weight: 500;
+}
+
+.select_guide > .images_container p {
+  animation: show 1s;
+  font-size: var(--mid-font-size);
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate(0, 50px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,5840 @@
+[
+  {
+    "id": 1,
+    "eng": "absinthe",
+    "kor": "압생트",
+    "category": 11
+  },
+  {
+    "id": 2,
+    "eng": "acacia",
+    "kor": "아카시아",
+    "category": 3
+  },
+  {
+    "id": 3,
+    "eng": "acai berry",
+    "kor": "아사이베리",
+    "category": 2
+  },
+  {
+    "id": 4,
+    "eng": "acerola",
+    "kor": "아세로라",
+    "category": 2
+  },
+  {
+    "id": 5,
+    "eng": "acerola blossom",
+    "kor": "아세로라 블라썸",
+    "category": 3
+  },
+  {
+    "id": 6,
+    "eng": "acetyl furan",
+    "kor": "아세틸 푸란",
+    "category": 7
+  },
+  {
+    "id": 7,
+    "eng": "agarwood (oud)",
+    "kor": "아갈우드",
+    "category": 8
+  },
+  {
+    "id": 8,
+    "eng": "agave",
+    "kor": "아게이브",
+    "category": 5
+  },
+  {
+    "id": 9,
+    "eng": "agave nectar",
+    "kor": "아게이브 넥타르",
+    "category": 7
+  },
+  {
+    "id": 10,
+    "eng": "aglaia",
+    "kor": "아글라이아",
+    "category": 3
+  },
+  {
+    "id": 11,
+    "eng": "akigalawood",
+    "kor": "아키갈라우드",
+    "category": 8
+  },
+  {
+    "id": 12,
+    "eng": "aldehydes",
+    "kor": "알데하이드",
+    "category": 12
+  },
+  {
+    "id": 13,
+    "eng": "alder",
+    "kor": "알더",
+    "category": 8
+  },
+  {
+    "id": 14,
+    "eng": "algae",
+    "kor": "알게",
+    "category": 5
+  },
+  {
+    "id": 15,
+    "eng": "allspice",
+    "kor": "올스파이스",
+    "category": 6
+  },
+  {
+    "id": 16,
+    "eng": "almond",
+    "kor": "아몬드",
+    "category": 2
+  },
+  {
+    "id": 17,
+    "eng": "almond blossom",
+    "kor": "아몬드 블라썸",
+    "category": 3
+  },
+  {
+    "id": 18,
+    "eng": "almond tree",
+    "kor": "아몬드 트리",
+    "category": 8
+  },
+  {
+    "id": 19,
+    "eng": "aloe vera",
+    "kor": "알로에 베라",
+    "category": 5
+  },
+  {
+    "id": 20,
+    "eng": "aluminum",
+    "kor": "알루미늄",
+    "category": 12
+  },
+  {
+    "id": 21,
+    "eng": "alumroot",
+    "kor": "앨럼루트",
+    "category": 3
+  },
+  {
+    "id": 22,
+    "eng": "alyssum",
+    "kor": "알리섬",
+    "category": 3
+  },
+  {
+    "id": 23,
+    "eng": "amaranth",
+    "kor": "아마란스",
+    "category": 8
+  },
+  {
+    "id": 24,
+    "eng": "amaretto",
+    "kor": "아마레토",
+    "category": 11
+  },
+  {
+    "id": 25,
+    "eng": "amarillys",
+    "kor": "아마릴리스",
+    "category": 3
+  },
+  {
+    "id": 26,
+    "eng": "amber",
+    "kor": "엠버",
+    "category": 10
+  },
+  {
+    "id": 27,
+    "eng": "amber xtreme",
+    "kor": "엠버 엑스트림",
+    "category": 10
+  },
+  {
+    "id": 28,
+    "eng": "ambergris",
+    "kor": "엠버그리스",
+    "category": 10
+  },
+  {
+    "id": 29,
+    "eng": "ambertonic (iff)",
+    "kor": "엠버토닉",
+    "category": 10
+  },
+  {
+    "id": 30,
+    "eng": "amberwood",
+    "kor": "엠버우드",
+    "category": 9
+  },
+  {
+    "id": 31,
+    "eng": "ambrarome",
+    "kor": "엠브러로움",
+    "category": 10
+  },
+  {
+    "id": 32,
+    "eng": "ambretone",
+    "kor": "엠브레톤",
+    "category": 10
+  },
+  {
+    "id": 33,
+    "eng": "ambrette (musk mallow)",
+    "kor": "엠브레트",
+    "category": 10
+  },
+  {
+    "id": 34,
+    "eng": "ambrettolide",
+    "kor": "앰브레톨라이드",
+    "category": 10
+  },
+  {
+    "id": 35,
+    "eng": "ambrocenide (symrise)",
+    "kor": "앰브로케니드",
+    "category": 10
+  },
+  {
+    "id": 36,
+    "eng": "ambroxan",
+    "kor": "앰브락산",
+    "category": 10
+  },
+  {
+    "id": 37,
+    "eng": "ammophila (beach grass)",
+    "kor": "애모필러",
+    "category": 5
+  },
+  {
+    "id": 38,
+    "eng": "amyl salicylate",
+    "kor": "애밀 샐슬럿",
+    "category": 12
+  },
+  {
+    "id": 39,
+    "eng": "amyris",
+    "kor": "애미리스",
+    "category": 8
+  },
+  {
+    "id": 40,
+    "eng": "anemone",
+    "kor": "아네모네",
+    "category": 3
+  },
+  {
+    "id": 41,
+    "eng": "angel\u0027s trumpet",
+    "kor": "앤젤스트럼펫",
+    "category": 3
+  },
+  {
+    "id": 42,
+    "eng": "angelica",
+    "kor": "안젤리카",
+    "category": 5
+  },
+  {
+    "id": 43,
+    "eng": "animal notes",
+    "kor": "에니멀 노츠",
+    "category": 10
+  },
+  {
+    "id": 44,
+    "eng": "anise",
+    "kor": "애너스",
+    "category": 6
+  },
+  {
+    "id": 45,
+    "eng": "apple",
+    "kor": "애플",
+    "category": 2
+  },
+  {
+    "id": 46,
+    "eng": "apple blossom",
+    "kor": "애플 플라썸",
+    "category": 3
+  },
+  {
+    "id": 47,
+    "eng": "apple juice",
+    "kor": "애플 주스",
+    "category": 2
+  },
+  {
+    "id": 48,
+    "eng": "apple mint",
+    "kor": "애플 민트",
+    "category": 5
+  },
+  {
+    "id": 49,
+    "eng": "apple pulp",
+    "kor": "애플 펄프",
+    "category": 2
+  },
+  {
+    "id": 50,
+    "eng": "apple tree",
+    "kor": "애플 트리",
+    "category": 8
+  },
+  {
+    "id": 51,
+    "eng": "apricot",
+    "kor": "애프리콧",
+    "category": 2
+  },
+  {
+    "id": 52,
+    "eng": "apricot blossom",
+    "kor": "애프리콧 플라썸",
+    "category": 3
+  },
+  {
+    "id": 53,
+    "eng": "aquozone",
+    "kor": "아쿠오존",
+    "category": 12
+  },
+  {
+    "id": 54,
+    "eng": "araucaria",
+    "kor": "아라우카리아",
+    "category": 8
+  },
+  {
+    "id": 55,
+    "eng": "arbutus (madrona, bearberry tree)",
+    "kor": "알버투스 (마드로나, 베어베리 트리)",
+    "category": 8
+  },
+  {
+    "id": 56,
+    "eng": "arctic bramble",
+    "kor": "아틱 브렘블",
+    "category": 2
+  },
+  {
+    "id": 57,
+    "eng": "argan",
+    "kor": "아르간",
+    "category": 2
+  },
+  {
+    "id": 58,
+    "eng": "argan tree",
+    "kor": "아르간 트리",
+    "category": 8
+  },
+  {
+    "id": 59,
+    "eng": "arnica",
+    "kor": "아르니카",
+    "category": 5
+  },
+  {
+    "id": 60,
+    "eng": "artemisia",
+    "kor": "아르테미시아",
+    "category": 5
+  },
+  {
+    "id": 61,
+    "eng": "arum lily",
+    "kor": "아룸 릴리",
+    "category": 4
+  },
+  {
+    "id": 62,
+    "eng": "asafoetida",
+    "kor": "아사포에티다",
+    "category": 6
+  },
+  {
+    "id": 63,
+    "eng": "ash",
+    "kor": "에쉬",
+    "category": 12
+  },
+  {
+    "id": 64,
+    "eng": "ashoka flower",
+    "kor": "에쇼카 플라워",
+    "category": 3
+  },
+  {
+    "id": 65,
+    "eng": "asparagus",
+    "kor": "아스파라거스",
+    "category": 5
+  },
+  {
+    "id": 66,
+    "eng": "aspen",
+    "kor": "아스펜",
+    "category": 8
+  },
+  {
+    "id": 67,
+    "eng": "asphalt",
+    "kor": "애스폴트",
+    "category": 12
+  },
+  {
+    "id": 68,
+    "eng": "aspic",
+    "kor": "애스픽",
+    "category": 10
+  },
+  {
+    "id": 69,
+    "eng": "avocado",
+    "kor": "아보카도",
+    "category": 5
+  },
+  {
+    "id": 70,
+    "eng": "azolla (water fern)",
+    "kor": "아졸라 (워터 펀)",
+    "category": 5
+  },
+  {
+    "id": 71,
+    "eng": "bacon",
+    "kor": "베이컨",
+    "category": 10
+  },
+  {
+    "id": 72,
+    "eng": "baileys irish cream",
+    "kor": "베일리즈 아이리시 크림",
+    "category": 11
+  },
+  {
+    "id": 73,
+    "eng": "balsamic vinegar",
+    "kor": "발사믹 식초",
+    "category": 9
+  },
+  {
+    "id": 74,
+    "eng": "bamboo",
+    "kor": "대나무",
+    "category": 8
+  },
+  {
+    "id": 75,
+    "eng": "banana",
+    "kor": "바나나",
+    "category": 2
+  },
+  {
+    "id": 76,
+    "eng": "banana flower",
+    "kor": "바나나 플라워",
+    "category": 3
+  },
+  {
+    "id": 77,
+    "eng": "banana leaf",
+    "kor": "바나나 리프",
+    "category": 5
+  },
+  {
+    "id": 78,
+    "eng": "baobab",
+    "kor": "바오밥",
+    "category": 8
+  },
+  {
+    "id": 79,
+    "eng": "barberry",
+    "kor": "바베리",
+    "category": 3
+  },
+  {
+    "id": 80,
+    "eng": "bark",
+    "kor": "바크",
+    "category": 8
+  },
+  {
+    "id": 81,
+    "eng": "barley",
+    "kor": "발리",
+    "category": 5
+  },
+  {
+    "id": 82,
+    "eng": "basil",
+    "kor": "바질",
+    "category": 5
+  },
+  {
+    "id": 83,
+    "eng": "bay essence",
+    "kor": "베이 에센스",
+    "category": 5
+  },
+  {
+    "id": 84,
+    "eng": "bay leaf",
+    "kor": "베이 리프",
+    "category": 6
+  },
+  {
+    "id": 85,
+    "eng": "bbq",
+    "kor": "바베큐",
+    "category": 10
+  },
+  {
+    "id": 86,
+    "eng": "bearberry",
+    "kor": "베어베리",
+    "category": 2
+  },
+  {
+    "id": 87,
+    "eng": "beech",
+    "kor": "비치",
+    "category": 8
+  },
+  {
+    "id": 88,
+    "eng": "beerale",
+    "kor": "비어에일",
+    "category": 11
+  },
+  {
+    "id": 89,
+    "eng": "beeswax",
+    "kor": "비즈왁스",
+    "category": 10
+  },
+  {
+    "id": 90,
+    "eng": "beetroot",
+    "kor": "비트루트",
+    "category": 2
+  },
+  {
+    "id": 91,
+    "eng": "belambra tree",
+    "kor": "벨람브라 트리",
+    "category": 8
+  },
+  {
+    "id": 92,
+    "eng": "belladona",
+    "kor": "벨라도나",
+    "category": 3
+  },
+  {
+    "id": 93,
+    "eng": "bellflower",
+    "kor": "벨플라워",
+    "category": 3
+  },
+  {
+    "id": 94,
+    "eng": "bellini",
+    "kor": "벨리니",
+    "category": 11
+  },
+  {
+    "id": 95,
+    "eng": "benzoin",
+    "kor": "벤조인",
+    "category": 9
+  },
+  {
+    "id": 96,
+    "eng": "bergamot",
+    "kor": "베르가못",
+    "category": 1
+  },
+  {
+    "id": 97,
+    "eng": "bergamot blossom",
+    "kor": "베르가못 블라썸",
+    "category": 3
+  },
+  {
+    "id": 98,
+    "eng": "birch",
+    "kor": "버치",
+    "category": 8
+  },
+  {
+    "id": 99,
+    "eng": "birch tar",
+    "kor": "버치 타르",
+    "category": 9
+  },
+  {
+    "id": 100,
+    "eng": "biscuit",
+    "kor": "비스킷",
+    "category": 7
+  },
+  {
+    "id": 101,
+    "eng": "bitter orange",
+    "kor": "비터 오렌지",
+    "category": 1
+  },
+  {
+    "id": 102,
+    "eng": "black currant",
+    "kor": "블랙 커렌트",
+    "category": 2
+  },
+  {
+    "id": 103,
+    "eng": "black currant blossom",
+    "kor": "블랙 커렌트 블라썸",
+    "category": 3
+  },
+  {
+    "id": 104,
+    "eng": "black currant leaf",
+    "kor": "블랙 커렌트 리프",
+    "category": 5
+  },
+  {
+    "id": 105,
+    "eng": "black hemlock or tsuga",
+    "kor": "블랙 헤믈락 (수가)",
+    "category": 8
+  },
+  {
+    "id": 106,
+    "eng": "black locust",
+    "kor": "블랙 록커스트",
+    "category": 4
+  },
+  {
+    "id": 107,
+    "eng": "black spruce",
+    "kor": "블랙 스프루스",
+    "category": 8
+  },
+  {
+    "id": 108,
+    "eng": "blackberry",
+    "kor": "블랙베리",
+    "category": 2
+  },
+  {
+    "id": 109,
+    "eng": "blackberry blossom",
+    "kor": "블랙베리 블라썸",
+    "category": 3
+  },
+  {
+    "id": 110,
+    "eng": "blackberry leaf",
+    "kor": "블랙베리 리프",
+    "category": 5
+  },
+  {
+    "id": 111,
+    "eng": "blackthorn",
+    "kor": "블랙토른",
+    "category": 2
+  },
+  {
+    "id": 112,
+    "eng": "blackwood",
+    "kor": "블랙우드",
+    "category": 8
+  },
+  {
+    "id": 113,
+    "eng": "blood",
+    "kor": "블러드",
+    "category": 12
+  },
+  {
+    "id": 114,
+    "eng": "blood orange",
+    "kor": "블러드 오렌지",
+    "category": 1
+  },
+  {
+    "id": 115,
+    "eng": "blue lilies",
+    "kor": "블루 릴리즈",
+    "category": 3
+  },
+  {
+    "id": 116,
+    "eng": "blue margarita",
+    "kor": "블루 마르가리타",
+    "category": 11
+  },
+  {
+    "id": 117,
+    "eng": "blue poppy",
+    "kor": "블루 포피",
+    "category": 3
+  },
+  {
+    "id": 118,
+    "eng": "blueberry",
+    "kor": "블루베리",
+    "category": 2
+  },
+  {
+    "id": 119,
+    "eng": "boisiris",
+    "kor": "보이사이러스",
+    "category": 12
+  },
+  {
+    "id": 120,
+    "eng": "borage",
+    "kor": "보어러지",
+    "category": 5
+  },
+  {
+    "id": 121,
+    "eng": "borneol",
+    "kor": "보어네올",
+    "category": 5
+  },
+  {
+    "id": 122,
+    "eng": "boronia",
+    "kor": "볼로니아",
+    "category": 4
+  },
+  {
+    "id": 123,
+    "eng": "bougainvillea",
+    "kor": "부게인빌리어",
+    "category": 3
+  },
+  {
+    "id": 124,
+    "eng": "bourbon whiskey",
+    "kor": "버본 위스키",
+    "category": 11
+  },
+  {
+    "id": 125,
+    "eng": "boysenberry",
+    "kor": "보이센베리",
+    "category": 2
+  },
+  {
+    "id": 126,
+    "eng": "bran",
+    "kor": "브란",
+    "category": 5
+  },
+  {
+    "id": 127,
+    "eng": "brazil nut",
+    "kor": "브라질 넛",
+    "category": 2
+  },
+  {
+    "id": 128,
+    "eng": "brazilian rosewood",
+    "kor": "브라질리안 로즈우드",
+    "category": 8
+  },
+  {
+    "id": 129,
+    "eng": "bread",
+    "kor": "브레드",
+    "category": 7
+  },
+  {
+    "id": 130,
+    "eng": "bread flower",
+    "kor": "브레드 플라워",
+    "category": 3
+  },
+  {
+    "id": 131,
+    "eng": "breu-branco",
+    "kor": "브루-브란코",
+    "category": 9
+  },
+  {
+    "id": 132,
+    "eng": "brick",
+    "kor": "브릭",
+    "category": 12
+  },
+  {
+    "id": 133,
+    "eng": "brioche",
+    "kor": "브리오슈",
+    "category": 7
+  },
+  {
+    "id": 134,
+    "eng": "bromelia",
+    "kor": "브로멜리아",
+    "category": 3
+  },
+  {
+    "id": 135,
+    "eng": "brown scotch tape",
+    "kor": "브라운 스카치 테이프",
+    "category": 12
+  },
+  {
+    "id": 136,
+    "eng": "brown sugar",
+    "kor": "브라운 슈거",
+    "category": 7
+  },
+  {
+    "id": 137,
+    "eng": "bubble gum",
+    "kor": "버블 검",
+    "category": 7
+  },
+  {
+    "id": 138,
+    "eng": "buchu or agathosma",
+    "kor": "바쿠 (아게토스마)",
+    "category": 5
+  },
+  {
+    "id": 139,
+    "eng": "buddha wood",
+    "kor": "부다 우드",
+    "category": 8
+  },
+  {
+    "id": 140,
+    "eng": "buddleia",
+    "kor": "바덜리아",
+    "category": 3
+  },
+  {
+    "id": 141,
+    "eng": "bulrush",
+    "kor": "불러쉬",
+    "category": 5
+  },
+  {
+    "id": 142,
+    "eng": "burdock",
+    "kor": "버덕",
+    "category": 5
+  },
+  {
+    "id": 143,
+    "eng": "burnt match",
+    "kor": "번트 메치",
+    "category": 12
+  },
+  {
+    "id": 144,
+    "eng": "bushman candle",
+    "kor": "부시맨 캔들",
+    "category": 9
+  },
+  {
+    "id": 145,
+    "eng": "butomus umbellatus",
+    "kor": "부토머스 엄벨라터스",
+    "category": 3
+  },
+  {
+    "id": 146,
+    "eng": "butter",
+    "kor": "버터",
+    "category": 7
+  },
+  {
+    "id": 147,
+    "eng": "buttercup",
+    "kor": "버터컵",
+    "category": 3
+  },
+  {
+    "id": 148,
+    "eng": "butterscotch",
+    "kor": "버터스카치",
+    "category": 7
+  },
+  {
+    "id": 149,
+    "eng": "buxus",
+    "kor": "벅서스",
+    "category": 8
+  },
+  {
+    "id": 150,
+    "eng": "cabreuva",
+    "kor": "카브루버",
+    "category": 8
+  },
+  {
+    "id": 151,
+    "eng": "cacao pod",
+    "kor": "카카오 팟",
+    "category": 6
+  },
+  {
+    "id": 152,
+    "eng": "cactus",
+    "kor": "켓터스",
+    "category": 5
+  },
+  {
+    "id": 153,
+    "eng": "cade oil",
+    "kor": "케이드 오일",
+    "category": 9
+  },
+  {
+    "id": 154,
+    "eng": "caipirinha",
+    "kor": "카이피리냐",
+    "category": 11
+  },
+  {
+    "id": 155,
+    "eng": "calamansi",
+    "kor": "깔라만시",
+    "category": 1
+  },
+  {
+    "id": 156,
+    "eng": "calamus",
+    "kor": "칼라머스",
+    "category": 5
+  },
+  {
+    "id": 157,
+    "eng": "calone",
+    "kor": "칼로우니",
+    "category": 12
+  },
+  {
+    "id": 158,
+    "eng": "calycanthus",
+    "kor": "캘리칸더스",
+    "category": 5
+  },
+  {
+    "id": 159,
+    "eng": "calypsone",
+    "kor": "칼립손",
+    "category": 12
+  },
+  {
+    "id": 160,
+    "eng": "cambodian oud",
+    "kor": "캄보디안 오드",
+    "category": 8
+  },
+  {
+    "id": 161,
+    "eng": "camellia",
+    "kor": "카멜리아",
+    "category": 3
+  },
+  {
+    "id": 162,
+    "eng": "campari",
+    "kor": "캠파리",
+    "category": 11
+  },
+  {
+    "id": 163,
+    "eng": "camphor",
+    "kor": "캠퍼",
+    "category": 12
+  },
+  {
+    "id": 164,
+    "eng": "canadian balsam",
+    "kor": "캐네디안 발쌈",
+    "category": 8
+  },
+  {
+    "id": 165,
+    "eng": "candied fruits",
+    "kor": "캔디드 프루츠",
+    "category": 7
+  },
+  {
+    "id": 166,
+    "eng": "candied ginger",
+    "kor": "캔디드 진저",
+    "category": 7
+  },
+  {
+    "id": 167,
+    "eng": "candied orange",
+    "kor": "캔디드 오렌지",
+    "category": 7
+  },
+  {
+    "id": 168,
+    "eng": "candies",
+    "kor": "캔디스",
+    "category": 7
+  },
+  {
+    "id": 169,
+    "eng": "canele",
+    "kor": "케널",
+    "category": 7
+  },
+  {
+    "id": 170,
+    "eng": "cannabis",
+    "kor": "캐너비스",
+    "category": 5
+  },
+  {
+    "id": 171,
+    "eng": "cannonball flower",
+    "kor": "캐논벨 플라워",
+    "category": 3
+  },
+  {
+    "id": 172,
+    "eng": "caoutchouc",
+    "kor": "케이우추시",
+    "category": 12
+  },
+  {
+    "id": 173,
+    "eng": "cappuccino",
+    "kor": "카푸치노",
+    "category": 11
+  },
+  {
+    "id": 174,
+    "eng": "carambola (star fruit)",
+    "kor": "카람볼라 (스타 프루츠)",
+    "category": 2
+  },
+  {
+    "id": 175,
+    "eng": "carambola blossom",
+    "kor": "카람볼라 블라썸",
+    "category": 3
+  },
+  {
+    "id": 176,
+    "eng": "caramel",
+    "kor": "카라멜",
+    "category": 7
+  },
+  {
+    "id": 177,
+    "eng": "caraway",
+    "kor": "카라웨이",
+    "category": 6
+  },
+  {
+    "id": 178,
+    "eng": "cardamom",
+    "kor": "카르다맘",
+    "category": 6
+  },
+  {
+    "id": 179,
+    "eng": "carissa",
+    "kor": "카리사",
+    "category": 4
+  },
+  {
+    "id": 180,
+    "eng": "carnation",
+    "kor": "카네이션",
+    "category": 3
+  },
+  {
+    "id": 181,
+    "eng": "carnation leaves",
+    "kor": "카네이션 리브스",
+    "category": 5
+  },
+  {
+    "id": 182,
+    "eng": "carob tree",
+    "kor": "캐롭 트리",
+    "category": 8
+  },
+  {
+    "id": 183,
+    "eng": "carrot",
+    "kor": "캐롯",
+    "category": 2
+  },
+  {
+    "id": 184,
+    "eng": "carrot seeds",
+    "kor": "캐롯 시드",
+    "category": 10
+  },
+  {
+    "id": 185,
+    "eng": "cascalone",
+    "kor": "케스칼로네",
+    "category": 12
+  },
+  {
+    "id": 186,
+    "eng": "cashew",
+    "kor": "케슈",
+    "category": 2
+  },
+  {
+    "id": 187,
+    "eng": "cashmeran",
+    "kor": "캐즈미런",
+    "category": 12
+  },
+  {
+    "id": 188,
+    "eng": "cashmir wood",
+    "kor": "캐시미어 우드",
+    "category": 8
+  },
+  {
+    "id": 189,
+    "eng": "cassia",
+    "kor": "카시아",
+    "category": 6
+  },
+  {
+    "id": 190,
+    "eng": "cassowary fruit",
+    "kor": "캐소워리 프루츠",
+    "category": 2
+  },
+  {
+    "id": 191,
+    "eng": "castoreum",
+    "kor": "케스토리움",
+    "category": 10
+  },
+  {
+    "id": 192,
+    "eng": "caviar",
+    "kor": "캐비어",
+    "category": 10
+  },
+  {
+    "id": 193,
+    "eng": "cedar",
+    "kor": "시더",
+    "category": 8
+  },
+  {
+    "id": 194,
+    "eng": "celery",
+    "kor": "셀러리",
+    "category": 5
+  },
+  {
+    "id": 195,
+    "eng": "celery seeds",
+    "kor": "셀러리 시즈",
+    "category": 5
+  },
+  {
+    "id": 196,
+    "eng": "celosia",
+    "kor": "셀로시아",
+    "category": 3
+  },
+  {
+    "id": 197,
+    "eng": "centella asiatica",
+    "kor": "센텔라 아시아티카",
+    "category": 5
+  },
+  {
+    "id": 198,
+    "eng": "cepes",
+    "kor": "세페이즈",
+    "category": 2
+  },
+  {
+    "id": 199,
+    "eng": "cetalox",
+    "kor": "세타록스",
+    "category": 10
+  },
+  {
+    "id": 200,
+    "eng": "chalood bark",
+    "kor": "칼루드 바크",
+    "category": 8
+  },
+  {
+    "id": 201,
+    "eng": "chamomile",
+    "kor": "카모마일",
+    "category": 3
+  },
+  {
+    "id": 202,
+    "eng": "champaca",
+    "kor": "샴파카",
+    "category": 3
+  },
+  {
+    "id": 203,
+    "eng": "champagne",
+    "kor": "샴페인",
+    "category": 11
+  },
+  {
+    "id": 204,
+    "eng": "chayote",
+    "kor": "체이엇",
+    "category": 2
+  },
+  {
+    "id": 205,
+    "eng": "cheese",
+    "kor": "치즈",
+    "category": 10
+  },
+  {
+    "id": 206,
+    "eng": "cherimoya",
+    "kor": "체리모어",
+    "category": 2
+  },
+  {
+    "id": 207,
+    "eng": "cherry",
+    "kor": "체리",
+    "category": 2
+  },
+  {
+    "id": 208,
+    "eng": "cherry blossom",
+    "kor": "체리 블라썸",
+    "category": 3
+  },
+  {
+    "id": 209,
+    "eng": "chestnut",
+    "kor": "케슈넛",
+    "category": 2
+  },
+  {
+    "id": 210,
+    "eng": "chimonanthus or wintersweet",
+    "kor": "치모넌써즈 (윈터스위츠)",
+    "category": 3
+  },
+  {
+    "id": 211,
+    "eng": "china rose",
+    "kor": "차이나 로즈",
+    "category": 3
+  },
+  {
+    "id": 212,
+    "eng": "chinotto",
+    "kor": "치노토",
+    "category": 11
+  },
+  {
+    "id": 213,
+    "eng": "chinotto",
+    "kor": "치노토",
+    "category": 1
+  },
+  {
+    "id": 214,
+    "eng": "chinotto blossom",
+    "kor": "치노토 블라썸",
+    "category": 3
+  },
+  {
+    "id": 215,
+    "eng": "chive",
+    "kor": "차이브",
+    "category": 5
+  },
+  {
+    "id": 216,
+    "eng": "chocolate flower",
+    "kor": "초콜렛 플라워",
+    "category": 3
+  },
+  {
+    "id": 217,
+    "eng": "choya loban",
+    "kor": "초야 로반",
+    "category": 9
+  },
+  {
+    "id": 218,
+    "eng": "choya nakh",
+    "kor": "초야 나크",
+    "category": 9
+  },
+  {
+    "id": 219,
+    "eng": "choya ral",
+    "kor": "초야 랄",
+    "category": 9
+  },
+  {
+    "id": 220,
+    "eng": "christmas tree or flame tree",
+    "kor": "크리스마스 트리 (플레임 프리)",
+    "category": 3
+  },
+  {
+    "id": 221,
+    "eng": "chrysanthemum",
+    "kor": "크리센티멈",
+    "category": 3
+  },
+  {
+    "id": 222,
+    "eng": "chutney",
+    "kor": "첫니",
+    "category": 6
+  },
+  {
+    "id": 223,
+    "eng": "cilantro",
+    "kor": "실란트로",
+    "category": 5
+  },
+  {
+    "id": 224,
+    "eng": "cinnamon",
+    "kor": "시나몬",
+    "category": 6
+  },
+  {
+    "id": 225,
+    "eng": "cinnamon leaf",
+    "kor": "시나몬 리프",
+    "category": 6
+  },
+  {
+    "id": 226,
+    "eng": "citron",
+    "kor": "시트론",
+    "category": 1
+  },
+  {
+    "id": 227,
+    "eng": "citruses",
+    "kor": "시트러스",
+    "category": 1
+  },
+  {
+    "id": 228,
+    "eng": "civet",
+    "kor": "시벳",
+    "category": 10
+  },
+  {
+    "id": 229,
+    "eng": "clary sage",
+    "kor": "클라리 세이지",
+    "category": 5
+  },
+  {
+    "id": 230,
+    "eng": "clay",
+    "kor": "클레이",
+    "category": 12
+  },
+  {
+    "id": 231,
+    "eng": "clearwood",
+    "kor": "클리어우드",
+    "category": 8
+  },
+  {
+    "id": 232,
+    "eng": "clematis",
+    "kor": "클레멘티스",
+    "category": 3
+  },
+  {
+    "id": 233,
+    "eng": "clementine",
+    "kor": "클레멘타인",
+    "category": 1
+  },
+  {
+    "id": 234,
+    "eng": "cloudberry",
+    "kor": "클라우드베리",
+    "category": 2
+  },
+  {
+    "id": 235,
+    "eng": "clove leaf",
+    "kor": "클로브 리프",
+    "category": 6
+  },
+  {
+    "id": 236,
+    "eng": "clover",
+    "kor": "클로버",
+    "category": 3
+  },
+  {
+    "id": 237,
+    "eng": "cloves",
+    "kor": "클로브스",
+    "category": 6
+  },
+  {
+    "id": 238,
+    "eng": "co2 extracts",
+    "kor": "co2 추출물",
+    "category": 12
+  },
+  {
+    "id": 239,
+    "eng": "coal",
+    "kor": "코올",
+    "category": 12
+  },
+  {
+    "id": 240,
+    "eng": "coal tar",
+    "kor": "코올 타르",
+    "category": 9
+  },
+  {
+    "id": 241,
+    "eng": "cobblestone",
+    "kor": "코벨스톤",
+    "category": 12
+  },
+  {
+    "id": 242,
+    "eng": "coca",
+    "kor": "코카",
+    "category": 5
+  },
+  {
+    "id": 243,
+    "eng": "coca-cola",
+    "kor": "코카콜라",
+    "category": 11
+  },
+  {
+    "id": 244,
+    "eng": "cocobolo",
+    "kor": "코코볼로",
+    "category": 8
+  },
+  {
+    "id": 245,
+    "eng": "coconut",
+    "kor": "코코넛",
+    "category": 2
+  },
+  {
+    "id": 246,
+    "eng": "coconut pie",
+    "kor": "코코넛 파이",
+    "category": 7
+  },
+  {
+    "id": 247,
+    "eng": "coffee",
+    "kor": "커피",
+    "category": 6
+  },
+  {
+    "id": 248,
+    "eng": "coffee blossom",
+    "kor": "커피 블라썸",
+    "category": 3
+  },
+  {
+    "id": 249,
+    "eng": "coffee tree",
+    "kor": "커피 트리",
+    "category": 8
+  },
+  {
+    "id": 250,
+    "eng": "cognac",
+    "kor": "코냑",
+    "category": 11
+  },
+  {
+    "id": 251,
+    "eng": "cognac",
+    "kor": "코냑",
+    "category": 11
+  },
+  {
+    "id": 252,
+    "eng": "concrete",
+    "kor": "콘크리트",
+    "category": 12
+  },
+  {
+    "id": 253,
+    "eng": "cookie",
+    "kor": "쿠키",
+    "category": 7
+  },
+  {
+    "id": 254,
+    "eng": "copahu balm",
+    "kor": "코파후 밤",
+    "category": 9
+  },
+  {
+    "id": 255,
+    "eng": "copaiba balm",
+    "kor": "코파이바 밤",
+    "category": 9
+  },
+  {
+    "id": 256,
+    "eng": "copal",
+    "kor": "코팔",
+    "category": 9
+  },
+  {
+    "id": 257,
+    "eng": "coral reef",
+    "kor": "코랄 리프",
+    "category": 10
+  },
+  {
+    "id": 258,
+    "eng": "coranol",
+    "kor": "코라놀",
+    "category": 12
+  },
+  {
+    "id": 259,
+    "eng": "coriander",
+    "kor": "코리안더",
+    "category": 6
+  },
+  {
+    "id": 260,
+    "eng": "cork",
+    "kor": "코르크",
+    "category": 8
+  },
+  {
+    "id": 261,
+    "eng": "cork",
+    "kor": "코르크",
+    "category": 12
+  },
+  {
+    "id": 262,
+    "eng": "corn silk",
+    "kor": "콘 실크",
+    "category": 2
+  },
+  {
+    "id": 263,
+    "eng": "cornflower, sultan seeds",
+    "kor": "콘플라워, 술탄 시즈",
+    "category": 3
+  },
+  {
+    "id": 264,
+    "eng": "cosmone",
+    "kor": "코즈먼",
+    "category": 12
+  },
+  {
+    "id": 265,
+    "eng": "cosmopolitan cocktail",
+    "kor": "코스모폴리탄 칵테일",
+    "category": 11
+  },
+  {
+    "id": 266,
+    "eng": "cosmos flower",
+    "kor": "코스모스 플라워",
+    "category": 3
+  },
+  {
+    "id": 267,
+    "eng": "costus",
+    "kor": "코스터스",
+    "category": 3
+  },
+  {
+    "id": 268,
+    "eng": "cotton candy",
+    "kor": "코튼 캔디",
+    "category": 7
+  },
+  {
+    "id": 269,
+    "eng": "cotton flower",
+    "kor": "코튼 플라워",
+    "category": 3
+  },
+  {
+    "id": 270,
+    "eng": "cottonwood (poplar)",
+    "kor": "코튼우드 (포플러)",
+    "category": 8
+  },
+  {
+    "id": 271,
+    "eng": "coumarin",
+    "kor": "쿠머린",
+    "category": 12
+  },
+  {
+    "id": 272,
+    "eng": "cranberry",
+    "kor": "크렌베리",
+    "category": 2
+  },
+  {
+    "id": 273,
+    "eng": "cream",
+    "kor": "크림",
+    "category": 7
+  },
+  {
+    "id": 274,
+    "eng": "cream soda",
+    "kor": "크림 소다",
+    "category": 11
+  },
+  {
+    "id": 275,
+    "eng": "creme brulee",
+    "kor": "크림 브룰리",
+    "category": 7
+  },
+  {
+    "id": 276,
+    "eng": "creosote bush",
+    "kor": "크레오소트 부쉬",
+    "category": 5
+  },
+  {
+    "id": 277,
+    "eng": "crinum lily",
+    "kor": "크리넘 릴리",
+    "category": 3
+  },
+  {
+    "id": 278,
+    "eng": "crithmum",
+    "kor": "크리멈",
+    "category": 5
+  },
+  {
+    "id": 279,
+    "eng": "croissant",
+    "kor": "크로이산트",
+    "category": 7
+  },
+  {
+    "id": 280,
+    "eng": "cubeb or tailed pepper",
+    "kor": "쿠벱 (테일드 페퍼)",
+    "category": 6
+  },
+  {
+    "id": 281,
+    "eng": "cucumber",
+    "kor": "큐컴버",
+    "category": 2
+  },
+  {
+    "id": 282,
+    "eng": "cumin",
+    "kor": "쿠민",
+    "category": 6
+  },
+  {
+    "id": 283,
+    "eng": "cupcake",
+    "kor": "컵케이크",
+    "category": 7
+  },
+  {
+    "id": 284,
+    "eng": "cupuacu, cupuassu, copoasu",
+    "kor": "커퍼쿠, 쿠푸아수, 코포아수",
+    "category": 2
+  },
+  {
+    "id": 285,
+    "eng": "curacao",
+    "kor": "큐라소",
+    "category": 11
+  },
+  {
+    "id": 286,
+    "eng": "curcuma (turmeric)",
+    "kor": "컬쿠마 (털메릭)",
+    "category": 6
+  },
+  {
+    "id": 287,
+    "eng": "currant leaf and bud",
+    "kor": "커런트 리프 앤 버드",
+    "category": 2
+  },
+  {
+    "id": 288,
+    "eng": "curry tree",
+    "kor": "커리 트리",
+    "category": 6
+  },
+  {
+    "id": 289,
+    "eng": "custard",
+    "kor": "커스타드",
+    "category": 7
+  },
+  {
+    "id": 290,
+    "eng": "cyclamen",
+    "kor": "사이클라멘",
+    "category": 3
+  },
+  {
+    "id": 291,
+    "eng": "cyperus scariosus",
+    "kor": "사이퍼러스 스케리오서스",
+    "category": 2
+  },
+  {
+    "id": 292,
+    "eng": "cypress",
+    "kor": "사이프레스",
+    "category": 8
+  },
+  {
+    "id": 293,
+    "eng": "cypriol oil or nagarmotha",
+    "kor": "사이프리올 오일 (나가아머써)",
+    "category": 8
+  },
+  {
+    "id": 294,
+    "eng": "dahlia",
+    "kor": "달리아",
+    "category": 3
+  },
+  {
+    "id": 295,
+    "eng": "daim",
+    "kor": "데임",
+    "category": 10
+  },
+  {
+    "id": 296,
+    "eng": "daiquiri",
+    "kor": "데커리",
+    "category": 11
+  },
+  {
+    "id": 297,
+    "eng": "daisy",
+    "kor": "데이지",
+    "category": 3
+  },
+  {
+    "id": 298,
+    "eng": "dandelion",
+    "kor": "덴덜라이언",
+    "category": 3
+  },
+  {
+    "id": 299,
+    "eng": "daphne",
+    "kor": "다프네",
+    "category": 3
+  },
+  {
+    "id": 300,
+    "eng": "dark chocolate",
+    "kor": "다크 초콜렛",
+    "category": 7
+  },
+  {
+    "id": 301,
+    "eng": "dates",
+    "kor": "데이츠",
+    "category": 7
+  },
+  {
+    "id": 302,
+    "eng": "datura",
+    "kor": "다투라",
+    "category": 4
+  },
+  {
+    "id": 303,
+    "eng": "davana",
+    "kor": "다바나",
+    "category": 5
+  },
+  {
+    "id": 304,
+    "eng": "deadnettle",
+    "kor": "데드네틀",
+    "category": 3
+  },
+  {
+    "id": 305,
+    "eng": "delonix",
+    "kor": "델로닉스",
+    "category": 3
+  },
+  {
+    "id": 306,
+    "eng": "desert rose",
+    "kor": "데저트 로즈",
+    "category": 3
+  },
+  {
+    "id": 307,
+    "eng": "dew drop",
+    "kor": "듀 드롭",
+    "category": 12
+  },
+  {
+    "id": 308,
+    "eng": "dewberry",
+    "kor": "듀베리",
+    "category": 2
+  },
+  {
+    "id": 309,
+    "eng": "dianthus",
+    "kor": "디안서스",
+    "category": 3
+  },
+  {
+    "id": 310,
+    "eng": "dill",
+    "kor": "딜",
+    "category": 6
+  },
+  {
+    "id": 311,
+    "eng": "dodecanal",
+    "kor": "도덱케널",
+    "category": 12
+  },
+  {
+    "id": 312,
+    "eng": "dove tree",
+    "kor": "도브 트리",
+    "category": 3
+  },
+  {
+    "id": 313,
+    "eng": "dragon blood resin",
+    "kor": "드레곤 블러드 레전",
+    "category": 9
+  },
+  {
+    "id": 314,
+    "eng": "dried apple crisp",
+    "kor": "드라이드 애플 크리스프",
+    "category": 2
+  },
+  {
+    "id": 315,
+    "eng": "dried apricot",
+    "kor": "드라이드 애프리콧",
+    "category": 2
+  },
+  {
+    "id": 316,
+    "eng": "dried fallen leaves",
+    "kor": "드라이드 폴른 리브즈",
+    "category": 5
+  },
+  {
+    "id": 317,
+    "eng": "dried fruits",
+    "kor": "드라이드 프루츠",
+    "category": 2
+  },
+  {
+    "id": 318,
+    "eng": "dried rose",
+    "kor": "드라이드 로즈",
+    "category": 3
+  },
+  {
+    "id": 319,
+    "eng": "driftwood",
+    "kor": "드리프트우드",
+    "category": 8
+  },
+  {
+    "id": 320,
+    "eng": "dry wood",
+    "kor": "드라이 우드",
+    "category": 8
+  },
+  {
+    "id": 321,
+    "eng": "dulce de leche",
+    "kor": "두셀 데 리체",
+    "category": 7
+  },
+  {
+    "id": 322,
+    "eng": "dyer\u0027s greenweed",
+    "kor": "다이어즈 그린위드",
+    "category": 3
+  },
+  {
+    "id": 323,
+    "eng": "earl grey tea",
+    "kor": "얼그레이 티",
+    "category": 5
+  },
+  {
+    "id": 324,
+    "eng": "earth tincture",
+    "kor": "어스 틴척",
+    "category": 12
+  },
+  {
+    "id": 325,
+    "eng": "earthy notes",
+    "kor": "어시 노츠",
+    "category": 12
+  },
+  {
+    "id": 326,
+    "eng": "eau de vie",
+    "kor": "에우 데 비에",
+    "category": 11
+  },
+  {
+    "id": 327,
+    "eng": "ebony tree",
+    "kor": "엔보니 트리",
+    "category": 8
+  },
+  {
+    "id": 328,
+    "eng": "edelweiss",
+    "kor": "에델바이스",
+    "category": 3
+  },
+  {
+    "id": 329,
+    "eng": "eglantine rose",
+    "kor": "에글런타인 로즈",
+    "category": 3
+  },
+  {
+    "id": 330,
+    "eng": "elderflower",
+    "kor": "엘덜플라워",
+    "category": 3
+  },
+  {
+    "id": 331,
+    "eng": "elemi",
+    "kor": "일레미",
+    "category": 9
+  },
+  {
+    "id": 332,
+    "eng": "ember",
+    "kor": "엠버",
+    "category": 12
+  },
+  {
+    "id": 333,
+    "eng": "encian",
+    "kor": "엔시언",
+    "category": 3
+  },
+  {
+    "id": 334,
+    "eng": "english marigold",
+    "kor": "잉글리시 메리골드",
+    "category": 3
+  },
+  {
+    "id": 335,
+    "eng": "ethyl maltol",
+    "kor": "에틸 말톨",
+    "category": 12
+  },
+  {
+    "id": 336,
+    "eng": "eucalyptus",
+    "kor": "유칼립투스",
+    "category": 8
+  },
+  {
+    "id": 337,
+    "eng": "eugenol",
+    "kor": "유제놀",
+    "category": 12
+  },
+  {
+    "id": 338,
+    "eng": "fabric",
+    "kor": "페브릭",
+    "category": 12
+  },
+  {
+    "id": 339,
+    "eng": "fennel",
+    "kor": "펜넬",
+    "category": 6
+  },
+  {
+    "id": 340,
+    "eng": "fenugreek",
+    "kor": "페누그릭",
+    "category": 6
+  },
+  {
+    "id": 341,
+    "eng": "fern",
+    "kor": "페른",
+    "category": 5
+  },
+  {
+    "id": 342,
+    "eng": "field scabious",
+    "kor": "필드 스케비어스",
+    "category": 3
+  },
+  {
+    "id": 343,
+    "eng": "fig",
+    "kor": "피그",
+    "category": 2
+  },
+  {
+    "id": 344,
+    "eng": "fig leaf",
+    "kor": "피그 리프",
+    "category": 2
+  },
+  {
+    "id": 345,
+    "eng": "fig tree",
+    "kor": "피그 트리",
+    "category": 8
+  },
+  {
+    "id": 346,
+    "eng": "finger lime",
+    "kor": "핑거 라임",
+    "category": 1
+  },
+  {
+    "id": 347,
+    "eng": "fir",
+    "kor": "퍼",
+    "category": 8
+  },
+  {
+    "id": 348,
+    "eng": "fire",
+    "kor": "파이어",
+    "category": 12
+  },
+  {
+    "id": 349,
+    "eng": "fish",
+    "kor": "피쉬",
+    "category": 12
+  },
+  {
+    "id": 350,
+    "eng": "flamingo flower (anthurium)",
+    "kor": "플라밍고 플라워 (엔쑤리엄)",
+    "category": 3
+  },
+  {
+    "id": 351,
+    "eng": "flax",
+    "kor": "플렉스",
+    "category": 3
+  },
+  {
+    "id": 352,
+    "eng": "flint",
+    "kor": "플린트",
+    "category": 12
+  },
+  {
+    "id": 353,
+    "eng": "floral notes",
+    "kor": "플로럴 노트",
+    "category": 3
+  },
+  {
+    "id": 354,
+    "eng": "forest fruits",
+    "kor": "포레스트 프루츠",
+    "category": 2
+  },
+  {
+    "id": 355,
+    "eng": "forget me not",
+    "kor": "폴겟 미 낫",
+    "category": 3
+  },
+  {
+    "id": 356,
+    "eng": "fragonia",
+    "kor": "프라고니아",
+    "category": 3
+  },
+  {
+    "id": 357,
+    "eng": "frangipani",
+    "kor": "프렌지파니",
+    "category": 4
+  },
+  {
+    "id": 358,
+    "eng": "freesia",
+    "kor": "프리지아",
+    "category": 3
+  },
+  {
+    "id": 359,
+    "eng": "french pastries",
+    "kor": "프렌치 페스츠리즈",
+    "category": 7
+  },
+  {
+    "id": 360,
+    "eng": "frosted berries",
+    "kor": "프로스티드 베리즈",
+    "category": 2
+  },
+  {
+    "id": 361,
+    "eng": "frosting [glace]",
+    "kor": "프로스팅 [글레이스]",
+    "category": 7
+  },
+  {
+    "id": 362,
+    "eng": "fruity notes",
+    "kor": "프루티 노트",
+    "category": 2
+  },
+  {
+    "id": 363,
+    "eng": "fuchsia",
+    "kor": "퓨시아",
+    "category": 3
+  },
+  {
+    "id": 364,
+    "eng": "galanga",
+    "kor": "갈랑가",
+    "category": 6
+  },
+  {
+    "id": 365,
+    "eng": "galaxolide",
+    "kor": "갤럭설라이드",
+    "category": 12
+  },
+  {
+    "id": 366,
+    "eng": "galbanum",
+    "kor": "갈바늄",
+    "category": 5
+  },
+  {
+    "id": 367,
+    "eng": "gardenia",
+    "kor": "가디니아",
+    "category": 4
+  },
+  {
+    "id": 368,
+    "eng": "gasoline",
+    "kor": "가솔린",
+    "category": 12
+  },
+  {
+    "id": 369,
+    "eng": "genet",
+    "kor": "제닛",
+    "category": 10
+  },
+  {
+    "id": 370,
+    "eng": "genmaicha",
+    "kor": "젠메이처",
+    "category": 5
+  },
+  {
+    "id": 371,
+    "eng": "geosmin",
+    "kor": "지오스민",
+    "category": 12
+  },
+  {
+    "id": 372,
+    "eng": "geranium",
+    "kor": "제레니움",
+    "category": 3
+  },
+  {
+    "id": 373,
+    "eng": "gerbera",
+    "kor": "거베라",
+    "category": 3
+  },
+  {
+    "id": 374,
+    "eng": "gianduia",
+    "kor": "지안두이어",
+    "category": 7
+  },
+  {
+    "id": 375,
+    "eng": "gin",
+    "kor": "진",
+    "category": 11
+  },
+  {
+    "id": 376,
+    "eng": "ginger",
+    "kor": "진저",
+    "category": 6
+  },
+  {
+    "id": 377,
+    "eng": "gingerbread",
+    "kor": "진저브레드",
+    "category": 7
+  },
+  {
+    "id": 378,
+    "eng": "ginkgo",
+    "kor": "긴커고",
+    "category": 5
+  },
+  {
+    "id": 379,
+    "eng": "ginseng",
+    "kor": "진생",
+    "category": 5
+  },
+  {
+    "id": 380,
+    "eng": "gladiolus",
+    "kor": "글래디올러스",
+    "category": 3
+  },
+  {
+    "id": 381,
+    "eng": "goat hair",
+    "kor": "고트 헤어",
+    "category": 10
+  },
+  {
+    "id": 382,
+    "eng": "goji berries",
+    "kor": "고지 베리즈",
+    "category": 2
+  },
+  {
+    "id": 383,
+    "eng": "goldenrod",
+    "kor": "골든로드",
+    "category": 3
+  },
+  {
+    "id": 384,
+    "eng": "gooseberry",
+    "kor": "구스베지",
+    "category": 2
+  },
+  {
+    "id": 385,
+    "eng": "gorse",
+    "kor": "고어스",
+    "category": 3
+  },
+  {
+    "id": 386,
+    "eng": "grape leaves",
+    "kor": "그레이프 리브즈",
+    "category": 5
+  },
+  {
+    "id": 387,
+    "eng": "grape seed",
+    "kor": "그레이프 시드",
+    "category": 2
+  },
+  {
+    "id": 388,
+    "eng": "grapefruit",
+    "kor": "그레이프프룻",
+    "category": 1
+  },
+  {
+    "id": 389,
+    "eng": "grapefruit blossom",
+    "kor": "그레이프프룻 블라썸",
+    "category": 4
+  },
+  {
+    "id": 390,
+    "eng": "grapes",
+    "kor": "그레이프",
+    "category": 2
+  },
+  {
+    "id": 391,
+    "eng": "graphite",
+    "kor": "그래파이트",
+    "category": 12
+  },
+  {
+    "id": 392,
+    "eng": "grass",
+    "kor": "그래스",
+    "category": 5
+  },
+  {
+    "id": 393,
+    "eng": "grass tree",
+    "kor": "그래스 트리",
+    "category": 8
+  },
+  {
+    "id": 394,
+    "eng": "green nard",
+    "kor": "그린 나드",
+    "category": 3
+  },
+  {
+    "id": 395,
+    "eng": "green notes",
+    "kor": "그린 노트",
+    "category": 5
+  },
+  {
+    "id": 396,
+    "eng": "green pepper",
+    "kor": "그린 페퍼",
+    "category": 5
+  },
+  {
+    "id": 397,
+    "eng": "green sap",
+    "kor": "그린 삽",
+    "category": 5
+  },
+  {
+    "id": 398,
+    "eng": "green tea flower",
+    "kor": "그린 티 플라워",
+    "category": 3
+  },
+  {
+    "id": 399,
+    "eng": "greengage",
+    "kor": "그린게이지",
+    "category": 2
+  },
+  {
+    "id": 400,
+    "eng": "grenadine",
+    "kor": "그레네딘",
+    "category": 11
+  },
+  {
+    "id": 401,
+    "eng": "gromwell",
+    "kor": "그롬웰",
+    "category": 5
+  },
+  {
+    "id": 402,
+    "eng": "ground cherry",
+    "kor": "그라운드 체리",
+    "category": 2
+  },
+  {
+    "id": 403,
+    "eng": "guaiac wood",
+    "kor": "과이악 우드",
+    "category": 8
+  },
+  {
+    "id": 404,
+    "eng": "guao or maiden plum",
+    "kor": "가우 (메이덴 플럼)",
+    "category": 5
+  },
+  {
+    "id": 405,
+    "eng": "guarana",
+    "kor": "게레나",
+    "category": 2
+  },
+  {
+    "id": 406,
+    "eng": "guava",
+    "kor": "구아바",
+    "category": 2
+  },
+  {
+    "id": 407,
+    "eng": "guava blossom",
+    "kor": "구아바 블라썸",
+    "category": 3
+  },
+  {
+    "id": 408,
+    "eng": "gunpowder",
+    "kor": "건파우더",
+    "category": 12
+  },
+  {
+    "id": 409,
+    "eng": "gurjun balsam",
+    "kor": "거전 발삼",
+    "category": 9
+  },
+  {
+    "id": 410,
+    "eng": "halva",
+    "kor": "할바",
+    "category": 7
+  },
+  {
+    "id": 411,
+    "eng": "hassaku",
+    "kor": "하사쿠",
+    "category": 1
+  },
+  {
+    "id": 412,
+    "eng": "hatkora lemon",
+    "kor": "핫코라 레몬",
+    "category": 1
+  },
+  {
+    "id": 413,
+    "eng": "hawthorn",
+    "kor": "호쏜",
+    "category": 3
+  },
+  {
+    "id": 414,
+    "eng": "hay",
+    "kor": "헤이",
+    "category": 5
+  },
+  {
+    "id": 415,
+    "eng": "hazel blossom",
+    "kor": "헤이즐 블라썸",
+    "category": 3
+  },
+  {
+    "id": 416,
+    "eng": "hazelnut",
+    "kor": "헤이즐넛",
+    "category": 2
+  },
+  {
+    "id": 417,
+    "eng": "hazelnut cocoa spread",
+    "kor": "헤이즐넛 코코아 스프레드",
+    "category": 7
+  },
+  {
+    "id": 418,
+    "eng": "head space waterfall",
+    "kor": "헤드 스페이스 워터폴",
+    "category": 12
+  },
+  {
+    "id": 419,
+    "eng": "heather",
+    "kor": "헤더",
+    "category": 3
+  },
+  {
+    "id": 420,
+    "eng": "hedione",
+    "kor": "헤디오니",
+    "category": 12
+  },
+  {
+    "id": 421,
+    "eng": "heliotrope",
+    "kor": "힐리오트롭",
+    "category": 3
+  },
+  {
+    "id": 422,
+    "eng": "hellabore flower",
+    "kor": "헬러보어 플라워",
+    "category": 3
+  },
+  {
+    "id": 423,
+    "eng": "hemlock",
+    "kor": "해믈락",
+    "category": 3
+  },
+  {
+    "id": 424,
+    "eng": "henna",
+    "kor": "헨나",
+    "category": 5
+  },
+  {
+    "id": 425,
+    "eng": "hi-fi",
+    "kor": "하이-파이",
+    "category": 11
+  },
+  {
+    "id": 426,
+    "eng": "hibiscus",
+    "kor": "히비스커스",
+    "category": 3
+  },
+  {
+    "id": 427,
+    "eng": "hina",
+    "kor": "히나",
+    "category": 12
+  },
+  {
+    "id": 428,
+    "eng": "hinoki wood",
+    "kor": "히노키 우드",
+    "category": 8
+  },
+  {
+    "id": 429,
+    "eng": "ho wood",
+    "kor": "호 우드",
+    "category": 8
+  },
+  {
+    "id": 430,
+    "eng": "hoary stock",
+    "kor": "호리 스톡",
+    "category": 3
+  },
+  {
+    "id": 431,
+    "eng": "holly flower",
+    "kor": "홀리 플라워",
+    "category": 3
+  },
+  {
+    "id": 432,
+    "eng": "hollyhock",
+    "kor": "홀리혹",
+    "category": 3
+  },
+  {
+    "id": 433,
+    "eng": "honey",
+    "kor": "허니",
+    "category": 7
+  },
+  {
+    "id": 434,
+    "eng": "honeybush or cyclopia",
+    "kor": "허니부니 (사이클로피아)",
+    "category": 3
+  },
+  {
+    "id": 435,
+    "eng": "honeycomb",
+    "kor": "허니콤",
+    "category": 7
+  },
+  {
+    "id": 436,
+    "eng": "honeydew blossom",
+    "kor": "허니듀 블라썸",
+    "category": 3
+  },
+  {
+    "id": 437,
+    "eng": "honeysuckle",
+    "kor": "허니서클",
+    "category": 4
+  },
+  {
+    "id": 438,
+    "eng": "hops",
+    "kor": "합스",
+    "category": 5
+  },
+  {
+    "id": 439,
+    "eng": "horchata",
+    "kor": "홀차타",
+    "category": 7
+  },
+  {
+    "id": 440,
+    "eng": "horseweed",
+    "kor": "호스위드",
+    "category": 5
+  },
+  {
+    "id": 441,
+    "eng": "hortensia",
+    "kor": "홀텐시아",
+    "category": 3
+  },
+  {
+    "id": 442,
+    "eng": "hot iron",
+    "kor": "핫 아이언",
+    "category": 12
+  },
+  {
+    "id": 443,
+    "eng": "hoya carnosa, wax plant",
+    "kor": "호야 카노사, 왁스 플렌트",
+    "category": 3
+  },
+  {
+    "id": 444,
+    "eng": "hyacinth",
+    "kor": "히아신스",
+    "category": 3
+  },
+  {
+    "id": 445,
+    "eng": "hyraceum",
+    "kor": "히라슘",
+    "category": 10
+  },
+  {
+    "id": 446,
+    "eng": "hyssop",
+    "kor": "히솝",
+    "category": 3
+  },
+  {
+    "id": 447,
+    "eng": "ice",
+    "kor": "아이스",
+    "category": 12
+  },
+  {
+    "id": 448,
+    "eng": "ice cream",
+    "kor": "아이스 크림",
+    "category": 7
+  },
+  {
+    "id": 449,
+    "eng": "icing pink",
+    "kor": "아이싱 핑크",
+    "category": 7
+  },
+  {
+    "id": 450,
+    "eng": "immortelle",
+    "kor": "임모텔",
+    "category": 5
+  },
+  {
+    "id": 451,
+    "eng": "impatiens",
+    "kor": "임페이션스",
+    "category": 3
+  },
+  {
+    "id": 452,
+    "eng": "incense",
+    "kor": "인센스",
+    "category": 9
+  },
+  {
+    "id": 453,
+    "eng": "incienso",
+    "kor": "인사이언소",
+    "category": 8
+  },
+  {
+    "id": 454,
+    "eng": "indian oud",
+    "kor": "인디안 오드",
+    "category": 8
+  },
+  {
+    "id": 455,
+    "eng": "indian spices",
+    "kor": "인디안 스파이시스",
+    "category": 6
+  },
+  {
+    "id": 456,
+    "eng": "indian woods",
+    "kor": "인디안 우즈",
+    "category": 8
+  },
+  {
+    "id": 457,
+    "eng": "indole",
+    "kor": "인돌레",
+    "category": 12
+  },
+  {
+    "id": 458,
+    "eng": "industrial glue",
+    "kor": "언더스트리올 글루",
+    "category": 12
+  },
+  {
+    "id": 459,
+    "eng": "ink",
+    "kor": "잉크",
+    "category": 12
+  },
+  {
+    "id": 460,
+    "eng": "instant film accord",
+    "kor": "인스턴트 필름 어코드",
+    "category": 12
+  },
+  {
+    "id": 461,
+    "eng": "iris",
+    "kor": "아이리스",
+    "category": 3
+  },
+  {
+    "id": 462,
+    "eng": "ishpink, ocotea quixos",
+    "kor": "이쉬핑크, 오코티아 퀵사스",
+    "category": 8
+  },
+  {
+    "id": 463,
+    "eng": "iso e super",
+    "kor": "아이소 에 수퍼",
+    "category": 12
+  },
+  {
+    "id": 464,
+    "eng": "isobutyl quinoline",
+    "kor": "이소부틸 퀴놀린",
+    "category": 12
+  },
+  {
+    "id": 465,
+    "eng": "ivy",
+    "kor": "아이비",
+    "category": 5
+  },
+  {
+    "id": 466,
+    "eng": "jabuticaba",
+    "kor": "자부티카바",
+    "category": 2
+  },
+  {
+    "id": 467,
+    "eng": "jacaranda",
+    "kor": "자카란다",
+    "category": 3
+  },
+  {
+    "id": 468,
+    "eng": "jackfruit",
+    "kor": "젝프루츠",
+    "category": 2
+  },
+  {
+    "id": 469,
+    "eng": "jade flower",
+    "kor": "제이드 플라워",
+    "category": 3
+  },
+  {
+    "id": 470,
+    "eng": "japanese loquat",
+    "kor": "제페니즈 로쾃",
+    "category": 2
+  },
+  {
+    "id": 471,
+    "eng": "japanese pepper",
+    "kor": "제페니즈 페퍼",
+    "category": 6
+  },
+  {
+    "id": 472,
+    "eng": "jasmine",
+    "kor": "자스민",
+    "category": 4
+  },
+  {
+    "id": 473,
+    "eng": "jasmine orchid",
+    "kor": "자스민 오키드",
+    "category": 3
+  },
+  {
+    "id": 474,
+    "eng": "jasmine tea",
+    "kor": "자스민 티",
+    "category": 11
+  },
+  {
+    "id": 475,
+    "eng": "jatamansi or spikenard",
+    "kor": "자타만시, 스파이크너드",
+    "category": 5
+  },
+  {
+    "id": 476,
+    "eng": "javanol",
+    "kor": "자바놀",
+    "category": 12
+  },
+  {
+    "id": 477,
+    "eng": "jeans",
+    "kor": "진스",
+    "category": 12
+  },
+  {
+    "id": 478,
+    "eng": "jobs tears (yi yi ren)",
+    "kor": "잡스 티어스 (이 이 렌)",
+    "category": 2
+  },
+  {
+    "id": 479,
+    "eng": "jujube blossom",
+    "kor": "주주베 블라썸",
+    "category": 3
+  },
+  {
+    "id": 480,
+    "eng": "juniper",
+    "kor": "주니퍼",
+    "category": 5
+  },
+  {
+    "id": 481,
+    "eng": "juniper berries",
+    "kor": "주니퍼 베리즈",
+    "category": 5
+  },
+  {
+    "id": 482,
+    "eng": "kadam",
+    "kor": "카담",
+    "category": 3
+  },
+  {
+    "id": 483,
+    "eng": "kaffir lime",
+    "kor": "카피어 라임",
+    "category": 1
+  },
+  {
+    "id": 484,
+    "eng": "kanuka",
+    "kor": "카누카",
+    "category": 3
+  },
+  {
+    "id": 485,
+    "eng": "karo-karounde",
+    "kor": "카로-카룬드",
+    "category": 4
+  },
+  {
+    "id": 486,
+    "eng": "katrafay",
+    "kor": "카트라페이",
+    "category": 5
+  },
+  {
+    "id": 487,
+    "eng": "katsura leaf",
+    "kor": "카츠라 리프",
+    "category": 5
+  },
+  {
+    "id": 488,
+    "eng": "kephalis",
+    "kor": "케펠리스",
+    "category": 10
+  },
+  {
+    "id": 489,
+    "eng": "khella",
+    "kor": "켈라",
+    "category": 5
+  },
+  {
+    "id": 490,
+    "eng": "kir royal",
+    "kor": "키르 로얄",
+    "category": 11
+  },
+  {
+    "id": 491,
+    "eng": "kiwi",
+    "kor": "키위",
+    "category": 2
+  },
+  {
+    "id": 492,
+    "eng": "kiwi blossom",
+    "kor": "키위 블라썸",
+    "category": 3
+  },
+  {
+    "id": 493,
+    "eng": "kowhai",
+    "kor": "코하이",
+    "category": 8
+  },
+  {
+    "id": 494,
+    "eng": "kudzu",
+    "kor": "커드주",
+    "category": 3
+  },
+  {
+    "id": 495,
+    "eng": "kulfi",
+    "kor": "컬피",
+    "category": 7
+  },
+  {
+    "id": 496,
+    "eng": "kumbaru",
+    "kor": "컴바루",
+    "category": 2
+  },
+  {
+    "id": 497,
+    "eng": "kumquat",
+    "kor": "컴쾃",
+    "category": 1
+  },
+  {
+    "id": 498,
+    "eng": "labdanum",
+    "kor": "라다넘",
+    "category": 9
+  },
+  {
+    "id": 499,
+    "eng": "laburnum",
+    "kor": "래버넘",
+    "category": 3
+  },
+  {
+    "id": 500,
+    "eng": "lady of the night flower",
+    "kor": "레이티 오브 더 나이트 플라워",
+    "category": 3
+  },
+  {
+    "id": 501,
+    "eng": "lady slipper orchid",
+    "kor": "레이디 슬리퍼 오키드",
+    "category": 3
+  },
+  {
+    "id": 502,
+    "eng": "lamduan flower",
+    "kor": "람 두안 플라워",
+    "category": 3
+  },
+  {
+    "id": 503,
+    "eng": "laminaria",
+    "kor": "라미나리아",
+    "category": 5
+  },
+  {
+    "id": 504,
+    "eng": "lamprocapnos",
+    "kor": "람프로카프노스",
+    "category": 3
+  },
+  {
+    "id": 505,
+    "eng": "lantana",
+    "kor": "란타나",
+    "category": 3
+  },
+  {
+    "id": 506,
+    "eng": "lantana leaf",
+    "kor": "란타나 리프",
+    "category": 5
+  },
+  {
+    "id": 507,
+    "eng": "laotian oud",
+    "kor": "라오 우드",
+    "category": 8
+  },
+  {
+    "id": 508,
+    "eng": "larch",
+    "kor": "라치",
+    "category": 8
+  },
+  {
+    "id": 509,
+    "eng": "larkspur",
+    "kor": "락스퍼",
+    "category": 3
+  },
+  {
+    "id": 510,
+    "eng": "laurel blossom",
+    "kor": "로렐 블로섬",
+    "category": 3
+  },
+  {
+    "id": 511,
+    "eng": "lava",
+    "kor": "라바",
+    "category": 12
+  },
+  {
+    "id": 512,
+    "eng": "lavender",
+    "kor": "라벤더",
+    "category": 3
+  },
+  {
+    "id": 513,
+    "eng": "leather",
+    "kor": "레더",
+    "category": 10
+  },
+  {
+    "id": 514,
+    "eng": "leatherwood",
+    "kor": "레더우드",
+    "category": 3
+  },
+  {
+    "id": 515,
+    "eng": "lemon",
+    "kor": "레몬",
+    "category": 1
+  },
+  {
+    "id": 516,
+    "eng": "lemon balm",
+    "kor": "레먼 밤",
+    "category": 1
+  },
+  {
+    "id": 517,
+    "eng": "lemon blossom",
+    "kor": "레몬 블로섬",
+    "category": 4
+  },
+  {
+    "id": 518,
+    "eng": "lemon tree",
+    "kor": "레몬 트리",
+    "category": 1
+  },
+  {
+    "id": 519,
+    "eng": "lemon verbena",
+    "kor": "레몬 버베나",
+    "category": 1
+  },
+  {
+    "id": 520,
+    "eng": "lemon zest",
+    "kor": "레몬 버비너",
+    "category": 1
+  },
+  {
+    "id": 521,
+    "eng": "lemonade",
+    "kor": "레몬에이드",
+    "category": 11
+  },
+  {
+    "id": 522,
+    "eng": "lemongrass",
+    "kor": "레몬그라스",
+    "category": 1
+  },
+  {
+    "id": 523,
+    "eng": "liatris",
+    "kor": "리아트리스",
+    "category": 3
+  },
+  {
+    "id": 524,
+    "eng": "lichen",
+    "kor": "라이컨",
+    "category": 8
+  },
+  {
+    "id": 525,
+    "eng": "licorice",
+    "kor": "리커리시",
+    "category": 6
+  },
+  {
+    "id": 526,
+    "eng": "lilac",
+    "kor": "라일락",
+    "category": 3
+  },
+  {
+    "id": 527,
+    "eng": "lily",
+    "kor": "릴리",
+    "category": 4
+  },
+  {
+    "id": 528,
+    "eng": "lily of the valley leaves",
+    "kor": "릴리 오브 더 밸리 리브즈",
+    "category": 5
+  },
+  {
+    "id": 529,
+    "eng": "lily-of-the-valley",
+    "kor": "릴리 오브 더 밸리",
+    "category": 3
+  },
+  {
+    "id": 530,
+    "eng": "lime",
+    "kor": "라임",
+    "category": 1
+  },
+  {
+    "id": 531,
+    "eng": "lime (linden) blossom",
+    "kor": "라임 (린던) 블라섬",
+    "category": 3
+  },
+  {
+    "id": 532,
+    "eng": "limetta",
+    "kor": "리메타",
+    "category": 1
+  },
+  {
+    "id": 533,
+    "eng": "limnophila aromatica",
+    "kor": "림노필라 아로마티카",
+    "category": 5
+  },
+  {
+    "id": 534,
+    "eng": "limoncello",
+    "kor": "리몬 첼로",
+    "category": 11
+  },
+  {
+    "id": 535,
+    "eng": "linaloe berry",
+    "kor": "리날로 베리",
+    "category": 5
+  },
+  {
+    "id": 536,
+    "eng": "linen",
+    "kor": "리넨",
+    "category": 12
+  },
+  {
+    "id": 537,
+    "eng": "lingonberry",
+    "kor": "린곤베리",
+    "category": 2
+  },
+  {
+    "id": 538,
+    "eng": "lip gloss",
+    "kor": "립 그로스",
+    "category": 12
+  },
+  {
+    "id": 539,
+    "eng": "lipstick",
+    "kor": "립스틱",
+    "category": 12
+  },
+  {
+    "id": 540,
+    "eng": "liquor",
+    "kor": "liquor",
+    "category": 11
+  },
+  {
+    "id": 541,
+    "eng": "litchi",
+    "kor": "리치",
+    "category": 2
+  },
+  {
+    "id": 542,
+    "eng": "litsea cubeba",
+    "kor": "리시 쿠베나",
+    "category": 1
+  },
+  {
+    "id": 543,
+    "eng": "longan berries",
+    "kor": "랑건 베리즈",
+    "category": 2
+  },
+  {
+    "id": 544,
+    "eng": "lorenox",
+    "kor": "로레녹스",
+    "category": 12
+  },
+  {
+    "id": 545,
+    "eng": "lotus",
+    "kor": "로터스",
+    "category": 3
+  },
+  {
+    "id": 546,
+    "eng": "loukhoum",
+    "kor": "로쿰",
+    "category": 7
+  },
+  {
+    "id": 547,
+    "eng": "lovage root",
+    "kor": "로바지 루트",
+    "category": 5
+  },
+  {
+    "id": 548,
+    "eng": "lupin",
+    "kor": "루핀",
+    "category": 3
+  },
+  {
+    "id": 549,
+    "eng": "lydia broom",
+    "kor": "리디아 블룸",
+    "category": 3
+  },
+  {
+    "id": 550,
+    "eng": "macadamia",
+    "kor": "매커데이미어",
+    "category": 2
+  },
+  {
+    "id": 551,
+    "eng": "macarons",
+    "kor": "마카롱",
+    "category": 7
+  },
+  {
+    "id": 552,
+    "eng": "mace",
+    "kor": "메이스",
+    "category": 6
+  },
+  {
+    "id": 553,
+    "eng": "madeira",
+    "kor": "머디어러",
+    "category": 11
+  },
+  {
+    "id": 554,
+    "eng": "magnolan",
+    "kor": "마그놀란",
+    "category": 12
+  },
+  {
+    "id": 555,
+    "eng": "magnolia",
+    "kor": "마그놀리아",
+    "category": 3
+  },
+  {
+    "id": 556,
+    "eng": "mahogany",
+    "kor": "마호가니",
+    "category": 8
+  },
+  {
+    "id": 557,
+    "eng": "mahonia",
+    "kor": "마호니아",
+    "category": 5
+  },
+  {
+    "id": 558,
+    "eng": "mahonial",
+    "kor": "마호니알",
+    "category": 12
+  },
+  {
+    "id": 559,
+    "eng": "mai tai cocktail",
+    "kor": "마이타이 캌테일",
+    "category": 11
+  },
+  {
+    "id": 560,
+    "eng": "malt",
+    "kor": "몰트",
+    "category": 2
+  },
+  {
+    "id": 561,
+    "eng": "malva",
+    "kor": "말바",
+    "category": 3
+  },
+  {
+    "id": 562,
+    "eng": "mandarin orange",
+    "kor": "만다린 오렌지",
+    "category": 1
+  },
+  {
+    "id": 563,
+    "eng": "mandarin orange blossom",
+    "kor": "만다린 오렌지 블라섬",
+    "category": 4
+  },
+  {
+    "id": 564,
+    "eng": "mandora",
+    "kor": "만도라",
+    "category": 1
+  },
+  {
+    "id": 565,
+    "eng": "mango",
+    "kor": "망고",
+    "category": 2
+  },
+  {
+    "id": 566,
+    "eng": "mango blossom",
+    "kor": "블라섬",
+    "category": 3
+  },
+  {
+    "id": 567,
+    "eng": "mangosteen",
+    "kor": "망고스틴",
+    "category": 2
+  },
+  {
+    "id": 568,
+    "eng": "maninka",
+    "kor": "마닌카",
+    "category": 2
+  },
+  {
+    "id": 569,
+    "eng": "manuka",
+    "kor": "마누카",
+    "category": 8
+  },
+  {
+    "id": 570,
+    "eng": "maple",
+    "kor": "메이플",
+    "category": 8
+  },
+  {
+    "id": 571,
+    "eng": "maple syrup",
+    "kor": "메이플 시럽",
+    "category": 7
+  },
+  {
+    "id": 572,
+    "eng": "maraschino cherry",
+    "kor": "마라스키노 체리",
+    "category": 7
+  },
+  {
+    "id": 573,
+    "eng": "marian plum",
+    "kor": "마리안 플럼",
+    "category": 2
+  },
+  {
+    "id": 574,
+    "eng": "marigold",
+    "kor": "매리골드",
+    "category": 5
+  },
+  {
+    "id": 575,
+    "eng": "mariposa lily",
+    "kor": "마리포사 릴리",
+    "category": 3
+  },
+  {
+    "id": 576,
+    "eng": "marjoram",
+    "kor": "마조람",
+    "category": 5
+  },
+  {
+    "id": 577,
+    "eng": "marmalade",
+    "kor": "마멀레이드",
+    "category": 7
+  },
+  {
+    "id": 578,
+    "eng": "marron glace",
+    "kor": "마론 글래스",
+    "category": 7
+  },
+  {
+    "id": 579,
+    "eng": "marshmallow",
+    "kor": "마시멜로우",
+    "category": 7
+  },
+  {
+    "id": 580,
+    "eng": "martini",
+    "kor": "마티니",
+    "category": 11
+  },
+  {
+    "id": 581,
+    "eng": "marzipan",
+    "kor": "마지팬",
+    "category": 7
+  },
+  {
+    "id": 582,
+    "eng": "masala chai",
+    "kor": "마살라 차이",
+    "category": 11
+  },
+  {
+    "id": 583,
+    "eng": "massoia",
+    "kor": "마소이아",
+    "category": 8
+  },
+  {
+    "id": 584,
+    "eng": "mastic or lentisque",
+    "kor": "렌티스크",
+    "category": 9
+  },
+  {
+    "id": 585,
+    "eng": "matcha tea",
+    "kor": "마차 티",
+    "category": 5
+  },
+  {
+    "id": 586,
+    "eng": "mate",
+    "kor": "메이트",
+    "category": 5
+  },
+  {
+    "id": 587,
+    "eng": "mayflower",
+    "kor": "메이플라워",
+    "category": 3
+  },
+  {
+    "id": 588,
+    "eng": "meadowsweet",
+    "kor": "메도스위트",
+    "category": 3
+  },
+  {
+    "id": 589,
+    "eng": "meat",
+    "kor": "미트",
+    "category": 10
+  },
+  {
+    "id": 590,
+    "eng": "melati",
+    "kor": "멜라티",
+    "category": 4
+  },
+  {
+    "id": 591,
+    "eng": "melilot or sweet clover",
+    "kor": "메럴랏",
+    "category": 5
+  },
+  {
+    "id": 592,
+    "eng": "melilotus",
+    "kor": "멜리로투스",
+    "category": 3
+  },
+  {
+    "id": 593,
+    "eng": "melon",
+    "kor": "멜론",
+    "category": 2
+  },
+  {
+    "id": 594,
+    "eng": "meringues",
+    "kor": "머랭",
+    "category": 7
+  },
+  {
+    "id": 595,
+    "eng": "mesquite wood",
+    "kor": "메스키트 우드",
+    "category": 8
+  },
+  {
+    "id": 596,
+    "eng": "metallic notes",
+    "kor": "메탈릭 노트",
+    "category": 12
+  },
+  {
+    "id": 597,
+    "eng": "methyl pamplemousse",
+    "kor": "메탈리 팜플무스",
+    "category": 1
+  },
+  {
+    "id": 598,
+    "eng": "mignonette",
+    "kor": "미그넷",
+    "category": 3
+  },
+  {
+    "id": 599,
+    "eng": "milk",
+    "kor": "밀크",
+    "category": 10
+  },
+  {
+    "id": 600,
+    "eng": "milk mousse",
+    "kor": "밀크 마우스",
+    "category": 7
+  },
+  {
+    "id": 601,
+    "eng": "mimosa",
+    "kor": "미모사",
+    "category": 3
+  },
+  {
+    "id": 602,
+    "eng": "mimusops elengi",
+    "kor": "미무소프스 에렌기",
+    "category": 3
+  },
+  {
+    "id": 603,
+    "eng": "mineral notes",
+    "kor": "미네랄 노트",
+    "category": 12
+  },
+  {
+    "id": 604,
+    "eng": "mint",
+    "kor": "민트",
+    "category": 5
+  },
+  {
+    "id": 605,
+    "eng": "mirabelle",
+    "kor": "미라벨",
+    "category": 2
+  },
+  {
+    "id": 606,
+    "eng": "mirabilis",
+    "kor": "미라빌리스",
+    "category": 3
+  },
+  {
+    "id": 607,
+    "eng": "mistletoe",
+    "kor": "미슬토",
+    "category": 5
+  },
+  {
+    "id": 608,
+    "eng": "mitti attar",
+    "kor": "미티 애터",
+    "category": 12
+  },
+  {
+    "id": 609,
+    "eng": "mock orange",
+    "kor": "목 오렌지",
+    "category": 4
+  },
+  {
+    "id": 610,
+    "eng": "moepel accord",
+    "kor": "모에펠 어코드",
+    "category": 8
+  },
+  {
+    "id": 611,
+    "eng": "mojito",
+    "kor": "모히토",
+    "category": 11
+  },
+  {
+    "id": 612,
+    "eng": "molasses",
+    "kor": "몰레시즈",
+    "category": 12
+  },
+  {
+    "id": 613,
+    "eng": "molasses",
+    "kor": "몰레시즈",
+    "category": 7
+  },
+  {
+    "id": 614,
+    "eng": "monarda",
+    "kor": "모나르다",
+    "category": 3
+  },
+  {
+    "id": 615,
+    "eng": "monoi oil",
+    "kor": "모노이 오일",
+    "category": 3
+  },
+  {
+    "id": 616,
+    "eng": "mopane",
+    "kor": "모판",
+    "category": 9
+  },
+  {
+    "id": 617,
+    "eng": "morning glory flower",
+    "kor": "모닌글로리 플라워",
+    "category": 3
+  },
+  {
+    "id": 618,
+    "eng": "motor oil",
+    "kor": "모터 오일",
+    "category": 12
+  },
+  {
+    "id": 619,
+    "eng": "mountain air",
+    "kor": "마운틴 에어",
+    "category": 12
+  },
+  {
+    "id": 620,
+    "eng": "mugane",
+    "kor": "무겐",
+    "category": 12
+  },
+  {
+    "id": 621,
+    "eng": "muhuhu",
+    "kor": "무후누",
+    "category": 8
+  },
+  {
+    "id": 622,
+    "eng": "mulberry",
+    "kor": "멀베리",
+    "category": 2
+  },
+  {
+    "id": 623,
+    "eng": "mushroom",
+    "kor": "머쉬룸",
+    "category": 2
+  },
+  {
+    "id": 624,
+    "eng": "musk",
+    "kor": "머스크",
+    "category": 10
+  },
+  {
+    "id": 625,
+    "eng": "mustard seed",
+    "kor": "머스타드 시드",
+    "category": 6
+  },
+  {
+    "id": 626,
+    "eng": "myrica",
+    "kor": "미리카",
+    "category": 9
+  },
+  {
+    "id": 627,
+    "eng": "myrrh",
+    "kor": "미르라",
+    "category": 9
+  },
+  {
+    "id": 628,
+    "eng": "myrtle",
+    "kor": "미르틀",
+    "category": 3
+  },
+  {
+    "id": 629,
+    "eng": "nag champa",
+    "kor": "내그 참파",
+    "category": 9
+  },
+  {
+    "id": 630,
+    "eng": "narcissus",
+    "kor": "나르키소스",
+    "category": 3
+  },
+  {
+    "id": 631,
+    "eng": "nashi pear",
+    "kor": "나시 피어",
+    "category": 2
+  },
+  {
+    "id": 632,
+    "eng": "nasturcia",
+    "kor": "나스투시아",
+    "category": 3
+  },
+  {
+    "id": 633,
+    "eng": "naturalcalm",
+    "kor": "네이처캄",
+    "category": 12
+  },
+  {
+    "id": 634,
+    "eng": "nectarine",
+    "kor": "넥터린",
+    "category": 2
+  },
+  {
+    "id": 635,
+    "eng": "nectarine blossom",
+    "kor": "넥터린 블라섬",
+    "category": 3
+  },
+  {
+    "id": 636,
+    "eng": "neem",
+    "kor": "님",
+    "category": 8
+  },
+  {
+    "id": 637,
+    "eng": "neoprene",
+    "kor": "니어프린",
+    "category": 12
+  },
+  {
+    "id": 638,
+    "eng": "nerium oleander",
+    "kor": "네리움 올린더",
+    "category": 3
+  },
+  {
+    "id": 639,
+    "eng": "neroli",
+    "kor": "네럴리",
+    "category": 1
+  },
+  {
+    "id": 640,
+    "eng": "nettle",
+    "kor": "네틀",
+    "category": 5
+  },
+  {
+    "id": 641,
+    "eng": "nigella",
+    "kor": "나이젤러",
+    "category": 6
+  },
+  {
+    "id": 642,
+    "eng": "night blooming cereus",
+    "kor": "나잇 블라섬 시어러스",
+    "category": 4
+  },
+  {
+    "id": 643,
+    "eng": "night blooming jasmine",
+    "kor": "나잇 블라섬 자스민",
+    "category": 3
+  },
+  {
+    "id": 644,
+    "eng": "nootka",
+    "kor": "누트카",
+    "category": 8
+  },
+  {
+    "id": 645,
+    "eng": "nougat",
+    "kor": "누갓",
+    "category": 7
+  },
+  {
+    "id": 646,
+    "eng": "nutmeg",
+    "kor": "넛메그",
+    "category": 6
+  },
+  {
+    "id": 647,
+    "eng": "oak",
+    "kor": "오크",
+    "category": 8
+  },
+  {
+    "id": 648,
+    "eng": "oak leaves",
+    "kor": "오크 리브즈",
+    "category": 5
+  },
+  {
+    "id": 649,
+    "eng": "oakmoss",
+    "kor": "오크모스",
+    "category": 8
+  },
+  {
+    "id": 650,
+    "eng": "oat",
+    "kor": "오트",
+    "category": 5
+  },
+  {
+    "id": 651,
+    "eng": "oily notes",
+    "kor": "오일리 노트",
+    "category": 6
+  },
+  {
+    "id": 652,
+    "eng": "olibanum (frankincense)",
+    "kor": "올리프밤",
+    "category": 9
+  },
+  {
+    "id": 653,
+    "eng": "olive",
+    "kor": "올리브",
+    "category": 2
+  },
+  {
+    "id": 654,
+    "eng": "olive flower",
+    "kor": "올리브 플라워",
+    "category": 3
+  },
+  {
+    "id": 655,
+    "eng": "olive leaf",
+    "kor": "올리브 리프",
+    "category": 5
+  },
+  {
+    "id": 656,
+    "eng": "olive tree",
+    "kor": "올리브 트리",
+    "category": 8
+  },
+  {
+    "id": 657,
+    "eng": "oolong tea",
+    "kor": "우롱 티",
+    "category": 5
+  },
+  {
+    "id": 658,
+    "eng": "opium",
+    "kor": "오피엄",
+    "category": 3
+  },
+  {
+    "id": 659,
+    "eng": "opoponax",
+    "kor": "오포 파낙스",
+    "category": 9
+  },
+  {
+    "id": 660,
+    "eng": "orange",
+    "kor": "오렌지",
+    "category": 1
+  },
+  {
+    "id": 661,
+    "eng": "orange blossom",
+    "kor": "오렌지 블라섬",
+    "category": 4
+  },
+  {
+    "id": 662,
+    "eng": "orange cassia tree",
+    "kor": "오렌지 카시아 트리",
+    "category": 3
+  },
+  {
+    "id": 663,
+    "eng": "orchard blossom",
+    "kor": "오처드 블라섬",
+    "category": 3
+  },
+  {
+    "id": 664,
+    "eng": "orchid",
+    "kor": "오키드",
+    "category": 3
+  },
+  {
+    "id": 665,
+    "eng": "orchid cactus",
+    "kor": "오키드 캑터스",
+    "category": 3
+  },
+  {
+    "id": 666,
+    "eng": "orchid leaf",
+    "kor": "오키드 리프",
+    "category": 5
+  },
+  {
+    "id": 667,
+    "eng": "oregano",
+    "kor": "오레가노",
+    "category": 5
+  },
+  {
+    "id": 668,
+    "eng": "oriental notes",
+    "kor": "오리엔탈 노트",
+    "category": 6
+  },
+  {
+    "id": 669,
+    "eng": "orris root",
+    "kor": "오리스 루트",
+    "category": 3
+  },
+  {
+    "id": 670,
+    "eng": "osmanthus",
+    "kor": "오스만터스",
+    "category": 3
+  },
+  {
+    "id": 671,
+    "eng": "oysters",
+    "kor": "오이스터스",
+    "category": 10
+  },
+  {
+    "id": 672,
+    "eng": "ozonic notes",
+    "kor": "오존익 노트",
+    "category": 12
+  },
+  {
+    "id": 673,
+    "eng": "palisander rosewood",
+    "kor": "팔리센터 로즈우드",
+    "category": 8
+  },
+  {
+    "id": 674,
+    "eng": "palm leaf",
+    "kor": "팜 리프",
+    "category": 5
+  },
+  {
+    "id": 675,
+    "eng": "palmarosa",
+    "kor": "팜마로사",
+    "category": 5
+  },
+  {
+    "id": 676,
+    "eng": "palo santo",
+    "kor": "팔로 산토",
+    "category": 8
+  },
+  {
+    "id": 677,
+    "eng": "pandanus",
+    "kor": "판데너스",
+    "category": 5
+  },
+  {
+    "id": 678,
+    "eng": "panna cotta",
+    "kor": "파나 코타",
+    "category": 7
+  },
+  {
+    "id": 679,
+    "eng": "pansy",
+    "kor": "판시",
+    "category": 3
+  },
+  {
+    "id": 680,
+    "eng": "papaya",
+    "kor": "파파야",
+    "category": 2
+  },
+  {
+    "id": 681,
+    "eng": "papaya blossom",
+    "kor": "파파야 블라섬",
+    "category": 3
+  },
+  {
+    "id": 682,
+    "eng": "paper",
+    "kor": "페이퍼",
+    "category": 12
+  },
+  {
+    "id": 683,
+    "eng": "paperbark",
+    "kor": "페이퍼바크",
+    "category": 8
+  },
+  {
+    "id": 684,
+    "eng": "papyrus",
+    "kor": "파피러스",
+    "category": 8
+  },
+  {
+    "id": 685,
+    "eng": "para-cresyl phenyl acetate",
+    "kor": "파라-크레실 페닐 아세테이트",
+    "category": 12
+  },
+  {
+    "id": 686,
+    "eng": "paradisone",
+    "kor": "파라디소네",
+    "category": 12
+  },
+  {
+    "id": 687,
+    "eng": "paramela",
+    "kor": "파라멜라",
+    "category": 3
+  },
+  {
+    "id": 688,
+    "eng": "parsley",
+    "kor": "파슬리",
+    "category": 5
+  },
+  {
+    "id": 689,
+    "eng": "passion flower",
+    "kor": "패션 플라워",
+    "category": 3
+  },
+  {
+    "id": 690,
+    "eng": "passionfruit",
+    "kor": "패션후르츠",
+    "category": 2
+  },
+  {
+    "id": 691,
+    "eng": "pataqueira",
+    "kor": "파타쿼이라",
+    "category": 3
+  },
+  {
+    "id": 692,
+    "eng": "patchouli",
+    "kor": "파출리",
+    "category": 8
+  },
+  {
+    "id": 693,
+    "eng": "pea",
+    "kor": "피",
+    "category": 2
+  },
+  {
+    "id": 694,
+    "eng": "peach",
+    "kor": "피치",
+    "category": 2
+  },
+  {
+    "id": 695,
+    "eng": "peach blossom",
+    "kor": "피치 블라섬",
+    "category": 3
+  },
+  {
+    "id": 696,
+    "eng": "peach leaf",
+    "kor": "피치 리프",
+    "category": 5
+  },
+  {
+    "id": 697,
+    "eng": "peanut",
+    "kor": "피넛",
+    "category": 2
+  },
+  {
+    "id": 698,
+    "eng": "pear",
+    "kor": "피어",
+    "category": 2
+  },
+  {
+    "id": 699,
+    "eng": "pear blossom",
+    "kor": "피어 블라섬",
+    "category": 3
+  },
+  {
+    "id": 700,
+    "eng": "pear ice cream",
+    "kor": "피어 아이스크림",
+    "category": 7
+  },
+  {
+    "id": 701,
+    "eng": "pear leaf",
+    "kor": "피어 리프",
+    "category": 5
+  },
+  {
+    "id": 702,
+    "eng": "pear leaf",
+    "kor": "피어 트리",
+    "category": 8
+  },
+  {
+    "id": 703,
+    "eng": "peat",
+    "kor": "피트",
+    "category": 12
+  },
+  {
+    "id": 704,
+    "eng": "pebbles",
+    "kor": "페블스",
+    "category": 12
+  },
+  {
+    "id": 705,
+    "eng": "pecan",
+    "kor": "페이칸",
+    "category": 2
+  },
+  {
+    "id": 706,
+    "eng": "pelargonium",
+    "kor": "펠라르고늄",
+    "category": 3
+  },
+  {
+    "id": 707,
+    "eng": "peony",
+    "kor": "피어니",
+    "category": 3
+  },
+  {
+    "id": 708,
+    "eng": "pepper",
+    "kor": "페퍼",
+    "category": 6
+  },
+  {
+    "id": 709,
+    "eng": "pepperleaf",
+    "kor": "페퍼 트리",
+    "category": 6
+  },
+  {
+    "id": 710,
+    "eng": "pepperwood or hercules club",
+    "kor": "페퍼우드",
+    "category": 8
+  },
+  {
+    "id": 711,
+    "eng": "periwinkle",
+    "kor": "페리윙클",
+    "category": 3
+  },
+  {
+    "id": 712,
+    "eng": "persimmon",
+    "kor": "퍼시몬",
+    "category": 2
+  },
+  {
+    "id": 713,
+    "eng": "peru leaf",
+    "kor": "페루 발삼",
+    "category": 9
+  },
+  {
+    "id": 714,
+    "eng": "petalia",
+    "kor": "페탈리아",
+    "category": 12
+  },
+  {
+    "id": 715,
+    "eng": "petitgrain",
+    "kor": "쁘띠 그레인",
+    "category": 1
+  },
+  {
+    "id": 716,
+    "eng": "petunia",
+    "kor": "피튜니아",
+    "category": 3
+  },
+  {
+    "id": 717,
+    "eng": "phlox",
+    "kor": "플록스",
+    "category": 3
+  },
+  {
+    "id": 718,
+    "eng": "pimento",
+    "kor": "피멘토",
+    "category": 6
+  },
+  {
+    "id": 719,
+    "eng": "pimento leaf",
+    "kor": "피멘토 리프",
+    "category": 6
+  },
+  {
+    "id": 720,
+    "eng": "pimento seeds",
+    "kor": "피멘토 시드",
+    "category": 6
+  },
+  {
+    "id": 721,
+    "eng": "pina colada",
+    "kor": "피냐 콜라다",
+    "category": 11
+  },
+  {
+    "id": 722,
+    "eng": "pine leaf",
+    "kor": "파인 트리",
+    "category": 8
+  },
+  {
+    "id": 723,
+    "eng": "pineapple",
+    "kor": "파인애플",
+    "category": 2
+  },
+  {
+    "id": 724,
+    "eng": "pineapple blossom",
+    "kor": "파인애플 블라섬",
+    "category": 3
+  },
+  {
+    "id": 725,
+    "eng": "pink pepper",
+    "kor": "핑크 페퍼",
+    "category": 6
+  },
+  {
+    "id": 726,
+    "eng": "pinot noir grapes",
+    "kor": "피노 누아르 그레이프",
+    "category": 2
+  },
+  {
+    "id": 727,
+    "eng": "pistachio",
+    "kor": "피스타치오",
+    "category": 2
+  },
+  {
+    "id": 728,
+    "eng": "pitahaya",
+    "kor": "피타야",
+    "category": 2
+  },
+  {
+    "id": 729,
+    "eng": "pitanga",
+    "kor": "피탄가",
+    "category": 2
+  },
+  {
+    "id": 730,
+    "eng": "pittosporum",
+    "kor": "피토스포룸",
+    "category": 3
+  },
+  {
+    "id": 731,
+    "eng": "plastic",
+    "kor": "플라스틱",
+    "category": 12
+  },
+  {
+    "id": 732,
+    "eng": "plum",
+    "kor": "플럼",
+    "category": 2
+  },
+  {
+    "id": 733,
+    "eng": "plum blossom",
+    "kor": "플럼 블라섬",
+    "category": 3
+  },
+  {
+    "id": 734,
+    "eng": "plum leaf",
+    "kor": "플럼 트리",
+    "category": 8
+  },
+  {
+    "id": 735,
+    "eng": "poinsettia",
+    "kor": "포인세티아",
+    "category": 3
+  },
+  {
+    "id": 736,
+    "eng": "pollen",
+    "kor": "팔런",
+    "category": 12
+  },
+  {
+    "id": 737,
+    "eng": "polygonum",
+    "kor": "폴리그넘",
+    "category": 5
+  },
+  {
+    "id": 738,
+    "eng": "pomarose",
+    "kor": "포마로즈",
+    "category": 12
+  },
+  {
+    "id": 739,
+    "eng": "pomegranate",
+    "kor": "파머그래넛",
+    "category": 2
+  },
+  {
+    "id": 740,
+    "eng": "pomegranate blossom",
+    "kor": "파머그래넛 블라섬",
+    "category": 3
+  },
+  {
+    "id": 741,
+    "eng": "pomelo",
+    "kor": "포멜로",
+    "category": 1
+  },
+  {
+    "id": 742,
+    "eng": "popcorn",
+    "kor": "팝콘",
+    "category": 7
+  },
+  {
+    "id": 743,
+    "eng": "poplar (populus) buds",
+    "kor": "파퓰러 버즈",
+    "category": 9
+  },
+  {
+    "id": 744,
+    "eng": "poppy",
+    "kor": "퍼피",
+    "category": 3
+  },
+  {
+    "id": 745,
+    "eng": "port wine",
+    "kor": "포트 와인",
+    "category": 11
+  },
+  {
+    "id": 746,
+    "eng": "portulaca or pigweed",
+    "kor": "포테리카",
+    "category": 5
+  },
+  {
+    "id": 747,
+    "eng": "powdery notes",
+    "kor": "파우더리 노트",
+    "category": 12
+  },
+  {
+    "id": 748,
+    "eng": "praline",
+    "kor": "프랄린",
+    "category": 7
+  },
+  {
+    "id": 749,
+    "eng": "primrose",
+    "kor": "프림로즈",
+    "category": 3
+  },
+  {
+    "id": 750,
+    "eng": "princess tree (paulownia)",
+    "kor": "프린세스 트리",
+    "category": 3
+  },
+  {
+    "id": 751,
+    "eng": "priprioca",
+    "kor": "프리프리오카",
+    "category": 6
+  },
+  {
+    "id": 752,
+    "eng": "privet",
+    "kor": "프리빗",
+    "category": 3
+  },
+  {
+    "id": 753,
+    "eng": "profiterole",
+    "kor": "프로피트롤",
+    "category": 7
+  },
+  {
+    "id": 754,
+    "eng": "prosecco",
+    "kor": "프로세소",
+    "category": 11
+  },
+  {
+    "id": 755,
+    "eng": "prunella",
+    "kor": "프루넬라",
+    "category": 3
+  },
+  {
+    "id": 756,
+    "eng": "pua keni keni (pua-lulu)",
+    "kor": "푸아루루",
+    "category": 8
+  },
+  {
+    "id": 757,
+    "eng": "pumpkin",
+    "kor": "펌킨",
+    "category": 2
+  },
+  {
+    "id": 758,
+    "eng": "punch",
+    "kor": "펀치",
+    "category": 11
+  },
+  {
+    "id": 759,
+    "eng": "quince",
+    "kor": "퀸스",
+    "category": 2
+  },
+  {
+    "id": 760,
+    "eng": "rain notes",
+    "kor": "레인 노트",
+    "category": 12
+  },
+  {
+    "id": 761,
+    "eng": "rainbow sorbet",
+    "kor": "레인보우 셔벗",
+    "category": 7
+  },
+  {
+    "id": 762,
+    "eng": "raki",
+    "kor": "라크",
+    "category": 11
+  },
+  {
+    "id": 763,
+    "eng": "rambutan",
+    "kor": "람부탄",
+    "category": 2
+  },
+  {
+    "id": 764,
+    "eng": "rangoon creeper",
+    "kor": "랑군 크래퍼",
+    "category": 3
+  },
+  {
+    "id": 765,
+    "eng": "raspberry",
+    "kor": "라즈베리",
+    "category": 2
+  },
+  {
+    "id": 766,
+    "eng": "raspberry blossom",
+    "kor": "라즈베리 블라섬",
+    "category": 3
+  },
+  {
+    "id": 767,
+    "eng": "ravenala",
+    "kor": "라벤아라",
+    "category": 8
+  },
+  {
+    "id": 768,
+    "eng": "ravensara",
+    "kor": "라벤사라",
+    "category": 8
+  },
+  {
+    "id": 769,
+    "eng": "red algae",
+    "kor": "레드 엘쥐",
+    "category": 5
+  },
+  {
+    "id": 770,
+    "eng": "red apple",
+    "kor": "레드 애플",
+    "category": 2
+  },
+  {
+    "id": 771,
+    "eng": "red berries",
+    "kor": "레드 배리",
+    "category": 2
+  },
+  {
+    "id": 772,
+    "eng": "red currant",
+    "kor": "레드 큐란트",
+    "category": 2
+  },
+  {
+    "id": 773,
+    "eng": "red fruits",
+    "kor": "레드 푸르츠",
+    "category": 2
+  },
+  {
+    "id": 774,
+    "eng": "red willow",
+    "kor": "레드 윌로우",
+    "category": 8
+  },
+  {
+    "id": 775,
+    "eng": "red wine",
+    "kor": "레드 와인",
+    "category": 11
+  },
+  {
+    "id": 776,
+    "eng": "reed",
+    "kor": "리드",
+    "category": 5
+  },
+  {
+    "id": 777,
+    "eng": "reseda",
+    "kor": "레세다",
+    "category": 3
+  },
+  {
+    "id": 778,
+    "eng": "resins",
+    "kor": "레진",
+    "category": 9
+  },
+  {
+    "id": 779,
+    "eng": "rhododendron",
+    "kor": "레두잘프",
+    "category": 3
+  },
+  {
+    "id": 780,
+    "eng": "rhubarb",
+    "kor": "루바브",
+    "category": 2
+  },
+  {
+    "id": 781,
+    "eng": "rice",
+    "kor": "라이스",
+    "category": 5
+  },
+  {
+    "id": 782,
+    "eng": "rice pudding",
+    "kor": "라잇 퍼딩",
+    "category": 7
+  },
+  {
+    "id": 783,
+    "eng": "rooibos red tea",
+    "kor": "루이보스 레드 티",
+    "category": 5
+  },
+  {
+    "id": 784,
+    "eng": "rosa rubiginosa",
+    "kor": "로사 루비기노사",
+    "category": 3
+  },
+  {
+    "id": 785,
+    "eng": "rose",
+    "kor": "로즈",
+    "category": 3
+  },
+  {
+    "id": 786,
+    "eng": "rose hip",
+    "kor": "로즈 힙",
+    "category": 3
+  },
+  {
+    "id": 787,
+    "eng": "rose jam",
+    "kor": "로즈 잼",
+    "category": 7
+  },
+  {
+    "id": 788,
+    "eng": "rose japanese (hamanasu)",
+    "kor": "로즈 제페니즈",
+    "category": 3
+  },
+  {
+    "id": 789,
+    "eng": "rose leaf",
+    "kor": "로즈 리프",
+    "category": 5
+  },
+  {
+    "id": 790,
+    "eng": "rose mallow",
+    "kor": "로즈 맬로우",
+    "category": 3
+  },
+  {
+    "id": 791,
+    "eng": "rose thorn",
+    "kor": "로즈 트론",
+    "category": 5
+  },
+  {
+    "id": 792,
+    "eng": "rosebay willowherb",
+    "kor": "로즈배리 윌로우허브",
+    "category": 3
+  },
+  {
+    "id": 793,
+    "eng": "rosemary",
+    "kor": "로즈마리",
+    "category": 5
+  },
+  {
+    "id": 794,
+    "eng": "rubber",
+    "kor": "러버",
+    "category": 9
+  },
+  {
+    "id": 795,
+    "eng": "rue",
+    "kor": "루",
+    "category": 5
+  },
+  {
+    "id": 796,
+    "eng": "rum",
+    "kor": "럼",
+    "category": 11
+  },
+  {
+    "id": 797,
+    "eng": "rumex",
+    "kor": "루멕스",
+    "category": 5
+  },
+  {
+    "id": 798,
+    "eng": "rye",
+    "kor": "라이",
+    "category": 5
+  },
+  {
+    "id": 799,
+    "eng": "safflower",
+    "kor": "새프플라워",
+    "category": 3
+  },
+  {
+    "id": 800,
+    "eng": "saffron",
+    "kor": "샤프론",
+    "category": 6
+  },
+  {
+    "id": 801,
+    "eng": "safraleine",
+    "kor": "샤프러닌",
+    "category": 6
+  },
+  {
+    "id": 802,
+    "eng": "sage",
+    "kor": "세이지",
+    "category": 5
+  },
+  {
+    "id": 803,
+    "eng": "sainfoins",
+    "kor": "세인포인",
+    "category": 3
+  },
+  {
+    "id": 804,
+    "eng": "sake",
+    "kor": "세이크",
+    "category": 11
+  },
+  {
+    "id": 805,
+    "eng": "salt",
+    "kor": "솔트",
+    "category": 12
+  },
+  {
+    "id": 806,
+    "eng": "saman",
+    "kor": "사만",
+    "category": 8
+  },
+  {
+    "id": 807,
+    "eng": "sand",
+    "kor": "샌드",
+    "category": 12
+  },
+  {
+    "id": 808,
+    "eng": "sandalwood",
+    "kor": "샌달우드",
+    "category": 8
+  },
+  {
+    "id": 809,
+    "eng": "sangria",
+    "kor": "상글리아",
+    "category": 11
+  },
+  {
+    "id": 810,
+    "eng": "santolina",
+    "kor": "산톨리나",
+    "category": 3
+  },
+  {
+    "id": 811,
+    "eng": "sapodilla",
+    "kor": "사포딜라",
+    "category": 2
+  },
+  {
+    "id": 812,
+    "eng": "satin",
+    "kor": "새틴",
+    "category": 12
+  },
+  {
+    "id": 813,
+    "eng": "satinwood",
+    "kor": "새틴우드",
+    "category": 8
+  },
+  {
+    "id": 814,
+    "eng": "satureja",
+    "kor": "세투레자",
+    "category": 5
+  },
+  {
+    "id": 815,
+    "eng": "saw palmetto",
+    "kor": "소 팔메토",
+    "category": 5
+  },
+  {
+    "id": 816,
+    "eng": "sea buckthorn",
+    "kor": "시 벅쏜",
+    "category": 2
+  },
+  {
+    "id": 817,
+    "eng": "sea shells",
+    "kor": "시 셸",
+    "category": 10
+  },
+  {
+    "id": 818,
+    "eng": "sea water",
+    "kor": "시 워터",
+    "category": 12
+  },
+  {
+    "id": 819,
+    "eng": "seaweed",
+    "kor": "시위드",
+    "category": 5
+  },
+  {
+    "id": 820,
+    "eng": "sequoia",
+    "kor": "세퀴이아",
+    "category": 8
+  },
+  {
+    "id": 821,
+    "eng": "sesame",
+    "kor": "시샘",
+    "category": 6
+  },
+  {
+    "id": 822,
+    "eng": "shiso",
+    "kor": "시소",
+    "category": 5
+  },
+  {
+    "id": 823,
+    "eng": "siam",
+    "kor": "시암",
+    "category": 8
+  },
+  {
+    "id": 824,
+    "eng": "sichuan pepper",
+    "kor": "쓰촨 페퍼",
+    "category": 6
+  },
+  {
+    "id": 825,
+    "eng": "sideritis, mountain tea",
+    "kor": "마운틴 티",
+    "category": 5
+  },
+  {
+    "id": 826,
+    "eng": "silk",
+    "kor": "실크",
+    "category": 12
+  },
+  {
+    "id": 827,
+    "eng": "silk tree blossom",
+    "kor": "실크 트리 블라섬",
+    "category": 3
+  },
+  {
+    "id": 828,
+    "eng": "silk vine or milk broom",
+    "kor": "리크 바인",
+    "category": 5
+  },
+  {
+    "id": 829,
+    "eng": "skin",
+    "kor": "스킨",
+    "category": 10
+  },
+  {
+    "id": 830,
+    "eng": "skunk cabbage",
+    "kor": "스컹키 캐비지",
+    "category": 5
+  },
+  {
+    "id": 831,
+    "eng": "slate",
+    "kor": "슬래이트",
+    "category": 12
+  },
+  {
+    "id": 832,
+    "eng": "smoke",
+    "kor": "스모크",
+    "category": 12
+  },
+  {
+    "id": 833,
+    "eng": "snake plant",
+    "kor": "스네이크 플랜트",
+    "category": 5
+  },
+  {
+    "id": 834,
+    "eng": "snow",
+    "kor": "스노우",
+    "category": 12
+  },
+  {
+    "id": 835,
+    "eng": "snowberry",
+    "kor": "스노우베리",
+    "category": 2
+  },
+  {
+    "id": 836,
+    "eng": "snowdrops",
+    "kor": "스노우드롭",
+    "category": 3
+  },
+  {
+    "id": 837,
+    "eng": "sodium silicate",
+    "kor": "소디엄 실리게이트",
+    "category": 12
+  },
+  {
+    "id": 838,
+    "eng": "solar notes",
+    "kor": "솔라 노트",
+    "category": 12
+  },
+  {
+    "id": 839,
+    "eng": "solomon`s seal",
+    "kor": "솔로몬 실",
+    "category": 3
+  },
+  {
+    "id": 840,
+    "eng": "sorbet",
+    "kor": "소벳",
+    "category": 7
+  },
+  {
+    "id": 841,
+    "eng": "sour cherry",
+    "kor": "사워 체리",
+    "category": 2
+  },
+  {
+    "id": 842,
+    "eng": "sour cherry blossom",
+    "kor": "사워 체리 블라섬",
+    "category": 3
+  },
+  {
+    "id": 843,
+    "eng": "soursop",
+    "kor": "사워삽",
+    "category": 2
+  },
+  {
+    "id": 844,
+    "eng": "soybean",
+    "kor": "소이빈",
+    "category": 2
+  },
+  {
+    "id": 845,
+    "eng": "spanish broom",
+    "kor": "스패니쉬 브룸",
+    "category": 3
+  },
+  {
+    "id": 846,
+    "eng": "spicy notes",
+    "kor": "스파이시 노트",
+    "category": 6
+  },
+  {
+    "id": 847,
+    "eng": "spinach",
+    "kor": "스피나치",
+    "category": 5
+  },
+  {
+    "id": 848,
+    "eng": "spiraea",
+    "kor": "스피레아",
+    "category": 3
+  },
+  {
+    "id": 849,
+    "eng": "spray paint",
+    "kor": "스프레이 플랜드",
+    "category": 12
+  },
+  {
+    "id": 850,
+    "eng": "spruce",
+    "kor": "스푸르스",
+    "category": 8
+  },
+  {
+    "id": 851,
+    "eng": "spun sugar",
+    "kor": "스푼 슈거",
+    "category": 7
+  },
+  {
+    "id": 852,
+    "eng": "squash",
+    "kor": "스쿼시",
+    "category": 2
+  },
+  {
+    "id": 853,
+    "eng": "st. john\u0027s wort",
+    "kor": "세인트 존스 워터",
+    "category": 3
+  },
+  {
+    "id": 854,
+    "eng": "star anise",
+    "kor": "스타아니스",
+    "category": 6
+  },
+  {
+    "id": 855,
+    "eng": "star apple",
+    "kor": "스타 애플",
+    "category": 2
+  },
+  {
+    "id": 856,
+    "eng": "starfish",
+    "kor": "스타피쉬",
+    "category": 10
+  },
+  {
+    "id": 857,
+    "eng": "stephanotis",
+    "kor": "스테파노티스",
+    "category": 4
+  },
+  {
+    "id": 858,
+    "eng": "strawberry",
+    "kor": "스트로베리",
+    "category": 2
+  },
+  {
+    "id": 859,
+    "eng": "strawberry leaf",
+    "kor": "스트로베리 리프",
+    "category": 5
+  },
+  {
+    "id": 860,
+    "eng": "strawberry syrup",
+    "kor": "스트로베리 시럽",
+    "category": 7
+  },
+  {
+    "id": 861,
+    "eng": "strelitzia",
+    "kor": "스트렐리치아",
+    "category": 3
+  },
+  {
+    "id": 862,
+    "eng": "strobilanthes callosus",
+    "kor": "스트로빌란테스 캘로서스",
+    "category": 3
+  },
+  {
+    "id": 863,
+    "eng": "styrax",
+    "kor": "스트락스",
+    "category": 9
+  },
+  {
+    "id": 864,
+    "eng": "suede",
+    "kor": "스웨이드",
+    "category": 10
+  },
+  {
+    "id": 865,
+    "eng": "sugar",
+    "kor": "슈가",
+    "category": 7
+  },
+  {
+    "id": 866,
+    "eng": "sumac",
+    "kor": "수막",
+    "category": 6
+  },
+  {
+    "id": 867,
+    "eng": "sundew",
+    "kor": "선듀",
+    "category": 5
+  },
+  {
+    "id": 868,
+    "eng": "sunflower",
+    "kor": "선플라워",
+    "category": 3
+  },
+  {
+    "id": 869,
+    "eng": "suntan lotion",
+    "kor": "선탠 로션",
+    "category": 12
+  },
+  {
+    "id": 870,
+    "eng": "surf wax",
+    "kor": "서프 왁스",
+    "category": 9
+  },
+  {
+    "id": 871,
+    "eng": "sweet grass",
+    "kor": "스위트 그래스",
+    "category": 5
+  },
+  {
+    "id": 872,
+    "eng": "sweet pea",
+    "kor": "스위트 피",
+    "category": 3
+  },
+  {
+    "id": 873,
+    "eng": "sycamore",
+    "kor": "사카모어",
+    "category": 8
+  },
+  {
+    "id": 874,
+    "eng": "sylkolide",
+    "kor": "실콜라이드",
+    "category": 10
+  },
+  {
+    "id": 875,
+    "eng": "syringa",
+    "kor": "시링가",
+    "category": 4
+  },
+  {
+    "id": 876,
+    "eng": "syrup",
+    "kor": "시럽",
+    "category": 11
+  },
+  {
+    "id": 877,
+    "eng": "taif rose",
+    "kor": "타이프 로즈",
+    "category": 3
+  },
+  {
+    "id": 878,
+    "eng": "takamaka",
+    "kor": "타카마카",
+    "category": 8
+  },
+  {
+    "id": 879,
+    "eng": "talc",
+    "kor": "탈크",
+    "category": 12
+  },
+  {
+    "id": 880,
+    "eng": "tamarind",
+    "kor": "타마린드",
+    "category": 6
+  },
+  {
+    "id": 881,
+    "eng": "tamarisk",
+    "kor": "타마리스크",
+    "category": 3
+  },
+  {
+    "id": 882,
+    "eng": "tangelo",
+    "kor": "탄젤로",
+    "category": 1
+  },
+  {
+    "id": 883,
+    "eng": "tangerine",
+    "kor": "탄젤린",
+    "category": 1
+  },
+  {
+    "id": 884,
+    "eng": "tangerine blossom",
+    "kor": "탄젤린 블라섬",
+    "category": 4
+  },
+  {
+    "id": 885,
+    "eng": "tansy",
+    "kor": "탠지",
+    "category": 5
+  },
+  {
+    "id": 886,
+    "eng": "tarragon",
+    "kor": "타라곤",
+    "category": 5
+  },
+  {
+    "id": 887,
+    "eng": "tayberry",
+    "kor": "테이베리",
+    "category": 2
+  },
+  {
+    "id": 888,
+    "eng": "tea",
+    "kor": "티",
+    "category": 5
+  },
+  {
+    "id": 889,
+    "eng": "tea tree oil",
+    "kor": "티 트리 오일",
+    "category": 9
+  },
+  {
+    "id": 890,
+    "eng": "teak wood",
+    "kor": "티크 우드",
+    "category": 8
+  },
+  {
+    "id": 891,
+    "eng": "tennis ball",
+    "kor": "테니스 볼",
+    "category": 12
+  },
+  {
+    "id": 892,
+    "eng": "tequila",
+    "kor": "테킬라",
+    "category": 11
+  },
+  {
+    "id": 893,
+    "eng": "thailand oud",
+    "kor": "타일랜드 우드",
+    "category": 8
+  },
+  {
+    "id": 894,
+    "eng": "thistle",
+    "kor": "씨슬",
+    "category": 5
+  },
+  {
+    "id": 895,
+    "eng": "thuja",
+    "kor": "슈저",
+    "category": 8
+  },
+  {
+    "id": 896,
+    "eng": "thyme",
+    "kor": "타임",
+    "category": 5
+  },
+  {
+    "id": 897,
+    "eng": "ti leaf (cordilyne)",
+    "kor": "코르딜리네",
+    "category": 5
+  },
+  {
+    "id": 898,
+    "eng": "tiare flower",
+    "kor": "티아레 플라워",
+    "category": 4
+  },
+  {
+    "id": 899,
+    "eng": "tiramisu",
+    "kor": "티라미수",
+    "category": 7
+  },
+  {
+    "id": 900,
+    "eng": "tobacco",
+    "kor": "토바코",
+    "category": 5
+  },
+  {
+    "id": 901,
+    "eng": "tobacco blossom",
+    "kor": "토바코 블라섬",
+    "category": 3
+  },
+  {
+    "id": 902,
+    "eng": "toffee",
+    "kor": "토피",
+    "category": 7
+  },
+  {
+    "id": 903,
+    "eng": "tokaji wine",
+    "kor": "토카지 와인",
+    "category": 11
+  },
+  {
+    "id": 904,
+    "eng": "tolu leaf",
+    "kor": "토루 리프",
+    "category": 10
+  },
+  {
+    "id": 905,
+    "eng": "tomato",
+    "kor": "토마토",
+    "category": 2
+  },
+  {
+    "id": 906,
+    "eng": "tomato leaf",
+    "kor": "토마토 리프",
+    "category": 5
+  },
+  {
+    "id": 907,
+    "eng": "tonic water",
+    "kor": "토닉 워터",
+    "category": 11
+  },
+  {
+    "id": 908,
+    "eng": "tonka bean",
+    "kor": "톤카 빈",
+    "category": 6
+  },
+  {
+    "id": 909,
+    "eng": "toscanol",
+    "kor": "토스카놀",
+    "category": 6
+  },
+  {
+    "id": 910,
+    "eng": "trillium",
+    "kor": "트릴리움",
+    "category": 3
+  },
+  {
+    "id": 911,
+    "eng": "tropical fruits",
+    "kor": "트로피카 푸르츠",
+    "category": 2
+  },
+  {
+    "id": 912,
+    "eng": "truffle",
+    "kor": "트러플",
+    "category": 10
+  },
+  {
+    "id": 913,
+    "eng": "tuberose",
+    "kor": "터브로즈",
+    "category": 4
+  },
+  {
+    "id": 914,
+    "eng": "tulip",
+    "kor": "튤립",
+    "category": 3
+  },
+  {
+    "id": 915,
+    "eng": "tulle accord",
+    "kor": "툴레 어코드",
+    "category": 12
+  },
+  {
+    "id": 916,
+    "eng": "tulsi",
+    "kor": "튤시",
+    "category": 5
+  },
+  {
+    "id": 917,
+    "eng": "turnera diffusa (damiana)",
+    "kor": "다미아나",
+    "category": 8
+  },
+  {
+    "id": 918,
+    "eng": "umbu-caja | tapereba",
+    "kor": "타페레바",
+    "category": 2
+  },
+  {
+    "id": 919,
+    "eng": "valerian",
+    "kor": "발레리안",
+    "category": 5
+  },
+  {
+    "id": 920,
+    "eng": "vanilla",
+    "kor": "바닐라",
+    "category": 6
+  },
+  {
+    "id": 921,
+    "eng": "varnish accord",
+    "kor": "바니쉬 어코드",
+    "category": 12
+  },
+  {
+    "id": 922,
+    "eng": "velvet",
+    "kor": "벨벳",
+    "category": 12
+  },
+  {
+    "id": 923,
+    "eng": "vermouth",
+    "kor": "베르무트",
+    "category": 11
+  },
+  {
+    "id": 924,
+    "eng": "vetiver",
+    "kor": "베티버",
+    "category": 8
+  },
+  {
+    "id": 925,
+    "eng": "vine",
+    "kor": "바인",
+    "category": 5
+  },
+  {
+    "id": 926,
+    "eng": "vinyl",
+    "kor": "빈일",
+    "category": 12
+  },
+  {
+    "id": 927,
+    "eng": "violet",
+    "kor": "바이올렛",
+    "category": 3
+  },
+  {
+    "id": 928,
+    "eng": "violet leaf",
+    "kor": "바이올렛 리프",
+    "category": 5
+  },
+  {
+    "id": 929,
+    "eng": "violet woodsorrel",
+    "kor": "바이올렛 우두소렐",
+    "category": 3
+  },
+  {
+    "id": 930,
+    "eng": "vodka",
+    "kor": "보드카",
+    "category": 11
+  },
+  {
+    "id": 931,
+    "eng": "wallflower",
+    "kor": "월프 플라워",
+    "category": 3
+  },
+  {
+    "id": 932,
+    "eng": "walnut",
+    "kor": "월넛",
+    "category": 2
+  },
+  {
+    "id": 933,
+    "eng": "wan sao lhong",
+    "kor": "완 사오 롱",
+    "category": 6
+  },
+  {
+    "id": 934,
+    "eng": "wasabi",
+    "kor": "와사비",
+    "category": 6
+  },
+  {
+    "id": 935,
+    "eng": "water",
+    "kor": "워터",
+    "category": 12
+  },
+  {
+    "id": 936,
+    "eng": "water fruit",
+    "kor": "워터 푸르츠",
+    "category": 2
+  },
+  {
+    "id": 937,
+    "eng": "water hyacinth",
+    "kor": "워터 히아신스",
+    "category": 3
+  },
+  {
+    "id": 938,
+    "eng": "water lily",
+    "kor": "워터 릴리",
+    "category": 3
+  },
+  {
+    "id": 939,
+    "eng": "water pepper",
+    "kor": "워터 페퍼",
+    "category": 6
+  },
+  {
+    "id": 940,
+    "eng": "watermelon",
+    "kor": "워터멜론",
+    "category": 2
+  },
+  {
+    "id": 941,
+    "eng": "west indian bay",
+    "kor": "웨스트 인디안 베이",
+    "category": 6
+  },
+  {
+    "id": 942,
+    "eng": "wet plaster",
+    "kor": "웻 플래스터",
+    "category": 12
+  },
+  {
+    "id": 943,
+    "eng": "wheat",
+    "kor": "위트",
+    "category": 5
+  },
+  {
+    "id": 944,
+    "eng": "whiskey",
+    "kor": "위스키",
+    "category": 11
+  },
+  {
+    "id": 945,
+    "eng": "white chocolate",
+    "kor": "화이트 초콜릿",
+    "category": 7
+  },
+  {
+    "id": 946,
+    "eng": "white currant",
+    "kor": "화이트 커런트",
+    "category": 2
+  },
+  {
+    "id": 947,
+    "eng": "white flowers",
+    "kor": "화이트 플라워",
+    "category": 4
+  },
+  {
+    "id": 948,
+    "eng": "white ginger lily",
+    "kor": "화이트 진저 릴리",
+    "category": 3
+  },
+  {
+    "id": 949,
+    "eng": "white oud",
+    "kor": "화이트 오드",
+    "category": 8
+  },
+  {
+    "id": 950,
+    "eng": "white tobacco",
+    "kor": "화이트 토바코",
+    "category": 4
+  },
+  {
+    "id": 951,
+    "eng": "white willow",
+    "kor": "화이트 윌로우",
+    "category": 8
+  },
+  {
+    "id": 952,
+    "eng": "white wine",
+    "kor": "화이트 와인",
+    "category": 11
+  },
+  {
+    "id": 953,
+    "eng": "wild strawberry",
+    "kor": "와일드 스트로베리",
+    "category": 2
+  },
+  {
+    "id": 954,
+    "eng": "wildflowers",
+    "kor": "와일드 플라워",
+    "category": 3
+  },
+  {
+    "id": 955,
+    "eng": "wine lees",
+    "kor": "와인 리스",
+    "category": 11
+  },
+  {
+    "id": 956,
+    "eng": "winterberry",
+    "kor": "윈터베리",
+    "category": 2
+  },
+  {
+    "id": 957,
+    "eng": "wisteria",
+    "kor": "위스테리아",
+    "category": 3
+  },
+  {
+    "id": 958,
+    "eng": "wolfberry",
+    "kor": "울프베리",
+    "category": 2
+  },
+  {
+    "id": 959,
+    "eng": "woody notes",
+    "kor": "우드 노트",
+    "category": 8
+  },
+  {
+    "id": 960,
+    "eng": "woody zion",
+    "kor": "우디 시온",
+    "category": 8
+  },
+  {
+    "id": 961,
+    "eng": "wool",
+    "kor": "울",
+    "category": 12
+  },
+  {
+    "id": 962,
+    "eng": "wormwood",
+    "kor": "웜우드",
+    "category": 5
+  },
+  {
+    "id": 963,
+    "eng": "wrightia",
+    "kor": "라이티아",
+    "category": 3
+  },
+  {
+    "id": 964,
+    "eng": "yarrow",
+    "kor": "얘로",
+    "category": 5
+  },
+  {
+    "id": 965,
+    "eng": "yellow cherry",
+    "kor": "애로 체리",
+    "category": 2
+  },
+  {
+    "id": 966,
+    "eng": "ylang-ylang",
+    "kor": "일랑-일랑",
+    "category": 3
+  },
+  {
+    "id": 967,
+    "eng": "yogurt",
+    "kor": "요거트",
+    "category": 7
+  },
+  {
+    "id": 968,
+    "eng": "yohimbe",
+    "kor": "요힘베",
+    "category": 8
+  },
+  {
+    "id": 969,
+    "eng": "yumberry",
+    "kor": "염베리",
+    "category": 2
+  },
+  {
+    "id": 970,
+    "eng": "yunnan red tea",
+    "kor": "원난 레드 티",
+    "category": 5
+  },
+  {
+    "id": 971,
+    "eng": "yuzu",
+    "kor": "유즈",
+    "category": 1
+  },
+  {
+    "id": 972,
+    "eng": "yuzu flower",
+    "kor": "유즈 플라워",
+    "category": 3
+  },
+  {
+    "id": 973,
+    "eng": "zinnia",
+    "kor": "진니아",
+    "category": 3
+  }
+]

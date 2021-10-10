@@ -1,0 +1,51 @@
+.mypage {
+  height: 100vh;
+  padding-top: 9vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+
+.mypage::-webkit-scrollbar {
+  display: none;
+}
+
+.mypage_title {
+  margin-top: 100px;
+  top: 10%;
+  font-size: var(--xxlarge-font-size);
+}
+
+.card_image {
+  background-repeat: no-repeat;
+  width: 80%;
+  height: 80%;
+}
+
+.logout_button {
+  width: 100px;
+  cursor: pointer;
+  bottom: 0;
+}
+
+.mypage > .no_perfume {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.mypage > .no_perfume > p:nth-child(1) {
+  font-size: var(--large-font-size);
+}
+
+.mypage > .no_perfume > .flex_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mypage > .no_perfume > .flex_box p {
+  font-size: var(--mid-font-size);
+  color: black;
+  margin: var(--margin-6) var(--margin-1) 0;
+}
