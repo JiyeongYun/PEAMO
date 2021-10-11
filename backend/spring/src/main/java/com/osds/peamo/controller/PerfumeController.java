@@ -65,7 +65,7 @@ public class PerfumeController {
     public ResponseEntity<Map<String, Object>> getPerfume(@RequestParam long pId, @RequestParam String uId) {
     	Map<String, Object> response = perfumeService.getPerfumeDetailInfo(pId, uId);
     	if (response == null) {
-    		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response); // 존재하지 않는 id 요청
+    		return new ResponseEntity(HttpStatus.NOT_FOUND); // 존재하지 않는 id 요청
 		}
     	return ResponseEntity.status(HttpStatus.OK).body(response);
     }
