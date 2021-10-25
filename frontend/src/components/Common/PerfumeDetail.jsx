@@ -167,7 +167,7 @@ function PerfumeDetail({ togglePerfumeDetail, extra = 'default' }) {
                 <tr>
                   <th>TOP</th>
                   <th>MIDDLE</th>
-                  <th>BOTTOM</th>
+                  <th>BASE</th>
                 </tr>
               </thead>
               <tbody>

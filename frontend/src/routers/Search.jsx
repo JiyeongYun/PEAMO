@@ -120,7 +120,7 @@ function Search() {
   // 향수 검색 함수
   function searchPer() {
     const word = document.querySelector('#search_name').value;
-    const uId = localStorage.getItem('userId');
+    const uId = localStorage.getItem('userId')?localStorage.getItem('userId'):"";
     axios
       .get('http://j5a403.p.ssafy.io:8000/perfume/search', {
         params: {

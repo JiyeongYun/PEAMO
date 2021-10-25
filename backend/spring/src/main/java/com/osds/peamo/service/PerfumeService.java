@@ -157,6 +157,9 @@ public class PerfumeService {
                 duplicatedSeasons.add(cs.getSeasonId());
             }
             HashSet<Long> seasons = new HashSet<>(duplicatedSeasons);   // 중복제거
+            if(seasons.size() == 0){    // 계절이 없는 경우
+                seasons.add((long)1); seasons.add((long)2); seasons.add((long)3); seasons.add((long)4);
+            }
 
             // 6. 좋아요 수 - goodCount
             int goodCount = perfume.getGoodCnt();
@@ -164,7 +167,7 @@ public class PerfumeService {
             // 향수 상세 정보 담기
             response.put("perfumeDetailInfo", PerfumeDetailInfo.builder().perfumeSimpleInfo(perfumeSimpleInfo).categoryNameList(categoryNameList)
                     .notesTMB(notesTMB).gender(gender).seasons(seasons).goodCount(goodCount).build());
-            
+
             List<PerfumeSimpleInfo> twoPerfumeSimpleInfos = new ArrayList<>();
             List<Similarity> similarityList = similarityRepository.getSimilaritiesByStandard(pId);
             for (Similarity similarity : similarityList) {
