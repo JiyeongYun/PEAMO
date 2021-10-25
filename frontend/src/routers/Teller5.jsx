@@ -23,38 +23,38 @@ function Teller5() {
         </div>
         <div className="teller_image_5">
           <div className="image">
-            <Link to="/teller-6" onClick={() => onClick(0)}>
+            <Link to="/teller-6" onClick={() => onClick(1)}>
               <img src="/images/spring.png" alt="spring"></img>
             </Link>
             <br></br>
-            <Link to="/teller-6" onClick={() => onClick(0)}>
+            <Link to="/teller-6" onClick={() => onClick(1)}>
               <span>봄</span>
             </Link>
           </div>
           <div className="image">
-            <Link to="/teller-6" onClick={() => onClick(1)}>
+            <Link to="/teller-6" onClick={() => onClick(2)}>
               <img src="/images/summer.png" alt="summer"></img>
             </Link>
             <br></br>
-            <Link to="/teller-6" onClick={() => onClick(1)}>
+            <Link to="/teller-6" onClick={() => onClick(2)}>
               <span>여름</span>
             </Link>
           </div>
           <div className="image">
-            <Link to="/teller-6" onClick={() => onClick(2)}>
+            <Link to="/teller-6" onClick={() => onClick(3)}>
               <img src="/images/fall.png" alt="fall"></img>
             </Link>
             <br></br>
-            <Link to="/teller-6" onClick={() => onClick(2)}>
+            <Link to="/teller-6" onClick={() => onClick(3)}>
               <span>가을</span>
             </Link>
           </div>
           <div className="image">
-            <Link to="/teller-6" onClick={() => onClick(3)}>
+            <Link to="/teller-6" onClick={() => onClick(4)}>
               <img src="/images/winter.png" alt="winter"></img>
             </Link>
             <br></br>
-            <Link to="/teller-6" onClick={() => onClick(3)}>
+            <Link to="/teller-6" onClick={() => onClick(4)}>
               <span>겨울</span>
             </Link>
           </div>
